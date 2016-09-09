@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|PowerPoint|OneNote|Project|Access" SupportedVersion="|V1.1|V1.2|V1.3|">
+  <Item text="概述" url="overview">
+    <Item text="平台概述" url="overview/office-add-ins" SEODescription="了解 Office 外接程序，允许将您的解决方案成为跨越 Windows、Office Online、Mac 和 IPad 的 Office 本地的一部分。" />
+	<Item text="运行外接程序的要求" url="overview/requirements-for-running-office-add-ins" SEODescription="了解运行 Office 外接程序的软件和设备要求。" />	
+	<Item text="外接程序开发的最佳做法" url="overview/add-in-development-best-practices" SEODescription="应用构建可优化用户体验的 Office 外接程序的最佳实践。" />
+	</Item>
+  <Item text="开始使用" url="get-started">
+    <Item text="使用 Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="使用 Visual Studio 开始构建一个 Office 外接程序" />
+	  <Item text="使用任何编辑器" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="在 Mac 或 Windows PC 上使用任意编辑器开始构建 Office 外接程序。" />
+    <Item text="使用 Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="通过从您的浏览器使用 Napa Office 365 开发工具，创建适用于 Excel、Outlook、PowerPoint、Project 或 Word 的基本内容、任务窗格或 Outlook 外接程序，从而开始使用 Office 外接程序。" />
+  </Item>
+  <Item text="设计" url="design/add-in-design">
+      <Item text="UI 元素" url="design/ui-elements/ui-elements" SEODescription="使用外接程序命令、结构 UI 和 自定义 HTML 界面来创建引人注目的外接程序用户界面。">
+      	<Item text="交互模式" url="design/ui-elements/interaction-patterns" SEODescription="使用建议的设计布局为设计模式创建一致的外观和风格。" />
+      	<Item text="内容外接程序的布局" url="design/ui-elements/layout-for-content-add-ins" SEODescription="使用建议的设计布局为内容外接程序创建一致的外观和风格。" />
+      	<Item text="任务窗格外接程序的布局" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="使用建议的设计布局为任务窗格外接程序创建一致的外观和风格。" />
+      	<Item text="Outlook 外接程序的布局" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="对邮件外接程序使用这些布局" Scope="outlook" />
+      	<Item text="使用 Office UI 结构" url="design/ui-elements/using-office-ui-fabric" SEODescription="向你演示使用结构的基础知识。" />
+      </Item>	
+    	<Item text="UX 设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
+	<Item text="Excel、Word 和 PowerPoint 的外接程序命令" url="design/add-in-commands" SEODescription="使用外接程序中的外接程序命令扩展 Excel、Word 和 PowerPoint 中的默认 Office UI。" />
+  	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
+    	<Item text="语音准则" url="design/voice-guidelines" SEODescription="找到要在 Office 外接程序的 UI 文本中使用的语音准则" />
+    	<Item text="辅助功能准则" url="design/accessibility-guidelines" SEODescription="了解如何让 Office 外接程序可供所有用户访问。" />
+    </Item>
+  <Item text="开发" url="develop">
+	<Item text="外接程序开发生命周期" url="design/add-in-development-lifecycle" SEODescription="计划端到端过程以开发用于扩展 Office 应用程序的任务窗格、内容和 Outlook 外接程序。" />
+	<Item text="安装最新的 Office 版本" url="develop/install-latest-office-version" SEODescription="了解如何选择加入以获取 Office 的最新版本。" />
+	<Item text="开发适用于 iPad 的外接程序" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="使你的 Office 外接程序可用于 Office for iPad。" />
+	<Item text="清单" url="overview/add-in-manifests">	
+		<Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="使用外接程序清单中的 VersionOverrides 元素定义外接程序命令。" />
+		<Item text="指定 Office 主机" url="overview/specify-office-hosts-and-api-requirements" SEODescription="查看如何在清单中指定 Office 主机和 API 要求。" /> 	
+		<Item text="在内容和任务窗格外接程序中请求 API 的使用权限" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="在清单中指定外接程序所需的 API 访问权限的级别。" />
+		<Item text="更新 API 和清单版本" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。" />
+		<Item text="使用运行时日志记录调试清单" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="使用运行时日志记录调试 Office 外接程序的清单" />
+	</Item>	
+	<Item text="Office JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="了解在 Office.js 文件中实现的适用于 Office 的 JavaScript API 的功能区域。">
+		<Item text="对于内容和任务窗格外接程序的支持" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="描述您可以在内容或任务窗格外接程序中声明的不同权限级别，以指定您的外接程序为实现其功能所要求的 JavaScript API 访问的级别。" />
+		<Item text="参考 Office js" url="develop/referencing-the-javascript-api-for-office-library-from-its-cdn" SEODescription="从适用于 Office 的 JavaScript API 库（Office.js 和特定于关联应用程序的 .js 文件）的内容传递网络 (CDN) 位置引用该库。" />
+		<Item text="加载 Office.js" url="develop/loading-the-dom-and-runtime-environment" SEODescription="外接程序必须确保在运行其自己的自定义逻辑之前加载 DOM 和 Office 外接程序运行时环境。" />
+		<Item text="Office 外接程序中的异步编程" url="develop/asynchronous-programming-in-office-add-ins" SEODescription="使用由适用于 Office 的 JavaScript API 支持的嵌套回调和承诺模式异步编程模式来开发 Office 外接程序。" />
+		<Item text="保持状态和设置" url="develop/persisting-add-in-state-and-settings" SEODescription="了解对内容、任务窗格和 Outlook 外接程序保留外接程序状态和设置的选项。" />
+	</Item>
+	<Item text="在 Office 外接程序中使用 OAuth" url="develop/use-the-oauth-authorization-framework-in-an-office-add-in" SEODescription="在您的 Office 外接程序中使用 OAuth 2.0 授权框架" />
+	<Item text="隐私和安全性" url="develop/privacy-and-security" SEODescription="Office 外接程序受运行时框架保护，该框架是多层权限模型，可以管理内存、CPU 和网络资源的使用。" />
+	<Item text="解决同一来源策略限制" url="develop/addressing-same-origin-policy-limitations" SEODescription="提供了解决同源策略限制的方法的简要概述，该限制防止从一个域获取或操作属性的文档与 Office 外接程序中的另一个域中加载脚本。" />
+	<Item text="本地化" url="develop/localization" SEODescription="为 Office 外接程序提供区域设置特定的内容，包括 UI 字符串、外接程序名称、说明、图标、源文件和日期/时间格式。" />
+    <Item text="性能" url="develop/resource-limits-and-performance-optimization" SEODescription="向您的 Office 外接程序应用资源使用限制，并优化外接程序的性能。" />
+  </Item>
+  <Item text="测试" url="testing">
+    	<Item text="旁加载 Office 外接程序进行测试" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="安装在 Windows 上运行的 Office 外接程序进行测试。" Scope="Excel, Word, PowerPoint, Project, Access" />
+		<Item text="在 Office Online 中旁加载 Office 外接程序进行测试" url="testing/sideload-office-add-ins-for-testing" SEODescription="了解如何将外接程序加载到 Office 应用程序中进行测试。" />
+	    <Item text="旁加载 Outlook 外接程序进行测试" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="安装 Outlook 外接程序进行测试" />
+    	<Item text="在 iPad 和 Mac 上进行旁加载" url="testing/sideload-an-office-add-in-on-ipad-and-mac" SEODescription="将您的 Office 外接程序旁加载在 iPad 或 Mac 上，以测试其如何在 Office for iOS 或 Office for Mac 中运行。" />
+    	<Item text="使用 F12 开发人员工具调试" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="在 Windows 10 上使用 F12 开发人员工具的调试器来调试 Office 外接程序。" />
+    	<Item text="在 Office Onlie 中调试" url="testing/debug-add-ins-in-office-online" SEODescription="不在 Windows 平台上运行 Office 的情况下（例如，您正在 Mac 上进行开发），使用 Office Online 调试外接程序。" />
+    	<Item text="在 iPad 和 Mac 上进行调试" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="使用 Weinre 远程 Web 检查器调试在 iPad 或 Mac 上运行的 Office 外接程序。" />
+        <Item text="用户错误疑难解答" url="testing/testing-and-troubleshooting" SEODescription="解决您的用户在使用 Office 外接程序时遇到的问题。" />
+	</Item>
+  <Item text="发布" url="publish/publish">
+    <Item text="在 Microsoft Azure 上托管 Office 外接程序" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="使用 Visual Studio 2015 和 Microsoft Office 开发人员工具发布到 Microsoft Azure，然后在它上面托管 Office 外接程序。" />
+    <Item text="使用 Napa 或 Visual Studio 打包您的外接程序" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="打包您的 Office 外接程序为发布做准备。" />
+    <Item text="将任务窗格和内容外接程序发布到外接程序目录" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="配置 Office 客户端以便你的外接程序在 Office 外接程序对话框中可用" />
+  </Item>
+  
+  <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="使用 JavaScript API 创建 Word 外接程序。" Scope="word">
+    <Item text="构建您的第一个 Word 外接程序" url="word/word-add-ins" SEODescription="使用 Word 外接程序扩展 Word 的功能并将 Word 与其他应用程序集成。" Scope="word" />
+    <Item text="通过 Office Open XML 创建适用于 Word 的更好的外接程序" url="word/create-better-add-ins-for-word-with-office-open-xml" SEODescription="使用 Office Open XML 通过 Word 外接程序插入丰富内容。编辑 Office Open XML 简化标注并尽量减少负载。" Scope="word" />
+    <Item text="字典任务窗格外接程序" url="word/dictionary-task-pane-add-ins" />
+	<Item text="从 PowerPoint 或 Word 相关外接程序中获取整个文档" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="创建可发布到远程位置的 PowerPoint 或 Word 外接程序。" />
+  	<Item text="读取数据并将其写入文档或电子表格中的活动选择区" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="使用 Document 对象读取数据并将其写入文档或电子表格中的活动选择区。" />
+  	<Item text="绑定到文档或电子表格中的区域" url="develop/bind-to-regions-in-a-document-or-spreadsheet" SEODescription="使用标识符访问文档或电子表格的某个区域。" />
+  </Item>
+    <Item text="Excel" url="excel" Scope="excel">
+    <Item text="Excel JavaScript API 编程概述" url="excel/excel-add-ins-javascript-programming-overview" SEODescription="使用 JavaScript API 构建适用于 Excel 2016 的外接程序。" Scope="excel" />
+	<Item text="构建您的第一个 Excel 外接程序" url="excel/build-your-first-excel-add-in" SEODescription="创建适用于 Excel 2016 的简单任务窗格外接程序。" Scope="excel" />
+	<Item text="设置 Excel 相关外接程序中表的格式" url="excel/format-tables-in-add-ins-for-excel" SEODescription="指定 Excel 相关外接程序中表的格式。" Scope="excel" />
+	  <Item text="读取数据并将其写入文档或电子表格中的活动选择区" url="develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet" SEODescription="读取数据并将其写入文档或电子表格中的活动选择区。" />	
+	  <Item text="绑定到文档或电子表格中的区域" url="develop/bind-to-regions-in-a-document-or-spreadsheet" Scope="excel" SEODescription="绑定到文档或电子表格中的区域。" />
+	</Item>
+  
+  <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="在阅读或撰写模式中创建 Outlook 外接程序。" Scope="outlook">
+    <Item text="概述" url="outlook/overview" SEODescription="了解 Outlook 外接程序体系结构和功能。" Scope="outlook" />
+    <Item text="适用于 Outlook 的外接程序命令" url="outlook/add-in-commands-for-outlook" SEODescription="使用外接程序命令将 Outlook 外接程序与 Outlook UI 集成。" Scope="outlook" />
+    <Item text="上下文 Outlook 外接程序" url="outlook/contextual-outlook-add-ins" SEODescription="基于邮件或约会中的指定文本激活 Outlook 外接程序。" Scope="outlook" />
+    <Item text="自定义窗格 Outlook 外接程序" url="outlook/custom-pane-outlook-add-ins" SEODescription="了解如何定义基于特定规则激活的 Outlook 外接程序。" Scope="outlook" />
+	<Item text="模块扩展 Outlook 外接程序" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="通过向导航栏添加模块扩展来扩展 Outlook UI。" /> 
+	<Item text="API" url="outlook/apis" SEODescription="了解如何指定您的 Outlook 外接程序所需的 API。" Scope="outlook" />
+	<Item text="清单" url="overview/add-in-manifests" Scope="outlook" SEODescription="使用 XML 清单指定外接程序的激活方式。">
+      <Item text="清单" url="outlook/manifests/manifests" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。" Scope="outlook" /><Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />
+      <Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="使用 Outlook 外接程序清单中的 VersionOverrides 元素定义外接程序命令。" Scope="outlook" />
+  	</Item>
+  <Item text="获取和设置阅读或撰写窗体中的项目数据" url="outlook/item-data" SEODescription="了解从 Outlook 外接程序的约会或邮件上获取或设置数据的方法" Scope="outlook" />
+	<Item text="获取和设置外接程序元数据" url="outlook/metadata-for-an-outlook-add-in" SEODescription="了解加载和存储只有您的 Outlook 外接程序可以访问的自定义数据 - 通过漫游设置和自定义属性。" Scope="outlook" />
+	<Item text="隐私和安全性" url="outlook/privacy-and-security" SEODescription="最终用户" Scope="outlook">
+		<Item text="了解 Outlook 外接程序权限" url="outlook/understanding-outlook-add-in-permissions" SEODescription="在 Outlook 外接程序清单中指定权限级别。" />
+    </Item>
+	<Item text="阅读方案" url="outlook/read-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
+		<Item text="使用正则表达式显示 Outlook 外接程序" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="了解如何使用正则表达式指定某个 Outlook 外接程序与阅读方案相关且 Outlook 应在 UI 中显示外接程序的条件。" Scope="outlook" />
+		<Item text="将项目中的字符串作为已知实体进行匹配" url="outlook/match-strings-in-an-item-as-well-known-entities" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
+		<Item text="从一个项目提取实体字符串" url="outlook/extract-entity-strings-from-an-item" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
+		<Item text="获取 Outlook 项目的附件" url="outlook/get-attachments-of-an-outlook-item" SEODescription="使用 Outlook 外接程序使服务能够从 Exchange 服务器中获取附件。" Scope="outlook" />
+	</Item>
+	<Item text="撰写方案" url="outlook/compose-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
+		<Item text="添加和删除撰写窗体中一个项目的附件" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="参阅 JavaScript 示例，这些示例使用异步方法和 Outlook 外接程序的 Exchange Web 服务 (EWS) ID 将附件添加到用户在 Outlook 中撰写的项目中。" Scope="outlook" /><Item text="在撰写窗体中获取或设置项目数据" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="了解在撰写方案的 Outlook 外接程序中如何获取或设置一个项目的各种属性" Scope="outlook" />
+		<Item text="获取、设置或添加收件人" url="outlook/get-set-or-add-recipients" />
+		<Item text="获取或设置主题" url="outlook/get-or-set-the-subject" SEODescription="了解用户在 Outlook 中撰写约会或邮件时如何从 Outlook 外接程序中获取或设置主题。" Scope="outlook" />
+		<Item text="在正文插入数据" url="outlook/insert-data-in-the-body" SEODescription="了解如何将数据插入到用户正从 Outlook 外接程序撰写的约会或邮件的正文中。" Scope="outlook" />	
+		<Item text="获取或设置约会位置" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="了解用户在 Outlook 中撰写约会时如何从 Outlook 外接程序中获取或设置位置。" Scope="outlook" />
+		<Item text="获取或设置约会时间" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="了解如何从 Outlook 外接程序获取或设置约会时间。" Scope="outlook" />
+	</Item>
+	<Item text="调用 Web 服务" url="outlook/web-services" SEODescription="了解如何为 Outlook 从 Outlook 外接程序调用 EWS 或其他 Web 服务。" Scope="outlook" />
+	<Item text="身份验证" url="outlook/authentication" SEODescription="了解如何使用 Exchange 2013 标识令牌验证您的 Outlook 外接程序。" Scope="outlook">
+		<Item text="标识令牌内部" url="outlook/inside-the-identity-token" SEODescription="找出 Exchange 2013 标识令牌中的内容。" Scope="outlook" />
+		<Item text="使用标识令牌调用服务" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
+		<Item text="使用令牌验证库" url="outlook/use-the-token-validation-library" SEODescription="了解如何使用 EWS 托管 API 验证库验证 Exchange 标识令牌。" Scope="outlook" />
+		<Item text="验证标识令牌" url="outlook/validate-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
+		<Item text="使用 PHP 验证标识令牌" url="outlook/use-php-to-validate-an-identity-token" SEODescription="了解如何使用 PHP 验证将 Outlook 外接程序客户的电子邮件帐户与您的服务所提供的信息相关联的 Exchange 2013 标识令牌。" Scope="outlook" />
+		<Item text="使用标识令牌验证用户" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="请参阅代码示例，该示例说明身份验证对象如何匹配由包含一组服务凭据的标识令牌所表示的唯一标识。" Scope="outlook" />    
+    	 </Item>
+	</Item>
+	<Item text="测试和提示" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
+		<Item text="在 Outlook for Mac 中比较 Outlook 外接程序支持" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="转到 dev.office.com 的错误链接。 我在表中固定了项目符号列表。" Scope="outlook" />
+		<Item text="处理 Outlook 外接程序中的日期值的提示" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="使用 Date 对象处理 Outlook 外接程序中的日期值。" />
+		<Item text="Outlook 外接程序的激活和 JavaScript API 限制" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="请确保 Outlook 外接程序处于激活和 API 使用准则范围内。" />
+		<Item text=" Outlook 外接程序激活故障排除" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook 外接程序激活是上下文相关的并且基于外接程序清单中的规则。探讨已安装的外接程序在 Outlook 中激活失败的原因。" Scope="outlook" />
+	</Item>    
+  <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
+	<Item text="在 PowerPoint 外接程序中使用文档主题" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="将某个主题应用至 PowerPoint 外接程序" />
+	<Item text="从 PowerPoint 或 Word 相关外接程序中获取整个文档" url="develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word" SEODescription="创建可发布到远程位置的 PowerPoint 或 Word 外接程序。" />   
+	<Item text="Office Mix" url="powerpoint/office-mix" Scope="powerpoint" SEODescription="使用 Office Mix 外接程序在 Office Mix PowerPoint 演示文稿中嵌入实验室。">
+      <Item text="Office Mix 外接程序" url="powerpoint/office-mix/office-mix-add-ins" SEODescription="LabsJs 允许您创建专用的 Office Mix 实例" Scope="powerpoint" />
+      <Item text="配置和编辑适用于 Office Mix 的 LabsJS 实验室" url="powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix" SEODescription="了解如何配置您的实验室以支持查看和编辑。" Scope="powerpoint" />
+      <Item text="从适用于 Office Mix 的 LabsJS 开始" url="powerpoint/office-mix/get-started-with-labsjs-for-office-mix" SEODescription="了解如何设置 Office 外接程序开发环境以支持使用 Labs.js API 进行 Microsoft Office Mix 实验室开发。" Scope="powerpoint" />
+	  <Item text="演练： 创建您的第一个 Office Mix 实验室" url="powerpoint/office-mix/creating-your-first-lab-for-office-mix" SEODescription="创建您的第一个 Office Mix 实验室" Scope="powerpoint" />
+      <Item text="使用 LabsJS 创建适用于 Mix 的实验室的准则" url="powerpoint/office-mix/guidelines-for-creating-labs-for-mix-using-labsjs" SEODescription="获取使用 LabsJS JavaScript 库创建适用于 Office Mix 实验室的简要介绍。" Scope="powerpoint" />
+      <Item text="LabsJS lab 组件" url="powerpoint/office-mix/labsjs-lab-components" SEODescription="组件是实验室的构建基块；使用组件装配您的实验室。" Scope="powerpoint" />
+      <Item text="适用于 Office Mix 示例的 LabsJS 实验室" url="powerpoint/office-mix/labsjs-labs-for-office-mix-examples" SEODescription="组件是实验室的构建基块；使用组件装配您的实验室。" Scope="powerpoint" />   
+    </Item>
+  </Item>
+  
+  <Item text="OneNote" url="onenote" Scope="onenote">
+	<Item text="OneNote JavaScript API 编程概述（预览）" url="onenote/onenote-add-ins-programming-overview" SEODescription="使用 JavaScript API 构建适用于 OneNote 的外接程序。" Scope="onenote" />
+	<Item text="构建您的第一个 OneNote 外接程序（预览）" url="onenote/onenote-add-ins-getting-started" SEODescription="创建适用于 OneNote 的简单任务窗格外接程序。" Scope="onenote" />
+	<Item text="处理 OneNote 页面内容（预览）" url="onenote/onenote-add-ins-page-content" SEODescription="使用 OneNote JavaScript API 以使用页面上的内容。" Scope="onenote" />
+  </Item>
+  
+  <Item text="Project" url="project" Scope="project">
+    <Item text="项目外接程序" url="project/project-add-ins" SEODescription="启用多个方案以便将 Project 2013 与网页和其他应用程序集成。" Scope="project" />
+	<Item text="使用带有本地 OData 服务的 REST 创建一个 Project 外接程序" url="project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service" SEODescription="构建用于 Project Professional 2013 的任务窗格外接程序" Scope="project" />
+    <Item text="使用文本编辑器为项目创建您的第一个任务窗格外接程序" url="project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor" SEODescription="开发一个使用指向 HTML 文件的 XML 清单的 Office 外接程序" Scope="project" /> 
+  </Item>
+  <Item text="访问" url="access" Scope="access">
+    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，它通过使用自定义 HTML 和 JavaScript 扩展 Access Web App。" Scope="access" />
+  </Item>
+</Menu>
