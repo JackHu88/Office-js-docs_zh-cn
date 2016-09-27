@@ -1,43 +1,71 @@
-﻿
-# “主机”元素
-指定 Office 外接程序支持的 Office 主机应用程序的类型。
 
- **外接程序类型：**内容、任务窗格、邮件
+# Host 元素
+指定应在其中激活外接程序的单个 Office 应用程序类型。
 
-
-## 语法：
+> **重要说明**：**Host** 元素的语法根据该元素是否在[基本清单](#basic-manifest)中或 [VersionOverrides](#versionoverrides-node) 节点中定义而不同。 但功能相同。  
 
 
-```XML
-<Host Name= ["Document" | "Database" | "Mailbox" | "Presentation" | "Project" | "Workbook"] />
+## 基本清单
+
+在基本清单（在 [OfficeApp](./officeapp.md) 下）中定义时，主机类型由 `Name` 属性决定。   
+
+### 属性
+| 属性     | 类型   | 必需 | 说明                                      |
+|:--------------|:-------|:---------|:-------------------------------------------------|
+| [Name](#name) | 字符串 | 必需 | Office 主机应用程序的类型名称。 |
+
+
+### 名称
+指定此外接程序面向的主机类型。 值必须为以下值之一：
+
+- `Document` (Word)
+- `Database` (Access)
+- `Mailbox` (Outlook)
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Project` (Project)
+- `Workbook` (Excel)
+
+### 示例
+```xml
+<Hosts>
+    <Host Name="Mailbox">
+    </Host>
+</Hosts>
 ```
 
+---
 
-## 属性
+## VersionOverrides 节点
+在 [VersionOverrides](./versionoverrides) 中定义时，主机类型由 `xsi:type` 属性决定。 
+
+### 属性
+
+|  属性  |  必需  |  说明  |
+|:-----|:-----|:-----|
+|  [xsi:type](#xsitype)  |  是  | 描述这些设置所适应的 Office 主机。|
+
+### 子元素
+
+|  元素 |  必需  |  说明  |
+|:-----|:-----|:-----|
+|  [FormFactor](./formfactor.md)    |  是   |  定义受影响的外形规则。 |
 
 
+### xsi:type
+控制所包含的设置也适用的 Office 主机类别（Word、Excel、PowerPoint、Outlook 和 OneNote）。 值必须为以下值之一：
 
-|**属性**|**类型**|**必需**|**说明**|
-|:-----|:-----|:-----|:-----|
-|Name|string|必需|Office 主机应用程序的类型的名称。|
+- `Document` (Word)
+- `MailHost` (Outlook)    
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Workbook` (Excel)
 
-## 备注
-
-可以指定 **Host** 元素中的 **Name** 属性中的以下值。每个值映射到外接程序支持的 Office 主机应用程序的一个或多个集。
-
-
-
-|**Name**|**Office 主机应用程序**|
-|:-----|:-----|
-| `"Document"`|Word、Word Online 和 iPad 上的 Word|
-| `"Database"`|Access Web 应用程序|
-| `"Mailbox"`|Outlook、Outlook Web App 和适用于设备的 OWA|
-| `"Notebook"`|OneNote Online|
-| `"Presentation"`|PowerPoint、PowerPoint Online 和 iPad 上的 PowerPoint|
-| `"Project"`|Project|
-| `"Workbook"`|Excel、Excel Online、iPad 上的 Excel|
-
-## 备注
-
-有关指定主机支持的详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
-
+## 主机示例 
+```xml
+<Hosts>
+    <Host xsi:type="MailHost">
+        <!-- Host Settings -->
+    </Host>
+</Hosts>
+```

@@ -113,5 +113,5 @@ OneNote 外接程序仅支持以下通用 API：
 
 - [生成你的第一个 OneNote 外接程序](onenote-add-ins-getting-started.md)
 - [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

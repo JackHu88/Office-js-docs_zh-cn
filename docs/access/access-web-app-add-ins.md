@@ -3,7 +3,10 @@
 
 
 
-本文演示如何使用 Visual Studio 2015 开发面向 Access Web 应用程序 的 Office 外接程序。
+本文介绍如何使用 Visual Studio 2015 开发面向 Access Web 应用的 Office 外接程序。
+
+>
+  **注意：**有关使用 VBA 开发 Access 解决方案的信息，请参阅 MSDN 上的 [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)。
 
 ## 先决条件
 

@@ -1,27 +1,21 @@
-﻿# 生成你的第一个 OneNote 外接程序
+# 生成你的第一个 OneNote 外接程序
 
-本文将引导你构建一个可添加一些文本至 OneNote 页面的简单的任务窗格外接程序。
+本文介绍生成可将一些文本添加到 OneNote 页面的简单任务窗格外接程序的步骤。
 
-- [设置开发环境](#设置开发环境)
-- [创建外接程序项目](#创建外接程序项目)
-- [配置外接程序清单](#配置外接程序清单)
-- [开发外接程序](#开发外接程序)
-- [测试外接程序](#测试外接程序)
-
-下图显示您将创建的外接程序。
+下图显示将创建的外接程序。
 
    ![构建自此演练的 OneNote 外接程序](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-### 步骤 1：设置开发环境
-1- 按照这些 [安装说明](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor)安装 Yeoman Office 生成器及其系统必备组件。
+## 步骤 1：设置开发环境
+1- 按照这些 [安装说明](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor)(#安装说明) 安装 Yeoman Office 生成器及其系统必备组件。
 
    当您没有 Visual Studio 或您想使用技术而非纯 HTML、CSS 和 JavaScript 时，Yeoman Office 生成器可以轻松地创建外接程序项目。它还提供了用于测试的本地 Gulp Web 服务器的快捷访问。 
 
-   >你可以有选择性地 [使用 Visual Studio](https://dev.office.com/docs/add-ins/get-started/create-and-debug-office-add-ins-in-visual-studio) 以创建你的项目文件，但不会获得内置 Gulp 服务器支持。
+   >你可以有选择性地 [使用 Visual Studio](https://dev.office.com/docs/add-ins/get-started/create-and-debug-office-add-ins-in-visual-studio)(#使用-visual-studio) 以创建你的项目文件，但不会获得内置 Gulp 服务器支持。
 
 <a name="create-project"></a>
-### 步骤 2：创建外接程序项目 
+## 步骤 2：创建外接程序项目 
 1- 创建一个名为 *onenote 外接程序*的本地文件夹。
 
 2- 打开 **cmd** 提示符，并导航到 **onenote 外接程序**文件夹。运行 `yo office` 命令，如下所示。
@@ -42,7 +36,7 @@ C:\your-local-path\onenote add-in\> yo office
 | 要使用的技术 | HTML、CSS 和 JavaScript |
 
 <a name="manifest"></a>
-### 步骤 3：配置外接程序清单 
+## 步骤 3：配置外接程序清单 
 1- 在您的项目文件中打开 **manifest-onenote-add-in.xml**。添加以下行至 **Hosts** 部分。这将指定您的外接程序支持 OneNote 主机应用程序。
 
 ```
@@ -56,7 +50,7 @@ C:\your-local-path\onenote add-in\> yo office
 ```
 
 <a name="develop"></a>
-### 步骤 4：开发外接程序
+## 步骤 4：开发外接程序
 您可以使用任何文本编辑器或 IDE 开发外接程序。如果您尚未尝试过 Visual Studio 代码，可以在 Linux、Mac OSX 和 Windows 上[免费下载](https://code.visualstudio.com/)。
 
 1- 在 **app/home** 文件夹中打开 *home.html*。 
@@ -165,7 +159,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-### 步骤 5：在 OneNote Online 上测试外接程序
+## 步骤 5：在 OneNote Online 上测试外接程序
 1- 运行 Gulp Web 服务器。  
 
    a. 在 **onenote 外接程序**文件夹中打开 **cmd** 提示符。 
@@ -188,13 +182,21 @@ https://localhost:8443/app/home/home.html
 
 3- 在 OneNote Online 中，打开一个笔记本。
 
-4-选择“**插入 > 上载外接程序**”。
+4-选择“**插入 > Office 外接程序**”。 这将打开 Office 外接程序对话框。
+  - 如果使用消费者帐户登录，请选择“**我的外接程序**”选项卡，然后选择“**上载我的外接程序**”。
+  - 如果使用工作或学校帐户登录，请选择“**我的组织**”选项卡，然后选择“**上载我的外接程序**”。 
+  
+  以下图像显示消费者笔记本的“**我的外接程序**”选项卡。
 
-5- 在“上载外接程序”对话框中，浏览至你项目文件中的 **manifest-onenote-add-in.xml**，然后选择“**上载**”。 测试时，你的清单文件可以在本地存储。
+  ![显示“我的外接程序”选项卡的 Office 外接程序对话框](../../images/onenote-office-add-ins-dialog.png)
+  
+  >**注意**：若要启用“**Office 外接程序**”按钮，请在 OneNote 页内单击。
+
+5- 在“上载外接程序”对话框中，浏览至项目文件中的 **manifest-onenote-add-in.xml**，然后选择“**上载**”。 测试时，你的清单文件可以在本地存储。
 
 6- 该外接程序在 OneNote 页面旁的 iFrame 中打开。 在文本区域中输入一些文本，然后选择“**添加边框**”。 您输入的文本将添加至页面。 
 
-### 故障排除和提示
+## 故障排除和提示
 - 您可以使用浏览器的开发者工具调试外接程序。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新外接程序的 iFrame。
 
 - 当您检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示 *未定义*。展开 `_proto_` 节点以查看在对象上被定义但未加载的属性。
@@ -207,5 +209,5 @@ https://localhost:8443/app/home/home.html
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

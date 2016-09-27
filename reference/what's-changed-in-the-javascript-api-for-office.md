@@ -1,20 +1,18 @@
-﻿
+
 # JavaScript API for Office 中的更改内容
 JavaScript API for Office 将定期更新新增和更新的对象、方法、属性、事件和枚举，以扩展 Office 外接程序的功能。使用下面的链接可查看新增和更新的 API 成员。
 
- _**适用范围：** SharePoint 的相关 Access 应用程序 | Office 相关应用程序 | Excel | Office 外接程序 | Outlook | PowerPoint | Project | Word_
+若要使用新的 API 成员开发外接项目，你需要 [在项目中更新适用于 Office 的 JavaScript API 文件](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
 
-若要使用新的 API 成员开发加载项，您需要 [在项目中更新 JavaScript API for Office 文件](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
-
-若要查看所有 API 成员（包括与之前更新相比未变化的成员），请参阅 [JavaScript API for Office](../reference/javascript-api-for-office.md)。
+若要查看所有 API 成员（包括与之前更新相比未变化的成员），请参阅 [适用于 Office 的 JavaScript API](../reference/javascript-api-for-office.md)。
 
 
-## 新 API 和更新 API
+## 新 API 和更新的 API
 
  **新增和更新的对象**
 
 
-|**Object**|**说明**|**添加或更新了版本 **|
+|**Object**|**说明**|**添加或更新了版本**|
 |:-----|:-----|:-----|
 |[项目](../reference/outlook/Office.context.mailbox.item.md)|更新和新增功能：<br><ul><li><p><a href="../reference/outlook/Office.context.mailbox.item.md#getSelectedDataAsync" target="_blank">getSelectedDataAsync</a> 和 <a href="../reference/outlook/Office.context.mailbox.item.md#setSelectedDataAsync" target="_blank">setSelectedDataAsync</a> 方法支持获取用户所选的内容并将其覆盖到邮件或约会的主题和正文中。</p></li><li><p><a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyAllForm" target="_blank">displayReplyAllForm</a> 和 <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyForm" target="_blank">displayReplyForm</a> 方法支持向约会的答复表单添加附件。</p></li></ul>|邮箱 1.2|
 |[项目](../reference/outlook/Office.context.mailbox.item.md)|进行了更新以包括用于创建撰写模式 Outlook 外接程序的方法和字段。 |1.1|

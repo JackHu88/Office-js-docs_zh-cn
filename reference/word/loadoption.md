@@ -55,7 +55,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
             return context.sync().then(function () {
 
             // Insert code that works with the paragraphs loaded by context.load().
-
+           })
         })
         .catch(function (error) {
             console.log('Error: ' + JSON.stringify(error));

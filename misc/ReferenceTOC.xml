@@ -24,7 +24,7 @@
 	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="指定用于表示插入 UX 中的 Office 外接程序和高 DPI 屏幕上的 Office 应用商店的图像的 URL。" />
     <Item text="主机" url="manifest/host" SEODescription="指定 Office 外接程序支持的 Office 主机应用程序的类型。" />
-    
+    <Item text="主机" url="manifest/hosts" SEODescription="指定将在其中激活 Office 外接程序的 Office 客户端应用程序。" />
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="指定用于表示插入 UX 和 Office 应用商店中的 Office 外接程序的图像的 URL。" />
     <Item text="Id" url="manifest/id" SEODescription="指定 Office 外接程序的唯一 ID 为 GUID。" />
     <Item text="方法" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="指定来自适用于 Office 的 JavaScript API 的单个方法，Office 外接程序需要该方法才能激活。" />
@@ -395,25 +395,25 @@
   </Item>
   
   <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="应用程序" url="onenote/application" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Error" url="onenote/error" SEODescription="OneNote 外接程序预览引用。" />
-	<Item text="笔记本" url="onenote/notebook" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Page" url="onenote/page" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Paragraph " url="onenote/paragraph" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="节" url="onenote/section" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="分级显示" url="onenote/outline" SEODescription="OneNote 外接程序预览引用。" />
-    <Item text="Image" url="onenote/image" SEODescription="OneNote 外接程序预览引用。" />
+    <Item text="Application" url="onenote/application" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Error" url="onenote/error" SEODescription="OneNote 外接程序引用。" />
+	<Item text="Notebook" url="onenote/notebook" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Page" url="onenote/page" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Paragraph" url="onenote/paragraph" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Richtext" url="onenote/richtext" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Section" url="onenote/section" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Outline" url="onenote/outline" SEODescription="OneNote 外接程序引用。" />
+    <Item text="Image" url="onenote/image" SEODescription="OneNote 外接程序引用。" />
   </Item>  
-  <Item text="Shared API" url="shared/shared-api">
+  <Item text="共享的 API" url="shared/shared-api">
     <Item text="适用于 Office 的 JavaScript API" url="javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 包括可在 Office 外接程序代码中使用的对象、方法、属性、事件和枚举。" />
 	<Item text="JavaScript API for Office 中的更改内容" url="what's-changed-in-the-javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 使用新的和更新的对象、方法、属性、事件和枚举定期进行更新来扩展 Office 外接程序的功能。" />
 	<Item text="Office 外接程序要求集" url="office-add-in-requirement-sets" SEODescription="要求集是 API 成员的命名组。Office 外接程序使用清单中指定要求集或使用运行时检查确定 Office 主机是否支持外接程序所需的 API。" />
@@ -444,7 +444,8 @@
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="获取异步操作的状态。" />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="获取此异步操作的负载或内容（如有）。" />
     </Item>
-    <Item text="上下文 " url="shared/office.context" FriendlyUrl="reference/common/officeoffice.context">
+    <Item text="Context " url="shared/context">
+      <Item text="office.context" url="shared/office.context" SEODescription="获取表示外接程序运行时环境的 Context 对象 " />
       <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="获取外接程序是否将运行在允许链接到外部付款系统的平台上。" />
       <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="获取用户指定的区域设置（语言）以编辑文档或项目。" />
       <Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="获取用户针对 Office 主机应用程序的 UI 指定的区域设置（语言）。" />

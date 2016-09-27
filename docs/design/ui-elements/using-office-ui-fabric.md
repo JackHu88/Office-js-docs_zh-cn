@@ -26,15 +26,15 @@
     </button>
 
 ##4.将组件与示例行为一起使用
-结构包括一些支持行为（例如在单击时会发生什么情况）的组件。为了帮助您入门，结构以 JQuery UI 插件的形式提供了一些**示例代码**供您使用。您还可以使用运行所需的任何其他框架。如果您选择使用示例，请注意，代码不随 CDN 分发，因此您必须从[结构 GitHub 项目](https://github.com/OfficeDev/Office-UI-Fabric/releases)的最新版本下载，引用它，然后在代码中进行初始化。 
+Fabric 包括一些支持行为（例如在单击时会发生什么情况）的组件。 为了帮助你入门，Fabric 2.6.1 以 JQuery UI 插件的形式提供了一些**示例代码**供你使用。 你还可以使用运行所需的任何其他框架。 如果选择使用示例，请注意，代码不随 CDN 分发，因此你必须从 [Fabric GitHub 项目](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1) 的 2.6.1 版本下载，引用它，然后在代码中进行初始化。 
 
 例如，要使用搜索框组件，请执行以下操作：
 
-1. 从 [GitHub](https://github.com/OfficeDev/Office-UI-Fabric/tree/master/src/components/SearchBox) 下载搜索框组件。
+1. 从 [GitHub](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1/src/components/SearchBox) 下载搜索框组件。
 2. 将以下引用添加到代码中：`<script src="SearchBox/Jquery.SearchBox.js"></script>`
 3. 确保此行可在页面加载时执行，以初始化组件：`$(".ms-SearchBox").SearchBox();`。我们建议您将此行包含在外接程序的 `Office.Initialize` 块中。     
 
-**备注：**如果您不打算使用所有结构组件，您可以通过选择改为托管每个组件的单个 CSS 文件来减少您下载的资源。您可以从[结构 GitHub 存储库](https://github.com/OfficeDev/Office-UI-Fabric)中的组件文件夹获取 CSS 文件。 
+**注意：**如果不打算使用所有 Fabric 组件，可以通过选择改为托管每个组件的单个 CSS 文件来减少下载的资源。 可以从 [Fabric 2.6.1 GitHub 存储库](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1) 中的组件文件夹获取 CSS 文件。 
 
 
 ##后续步骤

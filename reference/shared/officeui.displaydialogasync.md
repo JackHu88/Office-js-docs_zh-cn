@@ -1,4 +1,4 @@
-﻿# UI.displayDialogAsync 方法
+# UI.displayDialogAsync 方法
 
 在 Office 主机中显示一个对话框。 
 
@@ -23,7 +23,7 @@
 若要在运行时检测此 API，请使用以下代码。
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
+ if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
     {  
          // Use Office UI methods; 
     } 
@@ -60,7 +60,7 @@ office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|startAddress|string|接受在对话框中打开的初始 HTTPS(TLS) URL。 <ul><li>初始网页必须与父页位于相同的域。 初始网页加载后，你可以转到其他域。</li><li>调用 [office.context.ui.messageParent](officeui.messageparent.md) 的所有页也必须都与父页位于相同的域。</li></ul>|
+|startAddress|字符串|接受在对话框中打开的初始 HTTPS(TLS) URL。 <ul><li>初始网页必须与父页位于相同的域。 初始网页加载后，你可以转到其他域。</li><li>调用 [office.context.ui.messageParent](officeui.messageparent.md) 的所有页也必须都与父页位于相同的域。</li></ul>|
 |选项|object|可选。接受用于定义对话框行为的 options 对象。|
 |callback|对象|接受用于处理对话框创建尝试的 callback 方法。|
     

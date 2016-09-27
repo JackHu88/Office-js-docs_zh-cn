@@ -9,34 +9,25 @@ Vorlon.js 是网页的调试程序，与 F12 工具类似，它设计为远程�
 
 安装和设置 Vorlon： 
 
-1.  如果尚未安装，请安装 [Node.js](https://nodejs.org)。 
+1.  如果尚未安装，请安装 [Node.js](https://nodejs.org)和 [Git](https://git-scm.com/)。 
 
-2.  通过以下命令使用 npm 安装 Vorlon：`sudo npm i -g vorlon` 
+2.  通过以下命令使用 Git 安装 Vorlon：`git clone https://github.com/MicrosoftDX/Vorlonjs.git`。
 
-3.  使用命令 `vorlon` 运行 Vorlon 服务器。 
+3.  通过 `npm install` 安装依赖项。
 
-4.  打开浏览器窗口，然后转到 Vorlon 界面 [http://localhost:1337](http://localhost:1337)。
+4.  外接程序要求使用 HTTPS，因此其使用的任何脚本扩展也必须是 HTTPS，包括 Vorlon 脚本。 因此，必须将 Vorlon 配置为使用 SSL，从而通过外接程序使用 Vorlon。 在安装 Vorlon 的文件夹下，转到 /Server 文件夹并编辑 config.json 文件。 将 **useSSL** 属性更改为 **true**。 此时，还可以为 Office 外接程序启用该插件（将“已启用”属性更改为 true）。 
 
-5.  向外接程序的 home.html 文件（或主 HTML 文件）的 `<head>` 部分添加以下脚本标记：
+5.  使用命令 `sudo vorlon` 运行 Vorlon 服务器。 
+
+6.  打开浏览器窗口，然后转到 Vorlon 界面 [http://localhost:1337](http://localhost:1337)。 信任安全证书，应会提示你执行此操作。 还可以在 /Server/cert 下的 Vorlon 文件夹中找到该安全证书。 
+
+7.  向外接程序的 home.html 文件（或主 HTML 文件）的 `<head>` 部分添加以下脚本标记：
 ```    
-<script src="http://localhost:1337/vorlon.js"></script>    
+<script src="https://localhost:1337/vorlon.js"></script>    
 ```  
-
->**注意：**你必须启用 Vorlon 中的 HTTPS 以使用 Vorlon.js 对外接程序进行调试。 若要了解如何执行此操作，请参阅 [调试 Office 外接程序的 VorlonJS 插件](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/)。
 
 现在，不管您何时在设备上打开外接程序，都会显示在 Vorlon 的客户端列表中（在 Vorlon 界面的左边）。您可以远程突出显示 DOM 元素、远程执行命令等。  
 
 ![显示 Vorlon.js 界面的快照](../../images/vorlon_interface.png)
 
-Office 外接程序的专用 Vorlon 插件可添加额外功能，如与 Office.js API 交互。有关详细信息，请参阅博客文章[用于调试 Office 外接程序的 VorlonJS 插件](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/)。启用 Office 外接程序插件： 
-
-1.  通过使用以下命令在本地克隆 Vorlon.js GitHub 存储库的开发分支： 
-```
-git clone https://github.com/MicrosoftDX/Vorlonjs.git
-git checkout dev
-npm install
-```
-
-2.  打开位于 /Vorlon/Server/config.json 的 **config.json** 文件。 若要激活 Office 外接程序插件，请将“**enabled**”属性设置为”**true**”。
-
-![显示 config.json 的插件部分的快照](../../images/vorlon_plugins_config.png) 
+Office 插件为 Office.js 添加额外的功能，例如探索对象模型和执行 Office.js 调用。 

@@ -14,18 +14,16 @@ Office.context
 
 ## 成员
 
-
-**属性**
-
 |||
 |:-----|:-----|
-|名称|说明|
+|姓名|说明|
 |[commerceAllowed](../../reference/shared/office.context.commerceallowed.md)|获取外接程序是否将运行在允许链接到外部付款系统的平台上。|
 |[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|存储到文档或项中时获取数据的区域设置（语言）。|
 |[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|获取宿主应用程序的 UI 的区域设置（语言）。|
 |[文档](../../reference/shared/office.context.document.md)|获取表示正与内容或任务窗格外接程序交互的文档的对象。|
 |[mailbox](../../reference/shared/office.context.mailbox.md)|获取提供专门针对 Outlook 外接程序的 API 的成员的访问的  **mailbox** 对象。|
-|[officeTheme](../../reference/shared/office.context.officetheme.md)|提供了访问 Office 主题颜色的属性|
+|[officeTheme](../../reference/shared/office.context.officetheme.md)|提供了对 Office 主题颜色属性的访问权限。|
+|[ui](../../reference/shared/officeui)|提供可用于创建和操作 UI 组件（如对话框）的对象和方法。|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|获取表示外接程序的已保存自定义设置的对象。|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|获取外接程序是否将运行在已启用触控的 Office 主机应用程序中。|
 

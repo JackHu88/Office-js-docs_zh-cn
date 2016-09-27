@@ -37,7 +37,7 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 
 ## 访问页面内容
 
-你只可通过 `Page#load` 访问当前活动页的*页面内容*。 若要更改活动页，请调用 `navigateToPage($page)`。
+只可通过 `Page#load` 访问当前活动页的*页面内容*。 若要更改活动页，请调用 `navigateToPage($page)`。
 
 仍可查询任何页的元数据，例如标题。
 
@@ -45,5 +45,5 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

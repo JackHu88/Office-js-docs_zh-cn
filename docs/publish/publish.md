@@ -30,6 +30,8 @@
 
 若要确保你的外接程序能够覆盖更多的最终用户，请确保它能够跨平台正常运行。 Office 外接程序支持 Windows、Mac、Web、iOS 和 Android。 有关每个平台所支持功能的概述，请参阅 [Office 外接程序主机和平台可用性]。   
 
+有关许可 Office 应用商店外接程序的信息，请参阅[许可外接程序](https://msdn.microsoft.com/EN-US/library/office/jj163257.aspx)。
+
 有关最终用户如何获取、插入和运行外接程序的信息，请参阅 [开始使用你的 Office 外接程序](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE)。
 
 ## 其他资源

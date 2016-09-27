@@ -1,8 +1,8 @@
-﻿
+
 # 适用于 Office 的 JavaScript API 的错误代码
 本文记录了使用适用于 Office 的 JavaScript API (Office.js) 时可能遇到的错误消息。
 
- _**适用范围：** SharePoint 的相关 Access 应用程序 | Office 相关应用程序 | Excel | Office 外接程序 | Outlook | PowerPoint | Project | Word_
+ _**适用于：**Office 外接程序 |SharePoint 外接程序 |Excel |Outlook |PowerPoint | Project | Word_
 
 
 ## 错误代码
