@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabHost
+# <a name="labs.core.ilabhost"></a>Labs.Core.ILabHost
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 提供用于将 Labs.js 连接到主机的抽象层。
 
@@ -10,10 +10,10 @@ interface ILabHost
 ```
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
-### getSupportedVersions
+### <a name="getsupportedversions"></a>getSupportedVersions
 
  `getSupportedVersions(): Core.ILabHostVersionInfo[]`
 
@@ -24,7 +24,7 @@ interface ILabHost
 无。
 
 
-### connect
+### <a name="connect"></a>connect
 
  `connect(versions: Core.ILabHostVersionInfo[], callback: Core.ILabCallback<Core.IConnectionResponse>)`
 
@@ -35,10 +35,10 @@ interface ILabHost
 
 |||
 |:-----|:-----|
-| _版本_|客户端可利用的主机版本的列表。|
+| _versions_|客户端可利用的主机版本的列表。|
 | _callback_|完成连接后，将触发的回调函数。|
 
-### disconnect
+### <a name="disconnect"></a>disconnect
 
  `disconnect(callback: Core.ILabCallback<void>)`
 
@@ -52,7 +52,7 @@ interface ILabHost
 | _completionStatus_|断开连接时，实验室的状态。|
 | _callback_|断开连接后，将触发的回调函数。|
 
-### on
+### <a name="on"></a>on
 
  `on(handler: (string: any, any: any): void)`
 
@@ -63,9 +63,9 @@ interface ILabHost
 
 |||
 |:-----|:-----|
-| _Handler_|事件处理程序。|
+| _handler_|事件处理程序。|
 
-### sendMessage
+### <a name="sendmessage"></a>sendMessage
 
  `sendMessage(type: string, options: Core.IMessage, callback: Core.ILabCallback<Core.IMessageResponse>)`
 
@@ -80,7 +80,7 @@ interface ILabHost
 | _options_|邮件选项。|
 | _callback_|接收到消息后触发的回调函数。|
 
-### create
+### <a name="create"></a>create
 
  `create(options: Core.ILabCreationOptions, callback: Core.ILabCallback<void>)`
 
@@ -94,7 +94,7 @@ interface ILabHost
 | _options_|作为创建操作的一部分传递的选项。|
 | _callback_|创建实验室后触发的回调函数。|
 
-### getConfiguration
+### <a name="getconfiguration"></a>getConfiguration
 
  `getConfiguration(callback: Core.ILabCallback<Core.IConfiguration>)`
 
@@ -107,7 +107,7 @@ interface ILabHost
 |:-----|:-----|
 | _callback_|要检索配置信息的回调函数。|
 
-### setConfiguration
+### <a name="setconfiguration"></a>setConfiguration
 
  `setConfiguration(configuration: Core.IConfiguration, callback: Core.ILabCallback<void>)`
 
@@ -121,7 +121,7 @@ interface ILabHost
 | _configuration_|设置的实验室配置。|
 | _callback_|设置配置后触发的回调函数。|
 
-### getConfigurationInstance
+### <a name="getconfigurationinstance"></a>getConfigurationInstance
 
  `getConfigurationInstance(callback: Core.ILabCallback<Core.IConfigurationInstance>)`
 
@@ -134,7 +134,7 @@ interface ILabHost
 |:-----|:-----|
 | _callback_|检索完配置实例后触发的回调函数。|
 
-### getState
+### <a name="getstate"></a>getState
 
  `getState(callback: Core.ILabCallback<any>)`
 
@@ -147,7 +147,7 @@ interface ILabHost
 |:-----|:-----|
 | _completionStatus_|返回当前实验室状态的回调函数。|
 
-### setState
+### <a name="setstate"></a>setState
 
  `setState(state: any, callback: Core.ILabCallback<void>)`
 
@@ -161,7 +161,7 @@ interface ILabHost
 | _state_|实验室的状态。|
 | _callback_|设置状态后触发的回调函数。|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, callback: Core.ILabCallback<Core.IAction>)`
 
@@ -176,7 +176,7 @@ interface ILabHost
 | _options_|与操作一同提供的选项。|
 | _callback_|返回最终执行的操作的回调函数。|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, result: Core.IActionResult, callback: Core.ILabCallback<Core.IAction>)`
 
@@ -192,7 +192,7 @@ interface ILabHost
 | _result_|操作的结果。|
 | _callback_|返回最终执行的操作的回调函数。|
 
-### getActions
+### <a name="getactions"></a>getActions
 
  `getActions(type: string, options: Core.IGetActionOptions, callback: Core.ILabCallback<Core.IAction[]>)`
 

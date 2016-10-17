@@ -1,16 +1,16 @@
-﻿
-# Labs.Components.IActivityComponent
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.components.iactivitycomponent"></a>Labs.Components.IActivityComponent
 
-表示活动组件。可扩展 [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md)。
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
+
+表示活动组件。扩展 [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md)。
 
 ```
 interface IActivityComponent extends Labs.Core.IComponent
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |名称|说明|

@@ -1,6 +1,6 @@
  
 
-# 了解 API 要求集
+# <a name="understanding-api-requirement-sets"></a>了解 API 要求集
 
 Outlook 外接程序通过在其[清单](https://msdn.microsoft.com/EN-US/library/office/dn592036.aspx)中使用 [Requirements](https://msdn.microsoft.com/en-us/library/office/fp123693.aspx) 元素来声明所需要的 API 版本。Outlook 外接程序始终包括 `Name` 属性设置为 `Mailbox` 和 `MinVersion` 属性设置为支持外接程序方案的 API 最低要求集的 [Set](https://msdn.microsoft.com/EN-US/library/office/dn592049.aspx) 元素。
 
@@ -18,7 +18,7 @@ Outlook 外接程序通过在其[清单](https://msdn.microsoft.com/EN-US/librar
 
 在清单中设置最低要求集版本可控制外接程序会显示在哪个 Outlook 客户端中。如果客户端不支持最低要求集，则不会加载外接程序。例如，如果指定要求集版本 1.3，则意味着外接程序不会显示在任何不支持 1.3 及以上版本的 Outlook 客户端中。
 
-## 使用更高版本要求集中的 API
+## <a name="using-apis-from-later-requirement-sets"></a>使用更高版本要求集中的 API
 
 设置要求集不会限制外接程序可使用的可用 API。例如，如果外接程序指定要求集 1.1，但它在支持 1.3 的 Outlook 客户端中运行，则外接程序可以使用要求集 1.3 中的 API。\.
 
@@ -32,11 +32,11 @@ if (item.somePropertyOrFunction !== undefined) {
 
 对于清单中所指定的要求集版本中的任何 API，无需执行此类检查。
 
-## 选择最低要求集
+## <a name="choosing-a-minimum-requirement-set"></a>选择最低要求集
 
 开发人员应使用包含其方案关键 API 集的最早要求集，如果不使用该要求集，外接程序将不起作用。
 
-## 客户端
+## <a name="clients"></a>客户端
 
 下列客户端支持 Outlook 外接程序。
 

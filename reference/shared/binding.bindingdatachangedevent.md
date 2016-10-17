@@ -1,5 +1,5 @@
 
-# Binding.bindingDataChanged 事件
+# <a name="binding.bindingdatachanged-event"></a>Binding.bindingDataChanged 事件
 绑定内的数据更改时发生。
 
 |||
@@ -12,12 +12,12 @@ Office.EventType.BindingDataChanged
 ```
 
 
-## 备注
+## <a name="remarks"></a>备注
 
 若要为绑定的 **BindingDataChanged** 事件添加事件处理程序，请使用 [Binding](../../reference/shared/binding.addhandlerasync.md) 对象的 **addHandlerAsync** 方法。事件处理程序会接收 [BindingDataChangedEventArgs](../../reference/shared/binding.bindingdatachangedeventargs.md) 类型的参数。
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -38,7 +38,7 @@ function write(message){
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
@@ -58,11 +58,11 @@ function write(message){
 |||
 |:-----|:-----|
 |**在要求集中可用**|BindingEvents|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 |**版本**|**更改内容**|
 |:-----|:-----|

@@ -1,7 +1,7 @@
-﻿
-# Labs.Components.ChoiceComponentInstance
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.components.choicecomponentinstance"></a>Labs.Components.ChoiceComponentInstance
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示选项组件的实例。
 
@@ -10,19 +10,19 @@ class ChoiceComponentInstance extends Labs.ComponentInstance<Components.ChoiceCo
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |属性|说明|
 |:-----|:-----|
 | `public var component: Components.IChoiceComponentInstance`|此类表示的基础 [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md)。|
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor(component: Components.IChoiceComponentInstance)`
 
@@ -33,9 +33,9 @@ class ChoiceComponentInstance extends Labs.ComponentInstance<Components.ChoiceCo
 
 |参数|说明|
 |:-----|:-----|
-| _组件_|用来创建此类的 [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) 对象。|
+| _component_|用来创建此类的 [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) 对象。|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.ChoiceComponentAttempt`
 

@@ -1,11 +1,11 @@
 
-# File 对象
+# <a name="file-object"></a>File 对象
 表示与 Office 外接程序关联的文档文件。
 
 |||
 |:-----|:-----|
 |**主机：**|PowerPoint 和 Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|文件|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|文件|
 |**包含最后一次更改的版本**|1.1|
 
 ```
@@ -13,7 +13,7 @@ file
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **属性**
@@ -32,12 +32,12 @@ file
 |**[closeAsync](../../reference/shared/file.closeasync.md)**|关闭文档文件。|
 |**[getSliceAsync](../../reference/shared/file.getsliceasync.md)**|返回指定的切片。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 使用传递给 **Document.getFileAsync** 方法的回调函数中的 [AsyncResult.value](../../reference/shared/asyncresult.value.md) 属性访问 [File](../../reference/shared/document.getfileasync.md) 对象。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此对象。空的单元格表示相应的 Office 主机应用程序不支持此对象。
@@ -58,7 +58,7 @@ file
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

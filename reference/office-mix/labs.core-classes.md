@@ -1,8 +1,8 @@
-﻿
-# Labs.Core 类
+
+# <a name="labs.core-classes"></a>Labs.Core 类
 **LabsJS.Labs.Core** 模块中的类
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 **LabsJS.Labs.Core** 模块包含以下类。
 

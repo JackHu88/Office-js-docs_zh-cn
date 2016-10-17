@@ -1,9 +1,9 @@
 
-# Outlook 外接程序 API
+# <a name="outlook-add-in-apis"></a>Outlook 外接程序 API
 
 要将 API 用于您的 Outlook 外接程序，您必须指定 Office.js 库的位置、要求集、架构和权限。
 
-## Office.js 库
+## <a name="office.js-library"></a>Office.js 库
 
 要与 Outlook 外接程序 API 进行交互，你必须使用 Office.js 中的 JavaScript API。库的 CDN 为 _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_。提交到 Office 应用商店的外接程序必须按此 CDN 引用 Office.js，它们不能使用本地引用。 
 
@@ -16,9 +16,9 @@
 
 添加 API 时，Office.js 的 URL 将保持不变。仅当我们打破现有的 API 行为时，才会更改 URL 中的版本。
 
-> **重要说明：**开发任何 Office 主机应用程序的外接程序时，从页面的 `<head>` 区域内引用适用于 Office 的 JavaScript API。 这将确保 API 已先于所有正文元素完全初始化。 Office 主机要求外接程序在激活 5 秒钟内进行初始化。 超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。  
+> **重要说明：**开发任何 Office 主机应用程序的外接程序时，从页面的 `<head>` 区域内引用适用于 Office 的 JavaScript API。这将确保 API 已先于所有正文元素完全初始化。Office 主机要求外接程序在激活 5 秒钟内进行初始化。超过此阈值会导致声明的外接程序无响应，并且会向用户显示错误消息。  
 
-## 要求集
+## <a name="requirement-sets"></a>要求集
 
 所有 Outlook API 均属于邮箱要求集。邮箱要求集具有不同版本，我们发布的每个新 API 集均属于较高版本的要求集。并非所有 Outlook 客户端都支持我们发布的最新 API 集，但如果某个 Outlook 客户端声明支持某个要求集，它将支持该要求集中的所有 API。 
 
@@ -42,7 +42,7 @@ if (item.somePropertyOrFunction) {
 **Methods** 元素不适用于 Outlook 外接程序，因此，你无法声明对特定方法的支持。
 
 
-## 权限
+## <a name="permissions"></a>权限
 
 外接程序需要相应的权限才能使用所需的 API。有四个级别的权限。有关详细信息，请参阅[了解 Outlook 外接程序权限](../outlook/understanding-outlook-add-in-permissions.md)。
 
@@ -56,7 +56,7 @@ if (item.somePropertyOrFunction) {
 总之，你应该指定外接程序所需的最低权限。权限在清单的 **Permissions** 元素中声明。有关详细信息，请参阅 [Outlook 外接程序清单](../outlook/manifests/manifests.md)。有关安全问题的信息，请参阅 [Outlook 外接程序的隐私、权限和安全性](../outlook/../../docs/develop/privacy-and-security.md)。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [Outlook 外接程序清单](../outlook/manifests/manifests.md)
 

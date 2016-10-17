@@ -1,10 +1,10 @@
-﻿
-# 开发 Office 外接程序的最佳做法
+
+# <a name="best-practices-for-developing-office-add-ins"></a>开发 Office 外接程序的最佳做法
 
 
 有效的外接程序提供独特且极具吸引力的功能，采用具有视觉吸引力的方式扩展 Office 应用程序。若要创建出色的外接程序，需为用户提供极具吸引力的首次使用体验、设计一流的 UI 体验和优化外接程序的性能。将本文中描述的最佳实践应用于创建有助于您的用户快速有效地完成其任务的外接程序。
 
-## 提供明确值
+## <a name="provide-clear-value"></a>提供明确值
 
 
 
@@ -13,11 +13,11 @@
  - 在 Office 内启用新方案。
  - 在 Office 主机内嵌入补充服务。
  - 改善 Office 体验来提高工作效率。
-- 通过[创建引人入胜的第一次运行体验](#创建引人入胜的第一次运行体验)，确保用户能够快速了解你的外接程序的价值。
+- 通过[创建引人入胜的第一次运行体验](#create-an-engaging-first-run-experience)，确保用户能够快速了解你的外接程序的价值。
 - 创建 [有效的 Office 商店列表](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)。在标题和说明中明确外接程序的优点。不要依赖于您的品牌来传达您的外接程序的功能。
 
 
-## 创建极具吸引力的首次运行体验
+## <a name="create-an-engaging-first-run-experience"></a>创建极具吸引力的首次运行体验
 
 
 
@@ -45,7 +45,7 @@
 
 对于说明你在开发首次运行体验时可以应用的模式的模板，请参阅[适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
 
-## 使用外接程序命令
+## <a name="use-add-in-commands"></a>使用外接程序命令
 
 - 使用[外接程序命令](../design/add-in-commands.md)为你的外接程序提供相关 UI 入口点。
 
@@ -60,7 +60,8 @@
   - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
   - 不要添加不必要的按钮，从而为您的外接程序留出更多的空间。
 
-     >  **注意**  占用过多空间的外接程序可能无法通过 [Office 应用商店验证](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >
+  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - 对于所有图标：
     - 为按钮提供可明确标识用户所采取的操作的有意义的图标和 [标签](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx)。
@@ -92,7 +93,7 @@
 
 
 
-## 应用 UX 设计原则
+## <a name="apply-ux-design-principles"></a>应用 UX 设计原则
 
 
 
@@ -112,11 +113,11 @@
 
 - 考虑 [可访问性](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx) - 方便所有用户与其进行交互，并适应屏幕读取器等辅助技术。
 
-- 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#触摸)）的设计。确保您的 UI 可响应不同的外观设置。
+- 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#optimize-for-touch)）的设计。确保您的 UI 可响应不同的外观设置。
 
 对于应用你在开发外接程序时可以使用和自定义的设计原则的模板，请参阅[适用于 Office 外接程序的 UX 设计模式](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)。
 
-### 触摸优化
+### <a name="optimize-for-touch"></a>触摸优化
 
 
 
@@ -135,7 +136,7 @@
  >**注释**  如果您将 [Office UI 结构](https://github.com/OfficeDev/Office-UI-Fabric)用于您的设计元素，则许多这些元素都能得到满足。
 
 
-## 优化和监视外接程序性能
+## <a name="optimize-and-monitor-add-in-performance"></a>优化和监视外接程序性能
 
 
 
@@ -152,7 +153,7 @@
 - 如果操作需要执行时间，请为用户提供反馈。请注意下表中列出的阈值。另请参阅 [Office 外接程序的资源限制和性能优化](../../docs/develop/resource-limits-and-performance-optimization.md)
 
 
-|**交互类**|**目标**|**上界**|**人的感觉**|
+|**交互类**|**目标**|**上限**|**人类感知**|
 |:-----|:-----|:-----|:-----|
 |即时|<=50 毫秒|100 毫秒|没有明显的延迟。|
 |快速|50-100 毫秒|200 毫秒|最小限度的明显延迟。不需要反馈。|
@@ -165,7 +166,7 @@
 - 监视您的服务运行状况，并使用遥测监视用户的成功。
 
 
-## 推销您的外接程序
+## <a name="market-your-add-in"></a>推销您的外接程序
 
 
 

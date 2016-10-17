@@ -1,13 +1,13 @@
 
-# Word 外接程序概述
+# <a name="word-add-ins-overview"></a>Word 外接程序概述
 
 您想要创建一个解决方案以扩展 Word 功能？例如，涉及自动化文档程序集，或从其他数据源绑定到并访问 Word 文档中的数据。Office 外接程序平台包括 Word JavaScript API 和适用于 Office 的 JavaScript API，可用于扩展在 Windows 桌面、Mac 或云中运行的客户端。
 
 Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)中的众多开发选项之一。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档中的内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。下图显示了在任务窗格中运行的 Word 外接程序的一个示例。
 
-**图 1.外接程序运行在 Word 中的任务窗格**
+**图 1.在 Word 的任务窗格中运行的外接程序**
 
-![外接程序运行在 Word 中的任务窗格](../../images/WordAddinShowHostClient.png)
+![在 Word 的任务窗格中运行的外接程序](../../images/WordAddinShowHostClient.png)
 
 Word 外接程序 (1) 可以将请求发送到 Word 文档 (2) 可以使用 JavaScript 来访问段落对象和更新、删除或移动段落。例如，下面的代码演示如何将一个新句子附加到该段落。
 
@@ -35,7 +35,7 @@ Word.run(function (context) {
 
 外接程序只需编写一次，即可跨多个平台在所有版本 Word 中运行。有关详细信息，请参阅 [Office 外接程序主机和平台可用性](https://dev.office.com/add-in-availability)。
 
-## 适用于 Word 的 JavaScript API
+## <a name="javascript-apis-for-word"></a>适用于 Word 的 JavaScript API
 
 有两组 JavaScript Api 可用于与 Word 文档中的对象和元数据进行交互。第一组是[适用于 Office 的 JavaScript API](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word)，在 Office 2013 进行了引入。这是一个共享 API --许多对象可以在由两个或多个 Office 客户端托管的外接程序中使用。此 API 广泛使用回调。 
 
@@ -57,7 +57,7 @@ Word.run(function (context) {
 * 使用自定义 XML 部件。
 * 打开一个对话框。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 准备创建第一个 Word 外接程序？请参阅[构建您的第一个 Word 外接程序](word-add-ins.md)。您也可以尝试我们的交互式[入门体验](http://dev.office.com/getting-started/addins?product=Word)。使用[外接程序清单](../overview/add-in-manifests.md)来描述外接程序托管的位置和显示方式，以及定义权限和其他信息。
 
@@ -65,14 +65,14 @@ Word.run(function (context) {
 
 开发外接程序后，可以将其[发布](../publish/publish.md)到网络共享、应用目录或 Office 应用商店。
 
-## Word 外接程序未来发展趋势如何？
+## <a name="what's-coming-up-for-word-add-ins?"></a>Word 外接程序未来发展趋势如何？
 
 在我们设计和开发用于 Word 外接程序的新 API 时，我们将使它们可在[开放 API 规范](../../reference/openspec.md)页面上接收您的反馈。了解面向 Word JavaScript API 的管道中的新增功能，并在我们的设计规范中提供您的输入。
 
 您还可以在[更改日志](http://dev.office.com/changelog)页查看 Word JavaScript API 中的新增功能。
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
-* [Office 加载项平台概述](../overview/office-add-ins.md)
+* [Office 外接程序平台概述](../overview/office-add-ins.md)
 * [Word JavaScript API 参考](../../reference/word/word-add-ins-reference-overview.md)
 

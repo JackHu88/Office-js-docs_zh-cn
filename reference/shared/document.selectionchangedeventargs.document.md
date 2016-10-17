@@ -1,11 +1,11 @@
 
-# DocumentSelectionChangedEventArgs.document 属性
-获取用于表示引发  **SelectionChanged** 事件的文档的 **Document** 对象。
+# <a name="documentselectionchangedeventargs.document-property"></a>DocumentSelectionChangedEventArgs.document 属性
+获取用于表示引发  **Document** 事件的文档的 **SelectionChanged** 对象。
 
 |||
 |:-----|:-----|
 |**主机：**|Excel 和 Word|
-|**在其中添加**|1.1|
+|**添加内容的版本**|1.1|
 
 
 
@@ -15,17 +15,17 @@ var myDoc = eventArgsObj.document;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 表示引发 [SelectionChanged](../../reference/shared/document.md) 事件的文档的 [Document](../../reference/shared/document.selectionchanged.event.md) 对象。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -39,11 +39,11 @@ var myDoc = eventArgsObj.document;
 |||
 |:-----|:-----|
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

@@ -1,8 +1,8 @@
-﻿
-# Labs.Components 类
+
+# <a name="labs.components-classes"></a>Labs.Components 类
 **LabsJS.Labs.Components** 模块中的类
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 **LabsJS.Labs.Components** 模块包含以下类。
 

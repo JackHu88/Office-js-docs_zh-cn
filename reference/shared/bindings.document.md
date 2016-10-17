@@ -1,6 +1,6 @@
 
-# Bindings.document 属性
-获取表示与此组绑定关联的文档的  **Document** 对象。
+# <a name="bindings.document-property"></a>Bindings.document 属性
+获取表示与此组绑定关联的文档的 **Document** 对象。
 
 |||
 |:-----|:-----|
@@ -12,33 +12,33 @@ var docObj = bindingsObj.document;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 一个 [Document](../../reference/shared/bindings.document.md) 对象。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

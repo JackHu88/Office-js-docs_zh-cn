@@ -1,17 +1,17 @@
-﻿
-# LabsJS.Labs.Core.Actions
-提供了 LabJS.Labs.Core.Actions JavaScript API 的概述。
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labsjs.labs.core.actions"></a>LabsJS.Labs.Core.Actions
+提供 LabJS.Labs.Core.Actions JavaScript API 的概述。
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 这些 API 表示指明实验室当前行为的实验室操作。这些 API 对创建新组件或使用新驱动程序（而非 Office Mix）建立连接非常有用。
 
-## LabsJS.Labs.Core.Actions API 模块
+## <a name="labsjs.labs.core.actions-api-module"></a>LabsJS.Labs.Core.Actions API 模块
 
 Actions 模块包含以下类型：
 
 
-### 接口
+### <a name="interfaces"></a>接口
 
 
 |||
@@ -28,7 +28,7 @@ Actions 模块包含以下类型：
 |[Labs.Core.Actions.IResumeAttemptOptions](../../reference/office-mix/labs.core.actions.iresumeattemptoptions.md)|与恢复尝试关联的选项。|
 |[Labs.Core.Actions.ISubmitAnswerOptions](../../reference/office-mix/labs.core.actions.isubmitansweroptions.md)|提交答案操作时可用的选项。|
 
-### 变量
+### <a name="variables"></a>变量
 
 
 |||

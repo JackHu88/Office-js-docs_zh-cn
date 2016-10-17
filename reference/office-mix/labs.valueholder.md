@@ -1,7 +1,7 @@
 
-# Labs.ValueHolder
+# <a name="labs.valueholder"></a>Labs.ValueHolder
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 保留和跟踪指定实验室的值的容器对象。值可能存储在本地或服务器上。
 
@@ -10,7 +10,7 @@ class ValueHolder<T>
 ```
 
 
-## 变量
+## <a name="variables"></a>变量
 
 
 |||
@@ -21,12 +21,12 @@ class ValueHolder<T>
 | `public var value: T`|保存在容器中的值。|
 | `public var id: string`|ID 值。|
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### getValue
+### <a name="getvalue"></a>getValue
 
  `public function getValue(callback: Labs.Core.ILabCallback<T>): void`
 
@@ -39,7 +39,7 @@ class ValueHolder<T>
 |:-----|:-----|
 | _callback_|返回指定值的回调函数。|
 
-### provideValue
+### <a name="providevalue"></a>provideValue
 
  `public function provideValue(value: T): void`
 

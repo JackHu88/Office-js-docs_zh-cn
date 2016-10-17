@@ -1,11 +1,11 @@
 
-# FormSettings 元素
+# <a name="formsettings-element"></a>FormSettings 元素
 指定邮件外接程序的源位置和控制设置。
 
  **外接程序类型：**邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -15,12 +15,12 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## 可以包含：
+## <a name="can-contain:"></a>可以包含：
 
 [Form](../../reference/manifest/form.md)
 

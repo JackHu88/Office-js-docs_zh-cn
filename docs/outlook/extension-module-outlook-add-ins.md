@@ -1,10 +1,10 @@
-# 模块扩展 Outlook 外接程序
+# <a name="module-extension-outlook-add-ins"></a>模块扩展 Outlook 外接程序
 
-模块扩展外接程序显示在 Outlook 导航栏中，与邮件、任务和日历一起。 模块扩展不限于使用邮件和约会信息，你可以创建在 Outlook 中运行的应用程序，以便使你的用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
+模块扩展外接程序显示在 Outlook 导航栏中，与邮件、任务和日历一起。模块扩展不限于使用邮件和约会信息，你可以创建在 Outlook 中运行的应用程序，以便使你的用户无需退出 Outlook 即可轻松地访问业务信息和工作效率工具。
 
 > **注意**：模块扩展仅适用于 Office 2016。
 
-要打开模块扩展，用户单击 Outlook 导航栏中的模块的名称或图标即可。 如果用户选择了紧凑型导航，导航栏有一个显示已加载扩展的图标。
+要打开模块扩展，用户单击 Outlook 导航栏中的模块的名称或图标即可。如果用户选择了紧凑型导航，导航栏有一个显示已加载扩展的图标。
 
 ![当模块扩展在 Outlook 中加载时，显示紧凑型导航栏。](../../images/outlook-module-navigationbar-compact.png)
 
@@ -16,7 +16,7 @@
 
 ![当多个模块扩展在 Outlook 中加载时，显示展开的导航栏。](../../images/outlook-module-navigationbar-more.png)
 
-在单击扩展时，Outlook 会将内置模块替换为自定义模块，以便你的用户可以与该外接程序进行交互。 你可以使用外接程序中 Outlook JavaScript API 的所有功能，可以在与外接程序内容交互的 Outlook 功能区中创建命令按钮。 此示例外接程序集成在 Outlook 导航栏中，并拥有将更新外接程序内容的功能区命令。
+在单击扩展时，Outlook 会将内置模块替换为自定义模块，以便你的用户可以与该外接程序进行交互。你可以使用外接程序中 Outlook JavaScript API 的所有功能，可以在与外接程序内容交互的 Outlook 功能区中创建命令按钮。此示例外接程序集成在 Outlook 导航栏中，并拥有将更新外接程序内容的功能区命令。
 
 ![显示模块扩展的用户界面](../../images/outlook-module-extension.png)
 
@@ -128,7 +128,7 @@
         </VersionOverrides>
       </VersionOverrides>
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 * [Outlook 外接程序清单](manifests/manifests.md)
 * [在 Outlook 外接程序清单中定义外接程序命令](manifests/define-add-in-commands.md)

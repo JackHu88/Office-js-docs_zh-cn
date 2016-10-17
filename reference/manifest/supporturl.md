@@ -1,11 +1,11 @@
 
-# SupportUrl 元素
+# <a name="supporturl-element"></a>SupportUrl 元素
 指定提供外接程序支持信息的页面的 URL。
 
  **外接程序类型：**内容、任务窗格、邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -13,12 +13,12 @@
 ```
 
 
-## 可以包含：
+## <a name="can-contain:"></a>可以包含：
 
 [Override](../../reference/manifest/override.md)
 
 
-## 属性
+## <a name="attributes"></a>属性
 
 
 

@@ -1,5 +1,5 @@
 
-# 在文档或电子表格的活动选择内容中读取和写入数据
+# <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>在文档或电子表格的活动选择内容中读取和写入数据
 
 通过 [Document](../../reference/shared/document.md) 对象公开的方法，你可以读取文档或电子表格中用户的当前选区或向其中写入内容。为此，**Document** 对象提供了 **getSelectedDataAsync** 和 **setSelectedDataAsync** 方法。本主题还介绍了如何读取、写入和创建事件处理程序，以检测对用户选定内容所做的更改。
 
@@ -7,7 +7,7 @@
   **getSelectedDataAsync** 方法仅使用用户当前选区。如果需要在文档中保留选区，以便使用相同的选区在运行加载项的各个会话中读取和写入，必须使用 [Bindings.addFromSelectionAsync](http://msdn.microsoft.com/en-us/library/edc99214-e63e-43f2-9392-97ead42fc155.aspx) 方法添加绑定（或创建一个与 [Bindings](http://msdn.microsoft.com/en-us/library/09979e31-3bfb-45be-adda-0f7cc2db1fe1.aspx) 对象其他“addFrom”方法的绑定）。有关创建对文档区域的绑定，然后读取和写入绑定的信息，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
 
 
-### 读取选择的数据
+### <a name="read-selected-data"></a>读取选择的数据
 
 
 以下示例演示如何使用 [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) 方法从文档的选定内容中获取数据。
@@ -39,7 +39,7 @@ function write(message){
 [AsyncResult.status](../../reference/shared/asyncresult.error.md) 属性在 **if** 语句中用于测试调用是否成功。[Office.AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) 是可用的 **AsyncResult.status** 属性值的枚举。**Office.AsyncResultStatus.Failed** 的计算结果为字符串“failed”（而且，还可以指定为该文本字符串）。
 
 
-### 向选定内容中写入数据
+### <a name="write-data-to-the-selection"></a>向选定内容中写入数据
 
 
 以下示例演示如何将选定内容设置为显示"Hello World!"。
@@ -65,7 +65,7 @@ function write(message){
  **注意：**从 Excel 2013 SP1 的发行版及相应的 Excel Online 内部版本开始，你现在可以[在将表写入当前选定内容时设置格式](../../docs/excel/format-tables-in-add-ins-for-excel.md)。
 
 
-### 检测选定内容中的更改
+### <a name="detect-changes-in-the-selection"></a>检测选定内容中的更改
 
 
 以下示例演示如何通过使用 [Document.addHandlerAsync](../../reference/shared/document.addhandlerasync.md) 方法为文档中的 [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) 事件添加事件处理程序来检测选定内容中的更改。
@@ -94,7 +94,7 @@ function write(message){
  >**注释**  可以为给定事件添加多个事件处理程序，方法是再次调用  **addHandlerAsync** 方法，并为 _handler_ 参数传入一个其他事件处理程序函数。只要每个事件处理程序函数的名称保持唯一，此方法就有用。
 
 
-### 停止检测选定内容中的更改
+### <a name="stop-detecting-changes-in-the-selection"></a>停止检测选定内容中的更改
 
 
 以下示例演示如何通过调用 [document.removeHandlerAsync](../../reference/shared/document.selectionchanged.event.md) 方法停止侦听 [Document.SelectionChanged](../../reference/shared/document.removehandlerasync.md) 事件。

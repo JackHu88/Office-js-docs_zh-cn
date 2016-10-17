@@ -1,5 +1,5 @@
 
-# Bindings 对象
+# <a name="bindings-object"></a>Bindings 对象
 表示外接程序在文档中所具有的绑定。
 
 |||
@@ -17,7 +17,7 @@ Office.context.document.bindings
 |||
 |:-----|:-----|
 |名称|说明|
-|[文档](../../reference/shared/bindings.document.md)|获取表示与此组绑定关联的文档的  **Document** 对象。|
+|[document](../../reference/shared/bindings.document.md)|获取表示与此组绑定关联的文档的 **Document** 对象。|
 
 **方法**
 
@@ -31,7 +31,7 @@ Office.context.document.bindings
 |[getByIdAsync](../../reference/shared/bindings.getbyidasync.md)|按其标识符获取指定的绑定。|
 |[releaseByIdAsync](../../reference/shared/bindings.releasebyidasync.md)|移除指定绑定。|
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
@@ -44,15 +44,15 @@ Office.context.document.bindings
 ||Office for Windows Desktop|Office Online（在浏览器中）|Office for iPad|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

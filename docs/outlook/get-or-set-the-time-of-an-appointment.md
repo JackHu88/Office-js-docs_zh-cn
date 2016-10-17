@@ -1,5 +1,5 @@
 
-# 在 Outlook 中撰写约会时获取或设置时间
+# <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置时间
 
 适用于 Office 的 JavaScript API 提供了异步方法（[Time.getAsync](../../reference/outlook/Time.md) 和 [Time.setAsync](../../reference/outlook/Time.md)）以获取和设置用户正在撰写的约会的开始和结束时间。这些异步方法仅对撰写外接程序可用。若要使用这些方法，请确保已将 Outlook 的外接程序清单相应地设置为在撰写窗体中激活外接程序，如[创建适用于撰写窗体的 Outlook 外接程序](../outlook/compose-scenario.md)所述。
 
@@ -42,7 +42,7 @@ item.end.getAsync
 与适用于 Office 的 JavaScript API 中的大多数异步方法相同，**getAsync** 和 **setAsync** 采用可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md)。
 
 
-## 获取开始或结束时间
+## <a name="to-get-the-start-or-end-time"></a>获取开始或结束时间
 
 
 本节演示一个代码示例，将获取用户正在撰写的约会的开始时间，并显示该时间。您可以使用相同的代码并将  **start** 属性替换为 **end** 属性来获取结束时间。此代码示例在外接程序清单中假定了一个规则，将在撰写窗体中为约会激活外接程序，如下所示。
@@ -94,7 +94,7 @@ function write(message){
 ```
 
 
-## 设置开始或结束时间
+## <a name="to-set-the-start-or-end-time"></a>设置开始或结束时间
 
 
 本节演示一个代码示例，将设置用户正在撰写的约会或邮件的开始时间。您可以使用相同的代码并将  **start** 属性更换为 **end** 属性来设置结束时间。请注意，如果约会撰写窗体已有现有开始时间，随后设置开始时间将调整结束时间以保持约会之前的任何持续时间。如果约会撰写窗体已有现有结束时间，随后设置结束时间将同时调整持续时间和结束时间。如果已将约会设置为全天事件，那么设置开始时间会将结束时间调整为 24 小时后，并取消选中撰写窗体中全天事件的 UI。
@@ -145,7 +145,7 @@ function write(message){
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

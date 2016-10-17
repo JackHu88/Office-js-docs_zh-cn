@@ -1,25 +1,25 @@
 
 
-# ProjectDocument.ViewSelectionChanged 事件
+# <a name="projectdocument.viewselectionchanged-event"></a>ProjectDocument.ViewSelectionChanged 事件
 当活动项目中的活动视图发生更改时发生。
 
 |||
 |:-----|:-----|
 |**主机：**|Project|
 |**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Selection|
-|**在其中添加**|1.0|
+|**添加内容的版本**|1.0|
 
 ```js
 Office.EventType.ViewSelectionChanged
 ```
 
 
-## 注解
+## <a name="remarks"></a>注解
 
  **ViewSelectionChanged** 是一个 [EventType](../../reference/shared/eventtype-enumeration.md) 枚举常量，该常量可用于在 [ProjectDocument.addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md) 和 [ProjectDocument.removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md) 方法中添加或移除事件的处理程序。
 
 
-## 示例
+## <a name="example"></a>示例
 
 以下代码示例添加  **ViewSelectionChanged** 事件的处理程序。当活动视图更改时，它将获取活动视图的名称和类型。
 
@@ -78,12 +78,12 @@ Office.EventType.ViewSelectionChanged
 有关展示了如何在 Project 外接程序中使用 **ViewSelectionChanged** 事件处理程序的示例，请参阅[使用文本编辑器为 Project 2013 创建首个任务窗格外接程序](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此事件。空的单元格表示相应的 Office 主机应用程序不支持此事件。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 
@@ -95,11 +95,11 @@ Office.EventType.ViewSelectionChanged
 |:-----|:-----|
 |**在要求集中可用**||
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 
@@ -107,16 +107,16 @@ Office.EventType.ViewSelectionChanged
 |:-----|:-----|
 |1.0|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 
 [使用文本编辑器创建 Project 2013 的第一个任务窗格外接程序](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
-(#使用文本编辑器创建-project-2013-的第一个任务窗格外接程序)[EventType 枚举](../../reference/shared/eventtype-enumeration.md)
-(#eventtype-枚举)[ProjectDocument.addHandlerAsync 方法](../../reference/shared/projectdocument.addhandlerasync.md)
-(#projectdocument.addhandlerasync-方法)[ProjectDocument.removeHandlerAsync 方法](../../reference/shared/projectdocument.removehandlerasync.md)
-(#projectdocument.removehandlerasync-方法)[ProjectDocument 对象](../../reference/shared/projectdocument.projectdocument.md)
+[EventType 枚举](../../reference/shared/eventtype-enumeration.md)
+[ProjectDocument.addHandlerAsync 方法](../../reference/shared/projectdocument.addhandlerasync.md)
+[ProjectDocument.removeHandlerAsync 方法](../../reference/shared/projectdocument.removehandlerasync.md)
+)[ProjectDocument 对象](../../reference/shared/projectdocument.projectdocument.md)
 

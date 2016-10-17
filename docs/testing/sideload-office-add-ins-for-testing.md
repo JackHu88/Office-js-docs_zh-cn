@@ -1,5 +1,5 @@
 
-# 用于测试的 Office Online 中的旁加载 Office 外接程序
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>用于测试的 Office Online 中的旁加载 Office 外接程序
 
 您可以安装 Office 外接程序进行测试，而无需首先使用旁加载将其放在外接程序目录中。在 Office 365 或 Office Online 中都可以进行旁加载。该过程对两个平台略有不同。 
 
@@ -9,7 +9,7 @@
  >**注释**  如本文所述，Word、Excel 和 PowerPoint 支持旁加载。若要旁加载 Outlook 外接程序，请参阅[旁加载 Outlook 外接程序进行测试](sideload-outlook-add-ins-for-testing.md)。
 
 
-## 将 Office 外接程序 旁加载在 Office 365 上
+## <a name="sideload-an-office-add-in-on-office-365"></a>将 Office 外接程序 旁加载在 Office 365 上
 
 
 1. 登录到您的 Office 365 帐户。
@@ -29,7 +29,7 @@
 6. 验证是否已安装外接程序。例如，如果它是一个外接程序命令，它应显示在功能区或上下文菜单上。如果它是一个任务窗格外接程序，则应显示窗格。
     
 
-## 将 Office 外接程序旁加载在 Office Online 上
+## <a name="sideload-an-office-add-in-on-office-online"></a>将 Office 外接程序旁加载在 Office Online 上
 
 
 

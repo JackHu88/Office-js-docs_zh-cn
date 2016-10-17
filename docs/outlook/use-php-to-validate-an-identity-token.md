@@ -1,5 +1,5 @@
 
-# 使用 PHP 验证标识令牌
+# <a name="use-php-to-validate-an-identity-token"></a>使用 PHP 验证标识令牌
 
 Outlook 外接程序可以向您发送一个标识令牌，但您必须在信任请求之前对令牌进行验证，以确保它来自您预期的 Exchange 服务器。本文中的示例使用 PHP 验证标识令牌；但是，您可以使用任何编程语言来进行验证。[JSON Web 令牌 (JWT) Internet 草稿](http://self-issued.info/docs/draft-goland-json-web-token-00.html)介绍了验证令牌所需的步骤。
 
@@ -62,7 +62,7 @@ Outlook 外接程序可以向您发送一个标识令牌，但您必须在信任
 ```
 
 
-## 标识令牌验证库
+## <a name="identity-token-validation-library"></a>标识令牌验证库
 
 以下代码是验证 Exchange 标识令牌的 PHP 库。
 
@@ -498,7 +498,7 @@ class token_validator
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

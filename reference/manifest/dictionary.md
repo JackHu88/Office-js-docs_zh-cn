@@ -1,11 +1,11 @@
 
-# Dictionary 元素
+# <a name="dictionary-element"></a>Dictionary 元素
 定义可实现其他字典支持的任务窗格外接程序的设置。
 
  **外接程序类型：**任务窗格
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -15,16 +15,16 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## 可以包含：
+## <a name="can-contain:"></a>可以包含：
 
 
 
-|**元素**|
+|**Element**|
 |:-----|
 |[TargetDialects](../../reference/manifest/targetdialects.md)|
 |[QueryUri](../../reference/manifest/queryuri.md)|
@@ -32,7 +32,7 @@
 |[DictionaryName](../../reference/manifest/dictionaryname.md)|
 |[DictionaryHomePage](../../reference/manifest/dictionaryhomepage.md)|
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

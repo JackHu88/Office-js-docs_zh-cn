@@ -1,8 +1,8 @@
-﻿
-# Labs.Core.Actions 接口
+
+# <a name="labs.core.actions-interfaces"></a>Labs.Core.Actions 接口
 **LabsJS.Labs.Core.Actions** 模块中的接口
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 **LabsJS.Labs.Core.Actions** 模块包含以下接口。
 

@@ -1,4 +1,4 @@
-# 安装最新版本 Office 2016
+# <a name="install-the-latest-version-of-office-2016"></a>安装最新版本 Office 2016
 
 新的开发人员功能，包括那些仍处于预览状态的功能，会先发送给选择获取最新 Office 版本的订阅者。选择使用 Office 2016 的最新版本： 
 
@@ -18,6 +18,6 @@
 
 >**注意：**命令可能需要运行很长时间，而不指示进度。
 
-在安装进程完成后，你已安装最新的 Office 2016 应用程序。 要验证你是否拥有最新版本，请从任何 Office 应用程序转到“**文件**” > “**帐户**”。 在“Office 更新”下，你将看到版本号上面的 (Office Insiders) 标签。
+在安装进程完成后，你已安装最新的 Office 2016 应用程序。要验证你是否拥有最新版本，请从任何 Office 应用程序转到“**文件**” > “**帐户**”。在“Office 更新”下，你将看到版本号上面的 (Office Insiders) 标签。
 
 ![显示带有 Office Insiders 标签的产品信息的屏幕截图](../../images/officeinsider.PNG)

@@ -1,11 +1,11 @@
 
-# ProjectResourceFields 枚举
+# <a name="projectresourcefields-enumeration"></a>ProjectResourceFields 枚举
 指定可供 **[getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)** 方法用作参数的资源域。
 
 |||
 |:-----|:-----|
 |**主机：**|Project|
-|**在其中添加**|1.0|
+|**添加内容的版本**|1.0|
 
 ```js
 ProjectResourceFields={
@@ -213,14 +213,14 @@ ProjectResourceFields={
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **ProjectResourceFields** 枚举包含以下成员。
 
 
 
-|**姓名**|**值**|**说明**|
+|**名称**|**值**|**说明**|
 |:-----|:-----|:-----|
 |Accrual|0|权责发生制，定义了任务累算资源成本的方式：任务开始时进行累算 = 1，任务结束时进行累算 = 2，任务进行过程中（按比例）进行累算 = 3。|
 |ActualCost|1|为项目中的分配计算的资源的实际成本。|
@@ -423,18 +423,18 @@ ProjectResourceFields={
 |Text8|198|资源的文本字段。|
 |Text9|199|资源的文本字段。|
 
-## 注解
+## <a name="remarks"></a>注解
 
 
 **ProjectResourceFields** 常数可用作 [getResourceFieldAsync 方法](../../reference/shared/projectdocument.getresourcefieldasync.md)的参数。<br/><br/>若要详细了解如何处理 Project 中的域，请参阅[可用域引用](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)。在 Project 的“帮助”中，搜索 _Available fields_。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -446,22 +446,22 @@ ProjectResourceFields={
 
 |||
 |:-----|:-----|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 |**版本**|**更改内容**|
 |:-----|:-----|
 |1.0|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 [getResourceFieldAsync 方法](../../reference/shared/projectdocument.getresourcefieldasync.md)
 

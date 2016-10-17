@@ -1,12 +1,12 @@
 
-# Outlook 外接程序的激活和 JavaScript API 的限制
+# <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Outlook 外接程序的激活和 JavaScript API 的限制
 
 为了向 Outlook 外接程序的用户提供令人满意的体验，您必须了解特定的激活和 API 使用准则，并执行外接程序使其不超过这些限制。这些准则的设置是为了确保单个外接程序不能请求 Exchange Server 或 Outlook 而浪费过长时间来处理其激活规则或对适用于 Office 的 JavaScript API 调用，从而影响 Outlook 和其他外接程序的整体用户体验。在外接程序清单中设计激活规则，使用自定义属性、漫游设置、收件人、Exchange Web 服务 (EWS) 服务请求和响应以及异步调用时，均须遵守这些限制。 
 
  >**注意** 如果您的外接程序在 Outlook 富客户端中运行，您还必须确认外接程序是在特定运行时资源使用率限制内运行的。 
 
 
-## 激活规则的限制
+## <a name="limits-for-activation-rules"></a>激活规则的限制
 
 
 为 Outlook 外接程序设计激活规则时，请遵循以下准则：
@@ -20,9 +20,9 @@
     
 - 如果你在 **ItemHasKnownEntity** 或 [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) 规则中使用正则表达式，请注意，通常适用于任何 Outlook 主机的下列限制和准则，以及表 1、2 和 3 中所述的限制和准则（因主机而异）：
     
-      - 外接程序的激活规则中最多可指定 5 个正则表达式。如果超出该限制，则无法安装外接程序。
+      - 在外接程序的激活规则中最多仅指定五个正则表达式。如果超出该限制，将无法安装外接程序。
     
-  - 指定正则表达式，以便  **getRegExMatches** 方法调用在前 50 个匹配项内返回预期结果。
+  - 指定正则表达式，以便 **getRegExMatches** 方法调用在前 50 个匹配项内返回预期结果。
     
   - 可以在正则表达式中指定向前断言，但不支持向后 (?<=text) 和否定向后 (?<!text) 断言。
     
@@ -30,18 +30,18 @@
 表 1 列出了这些限制并介绍了 Outlook 富客户端与 Outlook Web App 或适用于设备的 OWA 之间正则表达式支持的区别。这种支持不依赖于任何特定类型的设备和项目正文。
 
 
- **表 1. 各种正则表达式支持的一般区别**
+ **表 1.各种正则表达式支持的一般区别**
 
 
-|**Outlook 富客户端**|**Outlook Web App 或 适用于设备的 OWA**|
+|**Outlook 富客户端**|**Outlook Web App 或适用于设备的 OWA**|
 |:-----|:-----|
-|使用作为 Visual Studio 标准模板库一部分提供的 C++ 正则表达式引擎。该引擎使用 ECMAScript 5 标准编译。 |使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。|
+|使用作为 Visual Studio 标准模板库的一部分提供的 C++ 正则表达式引擎。此引擎符合 ECMAScript 5 标准。 |使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。|
 |由于正则表达式引擎不同，预计包含基于预定义字符类的自定义字符类的正则表达式将返回与 Outlook Web App 或适用于设备的 OWA 中的 Outlook 富客户端不同的结果。<br/><br/>例如，正则表达式“[\s\S]{0,100}”与一个空格字符或非空格字符的 0 到 100 之间的任意数匹配。此正则表达式在 Outlook 富客户端中与在 Outlook Web App 和适用于设备的 OWA 中返回的结果不相同。作为解决方法，您应将正则表达式重写为""(\s|\S){0,100}"。此变通正则表达式与一个空格字符或非空格字符的 0 到 100 之间的任意数匹配。<br/><br/>您应该在每个 Outlook 主机中对每个正则表达式进行充分的测试，并在正则表达式返回不同的结果时重写该正则表达式。 |您应该在每个 Outlook 主机中对每个正则表达式进行充分的测试，并在正则表达式返回不同的结果时重写该正则表达式。|
 |默认情况下，外接程序的所有正则表达式的计算时间限制为 1 秒。超出此限制将导致最多重新计算 3 次。如果超出该重新计算限制，Outlook 富客户端将禁止对任何 Outlook 主机上的同一邮箱运行外接程序。<br/><br/>管理员可使用 **OutlookActivationAlertThreshold** 和 **OutlookActivationManagerRetryLimit** 注册表项覆盖这些计算限制。|不支持与 Outlook 富客户端中相同的资源监视或注册表设置。但将为所有 Outlook 主机上的同一邮箱禁用 Outlook 富客户端上需要很长计算时间的正则表达式的外接程序。|
 
 表 2 列出了这些限制并介绍了每一个 Outlook 应用了正则表达式的项正文部分的区别。如果对项正文应用了正则表达式，则其中某些限制取决于设备和项正文的类型。
 
-**表 2. 计算的项正文的大小限制**
+**表 2.计算的项正文的大小限制**
 
 
 ||**Outlook 富客户端**|**Outlook Web App、适用于设备的 OWA、OWA for iPad 或 OWA for iPhone**|**Outlook Web App**|
@@ -52,22 +52,22 @@
 
 表 3 列出了这些限制并介绍了每个 Outlook 主机在计算正则表达式后返回的匹配项的区别。这种支持不依赖于任何特定的设备类型，但是，如果对项正文应用了正则表达式，则该支持可能依赖于项正文的类型。
 
-**表 3. 返回的匹配项限制**
+**表 3.返回的匹配项限制**
 
 
-||**Outlook 富客户端**|**Outlook Web App 或 适用于设备的 OWA**|
+||**Outlook 富客户端**|**Outlook Web App 或适用于设备的 OWA**|
 |:-----|:-----|:-----|
 |返回的匹配项的顺序|假定对于应用于同一个项目的同一个正则表达式， **getRegExMatches** 返回的匹配项在 Outlook 富客户端中与在 Outlook Web App 或适用于设备的 OWA 中的不同。|假定  **getRegExMatches** 返回的匹配项的顺序在 Outlook 富客户端与在 Outlook Web App 或 适用于设备的 OWA 中的不同。|
 |纯文本项正文|**getRegExMatches** 返回至多 1,536 (1.5 KB) 个字符的任意匹配项，最多 50 个匹配项。<br/><br/>**注意**：**getRegExMatches** 并不会在返回的数组中以任何特定顺序返回匹配项。通常，假定 Outlook 富客户端中应用于同一项的同一正则表达式的匹配项顺序与 Outlook Web App 和适用于设备的 OWA 中的不同。|**getRegExMatches** 返回的任何匹配项最多为 3,072 个字符 (3 KB) ，最多为 50 个匹配项。|
 |HTML 项正文|**getRegExMatches** 返回至多 3,072 (3 KB) 个字符的任意匹配项，最多 50 个匹配项。<br/> <br/> **注意**：**getRegExMatches** 并不会在返回的数组中以任何特定顺序返回匹配项。通常，假定 Outlook 富客户端中应用于同一项的同一正则表达式的匹配项顺序与 Outlook Web App 和适用于设备的 OWA 中的不同。|**getRegExMatches** 返回的任何匹配项最多为 3,072 (3 KB) 个字符，最多为 50 个匹配项。|
 
-## JavaScript API 的限制
+## <a name="limits-for-javascript-api"></a>JavaScript API 的限制
 
 
 除了前面的激活规则的准则外，每个 Outlook 主机还对 JavaScript 对象模型强制实施了特定限制，如表 4 中所述：
 
 
-**表 4. 使用适用于 Office 的 JavaScript API 获取或设置特定数据的限制**
+**表 4.使用适用于 Office 的 JavaScript API 获取或设置特定数据的限制**
 
 
 |**功能**|**限制**|**相关 API**|**说明**|
@@ -90,7 +90,7 @@
 |附件 ID|100 个字符|[item.addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) 方法<br/><br/> [item.removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) 方法|要添加或从项目中删除的附件 ID 的长度限制。|
 |异步调用|3 次调用|**item.addFileAttachmentAsync** 方法<br/><br/>**item.addItemAttachmentAsync** 方法<br/><br/><br/>**item.removeAttachmentAsync** 方法<br/><br/> [Body.getTypeAsync](../../reference/outlook/Body.md) 方法<br/><br/>**Body.prependAsync** 方法<br/><br/>**Body.setSelectedDataAsync** 方法<br/><br/> [CustomProperties.saveAsync](../../reference/outlook/CustomProperties.md) 方法<br/><br/><br/> [item.LoadCustomPropertiesAysnc](../../reference/outlook/Office.context.mailbox.item.md) 方法<br/><br/><br/> [Location.getAsync](../../reference/outlook/Location.md) 方法<br/><br/>**Location.setAsync** 方法<br/><br/> [mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md) 方法<br/><br/> [mailbox.getUserIdentityTokenAsync](../../reference/outlook/Office.context.mailbox.md) 方法<br/><br/> [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) 方法<br/><br/>**Recipients.addAsync** 方法<br/><br/> [Recipients.getAsync](../../reference/outlook/Recipients.md) 方法<br/><br/>**Recipients.setAsync** 方法<br/><br/> [RoamingSettings.saveAsync](../../reference/outlook/RoamingSettings.md) 方法<br/><br/> [Subject.getAsync](../../reference/outlook/Subject.md) 方法<br/><br/>**Subject.setAsync** 方法<br/><br/> [Time.getAsync](../../reference/outlook/Time.md) 方法<br/><br/> [Time.setAsync](../../reference/outlook/Time.md) 方法|对于 Outlook Web App 或 适用于设备的 OWA：对每次同时异步调用的次数有限制，因为浏览器只允许对服务器进行有限数量的异步调用。 |
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

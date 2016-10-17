@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.Actions.ISubmitAnswerResult
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.actions.isubmitanswerresult"></a>Labs.Core.Actions.ISubmitAnswerResult
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 提交尝试答案的结果。
 
@@ -10,7 +10,7 @@ interface ISubmitAnswerResult extends Core.IActionResult
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

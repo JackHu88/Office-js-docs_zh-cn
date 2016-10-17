@@ -1,32 +1,32 @@
 
-# CustomXmlNode.getTextAsync 方法
+# <a name="customxmlnode.gettextasync-method"></a>CustomXmlNode.getTextAsync 方法
 异步获取自定义 XML 部件中 XML 节点的文本。
 
 |||
 |:-----|:-----|
 |**主机：**|Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|CustomXmlParts|
-|**在其中添加**|1.2|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|CustomXmlParts|
+|**添加内容的版本**|1.2|
 
 ```js
 customXmlNodeObj.getTextAsync([asyncContext,]callback(asyncResult);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 
 
 |**名称**|**类型**|**说明**|
 |:-----|:-----|:-----|
 | _asyncContext_|**object**|可选。用户定义的对象，适用于 [AsyncResult](../../reference/shared/asyncresult.md) 对象的 asyncContext 属性。当回调为命名的函数时，使用此选项为 **AsyncResult** 提供对象或值。|
-| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为  **AsyncResult** 。|
+| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为 **AsyncResult** 。|
 
-## 回调值
+## <a name="callback-value"></a>回调值
 
 当执行您传递给 _callback_ 参数的函数时，它会接收您可以从回调函数的唯一参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
-在传递给  **getTextAsync** 方法的回调函数中，您可以使用 **AsyncResult** 对象的属性返回以下信息。
+在传递给 **getTextAsync** 方法的回调函数中，可以使用 **AsyncResult** 对象的属性返回以下信息。
 
 
 
@@ -37,7 +37,7 @@ customXmlNodeObj.getTextAsync([asyncContext,]callback(asyncResult);
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|如果操作失败，则访问提供错误信息的 [Error](../../reference/shared/error.md) 对象。|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果您将用户定义的一个  **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。如果尚未设置 _asyncContext_，则此属性将返回其未定义的形式。|
 
-## 示例
+## <a name="example"></a>示例
 
 了解如何在自定义 XML 部件中获取节点的文本值。
 
@@ -72,12 +72,12 @@ Office.context.document.customXmlParts.getByIdAsync("{6C3C8BC8-F283-45AE-878A-BA
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|
@@ -88,11 +88,11 @@ Office.context.document.customXmlParts.getByIdAsync("{6C3C8BC8-F283-45AE-878A-BA
 |:-----|:-----|
 |**在要求集中可用**|CustomXmlParts|
 |**最低权限级别**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

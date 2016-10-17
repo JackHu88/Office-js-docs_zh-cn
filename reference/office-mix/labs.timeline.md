@@ -1,7 +1,7 @@
 
-# Labs.Timeline
+# <a name="labs.timeline"></a>Labs.Timeline
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 提供对 labs.js 时间线功能的访问权限。
 
@@ -10,19 +10,19 @@ class Timeline
 ```
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 方法
+### <a name="method"></a>方法
 
  `function constructor(labsInternal: Labs.LabsInternal)`
 
 创建 **Timeline** 类的新实例。
 
 
-### 下一页
+### <a name="next"></a>下一页
 
  `public function next(completionStatus: Labs.Core.ICompletionStatus, callback: Labs.Core.ILabCallback<void>): void`
 

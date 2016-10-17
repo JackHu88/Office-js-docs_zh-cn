@@ -1,5 +1,5 @@
 
-# 使用正则表达式激活规则显示 Outlook 外接程序
+# <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>使用正则表达式激活规则显示 Outlook 外接程序
 
 你可以指定正则表达式规则以在阅读情况下激活 Outlook 外接程序 - 用户在阅读窗格或检查器中查看邮件或约会时，Outlook 会对正则表达式规则求值，以确定是否应激活你的 Outlook 外接程序。用户在撰写项目时，Outlook 不会对这些规则求值。Outlook 还有其他一些不激活外接程序的情况，例如，项目受信息权限管理 (IRM) 保护或在“垃圾邮件”文件夹中的情况。有关详细信息，请参阅 [Outlook 外接程序的激活规则](../outlook/manifests/activation-rules.md)。
 
@@ -15,7 +15,7 @@
 |<|小于号|&amp;lt;|
 |>|大于号|&amp;gt;|
 
-## ItemHasRegularExpressionMatch 规则
+## <a name="itemhasregularexpressionmatch-rule"></a>ItemHasRegularExpressionMatch 规则
 
 
 **ItemHasRegularExpressionMatch** 规则对于基于受支持属性的特定值控制外接程序的激活很有用。**ItemHasRegularExpressionMatch** 规则包括以下属性。
@@ -24,12 +24,12 @@
 
 |**属性名**|**说明**|
 |:-----|:-----|
-|**RegExName**|指定正则表达式的名称，以便您能够在加载项的代码中引用该表达式。|
+|**RegExName**|指定正则表达式的名称，以便能够在外接程序的代码中引用该表达式。|
 |**RegExValue**|指定将对其求值的正则表达式以确定是否应显示外接程序。|
 |**PropertyName**|指定将为其对正则表达式求值的属性的名称。允许的值是  **BodyAsHTML**、 **BodyAsPlaintext**、 **SenderSMTPAddress** 和 **Subject**。 如果指定  **BodyAsHTML**，则 Outlook 仅在项目正文为 HTML 时应用正则表达式，否则，Outlook 将不会为该正则表达式返回任何匹配项。由于约会始终以 RTF 格式保存，因此，指定  **BodyAsHTML** 的正则表达式不与约会项目的正文中的任何字符串匹配。如果指定  **BodyAsPlaintext**，则 Outlook 始终对项目正文应用正则表达式。|
-|**IgnoreCase**|指定在匹配由  **RegExName** 指定的正则表达式时是否忽略大小写。|
+|**IgnoreCase**|指定在匹配由 **RegExName** 指定的正则表达式时是否忽略大小写。|
 
-### 在规则中使用正则表达式的最佳实践
+### <a name="best-practices-for-using-regular-expressions-in-rules"></a>在规则中使用正则表达式的最佳实践
 
 在使用正则表达式时应特别注意以下几点：
 
@@ -38,7 +38,7 @@
     
 - 各个浏览器上返回的纯文本正文可能存在细微的差异。如果使用 [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) 规则（将 **BodyAsPlaintext** 作为 **PropertyName** 属性），请在您的加载项支持的所有浏览器上测试您的正则表达式。
     
-    因为不同的浏览器获取所选项目的文本正文的方法不同，所以应确保你的正则表达式支持正文文本部分所返回的细微差异。 例如，一些浏览器（例如 Internet Explorer 9）使用 DOM 的 **innerText** 属性，而其他浏览器（例如 Firefox）使用.**textContent()** 方法来获取项目的文本正文。 同样，不同的浏览器所返回的换行符可能不同：在 Internet Explorer 上所返回的换行符为“\r\n”，而在 Firefox 和 Chrome 上所返回的换行符为“\n”。 有关详细信息，请参阅 [W3C DOM 兼容性 - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07)。
+    因为不同的浏览器获取所选项目的文本正文的方法不同，所以应确保你的正则表达式支持正文文本部分所返回的细微差异。例如，一些浏览器（例如 Internet Explorer 9）使用 DOM 的 **innerText** 属性，而其他浏览器（例如 Firefox）使用.**textContent()** 方法来获取项目的文本正文。同样，不同的浏览器所返回的换行符可能不同：在 Internet Explorer 上所返回的换行符为“\r\n”，而在 Firefox 和 Chrome 上所返回的换行符为“\n”。有关详细信息，请参阅 [W3C DOM 兼容性 - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07)。
     
 - Outlook 富客户端与 Outlook Web App 或 适用于设备的 OWA 上的项目的 HTML 正文之间存在细微差异。请仔细定义您的正则表达式。例如，请考虑在  **ItemHasRegularExpressionMatch** 规则中（将 **BodyAsHTML** 作为 **PropertyName** 属性值）使用的以下正则表达式：
     
@@ -65,7 +65,7 @@
 - 根据主机应用程序、设备类型或将对其应用正则表达式的属性，在设计正则表达式作为激活规则时，您需要了解针对每个主机的其他最佳实践和限制。有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
     
 
-### 示例
+### <a name="examples"></a>示例
 
 以下  **ItemHasRegularExpressionMatch** 规则将在发件人的 SMTP 电子邮件地址与"@contoso"匹配（不管是大写还是小写字符）时激活外接程序。
 
@@ -106,7 +106,7 @@
 ```
 
 
-## ItemHasKnownEntity 规则
+## <a name="itemhasknownentity-rule"></a>ItemHasKnownEntity 规则
 
 
 
@@ -124,10 +124,10 @@
 |:-----|:-----|
 |**EntityType**|指定必须为其计算结果为  **true** 的规则找到的实体的类型。使用多个规则可指定多个类型的实体。|
 |**RegExFilter**|指定用于进一步筛选由  **EntityType** 指定的实体的实例的正则表达式。|
-|**FilterName**|指定由  **RegExFilter** 指定的正则表达式的名称，以便稍后可通过代码引用它。|
-|**IgnoreCase**|指定在匹配由  **RegExFilter** 指定的正则表达式时是否忽略大小写。|
+|**FilterName**|指定由 **RegExFilter** 指定的正则表达式的名称，以便稍后可通过代码引用它。|
+|**IgnoreCase**|指定在匹配由 **RegExFilter** 指定的正则表达式时是否忽略大小写。|
 
-### 示例
+### <a name="examples"></a>示例
 
 以下  **ItemHasKnownEntity** 规则在当前项目的主题或正文中存在 URL 且该 URL 包含字符串"youtube"时将激活外接程序，而不考虑字符串的大小写。
 
@@ -141,7 +141,7 @@
 ```
 
 
-## 在代码中使用正则表达式结果
+## <a name="using-regular-expression-results-in-code"></a>在代码中使用正则表达式结果
 
 
 您可以通过在当前项目上使用以下方法来获取正则表达式的匹配项：
@@ -159,7 +159,7 @@
  >**注释**  Outlook 富客户端不会以任何特定顺序返回数组中的匹配项。此外，您不应假定 Outlook 富客户端将以同一顺序返回该数组中 Outlook Web App 或 适用于设备的 OWA 的匹配项，即使您对每个此类客户端上的同一邮箱中的相同项目运行同一个外接程序也是如此。有关在 Outlook 富客户端和 Outlook Web App 或 适用于设备的 OWA 上处理正则表达式的方式的其他差异，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)。
 
 
-### 示例
+### <a name="examples"></a>示例
 
 以下是包含带名为  `videoURL` 的正则表达式的 **ItemHasRegularExpressionMatch** 规则的规则集的示例。
 
@@ -227,7 +227,7 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
@@ -235,9 +235,10 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
     
 - [Outlook 外接程序的激活规则](../outlook/manifests/activation-rules.md)
     
-- [激活限制和适用于 Outlook 外接程序 的 JavaScript API](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Outlook 外接程序的激活和 JavaScript API 限制](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     
 - [将 Outlook 项目中的字符串作为已知实体进行匹配](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [.NET Framework 中的正则表达式的最佳实践](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
+- 
+  [.NET Framework 中的正则表达式的最佳做法](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
     

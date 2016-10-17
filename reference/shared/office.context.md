@@ -1,6 +1,6 @@
 
 
-# Office.context 属性
+# <a name="office.context-property"></a>Office.context 属性
 获取表示外接程序的运行时环境的 [Context](../../reference/shared/context.md) 对象，并提供对 API 的顶级对象（如 [Document](../../reference/shared/document.md) 和 [Mailbox](http://msdn.microsoft.com/library/a3880d3b-8a09-4cf9-9274-f2682cb3b769%28Office.15%29.aspx) 对象）的访问权限。
 
 |||
@@ -13,17 +13,17 @@ var myDocument = Office.context.document;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 [Context](../../reference/shared/context.md) 对象。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**Outlook for Mac**|
@@ -42,7 +42,7 @@ var myDocument = Office.context.document;
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

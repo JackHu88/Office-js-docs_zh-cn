@@ -1,14 +1,14 @@
-﻿
-# Labs.CommandType 变量
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.commandtype-variables"></a>Labs.CommandType 变量
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 **Labs.CommandType** 模块中的变量都是一些表示受支持的命令类型的字符串。
 
-## 变量
+## <a name="variables"></a>变量
 
 
-|**姓名**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | `var Connect: string`||
 | `var Disconnect: string`||

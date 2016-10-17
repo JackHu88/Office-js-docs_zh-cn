@@ -1,5 +1,5 @@
 
-# 在 Exchange 中使用标识令牌从 Outlook 外接程序调用服务
+# <a name="call-a-service-from-an-outlook-add-in-by-using-an-identity-token-in-exchange"></a>在 Exchange 中使用标识令牌从 Outlook 外接程序调用服务
 
 标识令牌为您的每个客户提供了一个唯一标识符，可使用该标识符对您提供的服务进行个性化设置。您的代码可使用将字符串返回您的 Outlook 外接程序的异步方法调用来要求 Exchange 服务器提供标识令牌。该字符串包含 JSON Web Token (JWT) 标识令牌。您的外接程序无需解压缩令牌。相反，它可将令牌传递到 Web 服务上，以便您的服务能够对来自外接程序的请求进行身份验证。
 
@@ -7,7 +7,7 @@
 
 向您的外接程序发送的服务请求添加标识令牌非常简单。您请求令牌，再使用令牌，然后使用 Web 服务响应。以下是借助您使用 **XmlHttpRequest** 方法发送到服务器的简单 XML 文档定义其外观的方式。
 
-## 从 Exchange 服务器请求令牌
+## <a name="request-a-token-from-your-exchange-server"></a>从 Exchange 服务器请求令牌
 
 
 邮件外接程序的此简单初始化方法使用  **getUserIdentityTokenAsync** 方法从 Exchange 服务器请求标识令牌。 _getUserIdentityToken_ 参数是在返回对服务器的异步请求时调用的函数。请参阅下一个步骤以了解回调方法。
@@ -29,7 +29,7 @@ Office.initialize = function () {
 ```
 
 
-## 使用标识令牌
+## <a name="use-the-identity-token"></a>使用标识令牌
 
 
 针对  **getUserIdentityTokenAsync** 方法的回调函数具有一个参数，该参数将用户标识令牌包含在其 **value** 属性中。
@@ -57,7 +57,7 @@ function getUserIdentityTokenCallback(asyncResult) {
 ```
 
 
-## 使用 Web 服务响应
+## <a name="use-the-web-service-response"></a>使用 Web 服务响应
 
 
 这是另一个用于处理来自 Web 服务的响应的简单函数。它遵循  **XHMHttpResponse** 回调函数的标准模式。此函数等到来自 Web 服务的完整响应传入后，将该响应的内容置入加载项 UI 中。此函数所解析的响应是来自 Web 服务的响应。有关此响应的详细信息，请参阅 [验证 Exchange 标识令牌](../outlook/validate-an-identity-token.md)。 
@@ -86,7 +86,7 @@ function readyStateChange() {
 ```
 
 
-## 示例：使用标识令牌调用 Web 服务
+## <a name="example:-calling-a-web-service-with-identity-tokens"></a>示例：使用标识令牌调用 Web 服务
 
 
 标识令牌向您的服务器上运行的 Web 服务提供有关调用服务的客户端的标识信息。若要使用标识令牌，您需要：
@@ -96,12 +96,12 @@ function readyStateChange() {
     
 - 一个在您的服务器上运行的 Web 服务，此服务为验证标识令牌的外接程序提供了 UI。您将在下列主题之一中找到创建 Web 服务所需的信息：
     
-      - [使用 Exchange 令牌验证库](../outlook/use-the-token-validation-library.md) -- 如果你使用的是我们提供的验证库。
+      - [使用 Exchange 令牌验证库](../outlook/use-the-token-validation-library.md) - 如果你使用的是我们提供的验证库。
     
   - [验证 Exchange 标识令牌](../outlook/validate-an-identity-token.md) - 如果你编写的是你自己的验证代码。
     
 
-### 示例外界程序的代码
+### <a name="code-for-the-sample-add-in"></a>示例外界程序的代码
 
 
 本文描述的外接程序需要以下文件：
@@ -114,7 +114,7 @@ function readyStateChange() {
 您还需要标识测试 Web 服务。有关该 Web 服务的信息，请参阅 [验证 Exchange 标识令牌](../outlook/validate-an-identity-token.md)。
 
 
-#### IdentityTest.js
+#### <a name="identitytest.js"></a>IdentityTest.js
 
 以下示例演示了 IdentityTest.js 文件。
 
@@ -169,7 +169,7 @@ function readyStateChange() {
 ```
 
 
-#### IdentityTest.html
+#### <a name="identitytest.html"></a>IdentityTest.html
 
 以下示例演示了 IdentityTest.html 文件。
 
@@ -272,7 +272,7 @@ function readyStateChange() {
 ```
 
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 
 在了解如何请求标识令牌后，您需要在请求的服务器端使用令牌。下面的文章将帮助您快速入门：
@@ -285,7 +285,7 @@ function readyStateChange() {
 - [使用 Exchange 的标识令牌对用户进行身份验证](../outlook/authenticate-a-user-with-an-identity-token.md)
     
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

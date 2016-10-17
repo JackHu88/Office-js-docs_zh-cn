@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.Actions.IGetValueResult
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.actions.igetvalueresult"></a>Labs.Core.Actions.IGetValueResult
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 获取值操作的结果。
 
@@ -10,7 +10,7 @@ interface IGetValueResult extends Core.IActionResult
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

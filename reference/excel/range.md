@@ -1,10 +1,10 @@
-﻿# Range 对象（适用于 Excel 的 JavaScript API）
+# <a name="range-object-(javascript-api-for-excel)"></a>Range 对象（适用于 Excel 的 JavaScript API）
 
 _适用于：Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
-区域表示一个或多个相邻的单元格，例如单元格、行、列、单元格块等。
+Range 表示一个或多个相邻的单元格，例如单元格、行、列、单元格块等。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
@@ -26,59 +26,59 @@ _适用于：Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |valueTypes|string|表示每个单元格的数据类型。只读。可能的值是：Unknown、Empty、String、Integer、Double、Boolean、Error。|
 |values|object[][]|表示指定区域的原始值。返回的数据类型可能是字符串、数字或布尔值。包含错误的单元格将返回错误的字符串。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问 [示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
-|格式|[RangeFormat](rangeformat.md)|返回一个格式对象，其中封装了区域的字体、填充、边框、对齐方式和其他属性。只读。|
+|format|[RangeFormat](rangeformat.md)|返回一个格式对象，其中封装了区域的字体、填充、边框、对齐方式和其他属性。只读。|
 |排序|[RangeSort](rangesort.md)|表示区域的排序配置。只读。|
-|工作表|[工作表](worksheet.md)|包含当前区域的工作表。只读。|
+|worksheet|[Worksheet](worksheet.md)|包含当前区域的工作表。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
-|[clear(applyTo: string)](#clearapplyto-string)|void|清除区域值、格式、填充、边框等。|
-|[delete(shift: string)](#deleteshift-string)|void|删除与区域相关的单元格。|
-|[getBoundingRect(anotherRange:Range or string)](#getboundingrectanotherrange-range-or-string)|[Range 对象设置内联图片](range.md)|获取包含指定区域的最小 range 对象。例如，“B2:C5”和“D10:E15”的 getBoundingRect 为“B2:E15”。|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range 对象设置内联图片](range.md)|根据行和列编号获取包含单个单元格的 range 对象。单元格可以位于父区域外部，只要其保持在工作表网格内即可。返回的单元格位于相对于区域左上角的单元格的位置。|
-|[getColumn(column: number)](#getcolumncolumn-number)|[Range 对象设置内联图片](range.md)|获取区域中包含的列。|
-|[getEntireColumn()](#getentirecolumn)|[Range 对象设置内联图片](range.md)|获取表示区域整列的对象。|
-|[getEntireRow()](#getentirerow)|[Range 对象设置内联图片](range.md)|获取表示区域整行的对象。|
-|[getIntersection(anotherRange:Range or string)](#getintersectionanotherrange-range-or-string)|[Range 对象设置内联图片](range.md)|获取表示指定区域的矩形交集的 range 对象。|
-|[getLastCell()](#getlastcell)|[Range 对象设置内联图片](range.md)|获取区域内的最后一个单元格。例如，“B2:D5”的最后一个单元格是“D5”。|
-|[getLastColumn()](#getlastcolumn)|[Range 对象设置内联图片](range.md)|获取区域内的最后一列。例如，“B2:D5”的最后一列是“D2:D5”。|
-|[getLastRow()](#getlastrow)|[Range 对象设置内联图片](range.md)|获取区域内的最后一行。例如，“B2:D5”的最后一行是“B5:D5”。|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range 对象设置内联图片](range.md)|获取表示与指定区域偏移的区域的对象。返回的区域的尺寸将与该区域匹配。如果强制使生成的区域位于工作表网格的边界之外，则会引发异常。|
-|[getRow(row: number)](#getrowrow-number)|[Range 对象设置内联图片](range.md)|获取区域中包含的行。|
-|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range 对象设置内联图片](range.md)|返回 range 对象的所用子区域。|
-|[insert(shift: string)](#insertshift-string)|[Range 对象设置内联图片](range.md)|将单个单元格或一系列单元格插入到工作表中取代此区域，并移动其他单元格以留出空间。在现在空白的空间返回新的 Range 对象。|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[clear(applyTo: string)](#clearapplyto-string)|无效|清除区域值、格式、填充、边框等。|
+|[delete(shift: string)](#deleteshift-string)|无效|删除与区域相关的单元格。|
+|[getBoundingRect(anotherRange:Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|获取包含指定区域的最小 range 对象。例如，“B2:C5”和“D10:E15”的 GetBoundingRect 为“B2:E15”。|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|根据行和列编号获取包含单个单元格的 range 对象。单元格可以位于父区域外部，只要其保持在工作表网格内即可。返回的单元格位于相对于区域左上角的单元格的位置。|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|获取区域中包含的列。|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|获取表示区域整列的对象。|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|获取表示区域整行的对象。|
+|[getIntersection(anotherRange:Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|获取表示指定区域的矩形交集的 range 对象。|
+|[getLastCell()](#getlastcell)|[Range](range.md)|获取区域内的最后一个单元格。例如，“B2:D5”的最后一个单元格是“D5”。|
+|[getLastColumn()](#getlastcolumn)|[Range](range.md)|获取区域内的最后一列。例如，“B2:D5”的最后一列是“D2:D5”。|
+|[getLastRow()](#getlastrow)|[Range](range.md)|获取区域内的最后一行。例如，“B2:D5”的最后一行是“B5:D5”。|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|获取表示与指定区域偏移的区域的对象。返回的区域的尺寸将与该区域匹配。如果强制使生成的区域位于工作表网格的边界之外，则会引发异常。|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|获取区域中包含的行。|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|返回 range 对象的所用子区域。|
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)|将单个单元格或一系列单元格插入到工作表中取代此区域，并移动其他单元格以留出空间。在现在空白的空间返回新的 Range 对象。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 |[merge(across: bool)](#mergeacross-bool)|void|在工作表中，将 range 单元格合并到一个区域中。|
 |[select()](#select)|void|在 Excel UI 中选择指定的区域。|
 |[unmerge()](#unmerge)|void|将 range 单元格拆分为单个单元格。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### clear(applyTo: string)
+### <a name="clear(applyto:-string)"></a>clear(applyTo: string)
 清除区域值、格式、填充、边框等。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.clear(applyTo);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |applyTo|string|可选。确定清除操作的类型。可能的值是：`All`（默认选项）、`Formats`、`Contents`|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 
 以下示例将清除区域的格式和内容。 
 
@@ -98,23 +98,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### delete(shift: string)
+### <a name="delete(shift:-string)"></a>delete(shift: string)
 删除与区域相关的单元格。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.delete(shift);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |Shift|string|指定移动单元格的方式。可能的值是：Up、Left|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 Excel.run(function (ctx) { 
@@ -132,23 +132,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getBoundingRect(anotherRange:Range or string)
+### <a name="getboundingrect(anotherrange:-range-or-string)"></a>getBoundingRect(anotherRange:Range or string)
 获取包含指定区域的最小 range 对象。例如，“B2:C5”和“D10:E15”的 GetBoundingRect 为“B2:E15”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getBoundingRect(anotherRange);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |anotherRange|Range or string|range 对象或地址或区域名称。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -170,24 +170,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### getCell(row: number, column: number)
+### <a name="getcell(row:-number,-column:-number)"></a>getCell(row: number, column: number)
 根据行和列编号获取包含单个单元格的 range 对象。单元格可以位于父区域外部，只要其保持在工作表网格内即可。返回的单元格位于相对于区域左上角的单元格的位置。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getCell(row, column);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |row|number|要检索的单元格的行号。从零开始编制索引。|
 |column|number|要检索的单元格的列号。从零开始编制索引。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 Excel.run(function (ctx) { 
@@ -209,23 +209,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getColumn(column: number)
+### <a name="getcolumn(column:-number)"></a>getColumn(column: number)
 获取区域中包含的列。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getColumn(column);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |column|number|要检索的区域的列号。从零开始编制索引。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -246,21 +246,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getEntireColumn()
+### <a name="getentirecolumn()"></a>getEntireColumn()
 获取表示区域整列的对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getEntireColumn();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 注意：由于相关区域是无限的，区域的网格属性（值、numberFormat、公式）包含 `null`。
 
@@ -283,21 +283,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getEntireRow()
+### <a name="getentirerow()"></a>getEntireRow()
 获取表示区域整行的对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getEntireRow();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 
 Excel.run(function (ctx) {
@@ -318,23 +318,23 @@ Excel.run(function (ctx) {
 ```
 由于相关区域是无限的，区域的网格属性（值、numberFormat、公式）包含 `null`。
 
-### getIntersection(anotherRange:Range or string)
+### <a name="getintersection(anotherrange:-range-or-string)"></a>getIntersection(anotherRange:Range or string)
 获取表示指定区域的矩形交集的 range 对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getIntersection(anotherRange);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |anotherRange|Range or string|将用于确定区域交集的 range 对象或区域地址。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -355,21 +355,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastCell()
+### <a name="getlastcell()"></a>getLastCell()
 获取区域内的最后一个单元格。例如，“B2:D5”的最后一个单元格是“D5”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getLastCell();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -390,21 +390,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastColumn()
+### <a name="getlastcolumn()"></a>getLastColumn()
 获取区域内的最后一列。例如，“B2:D5”的最后一列是“D2:D5”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getLastColumn();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -425,21 +425,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastRow()
+### <a name="getlastrow()"></a>getLastRow()
 获取区域内的最后一行。例如，“B2:D5”的最后一行是“B5:D5”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getLastRow();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -461,24 +461,24 @@ Excel.run(function (ctx) {
 
 
 
-### getOffsetRange(rowOffset: number, columnOffset: number)
+### <a name="getoffsetrange(rowoffset:-number,-columnoffset:-number)"></a>getOffsetRange(rowOffset: number, columnOffset: number)
 获取表示与指定区域偏移的区域的对象。返回的区域的尺寸将与该区域匹配。如果强制使生成的区域位于工作表网格的边界之外，则会引发异常。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |rowOffset|number|区域偏移的行数（正数、负数或 0）。正数表示向下偏移，负数表示向上偏移。|
 |columnOffset|number|区域偏移的列数（正数、负数或 0）。正数表示向右偏移，负数表示向左偏移。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 Excel.run(function (ctx) { 
@@ -498,23 +498,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRow(row: number)
+### <a name="getrow(row:-number)"></a>getRow(row: number)
 获取区域中包含的行。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getRow(row);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |row|number|要检索的区域的行号。从零开始编制索引。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -535,23 +535,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getUsedRange(valuesOnly: bool)
+### <a name="getusedrange(valuesonly:-bool)"></a>getUsedRange(valuesOnly: bool)
 返回指定 range 对象的所用区域。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getUsedRange(valuesOnly);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |valuesOnly|bool|可选。为 true 时，仅当前具有值的单元格被视为已使用的单元格。默认值为 false，将曾经具有值的所有单元格计入已使用的单元格。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -573,23 +573,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### insert(shift: string)
+### <a name="insert(shift:-string)"></a>insert(shift: string)
 将单个单元格或一系列单元格插入到工作表中取代此区域，并移动其他单元格以留出空间。在现在空白的空间返回新的 Range 对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insert(shift);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |Shift|string|指定移动单元格的方式。可能的值是：Down、Right|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
     
@@ -609,39 +609,39 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### merge(across: bool)
+### <a name="merge(across:-bool)"></a>merge(across: bool)
 在工作表中，将 range 单元格合并到一个区域中。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.merge(across);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |横向|bool|可选。如果为 True，则将指定区域中每一行的单元格合并为一个单独的合并单元格。默认值是 false。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -658,21 +658,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### select()
+### <a name="select()"></a>select()
 在 Excel UI 中选择指定的区域。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.select();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 
@@ -692,21 +692,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### unmerge()
+### <a name="unmerge()"></a>unmerge()
 将已合并的 range 单元格拆分为单个单元格。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.unmerge();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -722,7 +722,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
 此示例使用区域地址获取 range 对象。
 

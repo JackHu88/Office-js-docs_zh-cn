@@ -1,21 +1,21 @@
-﻿# BindingCollection 对象（适用于 Excel 的 JavaScript API）
+# <a name="bindingcollection-object-(javascript-api-for-excel)"></a>BindingCollection 对象（适用于 Excel 的 JavaScript API）
 
 表示属于工作簿的所有绑定对象的集合。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |count|INT|返回集合中绑定的数量。只读。|
-|Items|[Binding[]](binding.md)|绑定对象的集合。只读。|
+|项目|[Binding[]](binding.md)|绑定对象的集合。只读。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问 [示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 无
 
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
@@ -23,26 +23,26 @@ _请参阅属性访问[示例](#示例)。_
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|根据其在项目数组中的位置获取绑定对象。|
 |[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### getItem(id: string)
+### <a name="getitem(id:-string)"></a>getItem(id: string)
 按 ID 获取绑定对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 bindingCollectionObject.getItem(id);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |id|string|要检索的绑定对象的 ID。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Binding](binding.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 创建表绑定以监视表中的数据更改。数据更改时，表的背景颜色将变为橙色。
 
@@ -100,7 +100,7 @@ bindingCollectionObject.getItem(id);
 
 
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -118,23 +118,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 根据其在项目数组中的位置获取绑定对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 bindingCollectionObject.getItemAt(index);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Binding](binding.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -152,22 +152,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者接受 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
 ```js
 Excel.run(function (ctx) { 

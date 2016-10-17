@@ -1,5 +1,5 @@
 
-# AsyncResult 对象
+# <a name="asyncresult-object"></a>AsyncResult 对象
 用于封装异步请求的结果的对象，包括状态和错误信息（如果请求失败）。
 
 |||
@@ -12,20 +12,20 @@ AsyncResult
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **属性**
 
 
-|**名称**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
-|**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|获取与传入时状态相同的传递给调用方法的可选  _asyncContext_ 参数的用户定义项。|
-|**[错误](../../reference/shared/asyncresult.error.md)**|如果出现任何错误，获取提供错误描述的  **Error** 对象。|
+|**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|获取与传入时状态相同的传递给调用方法的可选 _asyncContext_ 参数的用户定义项。|
+|**[error](../../reference/shared/asyncresult.error.md)**|如果出现任何错误，获取提供错误描述的 **Error** 对象。|
 |**[status](../../reference/shared/asyncresult.status.md)**|获取异步操作的状态。|
 |**[value](../../reference/shared/asyncresult.value.md)**|获取此异步操作的负载或内容（如有）。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 当执行您传递给 "Async" 方法的 _callback_ 参数的函数时，它会接收您可以从回调函数的唯一参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
@@ -58,11 +58,11 @@ function write(message){
 
 请注意，函数中的其他代码行使用回调函数的  _result_ 参数访问 **AsyncResult** 对象的 **status** 和 **error** 属性。
 
-The  **AsyncResult** object is available from the function passed as the argument to the _callback_ parameter of the following methods:
+The **AsyncResult** object is available from the function passed as the argument to the _callback_ parameter of the following methods:
 
 
 
-|**父对象**|**方法**|
+|**Parent Object**|**Method**|
 |:-----|:-----|
 |**Document**（仅限 Excel、PowerPoint、Project 和 Word）|[getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md)|
 ||[setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md)|
@@ -93,13 +93,18 @@ The  **AsyncResult** object is available from the function passed as the argumen
 |**CustomXmlPrefixMappings**（仅限 Word）|[addNamespaceAsync](../../reference/shared/customxmlprefixmappings.addnamespaceasync.md)|
 ||[getNamespaceAsync](../../reference/shared/customxmlprefixmappings.getnamespaceasync.md)|
 ||[getPrefixAsync](../../reference/shared/customxmlprefixmappings.getprefixasync.md)|
-|**Mailbox**（仅限 Outlook）|[getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
-||[makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
-|**CustomProperties**（仅限 Outlook）|[saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
-|**Item**（仅限 Outlook）|[loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
-|**RoamingSettings**（仅限 Outlook）|[saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
+|**Mailbox**（仅限 Outlook）|
+  [getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
+||
+  [makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
+|**CustomProperties**（仅限 Outlook）|
+  [saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
+|**Item**（仅限 Outlook）|
+  [loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
+|**RoamingSettings**（仅限 Outlook）|
+  [saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
@@ -108,13 +113,13 @@ The  **AsyncResult** object is available from the function passed as the argumen
 
 
 
-| |**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**Outlook for Mac**|
+| |**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**适用于 Mac 的 Outlook**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||Y||||
 |**Excel**|Y|Y|Y|||
 |**Outlook**|Y|Y||Y|Y|
 |**PowerPoint**|Y|Y|Y|||
-|**Project**|Y|||||
+|**项目**|Y|||||
 |**Word**|Y|Y|Y|||
 
 |||
@@ -123,7 +128,7 @@ The  **AsyncResult** object is available from the function passed as the argumen
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

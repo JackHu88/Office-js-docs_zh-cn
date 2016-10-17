@@ -1,7 +1,7 @@
-﻿
-# Labs.ProblemState
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.problemstate"></a>Labs.ProblemState
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 给定实验室的状态值。
 
@@ -10,7 +10,7 @@ enum ProblemState
 ```
 
 
-## 枚举值
+## <a name="enumeration-values"></a>枚举值
 
 
 |||

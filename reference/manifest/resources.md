@@ -1,21 +1,21 @@
-﻿# Resources 元素
+# <a name="resources-element"></a>Resources 元素
 
-包含图标、字符串以及 [VersionOverrides](./versionoverrides.md) 节点的 URL。 清单元素通过使用资源的 **id** 来指定资源。 这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。 **id** 在清单内必须是唯一的且最多可包含 32 个字符。
+包含图标、字符串以及 [VersionOverrides](./versionoverrides.md) 节点的 URL。清单元素通过使用资源的 **id** 来指定资源。这有助于将清单的大小保持在可管理的范围，尤其是当资源具有不同区域设置的版本时。**id** 在清单内必须是唯一的且最多可包含 32 个字符。
 
 每个资源可以具有一个或多个 **Override** 子元素以定义特定区域设置的不同资源。
 
-## 子元素
+## <a name="child-elements"></a>子元素
 
 |  元素 |  类型  |  说明  |
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  提供指向图标图像的 HTTPS URL。 |
-|  **Urls**                |  url     |  提供 HTTPS URL 位置。 一个 URL 最多可包含 2048 个字符。 |
-|  **ShortStrings** |  字符串  |  **Label** 和 **Title**元素的文本。 每个**字符串**最多可包含 125 个字符。|
-|  **LongStrings**  |  字符串  | **Description** 属性的文本。 每个**字符串**最多可包含 250 个字符。|
+|  **Urls**                |  url     |  提供 HTTPS URL 位置。一个 URL 最多可包含 2048 个字符。 |
+|  **ShortStrings** |  string  |  **Label** 和 **Title** 元素的文本。每个 **String** 最多可包含 125 个字符。|
+|  **LongStrings**  |  string  | **Description** 属性的文本。每个 **String** 最多可包含 250 个字符。|
 
->**注意**  你必须为 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。
+>**注意**  必须为 **Image** 和 **Url** 元素中的所有 URL 使用安全套接字层 (SSL)。
 
-### Images
+### <a name="images"></a>Images
 每个图标必须具有三个 **Images** 元素，三个强制大小的各一个元素：
 - 16x16
 - 32x32
@@ -28,10 +28,10 @@
 - 48x48
 - 64x64
 
-> **重要说明：** Outlook 需要缓存图像资源的能力，以提高性能。 为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。 这将导致 Outlook 自动替代泛型或默认图像。    
+> **重要说明：** Outlook 需要缓存图像资源的能力，以提高性能。为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。这将导致 Outlook 自动替代泛型或默认图像。    
 
 
-## 资源示例 
+## <a name="resources-examples"></a>资源示例 
 
 ```XML
 <Resources>

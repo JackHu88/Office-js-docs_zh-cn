@@ -1,13 +1,13 @@
 
-# 向 SharePoint 上的外接程序目录发布任务窗格和内容外接程序
+# <a name="publish-task-pane-and-content-add-ins-to-an-add-in-catalog-on-sharepoint"></a>向 SharePoint 上的外接程序目录发布任务窗格和内容外接程序
 
-外接程序目录是 SharePoint Web 应用程序或 SharePoint Online 租户中的专用网站集，它托管 Office 和 SharePoint 外接程序的文档库。 管理员可以将 Office 外接程序清单文件上传到外接程序目录以供组织内使用。 当管理员将外接程序目录注册为受信任的目录时，用户可以从 Office 客户端应用程序中的插入 UI 中插入外接程序。
+外接程序目录是 SharePoint Web 应用程序或 SharePoint Online 租户中的专用网站集，它托管 Office 和 SharePoint 外接程序的文档库。管理员可以将 Office 外接程序清单文件上传到外接程序目录以供组织内使用。当管理员将外接程序目录注册为受信任的目录时，用户可以从 Office 客户端应用程序中的插入 UI 中插入外接程序。
 
->**注意：**SharePoint 上的外接程序目录不支持在[外接程序清单](../overview/add-in-manifests.md) 的 VersionOverrides 节点中实现的外接程序功能。
+>**注意：**SharePoint 上的外接程序目录不支持在[外接程序清单](../overview/add-in-manifests.md)的 VersionOverrides 节点中实现的外接程序功能。
 
-SharePoint 目录不支持 Office 2016 for Mac。 若要向 Mac 客户端部署 Office 外接程序，你必须将其提交到 [Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)。   
+SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 Office 外接程序，你必须将其提交到 [Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)。   
 
-## 在 SharePoint 上设置外接程序目录
+## <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>在 SharePoint 上设置外接程序目录
 
 1. 浏览到“**管理中心网站**”（“**开始**” > “**所有程序**” > “**Microsoft SharePoint 2013 产品**” > “**SharePoint 2013 管理中心**”）。
     
@@ -27,7 +27,7 @@ SharePoint 目录不支持 Office 2016 for Mac。 若要向 Mac 客户端部署 
     
 9. 若要向 Office 外接程序外接程序目录添加外接程序，请选择“**Office 外接程序**”。
 
-## 在 Office 365 上设置外接程序目录
+## <a name="to-set-up-an-add-in-catalog-on-office-365"></a>在 Office 365 上设置外接程序目录
 
 1. 在“Office 365 管理中心”页上，选择“**管理**”，然后选择“**SharePoint**”。
     
@@ -41,15 +41,15 @@ SharePoint 目录不支持 Office 2016 for Mac。 若要向 Mac 客户端部署 
     
 6. 指定网站地址。
     
-7. 将“**存储配额**”设置为可能的最低值（当前为 110）。 你将仅在该网站集上安装外接程序包，它们非常小。
+7. 将“**存储配额**”设置为可能的最低值（当前为 110）。你将仅在该网站集上安装外接程序包，它们非常小。
     
-8. 将“**服务器资源配额**”设置为 0（零）。 （服务器资源配额与限制性能不佳的沙盒解决方案有关，但你不会在外接程序目录网站上安装任何沙盒解决方案。）
+8. 将“**服务器资源配额**”设置为 0（零）。（服务器资源配额与限制性能不佳的沙盒解决方案有关，但你不会在外接程序目录网站上安装任何沙盒解决方案。）
     
 9. 选择“**确定**”。
     
-若要将外接程序添加到外接程序目录网站，请浏览至已创建的网站。 在左侧导航窗格中，选择“**Office 外接程序**”，然后选择“**新外接程序**”以上传 Office 外接程序清单文件。    
+若要将外接程序添加到外接程序目录网站，请浏览至已创建的网站。在左侧导航窗格中，选择“**Office 外接程序**”，然后选择“**新外接程序**”以上传 Office 外接程序清单文件。    
 
-## 发布到外接程序目录
+## <a name="publish-to-an-add-in-catalog"></a>发布到外接程序目录
 
 
 1. 浏览至外接程序目录：
@@ -66,7 +66,7 @@ SharePoint 目录不支持 Office 2016 for Mac。 若要向 Mac 客户端部署 
     
 3. 选择“**浏览**”，然后指定要上载的 [清单](../../docs/overview/add-in-manifests.md)。
     
-    此目录中的内容和任务窗格外接程序现在可从“**Office 外接程序**”对话框提供。 若要访问这些外接程序，请在“**插入**”选项卡上选择“**我的外接程序**”，然后选择“**我的组织**”。
+    此目录中的内容和任务窗格外接程序现在可从“**Office 外接程序**”对话框提供。若要访问这些外接程序，请在“**插入**”选项卡上选择“**我的外接程序**”，然后选择“**我的组织**”。
     
 将外接程序清单上载到“Office 外接程序”目录后，用户可以通过执行下列操作来访问外接程序：
 
@@ -81,7 +81,7 @@ SharePoint 目录不支持 Office 2016 for Mac。 若要向 Mac 客户端部署 
     
     `https:// _domain_ /sites/ _AddinCatalogSiteCollection_`
     
-3. 关闭并重新打开 Office 应用程序。 外接程序目录会出现在“**Office 外接程序**”对话框中。
+3. 关闭并重新打开 Office 应用程序。外接程序目录会出现在“**Office 外接程序**”对话框中。
     
 或者，管理员可以通过使用组策略来指定 SharePoint 上的 Office 外接程序目录。有关详细信息，请参阅 TechNet 提供的 [Office 外接程序概述](https://technet.microsoft.com/en-us/library/jj219429.aspx)中的"使用组策略管理用户安装和使用 Office 相关外接程序的方式"一节。
 

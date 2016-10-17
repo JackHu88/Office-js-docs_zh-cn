@@ -1,5 +1,5 @@
 
-# 适用于 Office 的 JavaScript API 参考
+# <a name="javascript-api-for-office-reference"></a>适用于 Office 的 JavaScript API 参考
 
 借助适用于 Office 的 JavaScript API，您可以创建可与 Office 主机应用程序中的对象模型进行交互的 Web 应用程序。您的应用程序将引用 office.js 库中，该库是一个脚本加载程序。Office.js 库加载适用于正在运行外接程序的 Office 应用程序的对象模型。您可以使用以下 JavaScript 对象模型：
 
@@ -10,7 +10,7 @@
 
 从 TOC 上方的下拉列表选择 Office 客户端，以便根据您的目标主机应用程序筛选内容。
 
-## 支持的主机应用程序
+## <a name="supported-host-applications"></a>支持的主机应用程序
 * Access
 * Excel
 * Outlook
@@ -20,7 +20,7 @@
 
 了解有关[支持的主机和其他要求](../docs/overview/requirements-for-running-office-add-ins.md)的详细信息。
 
-## 开放 API 规范
+## <a name="open-api-specifications"></a>开放 API 规范
 
 在我们设计和开发新的 API 以用于 Office 外接程序时，我们将使它们适用于[开放 API 规范](openspec.md)页的反馈。了解管道中的新增功能，并提供您对我们的设计规范的宝贵意见。
 

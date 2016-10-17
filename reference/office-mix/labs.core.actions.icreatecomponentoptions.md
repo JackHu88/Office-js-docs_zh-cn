@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.Actions.ICreateComponentOptions
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.actions.icreatecomponentoptions"></a>Labs.Core.Actions.ICreateComponentOptions
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 创建新的组件。
 
@@ -10,7 +10,7 @@ interface ICreateComponentOptions extends Core.IActionOptions
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

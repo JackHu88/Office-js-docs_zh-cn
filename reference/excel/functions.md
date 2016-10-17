@@ -1,21 +1,21 @@
-﻿# 工作表函数
+# <a name="worksheet-functions"></a>工作表函数
 用作可从 JavaScript 或 REST 中调用的 Microsoft Excel 工作表函数的容器。
 
-## 返回类型
+## <a name="return-type"></a>返回类型
 工作表函数返回 FunctionResult 对象。FunctionResult 对象具有两个属性。
 
 | 属性       | 类型    |说明|注释 |
 |:---------------|:--------|:----------|:-----|
-|value|string|返回应用指定的工作表函数的结果。||
-|错误|string|返回应用指定的工作表函数时的错误信息。||
+|value|字符串|返回应用指定的工作表函数的结果。||
+|错误|字符串|返回应用指定的工作表函数时的错误信息。||
 
 
-## 语法
+## <a name="syntax"></a>语法
 ```js
 workbook.functions.functionMethod();
 ```
 
-## 示例
+## <a name="examples"></a>示例
 下面是跟踪 Excel 中不同工具销售情况的示例表。我们将使用此表中的数据解释工作表函数的工作方式。
 
 ![示例](../../images/worksheetfunctionschainingResult.JPG)
@@ -68,7 +68,7 @@ workbook.functions.functionMethod();
 
 ```
 
-## [受支持的工作表函数的列表](#受支持的工作表函数的列表)
+## <a name="[list-of-supported-worksheet-functions](#list)"></a>[受支持的工作表函数的列表](#list)
 
 | 方法           | 返回类型    |说明|注释 |
 |:---------------|:--------|:----------|:-----|
@@ -113,7 +113,7 @@ workbook.functions.functionMethod();
 |[BITLSHIFT 函数](https://support.office.com/en-us/article/BITLSHIFT-function-c55bb27e-cacd-4c7c-b258-d80861a03c9c)| FunctionResult |返回按照 shift_amount 位数左移后得到的数值|
 |[BITOR 函数](https://support.office.com/en-us/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2)| FunctionResult |返回 2 个数字的按位“或”|
 |[BITRSHIFT 函数](https://support.office.com/en-us/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c)| FunctionResult |返回按照 shift_amount 位数右移后得到的数值|
-|[BITXOR 函数](https://support.office.com/en-us/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4)| FunctionResult |返回两个数字的按位“异或”值|
+|[BITXOR Function](https://support.office.com/en-us/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4)| FunctionResult |返回两个数字的按位“异或”值|
 |[CEILING.MATH 函数](https://support.office.com/en-us/article/CEILINGMATH-function-80f95d2f-b499-4eee-9f16-f795a8e306c8)| FunctionResult |将数值向上舍入为最接近的整数或最接近的基数的倍数|
 |[CEILING.PRECISE 函数](https://support.office.com/en-us/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb)| FunctionResult |将数值四舍五入到最接近的整数或最接近的基数的倍数。不论数字是否带有符号，都将数字向上舍入。|
 |[CHAR 函数](https://support.office.com/en-us/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a)| FunctionResult |返回由代码数字指定的字符|
@@ -252,7 +252,7 @@ workbook.functions.functionMethod();
 |[IMPOWER 函数](https://support.office.com/en-us/article/IMPOWER-function-210fd2f5-f8ff-4c6a-9d60-30e34fbdef39)| FunctionResult |返回复数的整数幂|
 |[IMPRODUCT 函数](https://support.office.com/en-us/article/IMPRODUCT-function-2fb8651a-a4f2-444f-975e-8ba7aab3a5ba)| FunctionResult |返回从 2 到 255 个复数的乘积|
 |[IMREAL 函数](https://support.office.com/en-us/article/IMREAL-function-d12bc4c0-25d0-4bb3-a25f-ece1938bf366)| FunctionResult |返回复数的实部系数|
-|[IMSEC 函数](https://support.office.com/en-us/article/IMSEC-function-6df11132-4411-4df4-a3dc-1f17372459e0)| FunctionResult |返回复数的正割值|
+|[IMSEC 函数](https://support.office.com/en-us/article/IMSEC-function-6df11132-4411-4df4-a3dc-1f17372459e0)IMSEC 函数| FunctionResult |返回复数的正割值|
 |[IMSECH 函数](https://support.office.com/en-us/article/IMSECH-function-f250304f-788b-4505-954e-eb01fa50903b)| FunctionResult |返回复数的双曲正割值|
 |[IMSIN 函数](https://support.office.com/en-us/article/IMSIN-function-1ab02a39-a721-48de-82ef-f52bf37859f6)| FunctionResult |返回复数的正弦值|
 |[IMSINH 函数](https://support.office.com/en-us/article/IMSINH-function-dfb9ec9e-8783-4985-8c42-b028e9e8da3d)| FunctionResult |返回复数的双曲正弦值|
@@ -262,7 +262,7 @@ workbook.functions.functionMethod();
 |[IMTAN 函数](https://support.office.com/en-us/article/IMTAN-function-8478f45d-610a-43cf-8544-9fc0b553a132)| FunctionResult |返回复数的正切值|
 |[INT 函数](https://support.office.com/en-us/article/INT-function-a6c4af9e-356d-4369-ab6a-cb1fd9d343ef)| FunctionResult |将数值向下舍入到最接近的整数|
 |[INTRATE 函数](https://support.office.com/en-us/article/INTRATE-function-5cb34dde-a221-4cb6-b3eb-0b9e55e1316f)| FunctionResult |返回完全投资型债券的利率|
-|[IPMT 函数](https://support.office.com/en-us/article/IPMT-function-5cce0ad6-8402-4a41-8d29-61a0b054cb6f)| FunctionResult |返回给定期间内投资所支付的利息|
+|[IPmt 函数](https://support.office.com/en-us/article/IPMT-function-5cce0ad6-8402-4a41-8d29-61a0b054cb6f)| FunctionResult |返回给定期间内投资所支付的利息|
 |[IRR 函数](https://support.office.com/en-us/article/IRR-function-64925eaa-9988-495b-b290-3ad0c163c1bc)| FunctionResult |返回一系列现金流的内部收益率|
 |[ISERR 函数](https://support.office.com/en-us/article/ISERR-function-0f2d7971-6019-40a0-a171-f2d869135665)| FunctionResult |如果数值是除 #N/A 之外的错误值，则返回 TRUE|
 |[ISERROR 函数](https://support.office.com/en-us/article/ISERROR-function-0f2d7971-6019-40a0-a171-f2d869135665)| FunctionResult |如果数值是任何错误值，则一律返回 TRUE|
@@ -315,7 +315,7 @@ workbook.functions.functionMethod();
 |[NORM.S.DIST 函数](https://support.office.com/en-us/article/NORMSDIST-function-1e787282-3832-4520-a9ae-bd2a8d99ba88)| FunctionResult |返回标准正态分布函数值|
 |[NORM.S.INV 函数](https://support.office.com/en-us/article/NORMSINV-function-d6d556b4-ab7f-49cd-b526-5a20918452b1)| FunctionResult |返回标准正态分布的反函数|
 |[NOT 函数](https://support.office.com/en-us/article/NOT-function-9cfc6011-a054-40c7-a140-cd4ba2d87d77)| FunctionResult |反转其参数的逻辑|
-|[Now 函数](https://support.office.com/en-us/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46)| FunctionResult |返回当前日期和时间的序列号|
+|[NOW 函数](https://support.office.com/en-us/article/NOW-function-3337fd29-145a-4347-b2e6-20c904739c46)| FunctionResult |返回当前日期和时间的序列号|
 |[NPER 函数](https://support.office.com/en-us/article/NPER-function-240535b5-6653-4d2d-bfcf-b6a38151d815)| FunctionResult |返回一项投资的周期数量|
 |[NPV 函数](https://support.office.com/en-us/article/NPV-function-8672cb67-2576-4d07-b67b-ac28acf2a568)| FunctionResult |基于一系列定期现金流和贴现率返回投资的净现值|
 |[NUMBERVALUE 函数](https://support.office.com/en-us/article/NUMBERVALUE-function-1b05c8cf-2bfa-4437-af70-596c7ea7d879)| FunctionResult |按独立于区域设置的方式将文本转换为数字|

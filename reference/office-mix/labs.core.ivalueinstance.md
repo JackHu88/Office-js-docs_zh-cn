@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.IValueInstance
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.ivalueinstance"></a>Labs.Core.IValueInstance
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 [Labs.Core.IValue](../../reference/office-mix/labs.core.ivalue.md) 对象实例，其中包含数值数据（如果有的话）。
 
@@ -10,7 +10,7 @@ interface IValueInstance
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

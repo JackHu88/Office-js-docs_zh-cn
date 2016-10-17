@@ -1,12 +1,12 @@
 
-# 使用 Exchange 的标识令牌对用户进行身份验证
+# <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>使用 Exchange 的标识令牌对用户进行身份验证
 
 您可以为信息服务实现单一登录 (SSO) 身份验证方案，从而让使用 Outlook 外接程序的客户能够通过其 Exchange 服务器凭据连接到您的服务。本文演示如何使用简单的基于  **Dictionary** 对象的用户数据存储匹配凭据。
 
  >**注释**  这只是 SSO 的一个简单示例，不应在生产代码中使用。和以往一样，在处理标识和身份验证事宜时，一定要确保您的代码满足组织的安全要求。
 
 
-## 使用 SSO 身份验证的先决条件
+## <a name="prerequisites-for-using-sso-authentication"></a>使用 SSO 身份验证的先决条件
 
 
 若要将标识令牌用于 SSO，您的服务应用程序需要具有有效的标识令牌。在以下文章中，您可以了解标识令牌，以及如何请求和验证标识令牌：
@@ -19,7 +19,7 @@
 - [使用 Exchange 令牌验证库](../outlook/use-the-token-validation-library.md)（如果使用的是托管代码），或 [验证 Exchange 标识令牌](../outlook/validate-an-identity-token.md)（如果您要编写自己的令牌验证方法）。
     
 
-## 对用户进行身份验证
+## <a name="authenticate-a-user"></a>对用户进行身份验证
 
 
 以下代码示例演示一个简单身份验证对象，该对象将匹配包含一组服务凭据的标识令牌所代表的唯一标识符。 **TokenAuthentication** 类提供了方法 **GetResponseFromService** ，后者将返回先前经过身份验证的令牌的响应，或者要求用户提供可以进行身份验证并与标识令牌关联的凭据。代码并不完整；它假设您将提供以下对象和方法。
@@ -155,7 +155,7 @@
 ```
 
 
-## 使用托管验证库对用户进行身份验证
+## <a name="authenticating-a-user-with-the-managed-validation-library"></a>使用托管验证库对用户进行身份验证
 
 
 如果要使用托管库验证标识令牌，您无需计算唯一键。 **AppIdentityToken** 类的 **UniqueUserIdentification** 属性可直接用作用户的唯一键。以下代码示例演示为使用 **AppIdentityToken** 类而需要对前面示例中的 **GetResponseFromService** 方法所进行的修改。
@@ -233,7 +233,7 @@
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

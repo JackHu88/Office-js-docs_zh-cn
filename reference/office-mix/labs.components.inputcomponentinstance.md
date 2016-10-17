@@ -1,7 +1,7 @@
-﻿
-# Labs.Components.InputComponentInstance
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.components.inputcomponentinstance"></a>Labs.Components.InputComponentInstance
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示输入组件的实例。
 
@@ -10,19 +10,19 @@ class InputComponentInstance extends Labs.ComponentInstance<Components.InputComp
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |属性|说明|
 |:-----|:-----|
 | `public var component: Components.IInputComponentInstance`|由此类表示的基础 [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) 对象。|
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor(component: Components.IInputComponentInstance)`
 
@@ -33,9 +33,9 @@ class InputComponentInstance extends Labs.ComponentInstance<Components.InputComp
 
 |参数|说明|
 |:-----|:-----|
-| _组件_|用来创建此类的 [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md)。|
+| _component_|用来创建此类的 [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md)。|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.InputComponentAttempt`
 

@@ -1,5 +1,5 @@
 
-# Error.code 属性
+# <a name="error.code-property"></a>Error.code 属性
 获取错误的数字代码。
 
 |||
@@ -12,17 +12,17 @@ var errCode = asyncResult.error.code;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 错误代码，类型为**数字**。
 
 
-## 备注
+## <a name="remarks"></a>备注
 
 **Error** 对象及其属性可从 [AsyncResult](../../reference/shared/asyncresult.md) 对象进行访问，后者在作为异步数据操作的 _callback_ 自变量传递的函数中返回。
 
 
-## 示例
+## <a name="example"></a>示例
 
 若要导致引发错误，选择表或矩阵，然后调用  `setText` 函数。
 
@@ -46,12 +46,12 @@ function write(message){
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 
@@ -71,7 +71,7 @@ function write(message){
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

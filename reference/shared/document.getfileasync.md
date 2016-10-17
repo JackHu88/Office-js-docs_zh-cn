@@ -1,35 +1,35 @@
-﻿
-# Document.getFileAsync 方法
+
+# <a name="document.getfileasync-method"></a>Document.getFileAsync 方法
 以高达 4194304 字节 (4 MB) 的切片形式返回整个文档文件。对于 iOS 外接程序而言，支持高达 65536 (64 KB) 的文件切片。请注意，若指定文件切片的大小上限超出允许限制，则会导致一个“内部错误”故障。 
 
 |||
 |:-----|:-----|
 |**主机：**|Excel、PowerPoint 和 Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|文件|
-|**文件中的最后更改**|1.1|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|文件|
+|**包含 File 最后一次更改的版本**|1.1|
 
 ```js
 Office.context.document.getFileAsync(fileType [, options], callback);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 
 
 |**名称**|**类型**|**说明**|**支持说明**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|指定返回文件的格式。必需。<br/><table><tr><th>主机</th><th>受支持的文件类型</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>Windows 桌面上的 PowerPoint</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr><tr><td>Windows 桌面、MAC 和 iPad 上的 Word</td><td>Office.FileType.Compressed、Office.FileType.Pdf 和 Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf 和 Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr></table>|**在 1.1 中已更改**，请参阅[支持历史记录](#支持历史记录)|
-| _选项_|**object**|指定以下任一[可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|指定返回文件的格式。必需。<br/><table><tr><th>Host</th><th>受支持的文件类型</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>Windows 桌面上的 PowerPoint</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr><tr><td>Windows 桌面、MAC 和 iPad 上的 Word</td><td>Office.FileType.Compressed、Office.FileType.Pdf 和 Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf 和 Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed、Office.FileType.Pdf</td></tr></table>|**包含更改的版本** 1.1，请参阅 [支持历史记录](#support-history)|
+| _options_|**object**|指定以下任一 [可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
 | _sliceSize_|**number**|指定最多 4194304 字节 (4 MB) 的所需切片大小（以字节为单位）。如果未指定，则使用 4194304 字节 (4 MB) 的默认切片大小。 ||
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string** 或 **undefined**|在  **AsyncResult** 对象中未经改动的返回的任何类型的用户定义项。||
-| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为  **AsyncResult** 。||
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string** 或 **undefined**|在 **AsyncResult** 对象中未经改动的返回的任何类型的用户定义项。||
+| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为 **AsyncResult** 。||
 
-## 回调值
+## <a name="callback-value"></a>回调值
 
 当执行您传递给 _callback_ 参数的函数时，它会接收您可以从回调函数的唯一参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
-在传递给  **getFileAsync** 方法的回调函数中，您可以使用 **AsyncResult** 对象的属性返回以下信息。
+在传递给 **getFileAsync** 方法的回调函数中，可以使用 **AsyncResult** 对象的属性返回以下信息。
 
 
 
@@ -38,13 +38,13 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|访问 [File](../../reference/shared/file.md) 对象。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|确定操作是成功还是失败。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|如果操作失败，则访问提供错误信息的 [Error](../../reference/shared/error.md) 对象。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果您将用户定义的一个  **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果用户定义的一个 **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 对于运行在 Office 主机应用程序中（而非 Office for iOS 中）的外接程序， **getFileAsync** 方法支持以切片形式获取至多 4194304 字节 (4 MB) 的文件。对于运行在 iOS 的 Office 应用程序中的外接程序， **getFileAsync** 方法支持以切片形式获取至多 65536 (64 KB) 的文件。
 
-可以使用以下枚举或文本值指定  _fileType_ 参数。
+可以使用以下枚举或文本值指定 _fileType_ 参数。
 
 
 **FileType 枚举**
@@ -58,7 +58,7 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 内存中不允许两个以上的文档；否则 **getFileAsync** 操作将会失败。处理完文件后，使用 [File.closeAsync](../../reference/shared/file.closeasync.md) 方法关闭文件。
 
 
-## 示例 - 获取 Office Open XML（"压缩"）格式的文档
+## <a name="example---get-a-document-in-office-open-xml-("compressed")-format"></a>示例 - 获取 Office Open XML（"压缩"）格式的文档
 
 以下示例以切片形式获取至多 65536 字节 (64 KB) 的 Office Open XML（"压缩"）格式的文档。注意：本示例中对  `app.showNotification` 的实现来自于 Office 外接程序的 Visual Studio 模板。
 
@@ -130,7 +130,7 @@ function onGotAllSlices(docdataSlices) {
 ```
 
 
-## 示例 - 获取 PDF 格式的文档
+## <a name="example---get-a-document-in-pdf-format"></a>示例 - 获取 PDF 格式的文档
 
 下面的示例获取 PDF 格式的文档。
 
@@ -156,12 +156,12 @@ Office.context.document.getFileAsync(Office.FileType.Pdf,
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -177,11 +177,11 @@ Office.context.document.getFileAsync(Office.FileType.Pdf,
 |:-----|:-----|
 |**在要求集中可用**|文件|
 |**最低权限级别**|[ReadAllDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 |**版本**|**更改内容**|

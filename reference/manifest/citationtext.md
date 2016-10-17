@@ -1,11 +1,11 @@
 
-# CitationText 元素
+# <a name="citationtext-element"></a>CitationText 元素
 指定该词典的引文样本文字。
 
  **外接程序类型：**内容、任务窗格、邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -13,12 +13,12 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

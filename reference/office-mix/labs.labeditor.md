@@ -1,19 +1,19 @@
 
-# Labs.LabEditor
+# <a name="labs.labeditor"></a>Labs.LabEditor
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
-**LabEditor** 对象允许你编辑给定实验室，并获取和设置与实验室关联的配置数据。
+**LabEditor** 对象允许编辑指定实验室，并获取和设置与实验室关联的配置数据。
 
 ```
 class LabEditor
 ```
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
-### getConfiguration
+### <a name="getconfiguration"></a>getConfiguration
 
  `public function getConfiguration(callback: Labs.Core.ILabCallback<Labs.Core.IConfiguration>): void`
 
@@ -22,11 +22,11 @@ class LabEditor
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|检索完配置后触发的回调函数。|
 
-### setConfiguration
+### <a name="setconfiguration"></a>setConfiguration
 
  `public function getConfiguration(callback: Labs.Core.ILabCallback<Labs.Core.IConfiguration>): void`
 
@@ -35,12 +35,12 @@ class LabEditor
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _configuration_|要设置的配置。|
 | _callback_|设置完配置后触发的回调函数。|
 
-### done
+### <a name="done"></a>done
 
  `public function done(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -49,6 +49,6 @@ class LabEditor
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|完成实验室编辑器操作后触发的回调函数。|

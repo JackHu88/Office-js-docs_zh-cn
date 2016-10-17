@@ -1,43 +1,43 @@
-﻿# OfficeExtension.Error 对象（适用于 Word 的 JavaScript API）
+# <a name="officeextension.error-object-(javascript-api-for-word)"></a>OfficeExtension.Error 对象（适用于 Word 的 JavaScript API）
 
 表示使用 Word JavaScript API 时出现的错误。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
-|code|string|获取一个指示错误类型的值。 值可以是“AccessDenied”、“GeneralException”、“ActivityLimitReached”、“InvalidArgument”、“ItemNotFound”或“NotImplemented”。 <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
+|code|字符串|获取一个指示错误类型的值。值可以是“AccessDenied”、“GeneralException”、“ActivityLimitReached”、“InvalidArgument”、“ItemNotFound”或“NotImplemented”。 <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
 |debugInfo|string|获取指示出错时所发生的问题的一个值。此值仅在开发/调试过程中使用。  |
-|邮件 |string| 获取与错误代码对应的本地化的人工读取字符串。|
-|name |string| 获取一个始终为“OfficeExtension.Error”的值。 |
+|邮件 |字符串| 获取与错误代码对应的本地化的人工读取字符串。|
+|name |字符串| 获取一个始终为“OfficeExtension.Error”的值。 |
 |traceMessages |string[]| 获取值数组，这些值与通过 context.trace(); 设置的检测消息对应 |
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问[示例](#property-access-examples)_。
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|string|以下面的格式返回错误代码和消息值：“{0}: {1}”、代码、消息。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### toString()
+### <a name="tostring()"></a>toString()
 以下面的格式返回错误代码和消息值：“{0}: {1}”、代码、消息。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 error.toString()
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无。
 
-#### 返回
+#### <a name="returns"></a>返回
 string
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -61,9 +61,9 @@ Word.run(function (context) {
 
 ```
 
-## 属性访问示例
+## <a name="property-access-examples"></a>属性访问示例
 
-### 跟踪消息检测
+### <a name="trace-message-instrumentation"></a>跟踪消息检测
 
 下面的示例显示如何检测批处理命令，以确定错误发生的位置。第一批成功插入文档中的前两个段落，未导致任何错误。第二批成功插入第三和第四段落，但在调用以插入第五段时失败。批处理中在该失败命令之后的所有其他命令都不执行，包括添加第五个跟踪消息的命令。在这种情况下，插入第四段之后及添加第五个跟踪消息之前，出现了错误。
 

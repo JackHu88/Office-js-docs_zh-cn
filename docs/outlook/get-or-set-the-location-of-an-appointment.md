@@ -1,5 +1,5 @@
 
-# 在 Outlook 中撰写约会时获取或设置位置
+# <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>在 Outlook 中撰写约会时获取或设置位置
 
 适用于 Office 的 JavaScript API 提供了异步方法（[getAsync](../../reference/outlook/Location.md) 和 [setAsync](../../reference/outlook/Location.md)）以获取和设置用户正在撰写的约会的位置。这些异步方法仅对撰写外接程序可用。若要使用这些方法，请确保已将 Outlook 的外接程序清单相应地设置为在撰写窗体中激活外接程序，如[创建适用于撰写窗体的 Outlook 外接程序](../outlook/compose-scenario.md)所述。
 
@@ -26,7 +26,7 @@ item.location.getAsync
 与适用于 Office 的 JavaScript API 中的大多数异步方法相同，**getAsync** 和 **setAsync** 采用可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md)。
 
 
-## 获取位置
+## <a name="to-get-the-location"></a>获取位置
 
 
 本节演示获取用户正在撰写的约会的位置、并显示位置的代码示例。此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会激活外接程序，如下所述。
@@ -76,7 +76,7 @@ function write(message){
 ```
 
 
-## 设置位置
+## <a name="to-set-the-location"></a>设置位置
 
 
 本节演示设置用户正在撰写的约会的位置的代码示例。与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会激活外接程序。
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

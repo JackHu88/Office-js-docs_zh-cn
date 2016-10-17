@@ -1,9 +1,9 @@
 
-# 使用 Exchange 标识令牌对 Outlook 外接程序进行身份验证
+# <a name="authenticate-an-outlook-add-in-by-using-exchange-identity-tokens"></a>使用 Exchange 标识令牌对 Outlook 外接程序进行身份验证
 
 您的 Outlook 外接程序可以从 Internet 上的任何地方为您的客户提供信息，无论是从承载该外接程序的服务器、您的内部网络还是云中的其他位置。但是，如果该信息受保护，则您的外接程序将需要一种方法将 Exchange 电子邮件帐户与您的信息服务相关联。Exchange 2013 可以提供一个标识发出请求的电子邮件帐户的令牌，以此来为您的外接程序启用单一登录 (SSO)。您可将此令牌与您应用程序的注册用户相关联，以便每次外接程序连接到您的服务时可以识别用户。
 
-## 标识令牌
+## <a name="identity-tokens"></a>标识令牌
 
 
 我们的两个示例外接程序使用公开信息，一个显示邮件中地址的 Bing 地图，另一个显示邮件中 YouTube 视频链接的预览。但是，您的外接程序也可以访问非公开信息。您可以使用承载您外接程序的服务器将外接程序链接到您内部网络中的信息，或链接到云中的任何位置。
@@ -36,13 +36,13 @@
 - [使用 Exchange 的标识令牌对用户进行身份验证](../outlook/validate-an-identity-token.md)
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
 - [Outlook 外接程序](../outlook/outlook-add-ins.md)
     
-- [从 Outlook 外接程序调用 web 服务](../outlook/web-services.md)
+- [从 Outlook 外接程序调用 Web 服务](../outlook/web-services.md)
     
 
 

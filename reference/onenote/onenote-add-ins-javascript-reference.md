@@ -1,4 +1,4 @@
-# OneNote 外接程序 JavaScript API 参考
+# <a name="onenote-add-ins-javascript-api-reference"></a>OneNote 外接程序 JavaScript API 参考
 
 *适用于：OneNote Online*
 
@@ -46,9 +46,9 @@
 
   - [TableCellCollection](tablecellcollection.md)：TableRow 中 TableCell 对象的集合。
         
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [OneNote JavaScript API 编程概述](../../docs/onenote/onenote-add-ins-programming-overview.md)
-- [生成你的第一个 OneNote 外接程序](../../docs/onenote/onenote-add-ins-getting-started.md)
+- [生成第一个 OneNote 外接程序](../../docs/onenote/onenote-add-ins-getting-started.md)
 - [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

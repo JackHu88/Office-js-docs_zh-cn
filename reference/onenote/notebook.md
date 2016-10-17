@@ -1,54 +1,54 @@
-﻿# 笔记本对象（适用于 OneNote 的 JavaScript API）
+# <a name="notebook-object-(javascript-api-for-onenote)"></a>笔记本对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_   
 
 
-表示一个 OneNote 笔记本。 笔记本包含分区组合和分区。
+表示一个 OneNote 笔记本。笔记本包含分区组合和分区。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|笔记本的客户端 url 只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
-|id|string|获取笔记本的 ID。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
-|名称|string|获取笔记本的名称。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
+|clientUrl|字符串|笔记本的客户端 url只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-clientUrl)|
+|id|字符串|获取笔记本的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
+|name|字符串|获取笔记本的名称。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
-_查看属性访问 [示例](#示例)。_
+_请参阅属性访问 [示例。](#property-access-examples)_
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|sectionGroups|[Sectiongroupcollection](sectiongroupcollection.md)|笔记本中的分区组。 只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
-|分区|[SectionCollection](sectioncollection.md)|笔记本中的分区。 只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
+|sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|笔记本中的分区组。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
+|sections|[SectionCollection](sectioncollection.md)|笔记本中的分区。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|[addSection(name:String)](#addsectionname-string)|[节](section.md)|向笔记本结尾添加新分区。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
-|[addSectionGroup(name:String)](#addsectiongroupname-string)|[分区组](sectiongroup.md)|将新的分区组添加到笔记本结尾。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
+|[addSection(name:String)](#addsectionname-string)|[Section](section.md)|添加新分区至笔记本结尾。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSection)|
+|[addSectionGroup(name:String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|将新的分区组添加到笔记本结尾。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### addSection(name:String)
+### <a name="addsection(name:-string)"></a>addSection(name:String)
 添加新分区至笔记本结尾。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 notebookObject.addSection(name);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|name|string|新节的名称。|
+|name|字符串|新节的名称。|
 
-#### 返回
-[节](section.md)
+#### <a name="returns"></a>返回
+[Section](section.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js          
 OneNote.run(function (context) {
 
@@ -76,23 +76,23 @@ OneNote.run(function (context) {
 ```
 
 
-### addSectionGroup(name:String)
+### <a name="addsectiongroup(name:-string)"></a>addSectionGroup(name:String)
 将新的分区组添加到笔记本结尾。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 notebookObject.addSectionGroup(name);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|name|string|新节的名称。|
+|name|字符串|新节的名称。|
 
-#### 返回
-[分区组](sectiongroup.md)
+#### <a name="returns"></a>返回
+[SectionGroup](sectiongroup.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js          
 OneNote.run(function (context) {
 
@@ -119,22 +119,22 @@ OneNote.run(function (context) {
 }); 
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 **id**
 ```js
 OneNote.run(function (context) {
@@ -161,7 +161,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**名称**
+**name**
 ```js
 OneNote.run(function (context) {
         
@@ -213,7 +213,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**分区**
+**sections**
 ```js
 OneNote.run(function (context) {
 

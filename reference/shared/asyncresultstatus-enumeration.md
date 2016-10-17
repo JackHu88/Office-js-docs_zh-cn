@@ -1,5 +1,5 @@
 
-# AsyncResultStatus 枚举
+# <a name="asyncresultstatus-enumeration"></a>AsyncResultStatus 枚举
 指定异步调用的结果。 
 
 |||
@@ -12,23 +12,23 @@ Office.AsyncResultStatus
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **值**
 
 
-|**枚举**|**值**|**说明**|
+|**枚举**|**值**|**Description**|
 |:-----|:-----|:-----|
 |Office.AsyncResultStatus.Succeeded|"succeeded"|调用成功。|
 |Office.AsyncResultStatus.Failed|"failed"|调用失败。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 由 [AsyncResult](../../reference/shared/asyncresult.status.md) 对象的 [status](../../reference/shared/asyncresult.md) 属性返回。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。
@@ -40,13 +40,13 @@ Office.AsyncResultStatus
 **支持的主机（按平台）**
 
 
-||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**Office for Mac**|
+||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**适用于 Mac 的 Office**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**|Y|||||
 |**Excel**|Y|Y|Y|||
 |**Outlook**|Y|Y||Y|Y|
 |**PowerPoint**|Y|Y|Y|||
-|**Project**|Y|||||
+|**项目**|Y|||||
 |**Word**|Y||Y|||
 
 |||
@@ -55,7 +55,7 @@ Office.AsyncResultStatus
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 |**版本**|**更改内容**|

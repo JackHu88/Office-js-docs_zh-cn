@@ -1,11 +1,11 @@
 
-# 配置和编辑 Office Mix 的 LabsJS 实验室
+# <a name="configuring-and-editing-labsjs-labs-for-office-mix"></a>配置和编辑 Office Mix 的 LabsJS 实验室
 
 
 
 Office Mix 提供用于获取和设置实验室配置的 office.js 方法。配置向 Office Mix 指示您创建的实验室类型，以及实验室将发回的数据类型。此信息用于收集分析数据并将其可视化。
 
-## 获取实验室编辑器
+## <a name="getting-the-lab-editor"></a>获取实验室编辑器
 
 实验室编辑器 [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md) 对象允许您编辑实验室并获取和设置您的实验室配置。当您编辑完实验室之后，必须调用 **Done** 方法。但是，调用 **Done** 方法并非必需的，除非您尝试使用或运行您正在编辑的实验室。请注意，一次只能打开实验室的一个实例。
 
@@ -67,17 +67,17 @@ labEditor.getConfiguration((err, configuration) => {
 ```
 
 
-## 关闭编辑器
+## <a name="closing-the-editor"></a>关闭编辑器
 
 要关闭编辑器，请在编辑完实验室之后对编辑器调用  **Done** 方法。请注意，您无法同时使用和编辑实验室。但是，调用 **Done** 之后，您可以编辑或运行实验室。
 
 
-## 与实验室交互
+## <a name="interacting-with-a-lab"></a>与实验室交互
 
 设置实验室配置后，即表示您已准备好开始与实验室交互。当实验室在 PowerPoint 内运行时，会对交互进行模拟。但是，当实验室在 Office Mix 课程播放器内运行时，数据将存储在 Office Mix 数据库中并在分析时使用。
 
 
-### 获取实验室实例
+### <a name="getting-the-lab-instance"></a>获取实验室实例
 
 您可使用 [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md) 对象与实验室交互，该对象是为当前用户配置的实验室的实例。要运行（或使用）实验室，请调用 [Labs.takeLab](../../../reference/office-mix/labs.takelab.md) 函数。
 
@@ -93,7 +93,7 @@ Labs.takeLab((err, labInstance) => {
 实例对象包含一系列组件实例（ [Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md)、 [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)），这些实例会映射到您在配置中指定的组件。实际上，实例就是配置的转换版本，用于将服务器端 ID 附加到实例对象，以及在必要时对用户隐藏某些字段（例如提示、答案等）。
 
 
-### 管理状态
+### <a name="managing-state"></a>管理状态
 
 状态是与运行指定实验室的用户相关的临时存储。您可以使用存储保存实验室后续调用之间的信息。例如，编程实验室可以存储用户当前进行的工作。
 
@@ -120,7 +120,7 @@ labInstance.getState((err, state) => {
 ```
 
 
-## 组件实例和结果
+## <a name="component-instances-and-results"></a>组件实例和结果
 
 接下来将概述如何实施四种组件类型的实例，并提供了组件方法的简短示例。 
 
@@ -178,7 +178,7 @@ hints[0].getValue((err, hint) => {
 ```
 
 
-### ActivityComponentInstance
+### <a name="activitycomponentinstance"></a>ActivityComponentInstance
 
 
 使用  **ActivityComponentInstace** 对象跟踪用户与活动组件的交互。该类提供了 **complete** 方法，以指示用户已完成与活动的交互。方法可以指示用户已完成分配的任务、读取或与活动相关的任何其他端点。以下代码显示了如何使用 **complete** 方法。
@@ -191,7 +191,7 @@ attempt.complete((err, unused) => {
 ```
 
 
-### ChoiceComponentInstance
+### <a name="choicecomponentinstance"></a>ChoiceComponentInstance
 
 
 使用  **ChoiceComponentInstance** 对象跟踪用户与选择组件的交互。选择组件是将向用户显示他们需要从中选择的选项列表的问题。这些选项可能是，也可能不是正确答案。该类提供两个主要方法： **getSubmissions** 和 **submit**。 **getSubmissions** 方法允许您检索之前存储的提交； **submit** 方法允许存储新的提交。以下代码示例说明了如何使用这两个方法。
@@ -214,7 +214,7 @@ this._attempt.submit(
 ```
 
 
-### InputComponentInstance
+### <a name="inputcomponentinstance"></a>InputComponentInstance
 
 
 使用  **InputComponentInstance** 对象跟踪用户与输入组件的交互。该类提供两个主要方法： **getSubmission** 和 **submit**。 **getSubmissions** 方法允许您检索之前存储的提交； **submit** 方法允许您存储新的提交。以下代码段说明了如何使用 **getSubmissions** 方法。
@@ -239,7 +239,7 @@ this._attempt.submit(
 ```
 
 
-### DynamicComponentInstance
+### <a name="dynamiccomponentinstance"></a>DynamicComponentInstance
 
 
 使用  **DynamicComponentInstance** 对象跟踪用户与动态组件的交互。该类中的主要方法包括 **getComponents**、 **createComponent** 和 **close**。
@@ -297,11 +297,11 @@ dynamicComponentInstance.close((err, unused) => {
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
 - [Office Mix 外接程序](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [演练：为 Office Mix 创建第一个实验室](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
+- [演练︰创建第一个 Office Mix 实验室](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

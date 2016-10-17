@@ -1,11 +1,11 @@
 
-# TargetDialect 元素
+# <a name="targetdialect-element"></a>TargetDialect 元素
  定义该词典支持的、表示为区域性名称字符串的方言。
 
  **外接程序类型：**任务窗格
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -15,17 +15,17 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 
 
-## 注解
+## <a name="remarks"></a>注解
 
 指定值采用 BCP 47 语言标记格式，如 `"en-US"`。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

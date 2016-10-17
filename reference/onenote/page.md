@@ -1,60 +1,60 @@
-﻿# 页面对象（适用于 OneNote 的 JavaScript API）
+# <a name="page-object-(javascript-api-for-onenote)"></a>页面对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_   
 
 
 表示一个 OneNote 页面。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
-|clientUrl|string|页面的客户端 url 只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
-|id|string|获取页面的 ID。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
+|clientUrl|字符串|页面的客户端 url只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
+|id|字符串|获取页面的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
 |pageLevel|int|获取或设置页面的缩进级别。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
-|标题|string|获取或设置页面的标题。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
-|webUrl|string|页面的 Web URL。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
+|title|字符串|获取或设置页面的标题。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
+|webUrl|string|页面的 Web URL。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
 
-_查看属性访问 [示例](#示例)。_
+_请参阅属性访问 [示例。](#property-access-examples)_
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|内容|[PageContentCollection](pagecontentcollection.md)|页面上 PageContent 对象的集合。 只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
-|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|页面上墨迹的文本解释。 如果没有墨迹分析信息，则返回 null。 只读。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
-|parentSection|[分区](section.md)|获取包含页面的分区。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
+|内容|[PageContentCollection](pagecontentcollection.md)|页面上 PageContent 对象的集合。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
+|inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|页面上墨迹的文本解释。如果没有墨迹分析信息，则返回 null。只读。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
+|parentSection|[Section](section.md)|获取包含页面的分区。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|[addOutline(left: double, top: double, html:String)](#addoutlineleft-double-top-double-html-string)|[分级显示](outline.md)|将“边框”添加到指定位置的页面。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
+|[addOutline(left: double, top: double, html:String)](#addoutlineleft-double-top-double-html-string)|[Outline](outline.md)|添加 Outline 至指定位置的页面。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-addOutline)|
 |[copyToSection(destinationSection:Section)](#copytosectiondestinationsection-section)|[Page](page.md)|将此页复制到指定的分区中。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-copyToSection)|
-|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|在当前页之前或之后插入一个新页面。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
+|[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|在当前分区之前或之后插入一个新的页面。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### addOutline(left: double, top: double, html:String)
+### <a name="addoutline(left:-double,-top:-double,-html:-string)"></a>addOutline(left: double, top: double, html:String)
 添加 Outline 至指定位置的页面。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 pageObject.addOutline(left, top, html);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |left|double|顶部的左边位置，Outline 的左角。|
 |top|double|顶部的顶层位置，Outline 的左角。|
-|html|string|描述边框的可视化演示文稿的 HTML 字符串。 请查看 OneNote 外接程序 JavaScript API [支持的 HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)。|
+|html|字符串|描述边框的可视化演示文稿的 HTML 字符串。请查看 OneNote 外接程序 JavaScript API [支持的 HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)。|
 
-#### 返回
-[分级显示](outline.md)
+#### <a name="returns"></a>返回
+[Outline](outline.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -92,23 +92,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToSection(destinationSection:Section)
+### <a name="copytosection(destinationsection:-section)"></a>copyToSection(destinationSection:Section)
 将此页复制到指定的分区中。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 pageObject.copyToSection(destinationSection);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |destinationSection|分区|要将此页复制到的分区。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Page](page.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -146,24 +146,24 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### insertPageAsSibling(location: string, title: string)
+### <a name="insertpageassibling(location:-string,-title:-string)"></a>insertPageAsSibling(location: string, title: string)
 在当前分区之前或之后插入一个新的页面。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 pageObject.insertPageAsSibling(location, title);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |location|string|相对于当前页面的新页面的位置。可能的值是：Before、After|
-|职位|string|新页面的标题。|
+|职位|字符串|新页面的标题。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Page](page.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -191,24 +191,24 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
-**内容**
+**contents**
 ```js
 OneNote.run(function (context) {
 

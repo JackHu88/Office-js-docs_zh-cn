@@ -1,9 +1,9 @@
 
-# 在 Outlook 的撰写窗体中添加和删除项目附件
+# <a name="add-and-remove-attachments-to-an-item-in-a-compose-form-in-outlook"></a>在 Outlook 的撰写窗体中添加和删除项目附件
 
 您可以使用 [addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) 和 [addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) 方法分别将文件和 Outlook 项目附加到用户撰写的项目。两种方法均为异步方法，这意味着执行可以继续，而无需等待 add-attachment 操作完成。根据所添加附件的原始位置和大小，add-attachment 异步调用可能需要一会才能完成。如果有些任务依赖于要完成的操作，您应该在回调方法中执行这些任务。此回调方法为可选，将在附件上载完成时调用。回调方法将 [AsyncResult](http://dev.outlook.com/reference/add-ins/simple-types.md) 对象作为输出参数，提供任何状态、错误以及从 add-attachment 操作返回的值。如果回调需要任何额外的参数，您可以在可选的 _options.aysncContext_ 参数中进行指定。 _options.asyncContext_ 可以为您的回调方法希望的任何类型。
 
-例如，你可以将 _options.asyncContext_ 定义为一个 JSON 对象，该对象包含一个或多个键值对，其中用“:”字符分隔键和值，用“,”分隔键值对。 你可以找到有关 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md) 中的 Office 外接程序平台中的 [将可选参数传递给异步方法](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) 的更多示例。 下面的示例演示了如何使用 **asyncContext** 参数将 2 个自变量传递给回调方法：
+例如，可以将 _options.asyncContext_ 定义为一个 JSON 对象，该对象包含一个或多个键值对，其中用“:”字符分隔键和值，用“,”分隔键值对。可以找到有关 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md) 中的 Office 外接程序平台中的 [将可选参数传递给异步方法](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) 的更多示例。下面的示例演示了如何使用 **asyncContext** 参数将 2 个自变量传递给回调方法：
 
 
 
@@ -18,7 +18,7 @@
  >**注释**  作为最佳做法，您应仅在同一外接程序在同一会话中添加了该附件时，才使用附件 ID 删除附件。在 Outlook Web App 和 适用于设备的 OWA 中，附件 ID 仅在同一会话中有效。用户关闭外接程序时，或用户在内嵌窗体中开始撰写，然后弹出内嵌窗体以在单独的窗口中继续时，会话结束。
 
 
-## 附加文件
+## <a name="attaching-a-file"></a>附加文件
 
 您可以使用  **addFileAttachmentAsync** 方法在撰写窗体中将文件附加到邮件或约会，并指定文件 URI。如果文件受保护，您可以包括相应的标识或身份验证令牌作为 URI 查询字符串参数。Exchange 将向 URI 发出调用以获取附件，保护文件的 Web 服务将需要使用令牌作为进行身份验证的一种方式。
 
@@ -68,7 +68,7 @@ function write(message){
 ```
 
 
-## 附加 Outlook 项目
+## <a name="attaching-an-outlook-item"></a>附加 Outlook 项目
 
 您可以通过指定项目的 Exchange Web Services (EWS) ID 并使用  **addItemAttachmentAsync** 方法，将 Outlook 项目（例如，电子邮件、日历或联系人项目）附加到撰写窗体中的邮件或约会。您可以通过使用 [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) 方法并访问 EWS 操作 [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)，来获取用户邮箱中电子邮件、日历、联系人或任务项目的 EWS ID。 [item.itemId](http://dev.outlook.com/reference/add-ins/Office.context.mailbox.item.md) 属性还提供阅读窗体中某个现有项目的 EWS ID。
 
@@ -108,7 +108,7 @@ function addItemAttachment(ID) {
  >**注释**  您可以使用撰写加载项在 Outlook Web App 或 适用于设备的 OWA 中附加定期约会的实例。但是，在 Outlook 富客户端中，尝试附加实例将导致附加定期系列（主约会）。
 
 
-## 删除附件
+## <a name="removing-an-attachment"></a>删除附件
 
 
 您可以指定相应的附件 ID，并使用 [removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) 方法在撰写窗体中从邮件或约会项目删除文件或项目附件。您应仅删除同一外接程序在同一会话中添加的附件。应确保附件 ID 与有效附件对应，否则此方法将返回错误。类似于 **addFileAttachmentAsync** 和 **addItemAttachmentAsync** 方法， **removeAttachmentAsync** 是一个异步方法。您应使用 **AsyncResult** 输出参数对象提供一个回调方法以检查状态和任何错误。还可以使用可选的 **asyncContext** 参数将任何其他参数传递给回调方法，此参数是键值对的 JSON 对象。
@@ -146,7 +146,7 @@ function removeAttachment(ID) {
 ```
 
 
-## 添加和删除附件的提示
+## <a name="tips-for-adding-and-removing-attachments"></a>添加和删除附件的提示
 
 
 如果您的撰写加载项将添加和删除附件，可构造代码，以便将有效附件 ID 传递给删除附件调用，并在  **AsyncResult.error** 返回 **InvalidAttachmentId** 后处理这种情况。根据附件的位置和大小，附加文件或项目将需要一段时间来完成。以下代码包含对 **addFileAttachmentAsync**、 `write` 和 **removeAttachmentAsync** 的调用。您可能认为此调用将按顺序依次执行。
@@ -288,7 +288,7 @@ function write(message){
 请注意， **removeAttachmentAsync** 的回调嵌套在 **addFileAttachmentAsync** 的回调中。由于 **addFileAttachmentAsync** 和 **removeAttachmentAsync** 为异步调用，因此可在 **removeAttachmentAsync** 的回调完成之前执行 **addFileAttachmentAsync** 的回调中的最后一行。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

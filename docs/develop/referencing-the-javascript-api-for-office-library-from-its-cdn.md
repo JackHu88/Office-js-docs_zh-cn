@@ -1,5 +1,5 @@
 
-# 从 适用于 Office 的 JavaScript API 的内容传送网络 (CDN) 引用 适用于 Office 的 JavaScript API 库
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>从 适用于 Office 的 JavaScript API 的内容传送网络 (CDN) 引用 适用于 Office 的 JavaScript API 库
 
 
 [适用于 Office 的 JavaScript](../../reference/javascript-api-for-office.md) 库包含 Office.js 文件和关联的特定于主机应用程序的 .js 文件，例如 Excel-15.js 和 Outlook-15.js。 
@@ -15,15 +15,15 @@ CDN URL 中 `/1/` 前面的 `office.js` 指定使用 Office.js 版本 1 中的�
 
 如果计划从 Office 应用商店发布你的 Office 外接程序，则必须使用 CDN 引用。本地引用仅适用于内部、开发和调试方案。
 
-> **重要说明：**开发任何 Office 主机应用程序的外接程序时，从页面的 `<head>` 部分内部引用适用于 Office 的 JavaScript 十分重要。 这将确保在任何正文元素之前，API 已经完全初始化。 Office 主机要求外接程序在激活 5 秒钟内进行初始化。 超过此阈值会导致声明外接程序无响应，并且会向用户显示错误消息。       
+> **重要说明：**开发任何 Office 主机应用程序的外接程序时，从页面的 `<head>` 部分内部引用适用于 Office 的 JavaScript 十分重要。这将确保在任何正文元素之前，API 已经完全初始化。Office 主机要求外接程序在激活 5 秒钟内进行初始化。超过此阈值会导致声明外接程序无响应，并且会向用户显示错误消息。       
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
-- [了解 适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [Office 加载项平台概述](../../docs/overview/office-add-ins.md)
+- [Office 外接程序平台概述](../../docs/overview/office-add-ins.md)
     
 - [Office 外接程序开发生命周期](../../docs/design/add-in-development-lifecycle.md)
     

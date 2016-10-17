@@ -1,7 +1,7 @@
-﻿
-# Labs.Components.IDynamicComponentInstance
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.components.idynamiccomponentinstance"></a>Labs.Components.IDynamicComponentInstance
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 动态组件的实例。
 
@@ -10,7 +10,7 @@ interface IDynamicComponentInstance extends Labs.Core.IComponentInstance
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |名称|说明|

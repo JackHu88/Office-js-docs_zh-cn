@@ -1,5 +1,5 @@
 
-# 在 Office 外接程序中使用 OAuth 授权框架
+# <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>在 Office 外接程序中使用 OAuth 授权框架
 
 OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce、LinkedIn 等联机服务提供商用其执行用户身份验证。OAuth 授权框架是 Azure 和 Office 365 中所用的默认授权协议。OAuth 授权框架用于企业（公司）和消费者方案。
 
@@ -27,7 +27,7 @@ OAuth 是授权的开放式标准，Office 365、Facebook、Google、SalesForce�
  **重要说明** 无法将访问令牌返回到任务窗格，但可以在服务器上使用它们。在此代码示例中，访问令牌在数据库中存储时长为 2 分钟。2 分钟之后，数据库中的令牌会被清除，并且系统会提示用户重新进行身份验证。在自身实现中更改此时间段之前，请考虑将访问令牌存储在数据库中的时长超过 2 分钟会带来的相关安全风险。
 
 
-## 步骤 1 - 启动套接字并打开一个弹出窗口
+## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>步骤 1 - 启动套接字并打开一个弹出窗口
 
 当您运行此代码示例时，任务窗格外接程序显示在 Office 中。当用户选择要登录到的 OAuth 提供程序时，外接程序首先创建套接字。此示例使用套接字提供良好的外接程序用户体验。外接程序使用套接字与用户沟通身份验证的成功或失败。通过使用套接字，外接程序的主页可轻松地更新身份验证状态，并不需要用户交互或轮询。下面的代码段来自 routes/connect.js，显示了如何启动套接字。套接字使用 **decodedNodeCookie**（外接程序的会话 ID）命名。此代码示例通过使用 [socket.io](http://socket.io/) 创建套接字。
 
@@ -70,7 +70,7 @@ onclick="window.open('/connect/azure/#{sessionID}', 'AuthPopup', 'width=500,heig
 ```
 
 
-## 步骤 2 &amp; 3 - 启动身份验证流程和显示登录页
+## <a name="steps-2-&amp;-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>步骤 2 &amp; 3 - 启动身份验证流程和显示登录页
 
 外接程序必须启动身份验证流程。下面的代码段使用了 Passport OAuth 库。在启动身份验证流程时，请确保传递 OAuth 提供程序的授权 URL 和外接程序的会话 ID。必须将外接程序的会话 ID 传递到状态参数中。弹出窗口现在将显示 OAuth 提供程序的登录页供用户进行登录。
 
@@ -84,7 +84,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## 步骤 4、5 &amp; 6 - 用户登录和 Web 服务器接收令牌
+## <a name="steps-4,-5-&amp;-6---user-signs-in-and-web-server-receives-tokens"></a>步骤 4、5 &amp; 6 - 用户登录和 Web 服务器接收令牌
 
  成功登录后，访问令牌、刷新令牌和状态参数将被返回到外接程序。状态参数包含会话 ID，用于将身份验证的状态信息发送到步骤 7 中的套接字。以下提取自 app.js 的代码段将访问令牌存储在数据库中。
 
@@ -101,7 +101,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## 步骤 7 - 将身份验证信息显示在外接程序的 UI 中
+## <a name="step-7---show-authentication-information-in-the-add-in's-ui"></a>步骤 7 - 将身份验证信息显示在外接程序的 UI 中
 
 以下提取自 connect.js 的代码段利用身份验证状态信息更新外接程序的 UI。外接程序的 UI 使用步骤 1 中创建的套接字进行了更新。
 
@@ -114,7 +114,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 <a name="bk_addresources"> </a>
 
 

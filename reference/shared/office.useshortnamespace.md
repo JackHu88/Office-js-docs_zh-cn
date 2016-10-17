@@ -1,7 +1,7 @@
 
 
-# Office.useShortNamespace 方法
-切换完整  `Office` 命名空间的 `Microsoft.Office.WebExtension` 别名。
+# <a name="office.useshortnamespace-method"></a>Office.useShortNamespace 方法
+切换完整 `Office` 命名空间的 `Microsoft.Office.WebExtension` 别名。
 
 |||
 |:-----|:-----|
@@ -13,7 +13,7 @@ Office.useShortNamespace(useShortcut);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 
 
@@ -21,11 +21,11 @@ _useShortcut_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;类型：**布尔值**
 
     
-&nbsp;&nbsp;&nbsp;&nbsp;**true** 表示使用快捷方式别名；而 **false** 则表示禁用快捷方式别名。 默认值为 **true**。
+&nbsp;&nbsp;&nbsp;&nbsp;**true** 表示使用快捷方式别名；而 **false** 则表示禁用快捷方式别名。默认值为 **true**。
     
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -57,12 +57,12 @@ function write(message){
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**适用于设备的 OWA**|**Outlook for Mac**|
@@ -81,7 +81,7 @@ function write(message){
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 |**版本**|**更改内容**|

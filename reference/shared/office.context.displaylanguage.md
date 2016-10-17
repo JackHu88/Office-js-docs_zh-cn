@@ -1,5 +1,5 @@
-﻿
-# Context.displayLanguage 属性
+
+# <a name="context.displaylanguage-property"></a>Context.displayLanguage 属性
 获取用户针对 Office 主机应用程序的 UI 指定的区域设置（语言）。
 
 |||
@@ -12,19 +12,19 @@ var myDisplayLanguage = Office.context.displayLanguage;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 RFC 1766 语言标记格式的一个  **string**，如  `en-US`。
 
 
-## 注解
+## <a name="remarks"></a>注解
 
-**displayLanguage** 值反映了在 Office 主机应用程序中通过 **文件** > **选项** > **语言** 指定的当前 **显示语言** 设置。
- 
+The  **displayLanguage** value reflects the current **Display Language** setting specified with **File** > **Options** > **Language** in the Office host application.
+
 在 Access Web 应用程序相关内容外接程序中， **displayLanguage** 属性会获取外接程序语言（例如，"en-US"）。
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -50,12 +50,12 @@ function write(message){
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|**Outlook for Mac**|
@@ -74,7 +74,7 @@ function write(message){
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

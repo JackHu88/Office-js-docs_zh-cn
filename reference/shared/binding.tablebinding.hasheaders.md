@@ -1,24 +1,24 @@
 
-# TableBinding.hasHeaders 属性
+# <a name="tablebinding.hasheaders-property"></a>TableBinding.hasHeaders 属性
 获取表是否具有标题。
 
 |||
 |:-----|:-----|
 |**主机：**|Access、Excel、PowerPoint、Project、Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|TableBindings|
-|**选择内容中的最后更改**|1.1|
+|在**要求集[中可用](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
+|**包含 Selection 最后一次更改的版本**|1.1|
 
 ```
 var colCount = bindingObj.hasHeaders;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 如果指定的 [TableBinding](../../reference/shared/binding.tablebinding.md) 具有标题，则返回 **true**；否则返回 **false**。
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -38,7 +38,7 @@ function write(message){
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此属性。空的单元格表示相应的 Office 主机应用程序不支持此属性。
@@ -53,17 +53,17 @@ function write(message){
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
 |**在要求集中可用**|TableBindings|
 |**最低权限级别**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

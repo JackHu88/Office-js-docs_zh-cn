@@ -1,44 +1,44 @@
-﻿# Section 对象（适用于 Word 的 JavaScript API）
+# <a name="section-object-(javascript-api-for-word)"></a>Section 对象（适用于 Word 的 JavaScript API）
 
 表示 Word 文档中的一节。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 无
 
-## Relationships
+## <a name="relationships"></a>Relationships
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
 |正文|[Body](body.md)|获取节的正文。这不包括标头/页脚和其他节元数据。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
 |[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|获取节的页脚之一。|
 |[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|获取节的标头之一。|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### getFooter(type: HeaderFooterType)
+### <a name="getfooter(type:-headerfootertype)"></a>getFooter(type: HeaderFooterType)
 获取节的页脚之一。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 sectionObject.getFooter(type);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |类型|HeaderFooterType|必填。要返回的页脚的类型。该值可以为“primary”、“firstPage”或“evenPages”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Body](body.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -77,23 +77,23 @@ Word.run(function (context) {
     }
 });
 ```
-### getHeader(type: HeaderFooterType)
+### <a name="getheader(type:-headerfootertype)"></a>getHeader(type: HeaderFooterType)
 获取节的标头之一。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 sectionObject.getHeader(type);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |类型|HeaderFooterType|必填。要返回的标头的类型。该值可以为“primary”、“firstPage”或“evenPages”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Body](body.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -133,21 +133,21 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。

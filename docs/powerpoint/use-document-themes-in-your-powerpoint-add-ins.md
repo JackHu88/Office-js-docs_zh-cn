@@ -1,7 +1,7 @@
-﻿# 在 PowerPoint 外接程序中使用文档主题
+# <a name="use-document-themes-in-your-powerpoint-add-ins"></a>在 PowerPoint 外接程序中使用文档主题
 
 
-[Office 主题](https://support.office.com/en-US/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) 一部分包括视觉协调的字体和颜色集，你可将其应用于演示文稿、文档、工作表以及电子邮件。 要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区的“**设计**”选项卡上的“**主题**”和“**变量**”组。 PowerPoint 通过默认的“**Office 主题**”分配新的空白演示文稿，但你也可以选择“**设计**”选项卡上可用的其他主题，从 Office.com 下载其他主题，或创建并自定义自己的主题。
+[Office 主题](https://support.office.com/en-US/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) 一部分包括视觉协调的字体和颜色集，可将其应用于演示文稿、文档、工作表以及电子邮件。要在 PowerPoint 中应用或自定义演示文稿的主题，请使用功能区的“**设计**”选项卡上的“**主题**”和“**变量**”组。PowerPoint 通过默认的“**Office 主题**”分配新的空白演示文稿，但也可以选择“**设计**”选项卡上可用的其他主题，从 Office.com 下载其他主题，或创建并自定义自己的主题。
 
 使用 OfficeThemes.css，有助于你以两种方式设计与 PowerPoint 相协调的外接程序：
 
@@ -11,7 +11,7 @@
 -  **在 PowerPoint 任务窗格加载项中** 使用 OfficeThemes.css 的 Office UI 主题类来指定 UI 中使用的相同字体和背景颜色，这样您的任务窗格加载项将会与内置任务窗格的颜色匹配（这些颜色将在用户更改 Office UI 主题时动态更新）。
     
 
-### 文档主题颜色
+### <a name="document-theme-colors"></a>文档主题颜色
 
 每个 Office 文档主题定义了 12 种颜色。在您通过颜色选取器在演示文稿中设置字体、背景和其他颜色设置时，有 10 种颜色可选：
 
@@ -26,7 +26,7 @@
 前四种颜色适用于文本和背景。使用浅色创建的文本始终在深色背景上清晰显示，使用深色创建的文本始终在浅色背景上清晰显示。接下来六种颜色是个性色，始终在四种潜在背景色上可见。最后两种颜色适用于超链接和已访问过的超链接。
 
 
-### 文档主题字体
+### <a name="document-theme-fonts"></a>文档主题字体
 
 每个 Office 文档主题还定义两种字体 -- 一种用于标题，另一种用于正文文本。PowerPoint 使用这些字体来构造自动文本样式。此外，文本和**艺术字**的**快速样式**库使用这些相同的主题字体。当你使用字体选取器选择字体时，这两种字体就是可用的前两个选项：
 
@@ -39,9 +39,9 @@
 ![“新建主题字体”对话框](../../images/off15app_CreateNewThemeFonts.png)
 
 
-### Office UI 主题字体和颜色
+### <a name="office-ui-theme-fonts-and-colors"></a>Office UI 主题字体和颜色
 
-Office 还让你在几个预定义主题之间进行选择，指定用于所有 Office 应用程序 UI 中的一些颜色和字体。 若要执行此操作，请使用“**文件**” > “**帐户**” > “**Office 主题**”下拉菜单（在任意 Office 应用程序中）。
+Office 还让你在几个预定义主题之间进行选择，指定用于所有 Office 应用程序 UI 中的一些颜色和字体。若要执行此操作，请使用“**文件**” > “**帐户**” > “**Office 主题**”下拉菜单（在任意 Office 应用程序中）。
 
 
 ![Office 主题下拉菜单](../../images/off15app_OfficeThemePicker.png)
@@ -49,17 +49,17 @@ Office 还让你在几个预定义主题之间进行选择，指定用于所有 
 OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类，以便它们使用这些相同的字体和颜色。这可使您设计与内置任务窗格外观一致的任务窗格加载项。
 
 
-## 使用 OfficeThemes.css
+## <a name="using-officethemes.css"></a>使用 OfficeThemes.css
 
 使用 OfficeThemes.css 文件处理 PowerPoint 内容加载项，使您可将 外接程序 的外观与它运行的演示文稿所应用的主题相协调。使用 OfficeThemes.css 文件处理 PowerPoint 任务窗格加载项，使您可将您 外接程序 的外观与 Office UI 的字体和颜色相协调。
 
 
-### 将 OfficeThemes.css 文件添加到您的项目中
+### <a name="adding-the-officethemes.css-file-to-your-project"></a>将 OfficeThemes.css 文件添加到您的项目中
 
 使用以下步骤将 OfficeThemes.css 文件添加到您的 外接程序 项目中并进行引用。
 
 
-### 将 OfficeThemes.css 添加到您的 Visual Studio 项目中
+### <a name="to-add-officethemes.css-to-your-visual-studio-project"></a>将 OfficeThemes.css 添加到您的 Visual Studio 项目中
 
 
 1. 在“**解决方案资源管理器**”中的_“**project_name**”_“**Web**”项目中右键单击“**内容**”文件夹，指向“**添加**”，然后单击“**样式表**”。
@@ -76,7 +76,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 4. 如果您使用非 Visual Studio 的工具来创建您的 外接程序，请将步骤 3 的 CSS 代码复制到文本文件中，确保将文件保存为 OfficeThemes.css。
     
 
-### 在加载项的 HTML 页中引用 OfficeThemes.css
+### <a name="referencing-officethemes.css-in-your-add-in's-html-pages"></a>在加载项的 HTML 页中引用 OfficeThemes.css
 
 若要在你的外接程序项目中使用 OfficeThemes.css，则在 Web 页（如 .html、.aspx 或 .php 文件）的 `<head>` 标记内添加引用 OfficeThemes.css 文件的 `<link>` 标记，这些 Web 页使用以下格式实现外接程序的 UI：
 
@@ -88,7 +88,7 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 要在 Visual Studio 中执行此操作，请按照下面的步骤操作。
 
 
-### 在 PowerPoint 加载项中引用 OfficeThemes.css
+### <a name="to-reference-officethemes.css-in-your-add-in-for-powerpoint"></a>在 PowerPoint 加载项中引用 OfficeThemes.css
 
 
 1. 在 Visual Studio 2015 中，打开或创建新的“**Office 外接程序**”项目。
@@ -102,9 +102,9 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 如果你正在使用非 Visual Studio 的工具创建外接程序，请添加相同格式的 `<link>` 标记，这一标记指定了将使用外接程序进行部署的 OfficeThemes.css 副本的相对路径。
 
 
-### 在内容加载项的 HTML 页中使用 OfficeThemes.css 文档主题类
+### <a name="using-officethemes.css-document-theme-classes-in-your-content-add-in's-html-page"></a>在内容加载项的 HTML 页中使用 OfficeThemes.css 文档主题类
 
-以下演示了使用 OfficeTheme.css 文档主题类的内容 外接程序 中的 HTML 简单示例。有关与文档主题中 12 种颜色和 2 种字体对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于内容加载项的主题类](#适用于内容加载项的主题类)。
+以下演示了使用 OfficeTheme.css 文档主题类的内容 外接程序 中的 HTML 简单示例。有关与文档主题中 12 种颜色和 2 种字体对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于内容加载项的主题类](#theme-classes-for-content-add-ins)。
 
 
 ```HTML
@@ -122,11 +122,11 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 ![运行 Facet 主题的内容应用程序](../../images/off15app_ContentApp_FacetTheme.png)
 
 
-### 在任务窗格加载项的 HTML 页中使用 OfficeThemes.css Office UI 主题类
+### <a name="using-officethemes.css-office-ui-theme-classes-in-your-task-pane-add-in's-html-page"></a>在任务窗格加载项的 HTML 页中使用 OfficeThemes.css Office UI 主题类
 
 除文档主题之外，用户还可为所有 Office 应用程序自定义 Office 用户界面的颜色主题，通过使用“**文件**” > “**帐户**” > “**Office 主题**”下拉框进行自定义。
 
-以下演示了 HTML 的简单示例，该示例在任务窗格 外接程序 中使用 OfficeTheme.css 类指定字体颜色和背景色。有关与 Office UI 主题字体和颜色对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于任务窗格加载项的主题类](#适用于任务窗格加载项的主题类)。
+以下演示了 HTML 的简单示例，该示例在任务窗格 外接程序 中使用 OfficeTheme.css 类指定字体颜色和背景色。有关与 Office UI 主题字体和颜色对应的 OfficeThemes.css 类的详细信息，请参阅 [适用于任务窗格加载项的主题类](#theme-classes-for-task-pane-add-ins)。
 
 
 ```HTML
@@ -144,19 +144,19 @@ OfficeThemes.css 包含您可在 PowerPoint 任务窗格加载项中使用的类
 ![使用 Office 深灰色主题的任务窗格](../../images/off15app_TaskPaneThemeDarkGray.png)
 
 
-## OfficeTheme.css 类
+## <a name="officetheme.css-classes"></a>OfficeTheme.css 类
 
 
 OfficeThemes.css 文件包括两组类，您可用于 PowerPoint 内容和任务窗格加载项。
 
 
-### 适用于内容加载项的主题类
+### <a name="theme-classes-for-content-add-ins"></a>适用于内容加载项的主题类
 
 
 OfficeThemes.css 文件提供与文档主题中的 2 种字体和 12 种颜色对应的类。这些类很适合用于 PowerPoint 内容加载项，以便您的加载项字体和颜色与它要插入的演示文稿相协调。
 
 
-**适用于内容加载项的主题字体**
+**适用于内容外接程序的主题字体**
 
 
 |**类**|**说明**|
@@ -170,7 +170,7 @@ OfficeThemes.css 文件提供与文档主题中的 2 种字体和 12 种颜色�
 | `office-headerFont-script`|标题字体的脚本名称。|
 | `office-headerFont-localized`|标题字体的本地化名称。根据当前在 Office 中使用的区域性，指定默认字体名称。|
 
-**适用于内容加载项的主题颜色**
+**适用于内容外接程序的主题颜色**
 
 
 |**类**|**说明**|
@@ -205,13 +205,13 @@ OfficeThemes.css 文件提供与文档主题中的 2 种字体和 12 种颜色�
 ![默认 Office 主题颜色示例](../../images/off15app_DefaultOfficeThemeColors.png)
 
 
-### 适用于任务窗格加载项的主题类
+### <a name="theme-classes-for-task-pane-add-ins"></a>适用于任务窗格加载项的主题类
 
 
 OfficeThemes.css 文件提供的类与分配给 Office 应用程序 UI 主题所使用的字体和背景的 4 种颜色对应。这些类很适合用于 PowerPoint 相关的任务加载项，以便您的加载项颜色与其他 Office 内置的任务窗格协调。
 
 
-**适用于任务窗格加载项的主题字体和背景色**
+**适用于任务窗格外接程序的主题字体和背景色**
 
 
 |**类**|**说明**|
@@ -221,6 +221,6 @@ OfficeThemes.css 文件提供的类与分配给 Office 应用程序 UI 主题所
 | `office-officeTheme-secondary-fontColor`|辅助字体颜色。默认为 #262626|
 | `office-officeTheme-secondary-bgColor`|辅助背景色。默认为 #FFFFFF|
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [创建 PowerPoint 相关的内容和任务窗格外接程序](../powerpoint/powerpoint-add-ins.md)

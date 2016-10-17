@@ -1,11 +1,11 @@
 
-# OfficeApp 元素
+# <a name="officeapp-element"></a>OfficeApp 元素
 Office 外接程序清单中的根元素。
 
  **外接程序类型：**内容、任务窗格、邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -18,33 +18,33 @@ Office 外接程序清单中的根元素。
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
- _无_
-
-
-## 必须包含：
+ _none_
 
 
+## <a name="must-contain:"></a>必须包含：
 
-|**元素**|**内容**|**邮件**|**TaskPane**|
+
+
+|**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[Id](../../reference/manifest/id.md)|x|x|x|
-|[版本](../../reference/manifest/version.md)|x|x|x|
+|[Version](../../reference/manifest/version.md)|x|x|x|
 |[ProviderName](../../reference/manifest/providername.md)|x|x|x|
 |[DefaultLocale](../../reference/manifest/defaultlocale.md)|x|x|x|
 |[DefaultSettings](../../reference/manifest/defaultsettings.md)|x|x|x|
 |[DisplayName](../../reference/manifest/displayname.md)|x|x|x|
 |[说明](../../reference/manifest/description.md)|x|x|x|
 |[FormSettings](../../reference/manifest/formsettings.md)||x||
-|[权限](../../reference/manifest/permissions.md)|x||x|
+|[Permissions](../../reference/manifest/permissions.md)|x||x|
 |[Rule](../../reference/manifest/rule.md)||x||
 
-## 可以包含：
+## <a name="can-contain:"></a>可以包含：
 
 
 
-|**元素**|**内容**|**邮件**|**TaskPane**|
+|**Element**|**Content**|**Mail**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](../../reference/manifest/alternateid.md)|x|x|x|
 |[IconUrl](../../reference/manifest/iconurl.md)|x|x|x|
@@ -54,12 +54,12 @@ Office 外接程序清单中的根元素。
 |[Hosts](../../reference/manifest/hosts.md)|x|x|x|
 |[Requirements](../../reference/manifest/requirements.md)|x|x|x|
 |[AllowSnapshot](../../reference/manifest/allowsnapshot.md)|x|||
-|[权限](../../reference/manifest/permissions.md)||x||
+|[Permissions](../../reference/manifest/permissions.md)||x||
 |[DisableEntityHighlighting](../../reference/manifest/disableentityhighlighting.md)||x||
 |[Dictionary](../../reference/manifest/dictionary.md)|||x|
 |[VersionOverrides](../../reference/manifest/versionoverrides.md)|X|X|X|
 
-## 属性
+## <a name="attributes"></a>属性
 
 
 |||

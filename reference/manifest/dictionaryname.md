@@ -1,11 +1,11 @@
 
-# DictionaryName 元素
+# <a name="dictionaryname-element"></a>DictionaryName 元素
 指定该词典的名称。
 
  **外接程序类型：**任务窗格
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -13,12 +13,12 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

@@ -1,11 +1,11 @@
 
-# ProjectViewTypes 枚举
+# <a name="projectviewtypes-enumeration"></a>ProjectViewTypes 枚举
 指定 **[getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)** 方法可以识别的视图的类型。
 
 |||
 |:-----|:-----|
 |**主机：**|Project|
-|**在其中添加**|1.0|
+|**添加内容的版本**|1.0|
 
 ```
 ProjectViewTypes={
@@ -29,7 +29,7 @@ ProjectViewTypes={
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 ****
@@ -40,32 +40,32 @@ ProjectViewTypes={
 |**Gantt**|甘特图视图|
 |**NetworkDiagram**|网络图视图。|
 |**TaskDiagram**|任务图视图。|
-|**TaskForm**|任务表单视图。|
+|**TaskForm**|任务窗体视图。|
 |**TaskSheet**|任务表视图。|
-|**ResourceForm**|资源表视图。|
+|**ResourceForm**|资源窗体视图。|
 |**ResourceSheet**|资源表视图。|
-|**ResourceForm**|资源表视图。|
+|**ResourceForm**|资源窗体视图。|
 |**ResourceGraph**|资源图视图。|
 |**TeamPlanner**|工作组规划器视图。|
 |**TaskDetails**|任务详细信息视图。|
-|**TaskNameForm**|任务名称表单视图。|
+|**TaskNameForm**|任务名称窗体视图。|
 |**ResourceNames**|资源名称视图。|
-|**日历**|日历视图。|
+|**Calendar**|日历视图。|
 |**TaskUsage**|任务使用视图。|
 |**ResourceUsage**|资源使用视图。|
-|**时间线**|时间线视图。|
+|**TimeLine**|时间线视图。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 **[getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)** 方法返回与活动视图对应的 **ProjectViewTypes** 常数值和名称。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -77,11 +77,11 @@ ProjectViewTypes={
 
 |||
 |:-----|:-----|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 
@@ -92,11 +92,11 @@ ProjectViewTypes={
 |:-----|:-----|
 |1.0|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 
 [getSelectedViewAsync 方法](../../reference/shared/projectdocument.getselectedviewasync.md)

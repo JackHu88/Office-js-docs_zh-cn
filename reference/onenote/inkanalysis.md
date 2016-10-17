@@ -1,51 +1,51 @@
-﻿# InkAnalysis 对象（适用于 OneNote 的 JavaScript API）
+# <a name="inkanalysis-object-(javascript-api-for-onenote)"></a>InkAnalysis 对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_   
 
 
-表示一组给定笔划墨迹的墨迹分析数据。
+表示一组给定墨迹笔划的墨迹分析数据。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
-|id|string|获取 InkAnalysis 对象的 ID。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-id)|
+|id|string|获取 InkAnalysis 对象的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-id)|
 
-_查看属性访问 [示例](#示例)。_
+_请参阅属性访问 [示例。](#property-access-examples)_
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|page|[Page](page.md)|获取父页对象。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-page)|
-|段落|[InkAnalysisParagraphCollection](inkanalysisparagraphcollection.md)|获取此页中的墨迹分析段落。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-paragraphs)|
+|page|[Page](page.md)|获取父页对象。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-page)|
+|paragraphs|[InkAnalysisParagraphCollection](inkanalysisparagraphcollection.md)|获取此页中的墨迹分析段落。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-paragraphs)|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-load)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysis-load)|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
-**段落**
+**paragraphs**
 ```js
 OneNote.run(function (ctx) {        
     var app = ctx.application;

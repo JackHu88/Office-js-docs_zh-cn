@@ -1,8 +1,8 @@
-﻿# NamedItem 对象（适用于 Excel 的 JavaScript API）
+# <a name="nameditem-object-(javascript-api-for-excel)"></a>NamedItem 对象（适用于 Excel 的 JavaScript API）
 
 表示单元格区域或值的定义名称。名称可以为基元的已命名对象（如以下类型中所示）、range 对象和对区域的引用。此对象可用于获取与名称相关的 range 对象。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
@@ -11,37 +11,37 @@
 |value|object|表示名称定义为引用的公式。例如 =Sheet14!$B$2:$H$12、=4.75 等。只读。|
 |visible|bool|指定对象是否可见。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问 [示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 无
 
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
-|[getRange()](#getrange)|[Range 对象设置内联图片](range.md)|返回与名称相关的 range 对象。如果已命名项目的类型不是区域，将引发异常。|
+|[getRange()](#getrange)|[Range](range.md)|返回与名称相关的 range 对象。如果已命名项目的类型不是区域，将引发异常。|
 |[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 返回与名称相关的 range 对象。如果已命名项目的类型不是区域，将引发异常。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 namedItemObject.getRange();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 返回与名称相关的 Range 对象。如果名称类型不为 `null`，则为 `Range`。备注:此 API 当前仅支持工作簿范围的项目。
 
@@ -62,22 +62,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
 ```js
 Excel.run(function (ctx) { 

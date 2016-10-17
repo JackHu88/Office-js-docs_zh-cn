@@ -1,12 +1,12 @@
-﻿
-# LabsJS.Labs.CommandType
+
+# <a name="labsjs.labs.commandtype"></a>LabsJS.Labs.CommandType
 提供 LabsJS Labs.CommandType JavaScript API 的高级视图。
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 **Labs.CommandType** 模块的成员仅由已声明的表示支持的命令类型的字符串变量所构成。
 
-## CommandType 变量
+## <a name="commandtype-variables"></a>CommandType 变量
 
 
 |变量|说明|

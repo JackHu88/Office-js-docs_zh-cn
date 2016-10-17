@@ -1,11 +1,11 @@
-﻿
-# LabsJS lab components
+
+# <a name="labsjs-lab-components"></a>LabsJS lab components
 
 Lab.js 为你提供了四种可用来装配你的实验室的组件类型。每个组件类型支持某个特定类型的实验室交互，包括：课程 HTML 格式的 iFrame 中的多个选择问题、免费响应问题或类似查看 Web 页面的活动。
 
-## 组件
+## <a name="components"></a>组件
 
-Office Mix 支持以下四种实验室组件类型：
+Office Mix 支持以下四种实验室组件类型： 
 
 
 -  **Activity component** ( **IActivityComponent**). Presents the user with an activity that must be completed; for example, read a piece of text, watch a video, or interact with a simulation. For more information, see [Labs.Components.ActivityComponentInstance](../../../reference/office-mix/labs.components.activitycomponentinstance.md).
@@ -17,7 +17,7 @@ Office Mix 支持以下四种实验室组件类型：
 -  **Dynamic component** ( **IDynamicComponent**). Generates other component types at runtime. Use this component type when you have branching questions, for example, where follow-up component types vary depending on a previous user input. This type also enables creating quiz banks or generating problems at runtime. For more information, see [Labs.Components.DynamicComponentInstance](../../../reference/office-mix/labs.components.dynamiccomponentinstance.md).
     
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
@@ -25,5 +25,5 @@ Office Mix 支持以下四种实验室组件类型：
     
 - [配置和编辑适用于 Office Mix 的 LabsJS 实验室](../../powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md)
     
-- [演练：为 Office Mix 创建第一个实验室](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
+- [演练︰创建第一个 Office Mix 实验室](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

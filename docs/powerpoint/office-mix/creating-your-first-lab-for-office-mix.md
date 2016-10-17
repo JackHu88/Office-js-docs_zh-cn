@@ -1,5 +1,5 @@
 
-# 演练：为 Office Mix 创建第一个实验室
+# <a name="walkthrough:-creating-your-first-lab-for-office-mix"></a>演练：为 Office Mix 创建第一个实验室
 使用分步演练构建您的第一个 LabsJS 实验室。
 
 
@@ -15,8 +15,7 @@
     
 - TrueFalse.css
     
-你可以使用任何你想要用于编辑这些文件的代码编辑器，因为我们未启动 Visual Studio 模板。 事实上，HTML 文件很简单，如果你愿意，你可以仅从教程文件中复制/粘贴 HTML 标记。 但是，请注意，其必须是 HTML5，因此请确保你的 doctype 声明是 `<!DOCTYPE html>` CSS 文件属于可选项。 所有复杂的工作都在 JavaScript (.js) 文件、TrueFalse.js 中完成。
-演练将覆盖四种主要实验室功能：
+你可以使用任何你想要用于编辑这些文件的代码编辑器，因为我们未启动 Visual Studio 模板。事实上，HTML 文件很简单，如果你愿意，你可以仅从教程文件中复制/粘贴 HTML 标记。但是，请注意，其必须是 HTML5，因此请确保你的 doctype 声明是 `<!DOCTYPE html>`CSS 文件属于可选项。所有复杂的工作都在 JavaScript (.js) 文件、TrueFalse.js 中完成。演练将覆盖四种主要实验室功能：
 
 - 设置（连接到主机）
     
@@ -27,13 +26,13 @@
 - 提取（或运行）实验室
     
 
- **注释**  
+ **注意**  
  ---
  文件 labhost.html 在 Web 服务器上运行并提供用于实验室开发和测试的托管环境。这大大简化了实验室环境。有关如何设置开发环境的信息，请参阅[适用于 Office Mix 的 LabsJS 入门](get-started-with-labsjs-for-office-mix.md)<br/><br/>
 
 最后，你可以在使用此 SDK 分发的文件中查看完成的 JavaScript 文件 (TrueFalse.js)。接下来是编码过程的演练。
 
-## 连接到实验室主机
+## <a name="connecting-to-the-lab-host"></a>连接到实验室主机
 
 此环境中的实验室能够与我们的实验室主机（用于开发和测试）或 Office.js 主机提供的默认运行时主机一起运行。然后启动函数将使用简单的 if/else 表达式测试哪些托管上下文适用。
 
@@ -102,7 +101,7 @@ function getConfiguration(question, answer) {
 ```
 
 
-## 模式更改
+## <a name="mode-changes"></a>模式更改
 
 实验室始终为两种状态或模式之一：**view** 和 **edit**。因此，我们需要一种方法来捕获和保留测验的状态和行为；我们将创建一个类用于此目的。
 
@@ -431,7 +430,7 @@ $(document).ready(function () {
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 <a name="bk_addresources"> </a>
 
 

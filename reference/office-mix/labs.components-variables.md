@@ -1,15 +1,15 @@
-﻿
-# Labs.Components 变量
+
+# <a name="labs.components-variables"></a>Labs.Components 变量
 Lab.Components 模块的变量声明。
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 我们对 LabsJS API 的 Lab.Components 模块中的变量提供声明和描述。事实上，这些变量实际上就是我们用来定义相应类型的常数。
 
-## 变量
+## <a name="variables"></a>变量
 
 
-|**姓名**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | `var ActivityComponentInstanceType: string`|活动组件实例的名称。活动组件提供了用户必须完成的活动。|
 | `var ChoiceComponentInstanceType: string`|选择组件实例的名称。选择组件有多个选项，并支持零个或多个响应。（可选）存在正确的选项列表。|

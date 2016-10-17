@@ -1,26 +1,26 @@
-# Settings.settingschangedeventargs 对象
+# <a name="settings.settingschangedeventargs-object"></a>Settings.settingschangedeventargs 对象
 提供有关引发了 [settingsChanged 事件](settings.settingschangedevent.md)的设置的信息。
 
 |||
 |:-----|:-----|
 |**主机：**|Access、Excel |
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|Settings|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Settings|
 |**包含最后一次更改的版本**|1.0|
 
 ```js
 Office.EventType.SettingsChanged
 ```
 
-## 成员
+## <a name="members"></a>成员
 
 **属性**
 
 |**名称**|**说明**|
 |:-----|:-----|
-|**[设置](settings.settingschangedeventargs.setting.md)**|获取表示引发了 settingsChanged 事件的设置的 **Settings** 对象。|
-|**[类型](settings.settingschangedeventargs.type.md)**|获取用于标识所引发事件的种类的 **EventType** 枚举值。|
+|**[settings](settings.settingschangedeventargs.setting.md)**|获取表示引发了 settingsChanged 事件的设置的 **Settings** 对象。|
+|**[type](settings.settingschangedeventargs.type.md)**|获取用于标识所引发事件的种类的 **EventType** 枚举值。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 若要添加 **settingsChanged** 事件的事件处理程序，请使用 [Settings](settings.addhandlerasync.md) 对象的 **addHandlerAsync** 方法。
 
@@ -33,12 +33,12 @@ Office.EventType.SettingsChanged
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此对象。空的单元格表示相应的 Office 主机应用程序不支持此对象。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|
@@ -50,11 +50,11 @@ Office.EventType.SettingsChanged
 |:-----|:-----|
 |**在要求集中可用**|Settings|
 |**最低权限级别**|受限|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 |**版本**|**更改内容**|
 |:-----|:-----|

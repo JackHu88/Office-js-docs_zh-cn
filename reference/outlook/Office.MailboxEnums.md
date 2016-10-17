@@ -1,52 +1,52 @@
-﻿ 
+ 
 
-# MailboxEnums
+# <a name="mailboxenums"></a>MailboxEnums
 
 ## [Office](Office.md).MailboxEnums
 
-##### 要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
 
-### 成员
+### <a name="members"></a>成员
 
-#### AttachmentType :String
+#### <a name="attachmenttype-:string"></a>AttachmentType :String
 
 指定附件的类型。
 
 AttachmentType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
 |`File`| String|`file`|附件是一个文件。|
 |`Item`| 字符串|`item`|附件是一个 Exchange 项目。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
-#### EntityType :String
+#### <a name="entitytype-:string"></a>EntityType :String
 
 指定实体的类型。
 
 EntityType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
@@ -58,23 +58,23 @@ EntityType
 |`TaskSuggestion`| String|`taskSuggestion`|指定实体为任务建议。|
 |`URL`| String|`url`|指定实体为 Internet URL。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
-#### ItemNotificationMessageType :String
+#### <a name="itemnotificationmessagetype-:string"></a>ItemNotificationMessageType :String
 
 为约会或邮件指定通知邮件类型。
 
 ItemNotificationMessageType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
@@ -82,46 +82,46 @@ ItemNotificationMessageType
 |`InformationalMessage`| 字符串|`informationalMessage`|notificationMessage 是信息性消息。|
 |`ErrorMessage`| 字符串|`errorMessage`|notificationMessage 是错误消息。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.3|
 |适用的 Outlook 模式| 撰写或阅读|
-#### ItemType :String
+#### <a name="itemtype-:string"></a>ItemType :String
 
 指定项的类型。
 
 ItemType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
 |`Message`| String|`message`|电子邮件、会议请求、会议响应或会议取消。|
 |`Appointment`| String|`appointment`|约会项目。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
-#### RecipientType :String
+#### <a name="recipienttype-:string"></a>RecipientType :String
 
 指定约会收件人的类型。
 
 RecipientType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
@@ -130,23 +130,23 @@ RecipientType
 |`User`| String|`user`|收件人是位于 Exchange 服务器上的 SMTP 电子邮件地址。|
 |`ExternalUser`| String|`externalUser`|收件人是不位于 Exchange 服务器上的 SMTP 电子邮件地址。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.1|
 |适用的 Outlook 模式| 撰写或阅读|
-#### ResponseType :String
+#### <a name="responsetype-:string"></a>ResponseType :String
 
 指定对会议邀请的响应类型。
 
 ResponseType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
@@ -156,24 +156,24 @@ ResponseType
 |`Accepted`| String|`accepted`|参与者已接受会议请求。|
 |`Declined`| 字符串|`declined`|参与者已拒绝会议请求。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
 
-#### RestVersion :String
+#### <a name="restversion-:string"></a>RestVersion :String
 
 指定对应于 REST 格式的项目 ID 的 REST API 的版本。 
 
 RestVersion
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 值 | 描述|
 |---|---|---|---|
@@ -181,7 +181,7 @@ RestVersion
 |`v2_0`| 字符串|`v2.0`|版本 2.0|
 |`Beta`| 字符串|`beta`|Beta.|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

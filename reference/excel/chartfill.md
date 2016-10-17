@@ -1,40 +1,40 @@
-﻿# ChartFill 对象（适用于 Excel 的 JavaScript API）
+# <a name="chartfill-object-(javascript-api-for-excel)"></a>ChartFill 对象（适用于 Excel 的 JavaScript API）
 
 表示图表元素的格式填充。
 
-## 属性
+## <a name="properties"></a>属性
 
 无
 
-## Relationships
+## <a name="relationships"></a>Relationships
 无
 
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|清除图表元素的填充颜色。|
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|将图表元素的填充格式设置为统一颜色。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### clear()
+### <a name="clear()"></a>clear()
 清除图表元素的填充颜色。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 chartFillObject.clear();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 
 清除名为“Chart1”的图表上值坐标轴的主要网格线的线条格式。
 
@@ -53,23 +53,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### setSolidColor(color: string)
+### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
 将图表元素的填充格式设置为统一颜色。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 chartFillObject.setSolidColor(color);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |color|string|表示窗体 #RRGGBB（例如“FFA500”）的边框线条颜色或作为已命名的 HTML 颜色（例如“orange”）的 HTML 颜色代码。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 
 将 Chart1 的背景颜色设置为红色。
 

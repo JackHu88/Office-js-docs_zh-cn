@@ -1,7 +1,7 @@
-﻿
-# Labs.Connect
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.connect"></a>Labs.Connect
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 初始化与主机的连接。
 

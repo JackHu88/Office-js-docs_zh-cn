@@ -1,5 +1,5 @@
 
-# Outlook 外接程序
+# <a name="outlook-add-ins"></a>Outlook 外接程序
 
 Outlook 外接程序是由第三方使用基于 Web 技术的新平台构建到 Outlook 中的集成。Outlook 外接程序具有三个关键方面：
 
@@ -15,23 +15,23 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 支持邮件外接程序的 Outlook 项目包括电子邮件、会议请求、响应和取消及约会。每个邮件外接程序均定义其可用的上下文，包括项目类型以及用户是在阅读还是撰写项目。
 
 
-## 扩展点
+## <a name="extension-points"></a>扩展点
 
 
 扩展点是外接程序与 Outlook 集成的方式。以下是执行此操作的方法：
 
 
-- 外接程序可以声明出现在所有邮件和约会的命令界面中的按钮。有关详细信息，请参阅 [用于 Outlook 的外接程序命令](../outlook/add-in-commands-for-outlook.md)。
+- 外接程序可以声明出现在所有邮件和约会的命令界面中的按钮。有关详细信息，请参阅 [Outlook 外接程序命令](../outlook/add-in-commands-for-outlook.md)。
     
-    **功能区上的外接程序及命令按钮**
+    **功能区上具有命令按钮的外接程序**
 
     ![外接程序命令无 UI 形状](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
 
-- 外接程序可以在邮件和约会中中断与正则表达式匹配项或检测实体的链接。 有关详细信息，请参阅 [上下文 Outlook 外接程序](../outlook/contextual-outlook-add-ins.md)。
+- 外接程序可以在邮件和约会中中断与正则表达式匹配项或检测实体的链接。有关详细信息，请参阅 [上下文相关 Outlook 外接程序](../outlook/contextual-outlook-add-ins.md)。
     
-    **用于突出显示的实体（地址）的上下文外接程序**
+    **用于突出显示的实体（地址）的上下文相关外接程序**
 
-    ![在卡片中显示上下文相关应用程序](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
+    ![在卡片中显示上下文相关应用](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 - 外接程序可以显示在邮件或约会正文上方的水平窗格中。这取决于复杂的规则，如是否存在邮件或约会的附件或 Exchange 项目类。有关详细信息，请参阅 [自定义窗格 Outlook 外接程序](../outlook/custom-pane-outlook-add-ins.md)。
     
@@ -40,7 +40,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
     ![显示邮件阅读窗体中的自定义窗格。](../../images/c585ab0a-6c33-42d0-a20f-5deb8b54f480.png)
 
 
-## 外接程序可用的邮箱项目
+## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
 
 在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
@@ -59,25 +59,27 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 通常，Outlook 可以为“已发送邮件”文件夹中的项目在阅读窗体中激活外接程序，基于已知实体字符串匹配激活的外接程序除外。有关其背后的具体原因，请参阅[将 Outlook 项目中的字符串作为已知实体进行匹配](../outlook/match-strings-in-an-item-as-well-known-entities.md)中的“支持已知实体”。
 
 
-## 支持的主机
+## <a name="supported-hosts"></a>支持的主机
 
 
 在 Outlook 2013 和更高版本、Outlook 2016 for Mac、Exchange 2013 内部环境中的 Outlook Web App、Office 365 和 Outlook.com 中的 Outlook Web App 中均支持 Outlook 外接程序。不是所有最新功能都会同时在所有客户端中受到支持。请参阅各个主题和 API 参考，以查看它们在哪些主机中不受支持。
 
 
-## 开始构建 Outlook 外接程序
+## <a name="get-started-building-outlook-add-ins"></a>开始构建 Outlook 外接程序
 
 
 若要开始构建 Outlook 外接程序，请参阅 [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 - [Outlook 外接程序体系结构和功能概述](../outlook/overview.md)
 - [开发 Office 外接程序的最佳做法](../../docs/overview/add-in-development-best-practices.md)
 - [Office 外接程序的设计准则](../../docs/design/add-in-design.md)
-- [许可 Office 和 SharePoint 加载项](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- 
+  [许可 Office 和 SharePoint 外接程序](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 - [发布 Office 外接程序](../publish/publish.md)
-- [将 Office 与 SharePoint 外接程序和 Office 365  Web 应用提交到 Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [将 Office 与 SharePoint 外接程序和 Office 365 Web 应用提交到 Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 

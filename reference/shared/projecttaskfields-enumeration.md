@@ -1,11 +1,11 @@
 
-# ProjectTaskFields 枚举
+# <a name="projecttaskfields-enumeration"></a>ProjectTaskFields 枚举
 指定可供 **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)** 方法用作参数的任务域。
 
 |||
 |:-----|:-----|
 |**主机：**|Project|
-|**在其中添加**|1.0|
+|**添加内容的版本**|1.0|
 
 ```js
 Microsoft.Office.WebExtension.ProjectTaskFields={
@@ -295,14 +295,14 @@ Microsoft.Office.WebExtension.ProjectTaskFields={
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **ProjectTaskFields** 枚举包含以下成员。
 
 
 
-|**Name**|**值**|**说明**|
+|**名称**|**值**|**说明**|
 |:-----|:-----|:-----|
 |ActualCost|0|当前任务的实际成本。|
 |ActualDuration|1|任务的实际工期，以分钟为单位。|
@@ -587,17 +587,17 @@ Microsoft.Office.WebExtension.ProjectTaskFields={
 |WBSSUCCESSORS|280|后续任务的工时分解结构代码，使用列表分隔符进行分隔。|
 |WSSID|281|对于与 SharePoint 任务列表同步的项目，SharePoint 列表中任务的 ID。|
 
-## 注解
+## <a name="remarks"></a>注解
 
 
 **ProjectProjectFields** 常数可用作 **[getProjectFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)** 方法的参数。<br/><br/>若要详细了解如何处理 Project 中的域，请参阅[可用域引用](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)。在 Project 的“帮助”中，搜索 _Available fields_。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。<br/><br/>
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。<br/><br/>
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。<br/><br/>
 
 **支持的主机（按平台）**
 
@@ -608,21 +608,21 @@ Microsoft.Office.WebExtension.ProjectTaskFields={
 
 |||
 |:-----|:-----|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 |**版本**|**更改内容**|
 |:-----|:-----|
 |1.0|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 [getTaskFieldAsync 方法](../../reference/shared/projectdocument.gettaskfieldasync.md)
 

@@ -1,5 +1,5 @@
 
-# BindingDataChangedEventArgs 对象
+# <a name="bindingdatachangedeventargs-object"></a>BindingDataChangedEventArgs 对象
 提供有关引发 [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) 事件的绑定的信息。
 
 |||
@@ -12,18 +12,18 @@ Office.EventType.BindingDataChanged
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **属性**
 
 
-|**名称**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
-|[绑定](../../reference/shared/binding.bindingdatachangedeventargs.binding.md)|获取表示引发 [DataChanged](../../reference/shared/binding.md) 事件的绑定的 **Binding** 对象。|
-|[类型](../../reference/shared/binding.bindingdatachangedeventargs.type.md)|获取标识被引发事件的类型的 [EventType](../../reference/shared/eventtype-enumeration.md) 枚举值。|
+|[binding](../../reference/shared/binding.bindingdatachangedeventargs.binding.md)|获取表示引发 [DataChanged](../../reference/shared/binding.md) 事件的绑定的 **Binding** 对象。|
+|[type](../../reference/shared/binding.bindingdatachangedeventargs.type.md)|获取标识被引发事件的类型的 [EventType](../../reference/shared/eventtype-enumeration.md) 枚举值。|
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此对象。空的单元格表示相应的 Office 主机应用程序不支持此对象。
@@ -42,11 +42,11 @@ Office.EventType.BindingDataChanged
 
 |||
 |:-----|:-----|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

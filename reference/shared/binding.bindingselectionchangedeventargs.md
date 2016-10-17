@@ -1,33 +1,33 @@
 
-# BindingSelectionChangedEventArgs 对象
+# <a name="bindingselectionchangedeventargs-object"></a>BindingSelectionChangedEventArgs 对象
 提供有关引发 [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) 事件的绑定的信息。
 
 |||
 |:-----|:-----|
 |**主机：**|Access、Excel、Word|
-|**TableBinding 中的最后更改**|1.1|
+|**TableBindings 中的最后更改 **|1.1|
 
 ```
 Office.EventType.BindingSelectionChanged
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **属性**
 
 
-|**名称**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
-|[绑定](../../reference/shared/binding.bindingselectionchangedevent.binding.md)|获取表示引发 [SelectionChanged](../../reference/shared/binding.md) 事件的绑定的 **Binding** 对象。|
+|[binding](../../reference/shared/binding.bindingselectionchangedevent.binding.md)|获取表示引发 [SelectionChanged](../../reference/shared/binding.md) 事件的绑定的 **Binding** 对象。|
 |[columnCount](../../reference/shared/binding.bindingselectionchangedevent.columncount.md)|获取选择的列数。|
 |[rowCount](../../reference/shared/binding.bindingselectionchangedevent.rowcount.md)|获取选择的行数。|
 |[startRow](../../reference/shared/binding.bindingselectionchangedevent.startrow.md)|获取选择的第一行的索引（基于零）。|
 |[startColumn](../../reference/shared/binding.bindingselectionchangedevent.startcolumn.md)|获取所选内容第一列的索引（从零开始）。|
-|[类型](../../reference/shared/binding.bindingselectionchangedevent.type.md)|获取标识被引发事件的类型的 [EventType](../../reference/shared/eventtype-enumeration.md) 枚举值。|
+|[type](../../reference/shared/binding.bindingselectionchangedevent.type.md)|获取标识被引发事件的类型的 [EventType](../../reference/shared/eventtype-enumeration.md) 枚举值。|
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
@@ -42,15 +42,15 @@ Office.EventType.BindingSelectionChanged
 |:-----|:-----|:-----|:-----|
 |**Access**||Y||
 |**Excel**|Y|Y|Y|
-|**Word**|Y||Y|
+|**Word**|Y|Y|Y|
 
 |||
 |:-----|:-----|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

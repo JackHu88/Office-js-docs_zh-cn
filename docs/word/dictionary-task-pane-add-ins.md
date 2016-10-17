@@ -1,38 +1,37 @@
 
-# 创建字典任务窗格外接程序
+# <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格外接程序
 
 
 本文显示任务窗格加载项和伴随的 Web 服务的示例，该 Web 服务为用户在 Word 2013 文档中的当前选择提供字典定义或同义词库同义词。 
 
 字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。 
 
-在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。 然后，字典提供程序的网页更新，以向用户显示所选内容的定义。
-XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。 图 1 显示所选内容并显示 Word 2013 中运行的 Bing 品牌字典外接程序体验。
+在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
 
-**图 1. 显示选定字词的定义的字典外接程序**
+**图 1.显示选定字词的定义的字典外接程序**
 
 
-![显示定义的字典应用程序](../../images/DictionaryAgave01.jpg)
+![显示定义的字典应用](../../images/DictionaryAgave01.jpg)
 
 由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
-**图 2. 定义上下文菜单中的命令**
+**图 2.定义上下文菜单中的命令**
 
 
 
 ![定义上下文菜单](../../images/DictionaryAgave02.jpg)
 
-**图 3. “拼写”和“语法”窗格中的定义**
+**图 3.“拼写”和“语法”窗格中的定义**
 
 
 ![“拼写”和“语法”窗格中的定义](../../images/DictionaryAgave03.jpg)
 
-**图 4. “同义词库”窗格中的定义**
+**图 4.“同义词库”窗格中的定义**
 
 
 ![“同义词库”窗格中的定义](../../images/DictionaryAgave04.jpg)
 
-**图 5. “阅读模式”中的定义**
+**图 5.“阅读模式”中的定义**
 
 
 ![“阅读模式”中的定义](../../images/DictionaryAgave05.jpg)
@@ -46,13 +45,13 @@ XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回�
     
 以下各节提供了有关如何创建这些组件的示例。
 
-## 创建字典 XML Web 服务
+## <a name="creating-a-dictionary-xml-web-service"></a>创建字典 XML Web 服务
 
 
 XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML 架构的 XML 返回。以下两节介绍了 OfficeDefinitions XML 架构，并提供有关如何对返回该 XML 格式查询的 XML Web 服务编码的示例。
 
 
-### OfficeDefinitions XML 架构
+### <a name="officedefinitions-xml-schema"></a>OfficeDefinitions XML 架构
 
 以下代码显示用于 OfficeDefinitions XML 架构的 XSD。
 
@@ -105,7 +104,7 @@ XML Web 服务必须将对 Web 服务的查询作为符合 OfficeDefinitions XML
 ```
 
 
-### 示例字典 XML Web 服务
+### <a name="sample-dictionary-xml-web-service"></a>示例字典 XML Web 服务
 
 以下 C# 代码提供了一个有关如何为 XML Web 服务编写代码的简单示例，该服务以 OfficeDefinitions XML 格式返回字典查询的结果。
 
@@ -179,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## 创建字典加载项的组件
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>创建字典加载项的组件
 
 
 字典加载项包含三个主要组件文件。
@@ -192,7 +191,7 @@ public class WebService : System.Web.Services.WebService {
 - JavaScript 文件，用于提供从文档中获取用户选择的逻辑，将选择作为查询发送给 Web 服务，然后在外接程序的 UI 中显示返回的结果。
     
 
-### 创建字典加载项的清单文件
+### <a name="creating-a-dictionary-add-in's-manifest-file"></a>创建字典加载项的清单文件
 
 下面是字典加载项的示例清单文件。
 
@@ -257,7 +256,7 @@ public class WebService : System.Web.Services.WebService {
 以下各节介绍了创建字典外接程序的清单文件时特定的 **Dictionary** 元素及其子元素。有关清单文件中的其他元素的信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
 
 
-### Dictionary 元素
+### <a name="dictionary-element"></a>Dictionary 元素
 
 
 指定用于字典外接程序的设置。
@@ -270,15 +269,15 @@ public class WebService : System.Web.Services.WebService {
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **注解**
+ **备注**
 
-在创建字典外接程序时，会将 **Dictionary**任务窗格 元素及其子元素添加到任务窗格外接程序的清单中。
-
-
-#### TargetDialects 元素
+在创建字典外接程序时，会将 **Dictionary** 元素及其子元素添加到任务窗格外接程序的清单中。
 
 
-指定此字典支持的方言。 必需（字典外接程序）。
+#### <a name="targetdialects-element"></a>TargetDialects 元素
+
+
+指定此字典支持的方言。必需（字典外接程序）。
 
  **父元素**
 
@@ -288,7 +287,7 @@ public class WebService : System.Web.Services.WebService {
 
  `<TargetDialect>`
 
- **注解**
+ **备注**
 
 **TargetDialects** 元素及其子元素指定字典支持的方言集。例如，如果字典适用于西班牙语（墨西哥）和西班牙语（秘鲁）方言，但不适用于西班牙语（西班牙），则可在此元素中指定这种情况。此元素仅用于指定同一语言的不同方言。不要在此清单中指定多种语言（例如，西班牙语和英语）。将不同的语言作为不同的字典发布。
 
@@ -321,16 +320,16 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### TargetDialect 元素
+#### <a name="targetdialect-element"></a>TargetDialect 元素
 
 
-指定此字典支持的方言。 必需（字典外接程序）。
+指定此字典支持的方言。必需（字典外接程序）。
 
  **父元素**
 
  `<TargetDialects>`
 
- **注解**
+ **备注**
 
 以 RFC1766 `language` 标记格式指定方言的值，如 EN-US。
 
@@ -344,18 +343,18 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### QueryUri 元素
+#### <a name="queryuri-element"></a>QueryUri 元素
 
 
-指定词典查询服务的终结点。 必需（字典外接程序）。
+指定词典查询服务的终结点。必需（字典外接程序）。
 
  **父元素**
 
  `<Dictionary>`
 
- **注解**
+ **备注**
 
-这是字典提供程序的 XML Web 服务的 URI。 被正确转义的查询将被追加到此 URI。 
+这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。 
 
  **示例**
 
@@ -367,16 +366,16 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### CitationText 元素
+#### <a name="citationtext-element"></a>CitationText 元素
 
 
-指定引文中要使用的文本。 必需（字典外接程序）。
+指定引文中要使用的文本。必需（字典外接程序）。
 
  **父元素**
 
  `<Dictionary>`
 
- **注解**
+ **备注**
 
 此元素指定将在从 Web 服务返回的内容之下的行中显示的引文文本的开头（例如，“Results by:”或“Powered by:”）。
 
@@ -392,16 +391,16 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### DictionaryName 元素
+#### <a name="dictionaryname-element"></a>DictionaryName 元素
 
 
-指定该词典的名称。 必需（字典外接程序）。
+指定该词典的名称。必需（字典外接程序）。
 
  **父元素**
 
  `<Dictionary>`
 
- **注解**
+ **备注**
 
 此元素指定引文文本中的链接文本。引文文本显示在从 Web 服务返回的内容之下的行中。
 
@@ -417,16 +416,16 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-#### DictionaryHomePage 元素
+#### <a name="dictionaryhomepage-element"></a>DictionaryHomePage 元素
 
 
-指定该词典的主页的 URL。 必需（字典外接程序）。
+指定该词典的主页的 URL。必需（字典外接程序）。
 
  **父元素**
 
  `<Dictionary>`
 
- **注解**
+ **备注**
 
 此元素指定引文文本中的链接 URL。引文文本显示在从 Web 服务返回的内容之下的行中。
 
@@ -442,7 +441,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### 创建字典外接程序的 HTML 用户界面
+### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
 
 
 以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。
@@ -532,15 +531,15 @@ a:hover, a:active
 ```
 
 
-**图 6. 演示字典 UI**
+**图 6.演示词典 UI**
 
-![演示字典 UI](../../images/DictionaryAgave06.jpg)
-
-
-### 编写 JavaScript 实现
+![演示词典 UI](../../images/DictionaryAgave06.jpg)
 
 
-以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。 该脚本重新使用以前介绍的 XML Web 服务。 脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。 它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
+### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
+
+
+以下示例显示 Dictionary.js 文件中的 JavaScript 实现（该文件从外接程序的 HTML 页面调用，以提供演示字典外接程序的编程逻辑）。该脚本重新使用以前介绍的 XML Web 服务。脚本作为示例 Web 服务被置于同一目录中时将从该服务获取定义。它可以通过修改文件顶部的 `xmlServiceURL` 变量来使用符合 XML Web 服务的公用 OfficeDefinitions，然后将拼音的 Bing API 键替换为正确注册的键。
 
 从此实现中调用的 JavaScript API for Office (Office.js) 的主要成员如下：
 
@@ -551,9 +550,9 @@ a:hover, a:active
     
 - **Document** 对象的 [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) 方法，在引发 **SelectionChanged** 事件处理程序时会在 `tryUpdatingSelectedWord()` 函数中调用该方法，以获取用户选择的字词或短语，将其强制为纯文本，然后执行 `selectedTextCallback` 异步回调函数。
     
-- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。 它通过使用返回的 **AsyncResult** 对象的 [value](../../reference/shared/asyncresult.status.md) 属性从回调的 _selectedText_ 参数（类型为 [AsyncResult](../../reference/shared/asyncresult.md)）获取该值。
+- 当 `selectTextCallback` 异步回调函数（作为 **getSelectedDataAsync** 方法的 _callback_ 参数传递）执行时，它在回调返回时获取所选文本的值。它通过使用返回的 [AsyncResult](../../reference/shared/asyncresult.md) 对象的 [value](../../reference/shared/asyncresult.status.md) 属性从回调的 _selectedText_ 参数（类型为 **AsyncResult**）获取该值。
     
-- `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。 它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
+- `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     
 - Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。
     

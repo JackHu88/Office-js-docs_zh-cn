@@ -1,19 +1,19 @@
-﻿# Filter 对象（适用于 Excel 的 JavaScript API）
+# <a name="filter-object-(javascript-api-for-excel)"></a>Filter 对象（适用于 Excel 的 JavaScript API）
 
 _适用于：Excel 2016、Excel Online、Excel for iOS、Office 2016_
 
 管理表格列的筛选。
 
-## 属性
+## <a name="properties"></a>属性
 
 无
 
-## Relationships
+## <a name="relationships"></a>Relationships
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
 |条件|[FilterCriteria](filtercriteria.md)|给定列上当前应用的筛选器。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
@@ -31,26 +31,26 @@ _适用于：Excel 2016、Excel Online、Excel for iOS、Office 2016_
 |[clear()](#clear)|void|清除给定列上的筛选器。|
 |[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### apply(criteria:FilterCriteria)
+### <a name="apply(criteria:-filtercriteria)"></a>apply(criteria:FilterCriteria)
 在给定列中应用给定的筛选条件。使用以下任一帮助程序方法均可实现相同的功能。 
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.apply(criteria);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |条件|FilterCriteria|要应用的条件。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 以下示例演示如何使用泛型 apply() 方法应用自定义筛选器。
 
 ```js
@@ -72,23 +72,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyBottomItemsFilter(count: number)
+### <a name="applybottomitemsfilter(count:-number)"></a>applyBottomItemsFilter(count: number)
 将“Bottom Item”筛选器应用于列，获取给定数量的元素。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyBottomItemsFilter(count);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |count|编号|要显示的底部元素的数量。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -102,23 +102,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyBottomPercentFilter(percent: number)
+### <a name="applybottompercentfilter(percent:-number)"></a>applyBottomPercentFilter(percent: number)
 将“Bottom Percent”筛选器应用于列，获取给定百分比的元素。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyBottomPercentFilter(percent);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |百分比|编号|要显示的底部元素的百分比。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -131,24 +131,24 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### applyCellColorFilter(color: string)
+### <a name="applycellcolorfilter(color:-string)"></a>applyCellColorFilter(color: string)
 将“Cell Color”筛选器应用于列，获取给定颜色。
 
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyCellColorFilter(color);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|color|string|要显示的单元格的背景颜色。|
+|color|字符串|要显示的单元格的背景颜色。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -162,26 +162,26 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyCustomFilter(criteria1: string, criteria2: string, oper:FilterOperator)
+### <a name="applycustomfilter(criteria1:-string,-criteria2:-string,-oper:-filteroperator)"></a>applyCustomFilter(criteria1: string, criteria2: string, oper:FilterOperator)
 将“Icon”筛选器应用于列，获取给定条件的字符串。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|criteria1|string|第一个条件字符串。|
+|criteria1|字符串|第一个条件字符串。|
 |criteria2|string|可选。第二个条件字符串。|
 |运算符|FilterOperator|可选。说明这两个条件如何联接的运算符。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -195,23 +195,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyDynamicFilter(criteria: string)
+### <a name="applydynamicfilter(criteria:-string)"></a>applyDynamicFilter(criteria: string)
 将“Dynamic”筛选器应用于列。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyDynamicFilter(criteria);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |条件|string|要应用的动态条件。可能的值是：Unknown、AboveAverage、AllDatesInPeriodApril、AllDatesInPeriodAugust、AllDatesInPeriodDecember、AllDatesInPeriodFebruray、AllDatesInPeriodJanuary、AllDatesInPeriodJuly、AllDatesInPeriodJune、AllDatesInPeriodMarch、AllDatesInPeriodMay、AllDatesInPeriodNovember、AllDatesInPeriodOctober、AllDatesInPeriodQuarter1、AllDatesInPeriodQuarter2、AllDatesInPeriodQuarter3、AllDatesInPeriodQuarter4、AllDatesInPeriodSeptember, BelowAverage、LastMonth, LastQuarter、LastWeek、LastYear、NextMonth、NextQuarter、NextWeek、NextYear、ThisMonth、ThisQuarter、ThisWeek、ThisYear、Today、Tomorrow、YearToDate、Yesterday|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -225,23 +225,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyFontColorFilter(color: string)
+### <a name="applyfontcolorfilter(color:-string)"></a>applyFontColorFilter(color: string)
 将“Font Color”筛选器应用于列，获取给定颜色。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyFontColorFilter(color);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|color|string|要显示的单元格的字体颜色。|
+|color|字符串|要显示的单元格的字体颜色。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -255,23 +255,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyIconFilter(icon:Icon)
+### <a name="applyiconfilter(icon:-icon)"></a>applyIconFilter(icon:Icon)
 将“Icon”筛选器应用于列，获取给定图标。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyIconFilter(icon);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |icon|图标|要显示的单元格图标。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -285,23 +285,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyTopItemsFilter(count: number)
+### <a name="applytopitemsfilter(count:-number)"></a>applyTopItemsFilter(count: number)
 将“Top Item”筛选器应用于列，获取给定数量的元素。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyTopItemsFilter(count);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |count|编号|要显示的顶部元素的数量。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -316,23 +316,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### applyTopPercentFilter(percent: number)
+### <a name="applytoppercentfilter(percent:-number)"></a>applyTopPercentFilter(percent: number)
 将“Top Percent”筛选器应用于列，获取给定百分比的元素。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyTopPercentFilter(percent);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |百分比|编号|要显示的顶部元素的百分比。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -345,23 +345,23 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### applyValuesFilter(values: ()[])
+### <a name="applyvaluesfilter(values:-()[])"></a>applyValuesFilter(values: ()[])
 将“Values”筛选器应用于列，获取给定值。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.applyValuesFilter(values);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |值|()[]|要显示的值的列表。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -375,21 +375,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### clear()
+### <a name="clear()"></a>clear()
 清除给定列上的筛选器。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 filterObject.clear();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="example"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -403,18 +403,18 @@ Excel.run(function (ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void

@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.ILabHostVersionInfo
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.ilabhostversioninfo"></a>Labs.Core.ILabHostVersionInfo
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 有关实验室主机的版本信息。
 
@@ -10,7 +10,7 @@ interface ILabHostVersionInfo
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

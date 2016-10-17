@@ -1,11 +1,11 @@
-﻿
-# Override 元素
+
+# <a name="override-element"></a>Override 元素
 提供一种为其他区域设置指定某设置的值的方法。
 
  **外接程序类型：**内容、任务窗格、邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -13,7 +13,7 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 
 ||
@@ -29,16 +29,16 @@
 |[SourceLocation](../../reference/manifest/sourcelocation.md)|
 |[SupportUrl](../../reference/manifest/supporturl.md)|
 
-## 属性
+## <a name="attributes"></a>属性
 
 
 
 |**属性**|**类型**|**必需**|**说明**|
 |:-----|:-----|:-----|:-----|
-|区域设置|string|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
-|值|string|必需|指定表示为指定区域设置的设置的值。|
+|区域设置|字符串|必需|为此替代项指定区域设置的区域性名称，采用 BCP 47 语言标记格式，例如 `"en-US"`。|
+|值|字符串|必需|指定表示为指定区域设置的设置的值。|
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

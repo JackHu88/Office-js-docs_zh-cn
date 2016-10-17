@@ -1,14 +1,11 @@
 
-# 在 Visual Studio 中创建和调试 Office 外接程序
+# <a name="create-and-debug-office-add-ins-in-visual-studio"></a>在 Visual Studio 中创建和调试 Office 外接程序
 
+本文介绍如何使用 Visual Studio 创建第一个 Office 外接程序。本文中的步骤基于 Visual Studio 2015。如果使用的是 Visual Studio 的其他版本，操作步骤可能略有不同。
 
+>**注意：**若要开始创建适用于 OneNote 的外接程序，请参阅 [生成第一个 OneNote 外接程序](../onenote/onenote-add-ins-getting-started.md)。
 
-
- >**注意**  这些说明基于 Visual Studio 2015。如果你正在使用 Visual Studio 的其他版本，操作步骤可能略有不同。
-
-
-
-## 在 Visual Studio 中创建 Office 外接程序项目
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>在 Visual Studio 中创建 Office 外接程序项目
 
 
 开始使用前，确保你已安装 [Office 开发人员工具](https://www.visualstudio.com/features/office-tools-vs.aspx)。 
@@ -20,7 +17,7 @@
     
 3. 为项目命名，然后选择“**确定**”以创建项目。
     
-4. Visual Studio 将创建项目，其文件会显示在“**解决方案资源管理器**”中。 默认的 Home.html 页面会在 Visual Studio 中打开。
+4. Visual Studio 将创建项目，其文件会显示在“**解决方案资源管理器**”中。默认的 Home.html 页面会在 Visual Studio 中打开。
     
 在 Visual Studio 2015 中，某些外接程序项目模板已进行了更新，可反映其他功能：
 
@@ -30,24 +27,24 @@
 - Outlook 外接程序包含的选项不仅可用于将您的外接程序包含在电子邮件或约会中，还可用于指定撰写及阅读电子邮件或约会时外接程序是否可用。
     
 
- >**注意**  在 Visual Studio 中，根据说明，大多数选项都是可以理解的，但“**电子邮件**”复选框除外。 若要创建不仅伴随邮件项目而且伴随会议请求、响应和取消出现的 Outlook 外接程序，请使用此复选框。
+ >**注意**  在 Visual Studio 中，根据说明，大多数选项都是可以理解的，但“**电子邮件**”复选框除外。若要创建不仅伴随邮件项目而且伴随会议请求、响应和取消出现的 Outlook 外接程序，请使用此复选框。
 
 完成向导后，Visual Studio 会为你创建一个包含两个项目的解决方案。
 
 
 
-|**Project**|**说明**|
+|**项目**|**说明**|
 |:-----|:-----|
-|加载项项目|仅包含一个 XML 清单文件，该文件包含描述您加载项的所有设置。这些设置可帮助 Office 主机确定应何时激活加载项，以及在何处显示加载项。Visual Studio 会为您生成此文件的内容，以便您能够立即运行项目并使用加载项。您可以通过使用清单编辑器来随时更改这些设置。|
+|外接程序项目|仅包含一个 XML 清单文件，该文件包含描述您加载项的所有设置。这些设置可帮助 Office 主机确定应何时激活加载项，以及在何处显示加载项。Visual Studio 会为您生成此文件的内容，以便您能够立即运行项目并使用加载项。您可以通过使用清单编辑器来随时更改这些设置。|
 |Web 应用程序项目|包含加载项的内容页面，包括开发可识别 Office 的 HTML 和 JavaScript 页面所需的所有文件和文件引用。在您开发加载项时，Visual Studio 会在本地 IIS 服务器上承载 Web 应用程序。准备好进行发布后，必须找出一个服务器来承载此项目。如果要了解有关 ASP.NET Web 应用程序项目的更多信息，请参阅 [ASP.NET Web 项目](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx)。|
 
-## 修改你的外接程序设置
+## <a name="modify-your-add-in-settings"></a>修改你的外接程序设置
 
 
-若要修改外接程序设置，请编辑项目的 XML 清单文件。 在“**解决方案资源管理器**”中，展开外接程序项目节点、展开包含 XML 清单的文件夹并选择 XML 清单。 你可以指向该文件中的任何元素以查看说明该元素的用途的工具提示。 有关清单文件的详细信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
+若要修改外接程序设置，请编辑项目的 XML 清单文件。在“**解决方案资源管理器**”中，展开外接程序项目节点、展开包含 XML 清单的文件夹并选择 XML 清单。你可以指向该文件中的任何元素以查看说明该元素用途的工具提示。有关清单文件的详细信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
 
 
-## 开发外接程序的内容
+## <a name="develop-the-contents-of-your-add-in"></a>开发外接程序的内容
 
 
 加载项项目允许您修改描述加载项的设置，而 Web 应用程序提供加载项中显示的内容。 
@@ -60,25 +57,25 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 
 |**文件**|**说明**|
 |:-----|:-----|
-|**Home.html**|位于项目的**主**文件夹中，此为外接程序的默认 HTML 页面。 在文档、电子邮件或约会项目中激活此页面时，它会显示为外接程序内的第一个页面。 此文件很方便，因为它包含你入门所需的所有文件引用。 准备好创建第一个外接程序时，只需向此文件添加 HTML 代码即可。|
-|**Home.js**|位于项目的**主**文件夹中，此为与 Home.js 页面相关联的 JavaScript 文件。 你可以将特定于 Home.html 页面的行为的任何代码置于 Home.js 文件中。 Home.js 文件包含一些可帮你入门的示例代码。|
-|**App.js**|位于项目的**外接程序**文件夹中，此为整个外接程序的默认 JavaScript 文件。 你可以将对你外接程序的多个页面的行为通用的代码置于 App.js 文件中。 App.js 文件包含一些可帮你入门的示例代码。|
+|**Home.html**|位于项目的**主**文件夹中，此为外接程序的默认 HTML 页面。在文档、电子邮件或约会项目中激活此页面时，它会显示为外接程序内的第一个页面。此文件很方便，因为它包含你入门所需的所有文件引用。准备好创建第一个外接程序时，只需向此文件添加 HTML 代码即可。|
+|**Home.js**|位于项目的**主**文件夹中，此为与 Home.js 页面相关联的 JavaScript 文件。你可以将特定于 Home.html 页面的行为的任何代码置于 Home.js 文件中。Home.js 文件包含一些可帮你入门的示例代码。|
+|**App.js**|位于项目的**外接程序**文件夹中，此为整个外接程序的默认 JavaScript 文件。你可以将对你外接程序的多个页面的行为通用的代码置于 App.js 文件中。App.js 文件包含一些可帮你入门的示例代码。|
 
- >**注意**  你无需使用这些文件。 你可以随意将其他文件添加到项目并改为使用这些。 如果你想让其他 HTML 文件显示为外接程序的初始页，请打开清单编辑器，然后将 **SourceLocation** 属性指向文件名。
+ >**注意**  你无需使用这些文件。你可以随意将其他文件添加到项目并改为使用这些。如果想让其他 HTML 文件显示为外接程序的初始页，请打开清单编辑器，然后将 **SourceLocation** 属性指向文件名。
 
 
-## 调试你的外接程序
+## <a name="debug-your-add-in"></a>调试你的外接程序
 
 
 当您准备启动加载项时，请查看与构建和调试相关的属性，然后启动解决方案。
 
 
-### 查看生成和调试属性
+### <a name="review-the-build-and-debug-properties"></a>查看生成和调试属性
 
 在启动解决方案之前，请确认 Visual Studio 将打开您需要的主机应用程序。该信息连同与构建和调试加载项有关的其他几个属性一起显示在项目的属性页中。
 
 
-### 打开项目的属性页
+### <a name="to-open-the-property-pages-of-a-project"></a>打开项目的属性页
 
 
 1. 在“**解决方案资源管理器**”中，选择项目名称。
@@ -91,9 +88,9 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 
 |**属性**|**说明**|
 |:-----|:-----|
-|**启动操作**|指定是否在 Office 桌面客户端或在指定浏览器的 Office Online 客户端调试加载项。|
+|**启动操作**|指定是否在 Office 桌面客户端或在指定浏览器的 Office Online 客户端调试外接程序。|
 |**启动文档**（仅限内容和任务窗格加载项）|指定要在启动项目时打开的文档。|
-|**Web 项目**|指定与加载项关联的 Web 项目的名称。|
+|**Web 项目**|指定与外接程序关联的 Web 项目的名称。|
 |**电子邮件地址**（仅限 Outlook 外接程序）|指定 Exchange Server 或 Exchange Online 中您想用来测试您的 Outlook 外接程序的用户帐户的电子邮件地址。|
 |**EWS Url**（仅限 Outlook 外接程序）|Exchange Web 服务 URL（例如：https://www.contoso.com/ews/exchange.aspx）。 |
 |**OWA Url**（仅限 Outlook 外接程序）|Outlook Web App URL（例如：https://www.contoso.com/owa）。|
@@ -101,13 +98,13 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 |**项目文件**|指定包含生成、配置和有关项目的其他信息的文件名称。|
 |**项目文件夹**|项目文件的位置。|
 
-### 使用现有文档调试加载项（仅限内容和任务窗格加载项）
+### <a name="use-an-existing-document-to-debug-the-add-in-(content-and-task-pane-add-ins-only)"></a>使用现有文档调试加载项（仅限内容和任务窗格加载项）
 
 
 您可以将文档添加到加载项项目。如果您有包含要用于加载项的测试数据的文档，Visual Studio 将在您启动项目时为您打开该文档。
 
 
-### 使用现有文档调试加载项
+### <a name="to-use-an-existing-document-to-debug-the-add-in"></a>使用现有文档调试加载项
 
 
 1. 在“**解决方案资源管理器**”中，选择外接程序项目文件夹。
@@ -126,13 +123,13 @@ Web 应用程序项目包含一个可用于入门的默认 HTML 页和 Javascrip
 6. 在“**启动文档**”列表中，选择要添加到项目的文档，然后选择“**确定**”按钮关闭属性页。
     
 
-### 启动解决方案
+### <a name="start-the-solution"></a>启动解决方案
 
 
-启动 Visual Studio 时将自动生成解决方案。 你可以通过依次选择“**调试**、“**启动**”，从“**菜单**”栏中启动解决方案。 
+启动 Visual Studio 时将自动生成解决方案。你可以通过依次选择“**调试**、“**启动**”，从“**菜单**”栏中启动解决方案。 
 
 
- >**注意**  如果在 Internet Explorer 中未启用脚本调试，你将无法在 Visual Studio 中启动调试器。 你可以通过以下方式启用脚本调试：打开“**Internet 选项**”对话框，选择“**高级**”选项卡，然后清除“**禁用脚本调试 (Internet Explorer)**”和“**禁用脚本调试（其他）**”复选框。
+ >**注意**  如果在 Internet Explorer 中未启用脚本调试，你将无法在 Visual Studio 中启动调试器。你可以通过以下方式启用脚本调试：打开“**Internet 选项**”对话框，选择“**高级**”选项卡，然后清除“**禁用脚本调试 (Internet Explorer)**”和“**禁用脚本调试（其他）**”复选框。
 
 Visual Studio 生成项目并执行以下操作：
 
@@ -152,25 +149,26 @@ Visual Studio 生成项目并执行以下操作：
     
 3. 打开主机应用程序。 
     
-生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。 Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。 通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。 通过这些标志，你可以得知 Visual Studio 在你的代码中检测到的问题。 有关详细信息，请参阅 [代码和文本编辑器](http://go.microsoft.com/fwlink/?LinkID=128497)。 有关如何启用或禁用验证的详细信息，请参阅： 
+生成项目时，Visual Studio 不会显示“**输出**”窗口中的验证错误。Visual Studio 报告“**错误列表**”窗口中出现的错误和警告。通过在代码和文本编辑器中显示不同颜色的波浪下划线（称为波浪线），Visual Studio 还报告验证错误。通过这些标志，你可以得知 Visual Studio 在代码中检测到的问题。有关详细信息，请参阅 [代码和文本编辑器](http://go.microsoft.com/fwlink/?LinkID=128497)。有关如何启用或禁用验证的详细信息，请参阅： 
 
 
-- [选项、文本编辑器、JavaScript、IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
+- [选项、文本编辑器、JavaScript 和 IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [如何：为 Visual Web Developer 中的 HTML 编辑设置验证选项](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- 
+  [操作方法：为 Visual Web Developer 中的 HTML 编辑设置验证选项](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
-- ["选项"对话框 ->"文本编辑器"->"CSS"->"验证"](http://go.microsoft.com/fwlink/?LinkID=238780)
+- [有关 CSS，请参阅验证、CSS、文本编辑器和“选项”对话框](http://go.microsoft.com/fwlink/?LinkID=238780)
     
 若要查看项目中 XML 清单文件的验证规则，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)。
 
 
-### 在 Excel、Word 或项目中显示外接程序并单步调试代码
+### <a name="show-an-add-in-in-excel,-word,-or-project-and-step-through-your-code"></a>在 Excel、Word 或项目中显示外接程序并单步调试代码
 
 
-如果你将外接程序项目的“**启动文档**”属性设置为 Excel 或 Word，Visual Studio 会创建一个新文档，外接程序会出现。 如果你将外接程序项目的“**启动文档**”属性设置为使用现有文档，Visual Studio 会打开该文档，但是你必须手动插入外接程序。 如果你将“**启动文档**”设置为“**Microsoft Project**”，则还需要手动插入外接程序。
+如果将外接程序项目的“**启动文档**”属性设置为 Excel 或 Word，Visual Studio 会创建一个新文档，外接程序会出现。如果将外接程序项目的“**启动文档**”属性设置为使用现有文档，Visual Studio 会打开该文档，但是你必须手动插入外接程序。如果将“**启动文档**”设置为“**Microsoft Project**”，则还需要手动插入外接程序。
 
 
-### 若要在 Excel 或 Word 中显示 Office 外接程序
+### <a name="to-show-an-office-add-in-in-excel-or-word"></a>若要在 Excel 或 Word 中显示 Office 外接程序
 
 
 1. 在 Excel 或 Word 中的“**插入**”选项卡上，选择“**Office 外接程序**”。
@@ -178,7 +176,7 @@ Visual Studio 生成项目并执行以下操作：
 2. 在出现的列表中选择您的加载项。
     
 
-### 在 Project 中显示 Office 外接程序
+### <a name="to-show-an-office-add-in-in-project"></a>在 Project 中显示 Office 外接程序
 
 
 1. 在 Project 中的“**项目**”选项卡上，选择“**Office 外接程序**”。
@@ -188,7 +186,7 @@ Visual Studio 生成项目并执行以下操作：
 在 Visual Studio 中，您随后可以设置断点。然后，当您与加载项交互时，可对 HTML、JavaScript 和 C# 或 VB 代码文件中的代码进行单步调试。
 
 
-### 在 Outlook 中显示 Outlook 外接程序并单步调试代码
+### <a name="show-the-outlook-add-in-in-outlook-and-step-through-your-code"></a>在 Outlook 中显示 Outlook 外接程序并单步调试代码
 
 
 若要在 Outlook 中查看加载项，请打开一个电子邮件或约会项目。
@@ -199,16 +197,16 @@ Visual Studio 生成项目并执行以下操作：
 
 在 Visual Studio 中，可以设置断点。然后，与 Outlook 外接程序交互并逐句调试 HTML、JavaScript 和 C# 或 VB 代码文件中的代码。 
 
-你还可以更改代码并在 Outlook 外接程序中查看这些更改的效果，而不必关闭 Office 外接程序并再次启动项目。 在 Outlook 中，只需打开 Outlook 外接程序的快捷菜单，然后选择“**重新加载**”即可。
+你还可以更改代码并在 Outlook 外接程序中查看这些更改的效果，而不必关闭 Office 外接程序并再次启动项目。在 Outlook 中，只需打开 Outlook 外接程序的快捷菜单，然后选择“**重新加载**”即可。
 
 
-### 修改代码并继续调试外接程序，而不必再次启动项目
+### <a name="modify-code-and-continue-to-debug-the-add-in-without-having-to-start-the-project-again"></a>修改代码并继续调试外接程序，而不必再次启动项目
 
 
-你可以更改代码并在外接程序中查看这些更改的效果，无需关闭主机应用程序并重新启动该项目。 更改代码后，打开外接程序的快捷菜单，然后选择“**重新加载**”。 当重新加载外接程序时，它会与 Visual Studio 调试器断开连接。 因此，你可以查看所做更改的效果，但是在将 Visual Studio 调试器附加到所有可用的 Iexplore.exe 进程之前，将无法再次单步执行代码。
+你可以更改代码并在外接程序中查看这些更改的效果，无需关闭主机应用程序并重新启动该项目。更改代码后，打开外接程序的快捷菜单，然后选择“**重新加载**”。当重新加载外接程序时，它会与 Visual Studio 调试器断开连接。因此，你可以查看所做更改的效果，但是在将 Visual Studio 调试器附加到所有可用的 Iexplore.exe 进程之前，将无法再次单步执行代码。
 
 
-### 将 Visual Studio 调试器附加到所有可用的 Iexplore.exe 进程
+### <a name="to-attach-the-visual-studio-debugger-to-all-of-the-available-iexplore.exe-processes"></a>将 Visual Studio 调试器附加到所有可用的 Iexplore.exe 进程
 
 
 1. 在 Visual Studio 中，依次选择“**调试**”、“**附加到进程**”。
@@ -216,7 +214,7 @@ Visual Studio 生成项目并执行以下操作：
 2. 在“**附加到进程**”对话框中，选择所有可用的“**Iexplore.exe**”进程，然后选择“**附加**”按钮。
     
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 - [发布 Office 外接程序](../publish/publish.md)
     

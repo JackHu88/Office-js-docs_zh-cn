@@ -1,7 +1,7 @@
-﻿
-# Labs.ConnectionState
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.connectionstate"></a>Labs.ConnectionState
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 枚举实验室与主机之间的可能的连接状态。
 
@@ -10,7 +10,7 @@ enum ConnectionState
 ```
 
 
-## 枚举值
+## <a name="enumeration-values"></a>枚举值
 
 
 |||

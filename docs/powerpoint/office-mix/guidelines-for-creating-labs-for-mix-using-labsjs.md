@@ -1,5 +1,5 @@
 
-# 使用 LabsJS 创建 Mix 实验室的准则
+# <a name="guidelines-for-creating-labs-for-mix-using-labsjs"></a>使用 LabsJS 创建 Mix 实验室的准则
 
 
 
@@ -8,13 +8,13 @@ LabsJS 库 (labs.js) 支持编写与 Office Mix 集成的专门 Office 外接程
 LabsJS 内容提供了指导和示例，有助您实施 labs.js JavaScript API。此库在 [适用于 Office 的 JavaScript API](../../../reference/javascript-api-for-office.md) (Office.js) 的基础上构建，并提供了针对 Office Mix 中嵌入的外接程序优化的抽象层。
 
 
-## 通用准则
+## <a name="general-guidelines"></a>通用准则
 
 
 下面是在使用 LabJS API 编写外接程序时有帮助的一些通用准则。
 
 
-### 脚本
+### <a name="scripts"></a>脚本
 
 因为 labs.js 库是 office.js 上的抽象层，因此依赖于 office.js，office.js 和 labs.js 库文件都必须包含在您的开发项目中。 
 
@@ -26,7 +26,7 @@ labs.js 库附带 LabsJS SDK。或者，你可以引用 CDN <code>https://az5927
  >**注意**：除了 JavaScript 文件 (labs-1.0.4.js) 以外，我们还提供实验室 API 的 TypeScript 定义文件 (labs-1.0.4.d.ts)。定义文件针对 TypeScript 版本 0.9.1.1 而构建。
 
 
-### 回调和错误处理
+### <a name="callbacks-and-error-handling"></a>回调和错误处理
 
 labs.js API 中的几种方法将异步操作。对于这些操作，API 采用标准回调界面  **ILabCallback**。 
 
@@ -57,7 +57,7 @@ function createCallback<T>(deferred: JQueryDeferred<T>): Labs.Core.ILabCallback<
 ```
 
 
-### 实验室主机和 DefaultLabHost
+### <a name="lab-host-and-defaultlabhost"></a>实验室主机和 DefaultLabHost
 
 实验室主机 ( **ILabHost**) 是支持实验室开发的基础驱动程序。默认情况下，它设置为与 office.js 集成的主机。
 
@@ -77,7 +77,7 @@ Labs.DefaultHostBuilder = function () {
 ```
 
 
-### 初始化
+### <a name="initialization"></a>初始化
 
 初始化可在实验室及其主机之间建立通信通道。通过调用以下方法初始化您的实验室。
 
@@ -89,12 +89,12 @@ Labs.connect((err, connectionResponse) => {});
 初始化之后，您可以调用 labs.js API 的其他方法。 _connectionResponse_ 参数包含关于主机和用户的信息以及其他与连接相关的信息。有关返回值的详细信息，请参阅 [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md)。
 
 
-### 时间格式
+### <a name="time-format"></a>时间格式
 
 Labs.js 将数字存储为自 UTC 时间 1970 年 1 月 1 日以来经过的毫秒数。这与 JavaScript [Date 对象](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx)的日期格式匹配。
 
 
-### 时间线
+### <a name="timeline"></a>时间线
 
 实验室还可以与课程播放器时间线交互。时间线允许实验室通知课程播放器前进到下一张幻灯片。可通过调用  **Labs.getTimeline** 方法来检索时间线对象。
 
@@ -104,13 +104,13 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## 处理事件
+## <a name="handling-events"></a>处理事件
 
 
 LabsJS 事件 API 可跟踪实验室特定事件，并使您能够添加事件处理程序，以便对事件做出响应或采取措施。事件方法位于  **EventTypes** 对象上，其中三个为： **ModeChanged**、 **Activate** 和 **Deactivate**。 
 
 
-### 模式更改
+### <a name="mode-change"></a>模式更改
 
 当特定实验室从编辑模式更改为查看模式时， **ModeChanged** 事件将触发。在 PowerPoint 编辑模式下查看实验室时，编辑模式可见。PowerPoint 呈现幻灯片放映或实验室显示在 Office Mix 课程播放器中时，查看模式可见。查看模式应始终显示用户在使用实验室时所看到的内容。编辑模式允许用户配置实验室。
 
@@ -127,7 +127,7 @@ Labs.on(Labs.Core.EventTypes.ModeChanged, (data) => {
 ```
 
 
-### 激活
+### <a name="activate"></a>激活
 
 当实验室所在的 PowerPoint 幻灯片在课程播放器中变为活动状态时， **activate** 事件将触发。
 
@@ -139,7 +139,7 @@ Labs.on(Labs.Core.EventTypes.Activate, (data) => {
 ```
 
 
-### 停用
+### <a name="deactivate"></a>停用
 
 当实验室所在的 PowerPoint 幻灯片不再是活动幻灯片时， **deactivate** 事件将触发。
 
@@ -151,7 +151,7 @@ Labs.on(Labs.Core.EventTypes.Deactivate, (data) => {
 ```
 
 
-### 时间线
+### <a name="timeline"></a>时间线
 
 实验室还可以与课程播放器时间线交互。时间线允许实验室通知课程播放器前进到下一张幻灯片。可通过调用  **Labs.getTimeline** 方法来检索时间线对象。
 
@@ -161,7 +161,7 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

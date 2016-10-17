@@ -1,12 +1,12 @@
-﻿
-# LabsJS JavaScript API 引用
-大致了解 LabsJS JavaScript对象模型。
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labsjs-javascript-api-reference"></a>LabsJS JavaScript API 引用
+大致了解 LabsJS JavaScript 对象模型。
 
-LabsJS 引用中记录了 [TypeScript](http://www.typescriptlang.org/) 文件 **labs-1.0.42.d.ts** ，该文件将 LabsJS 对象模型分类成模块。
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
-## LabsJS 对象模型
+LabsJS 引用中记录了 [TypeScript](http://www.typescriptlang.org/) 文件 **labs-1.0.42.d.ts**，该文件将 LabsJS 对象模型分类成模块。
+
+## <a name="labsjs-object-model"></a>LabsJS 对象模型
 
 LabsJS 对象模型分为五个模块：
 
@@ -37,7 +37,7 @@ LabsJS 对象模型分为五个模块：
 
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

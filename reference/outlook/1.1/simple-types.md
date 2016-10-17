@@ -1,12 +1,12 @@
 
 
-# 简单类型
+# <a name="simple-types"></a>简单类型
 
-####  AsyncResult
+####  <a name="asyncresult"></a>AsyncResult
 
 用于封装异步请求的结果的对象，包括状态和错误信息（如果请求失败）。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -15,19 +15,19 @@
 |`status`| [Office.AsyncResultStatus](Office.md#.asyncresultstatus-string)|获取异步操作的状态。|
 |`value`| Object|获取此异步操作的负载或内容（如有）。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写或阅读|
-#### AttachmentDetails
+#### <a name="attachmentdetails"></a>AttachmentDetails
 
 表示服务器中一个项目上的附件。仅限阅读模式。
 
 `AttachmentDetail` 对象的数组作为 `attachments` 或 `Appointment` 对象的 `Message` 属性返回。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -38,20 +38,20 @@
 |`name`| String|获取附件的名称。|
 |`size`| 数字|获取以字节为单位的附件大小。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### Contact
+#### <a name="contact"></a>Contact
 
 表示存储在服务器上的联系人。仅限阅读模式。
 
 与电子邮件或约会关联的联系人列表在由活动项的 `contacts` 或 `Entities` 方法返回的 [`getEntities`](simple-types.md#entities) 对象的 `getEntitiesByType` 属性中返回。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -62,22 +62,22 @@
 |`phoneNumbers`| Array.&lt;[PhoneNumber](simple-types.md#phonenumber)&gt;| &lt;可为 null&gt;|包含与联系人关联的每个电话号码的 `PhoneNumber` 对象的数组。|
 |`urls`| Array.&lt;String&gt;| &lt;可为 null&gt;|包含与联系人关联的 Internet URL 的字符串数组。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| 受限|
 |适用的 Outlook 模式| 阅读|
-####  EmailAddressDetails
+####  <a name="emailaddressdetails"></a>EmailAddressDetails
 
 提供电子邮件或约会的发件人或指定收件人的电子邮件属性。
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   对象
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -86,32 +86,32 @@
 |`emailAddress`| String|获取 SMTP 电子邮件地址。|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|获取收件人的电子邮件地址类型。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 撰写或阅读|
-#### EmailUser
+#### <a name="emailuser"></a>EmailUser
 
 表示 Exchange Server 上的电子邮件帐户。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
 |`displayName`| 字符串|获取与电子邮件地址关联的显示名称。|
 |`emailAddress`| String|获取 SMTP 电子邮件地址。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### Entities
+#### <a name="entities"></a>Entities
 
 表示电子邮件或约会中找到的实体集合。仅限阅读模式。
 
@@ -127,7 +127,7 @@
 
 属性数组由 `getEntitiesByType` 方法返回时，仅指定实体的属性包含数据；其他所有属性均为 `null`。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -139,18 +139,18 @@
 |`taskSuggestions`| Array.&lt;[TaskSuggestion](simple-types.md#tasksuggestion)&gt;| &lt;可为 null&gt;|获取电子邮件或约会中找到的任务建议。|
 |`urls`| Array.&lt;String&gt;| &lt;可为 null&gt;|获取电子邮件或约会中呈现的 Internet URL。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### LocalClientTime
+#### <a name="localclienttime"></a>LocalClientTime
 
 表示本地客户端时区中的日期和时间。仅限阅读模式。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -163,14 +163,14 @@
 |`milliseconds`| 数字|表示毫秒的整数值。|
 |`timezoneOffset`| 数字|表示本地时区与 UTC 之间的分钟数差异的整数值。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### MeetingSuggestion
+#### <a name="meetingsuggestion"></a>MeetingSuggestion
 
 表示在项目中找到的建议会议。仅限阅读模式。
 
@@ -178,7 +178,7 @@
 
 `start` 和 `end` 的值为包含建议会议的开始和结束日期和时间的 Date 对象的字符串表示形式。这些值用为当前用户指定的默认时区表示。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -189,24 +189,24 @@
 |`start`| String|获取建议会议开始的日期和时间。|
 |`subject`| String|获取建议会议的主题。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### PhoneNumber
+#### <a name="phonenumber"></a>PhoneNumber
 
 表示项目中标识的电话号码。仅限阅读模式。
 
 包含电子邮件中找到的电话号码的 `PhoneNumber` 对象数组在对所选项目调用 [`phoneNumbers`](simple-types.md#entities) 方法时返回的 [`Entities`](Office.context.mailbox.item.md#getentities--entities) 对象的 `getEntities` 属性中返回。
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   对象
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -214,27 +214,27 @@
 |`phoneString`| String|获取包含电话号码的字符串。该字符串只包含电话号码中的数字，而不包括原始项目中存在的括号和连字符等字符。|
 |`type`| String|获取标识电话号码的类型的字符串：`Home`、`Work`、`Mobile` 和 `Unspecified`。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### TaskSuggestion
+#### <a name="tasksuggestion"></a>TaskSuggestion
 
 表示项目中标识的建议任务。仅限阅读模式。
 
 当对活动项目调用 [`taskSuggestions`](simple-types.md#entities) 或 [`Entities`](Office.context.mailbox.item.md#getentities--entities) 方法时，在电子邮件中建议的任务列表将在返回的 [`Entities`][`getEntities`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) 对象的 `getEntitiesByType` 属性中返回。
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 说明|
 |---|---|---|
 |`assignees`| Array.&lt;[EmailUser](simple-types.md#emailuser)&gt;|获取应向其分配建议任务的用户。|
 |`taskString`| String|获取标识为任务建议的项的文本。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|

@@ -1,5 +1,5 @@
 
-# 在 Outlook 中撰写约会或邮件时将数据插入到正文中
+# <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时将数据插入到正文中
 
 您可以使用异步方法（[Body.getAsync](../../reference/outlook/Body.md)、[Body.getTypeAsync](../../reference/outlook/Body.md)、[Body.prependAsync](../../reference/outlook/Body.md)、[Body.setAsync](../../reference/outlook/Body.md) 和 [Body.setSelectedDataAsync](../../reference/outlook/Body.md)），以获取正文类型并在用户正在撰写的约会或邮件项目的正文中插入数据。这些异步方法仅适用于撰写外接程序。若要使用这些方法，请确保已正确设置外接程序清单，以便 Outlook 可以在撰写窗体中激活外接程序，如[创建适用于撰写窗体的 Outlook 外接程序](../outlook/compose-scenario.md)中所述。
 
@@ -21,7 +21,7 @@
 除 _coercionType_ 以外，与适用于 Office 的 JavaScript API 中的大多数异步方法相似，**getTypeAsync**、**prependAsync** 和 **setSelectedDataAsync** 采用其他可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md)。
 
 
-## 在当前光标位置插入数据
+## <a name="to-insert-data-at-the-current-cursor-position"></a>在当前光标位置插入数据
 
 
 此部分显示的代码示例使用  **getTypeAsync** 验证正在撰写的项目的正文类型，然后使用 **setSelectedDataAsync** 在当前光标位置插入数据。
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## 在项目正文的开头插入数据
+## <a name="to-insert-data-at-the-beginning-of-the-item-body"></a>在项目正文的开头插入数据
 
 
 您也可以使用  **prependAsync** 在项目正文的开头部分插入数据，无论当前光标位置如何均可插入。除了插入点不同之外， **prependAsync** 和 **setSelectedDataAsync** 的工作原理相似：
@@ -215,7 +215,7 @@ function write(message){
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

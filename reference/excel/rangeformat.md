@@ -1,8 +1,8 @@
-﻿# RangeFormat 对象（适用于 Excel 的 JavaScript API）
+# <a name="rangeformat-object-(javascript-api-for-excel)"></a>RangeFormat 对象（适用于 Excel 的 JavaScript API）
 
 一个格式对象，其中封装了区域的字体、填充、边框、对齐方式和其他属性。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
@@ -12,17 +12,17 @@
 |verticalAlignment|string|表示指定对象的垂直对齐方式。可能的值是：Top、Center、Bottom、Justify、Distributed。|
 |wrapText|bool|指示 Excel 文本控件被设置为对象中的自动换行。指示整个区域不使用统一自动换行设置的空值。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问 [示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
-|Borders|[RangeBorderCollection](rangebordercollection.md)|应用于所选的整个区域的 border 对象的集合。只读。|
-|填充。|[RangeFill](rangefill.md)|返回在整个区域内定义的 fill 对象。只读。|
+|borders|[RangeBorderCollection](rangebordercollection.md)|应用于所选的整个区域的 border 对象的集合。只读。|
+|fill|[RangeFill](rangefill.md)|返回在整个区域内定义的 fill 对象。只读。|
 |font|[RangeFont](rangefont.md)|返回在所选的整个区域内定义的 font 对象。只读。|
-|保护|[FormatProtection](formatprotection.md)|返回某一区域的格式保护对象。只读。|
+|protection|[FormatProtection](formatprotection.md)|返回某一区域的格式 protection 对象。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
@@ -30,53 +30,53 @@ _请参阅属性访问[示例](#示例)。_
 |[autofitRows()](#autofitrows)|void|根据列中的当前数据，更改当前区域的行高以达到最佳高度。|
 |[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### autofitColumns()
+### <a name="autofitcolumns()"></a>autofitColumns()
 根据列中的当前数据，更改当前区域的列宽以达到最佳宽度。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeFormatObject.autofitColumns();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### autofitRows()
+### <a name="autofitrows()"></a>autofitRows()
 根据列中的当前数据，更改当前区域的行高以达到最佳高度。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeFormatObject.autofitRows();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
 本示例打印某一范围的所有格式属性。 
 

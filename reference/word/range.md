@@ -1,61 +1,61 @@
-﻿# Range 对象（适用于 Word 的 JavaScript API）
+# <a name="range-object-(javascript-api-for-word)"></a>Range 对象（适用于 Word 的 JavaScript API）
 
 表示文档中的一个连续区域。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |style|string|获取或设置用于区域的样式。这是预安装样式或自定义样式的名称。|
 |text|string|获取区域的文本。只读。|
 
-## Relationships
+## <a name="relationships"></a>Relationships
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|获取区域中的内容控件对象集合。只读。|
-|font|[字体](font.md)|获取区域的文本格式。使用此对象获取和设置字体名称、大小、颜色和其他属性。只读。|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|获取区域中的 inlinePicture 对象的集合。只读。|
+|font|[Font](font.md)|获取区域的文本格式。使用此对象获取和设置字体名称、大小、颜色和其他属性。只读。|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|获取范围中的嵌入式图片对象集合。只读。|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|获取区域中的段落对象集合。只读。|
-|parentContentControl|[ContentControl](contentcontrol.md)|获取包含该范围的内容控件。如果不存在父内容控件，返回 null。只读的。|
+|parentContentControl|[ContentControl](contentcontrol.md)|获取包含该范围的内容控件。如果不存在父内容控件，返回 null。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|清除 range 对象的内容。用户可以对已清除的内容执行撤消操作。|
-|[delete()](#delete)|void|从文档中删除区域及其内容。|
+|[delete()](#delete)|void|从文档中删除该范围及其内容。|
 |[getHtml()](#gethtml)|string|获取 range 对象的 HTML 表示形式。|
 |[getOoxml()](#getooxml)|string|获取 range 对象的 OOXML 表示形式。|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|在指定位置插入分隔符。 分隔符只能插入到包含在主文档正文内的 range 对象中，除非它是可以插入到任何 body 对象的换行符。 insertLocation 值可以为“Before”或“After”。|
+|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的 range 对象中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Before”或“After”。|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|使用富文本内容控件封装 range 对象。|
-|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将文档插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将 HTML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将图片插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”、“End”、“Before”或“After”。
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将 OOXML 或 wordProcessingML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph ](paragraph.md)|将段落插入到区域中的指定位置。insertLocation 值可以为“Before”或“After”。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将文本插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
-|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索 range 对象的范围。搜索结果是 range 对象的集合。|
+|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|将文档插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|将 HTML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将图片插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”、“End”、“Before”或“After”。
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|将 OOXML 或 wordProcessingML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|将段落插入到区域中的指定位置。insertLocation 值可以为“Before”或“After”。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|将文本插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索 range 对象的范围。搜索结果是 range 对象的集合。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|选择并在 Word UI 中导航到区域。SelectionMode 值可以为“Select”、“Start”或“End”。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### clear()
+### <a name="clear()"></a>clear()
 清除 range 对象的内容。用户可以对已清除的内容执行撤消操作。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.clear();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -80,21 +80,21 @@ Word.run(function (context) {
     }
 });
 ```
-### delete()
+### <a name="delete()"></a>delete()
 从文档中删除区域及其内容。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.delete();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 获取 range 对象的 HTML 表示形式。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getHtml();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 string
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -160,21 +160,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 获取 range 对象的 OOXML 表示形式。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.getOoxml();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 string
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -200,27 +200,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-在指定位置插入分隔符。 分隔符只能插入到包含在主文档正文内的 range 对象中，除非它是可以插入到任何 body 对象的换行符。 insertLocation 值可以为“Before”或“After”。
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的 range 对象中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Before”或“After”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertBreak(breakType, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |breakType|BreakType|必需。要添加到区域的分隔符类型。|
 |insertLocation|InsertLocation|必需。值可以为“Before”或“After”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 其他详细信息
+#### <a name="additional-details"></a>其他详细信息
 除了换行符之外，您不能在标头、页脚、脚注、尾注、注释和文本框对象中插入分隔符。
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -246,21 +246,21 @@ Word.run(function (context) {
 });
 ```
 
-### insertContentControl()
+### <a name="insertcontentcontrol()"></a>insertContentControl()
 使用富文本内容控件封装 range 对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertContentControl();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 [ContentControl](contentcontrol.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -293,24 +293,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 将文档插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64File|string|必需。要插入的 base64 编码的文件内容。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -337,24 +337,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
 将 HTML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertHtml(html, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |Html|string|必需。要插入到区域中的 HTML。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -380,39 +380,39 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
 将图片插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”、“End”、“Before”或“After”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 rangeObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|必需。将 base64 编码的图像插入区域中。|
 |insertLocation|InsertLocation|必需。值可以为“Replace”、“Start”、“End”、“Before”或“After”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [InlinePicture](inlinepicture.md)
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 将 OOXML 或 wordProcessingML 插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |ooxml|string|必需。要插入到区域中的 OOXML 或 wordProcessingML。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -438,27 +438,27 @@ Word.run(function (context) {
 });
 ```
 
-#### 其他信息
+#### <a name="additional-information"></a>其他信息
 阅读[使用 Office Open XML 创建更好的 Word 外接程序](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)以获取使用 OOXML 的指南。
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 将段落插入到区域中的指定位置。insertLocation 值可以为“Before”或“After”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |paragraphText|string|必需。要插入的段落文本。|
 |insertLocation|InsertLocation|必需。值可以为“Before”或“After”。|
 
-#### 返回
-[Paragraph ](paragraph.md)
+#### <a name="returns"></a>返回
+[Paragraph](paragraph.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -484,24 +484,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
 将文本插入到区域中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.insertText(text, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |text|string|必需。要插入的文本。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -527,23 +527,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -576,41 +576,41 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 使用指定搜索选项搜索 range 对象的范围。搜索结果是 range 对象的集合。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.search(searchText, searchOptions);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|searchText|string|必须。搜索文本。|
+|searchText|string|必需。搜索文本。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|可选。用于搜索的选项。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [SearchResultCollection](searchresultcollection.md)
 
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 选择并在 Word UI 中导航到区域。SelectionMode 值可以为“Select”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 rangeObject.select(selectionMode);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|可选。选择模式可以为“Select”、“Start”或“End”。“Select”为默认值。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -639,5 +639,5 @@ Word.run(function (context) {
 });
 ```
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。

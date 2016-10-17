@@ -1,6 +1,6 @@
 
-# Context 对象
-表示 外接程序 的运行时环境，并提供对 API 的关键对象的访问。
+# <a name="context-object"></a>Context 对象
+表示外接程序的运行时环境，并提供对 API 的关键对象的访问。
 
 |||
 |:-----|:-----|
@@ -12,7 +12,7 @@ Office.context
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 |||
 |:-----|:-----|
@@ -20,19 +20,19 @@ Office.context
 |[commerceAllowed](../../reference/shared/office.context.commerceallowed.md)|获取外接程序是否将运行在允许链接到外部付款系统的平台上。|
 |[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|存储到文档或项中时获取数据的区域设置（语言）。|
 |[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|获取宿主应用程序的 UI 的区域设置（语言）。|
-|[文档](../../reference/shared/office.context.document.md)|获取表示正与内容或任务窗格外接程序交互的文档的对象。|
-|[mailbox](../../reference/shared/office.context.mailbox.md)|获取提供专门针对 Outlook 外接程序的 API 的成员的访问的  **mailbox** 对象。|
-|[officeTheme](../../reference/shared/office.context.officetheme.md)|提供了对 Office 主题颜色属性的访问权限。|
+|[document](../../reference/shared/office.context.document.md)|获取表示正与内容或任务窗格外接程序交互的文档的对象。|
+|[mailbox](../../reference/shared/office.context.mailbox.md)|获取提供专门针对 Outlook 外接程序的 API 的成员的访问的 **mailbox** 对象。|
+|[officeTheme](../../reference/shared/office.context.officetheme.md)|提供了访问 Office 主题颜色的属性。|
 |[ui](../../reference/shared/officeui)|提供可用于创建和操作 UI 组件（如对话框）的对象和方法。|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|获取表示外接程序的已保存自定义设置的对象。|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|获取外接程序是否将运行在已启用触控的 Office 主机应用程序中。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 提供对 JavaScript API for Office 中的关键对象的访问的  **Context** 对象。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 
@@ -43,7 +43,7 @@ Office.context
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

@@ -1,4 +1,4 @@
-# 处理 OneNote 页面内容 
+# <a name="work-with-onenote-page-content"></a>处理 OneNote 页面内容 
 
 在 OneNote 外接程序 JavaScript API 中，页面内容由以下对象模型表示。
 
@@ -20,9 +20,9 @@
 - [Outline](../../reference/onenote/outline.md)
 - [Paragraph](../../reference/onenote/paragraph.md)
 
-OneNote 页面的内容和结构由 HTML 进行表示。 只有一部分 HTML 可用于创建或更新页面内容，如下所述。
+OneNote 页面的内容和结构由 HTML 进行表示。只有一部分 HTML 可用于创建或更新页面内容，如下所述。
 
-## 受支持的 HTML
+## <a name="supported-html"></a>受支持的 HTML
 
 OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页面内容：
 
@@ -35,13 +35,13 @@ OneNote 外接程序 JavaScript API 支持使用以下 HTML 创建和更新页�
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## 访问页面内容
+## <a name="accessing-page-contents"></a>访问页面内容
 
-只可通过 `Page#load` 访问当前活动页的*页面内容*。 若要更改活动页，请调用 `navigateToPage($page)`。
+只可通过 `Page#load` 访问当前活动页的*页面内容*。若要更改活动页，请调用 `navigateToPage($page)`。
 
 仍可查询任何页的元数据，例如标题。
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)

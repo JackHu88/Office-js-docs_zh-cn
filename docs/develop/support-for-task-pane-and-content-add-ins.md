@@ -1,5 +1,5 @@
 
-# 对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
+# <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>对 Office 2013 中内容和任务窗格外接程序的 Office JavaScript API 支持
 
 
 您可以使用 [Office JavaScript API](../../reference/javascript-api-for-office.md) 创建 Office 2013 主机应用程序的任务窗格或内容外接程序。已对内容和任务窗格外接程序支持的对象和方法进行如下分类：
@@ -27,7 +27,7 @@
 有关对各 Office 主机应用程序的 Office JavaScript API 支持的摘要信息，请参阅[了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)。
 
 
-## 在活动的选择内容中读取和写入
+## <a name="reading-and-writing-to-an-active-selection"></a>在活动的选择内容中读取和写入
 
 您可以在文档、电子表格或演示文稿的用户当前选定内容中读取和写入。根据加载项的主机应用程序，您可以在 [Document](../../reference/shared/document.getselecteddataasync.md) 对象的 [getSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) 和 [setSelectedDataAsync](../../reference/shared/document.md) 方法中指定要作为参数来读取或写入的数据结构类型。例如，您可以指定任何用于 Word 的数据类型（文本、HTML、表格数据或 Office Open XML）、用于 Excel 的文本和表格数据，以及用于 PowerPoint 和 Project 的文本。您还可以创建事件处理程序来检测对用户选择内容的更改。以下示例使用 **getSelectedDataAsync** 方法从作为文本的选择内容中获取数据。
 
@@ -53,7 +53,7 @@ function write(message){
 有关详细信息和示例，请参阅[将数据读取和写入到文档或电子表格中的活动选择区](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。
 
 
-## 绑定到文档或电子表格中的区域
+## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>绑定到文档或电子表格中的区域
 
 您可以使用 **getSelectedDataAsync** 和 **setSelectedDataAsync** 方法在文档、电子表格或演示文稿中的用户*当前*选定内容中读取和写入。但是，如果您想在不要求用户选定内容的情况下，在运行您外接程序的各个会话中访问文档中的同一区域，您应首先绑定到该区域。您还可以订阅该绑定区域的数据和选定内容更改事件。
 
@@ -83,7 +83,7 @@ function write(message){
 有关详细信息和示例，请参阅[绑定到文档或电子表格中的区域](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)。
 
 
-## 获取整个文档
+## <a name="getting-entire-documents"></a>获取整个文档
 
 如果任务窗格外接程序在 PowerPoint 或 Word 中运行，您可以使用 [Document.getFileAsync](../../reference/shared/document.getfileasync.md)、[File.getSliceAsync](../../reference/shared/file.getsliceasync.md) 和 [File.closeAsync](../../reference/shared/file.closeasync.md) 方法获取整个演示文稿或文档。
 
@@ -92,7 +92,7 @@ function write(message){
 有关详细信息，请参阅如何[从 PowerPoint 或 Word 外接程序中获取整个文档](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)。 
 
 
-## 读取和写入 Word 文档的自定义 XML 部件
+## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>读取和写入 Word 文档的自定义 XML 部件
 
 通过使用 Open Office XML 文件格式和内容控件，您可以将自定义 XML 部件添加到 Word 文档，并将 XML 部件中的元素绑定到文档的内容控件。打开文档时，Word 读取并自动使用自定义 XML 部件中的数据填充绑定的内容控件。用户还可以将数据写入内容控件，且在用户保存文档时，控件中的数据也将保存到绑定的 XML 部件。适用于 Word 的任务窗格外接程序可以使用 [Document.customXmlParts](../../reference/shared/document.customxmlparts.md) 属性、[CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md)、[CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) 和 [CustomXmlNode](../../reference/shared/customxmlnode.customxmlnode.md) 对象来动态读取文档中的数据和将数据写入文档中。
 
@@ -105,10 +105,10 @@ function write(message){
 有关如何使用含有任务窗格外接程序的自定义 XML 部件的详细信息，请参阅[使用 Office Open XML 创建更好的 Word 外接程序](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md)。
 
 
-## 保留外接程序设置
+## <a name="persisting-add-in-settings"></a>保留外接程序设置
 
 
-通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。 可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。 或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](../../reference/shared/settings.md) 对象的方法。 使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。 此数据仅用于创建它的外接程序。
+通常需要保存外接程序的自定义数据，例如用户的首选项或外接程序的状态，并在下一次打开外接程序时访问该数据。可以使用通用的 Web 编程技术保存该数据，例如浏览器 cookie 或 HTML 5 Web 存储。或者，如果你的外接程序在 Excel、PowerPoint 或 Word 中运行，则可以使用 [设置](../../reference/shared/settings.md) 对象的方法。使用**设置**对象创建的数据存储在电子表格、演示文档或植入和保存外接程序的文档中。此数据仅用于创建它的外接程序。
 
 为了避免往返于存储文档的服务器，使用 **Settings** 对象创建的数据运行时在内存中进行管理。之前保存的设置数据在初始化外接程序时加载到内存中，并在调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法时，仅将对数据的更改保存回文档。在内部，将该数据作为名称/值对存储在序列化的 JSON 对象中。可以使用 [Settings](../../reference/shared/settings.get.md) 对象的 [get](../../reference/shared/settings.set.md)、[set](../../reference/shared/settings.removehandlerasync.md) 和 **remove** 方法从数据的内存副本中读取、写入和删除项目。以下代码行显示如何创建名为 `themeColor` 的设置，并将它的值设置为“green”。
 
@@ -124,14 +124,14 @@ Office.context.document.settings.set('themeColor', 'green');
 有关通过 **Settings** 对象的方法使用自定义数据的详细信息，请参阅[保留外接程序的状态和设置](../../docs/develop/persisting-add-in-state-and-settings.md)。
 
 
-## 读取项目文档的属性
+## <a name="reading-properties-of-a-project-document"></a>读取项目文档的属性
 
 如果您的任务窗格外接程序在 Project 中运行，则它可以从活动项目的某些项目字段、资源和任务字段中读取数据。为此，可以使用将 [Document](../../reference/shared/projectdocument.projectdocument.md) 对象扩展为提供其他特定于 Project 功能的 **ProjectDocument** 对象的方法和事件。
 
 有关读取 Project 数据的示例，请参阅[使用文本编辑器创建您第一个用于 Project 2013 的任务窗格外接程序](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)。
 
 
-## 权限模型和管治
+## <a name="permissions-model-and-governance"></a>权限模型和管治
 
 您的外接程序使用其清单中的 **Permissions** 元素请求对 Office JavaScript API 中功能级别的访问权限。例如，如果您的外接程序请求对文档的读取/写入访问权限，它的清单必须将 `ReadWriteDocument` 指定为其 **Permissions** 元素中的文本值。因为权限的存在是为了保护用户的隐私和安全，因此最佳做法应当是，请求功能所需的最低级别的权限。以下示例显示如何在任务窗格清单中请求 **ReadDocument** 权限。
 
@@ -151,12 +151,13 @@ Office.context.document.settings.set('themeColor', 'green');
 有关详细信息，请参阅[请求 API 在内容和任务窗格外接程序中使用的权限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 - [Office JavaScript API](../../reference/javascript-api-for-office.md)
     
-- [Office 外接程序清单的架构参考](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- 
+  [Office 外接程序清单的架构参考](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [解决 Office 外接程序中的用户错误](../../docs/testing/testing-and-troubleshooting.md)
     

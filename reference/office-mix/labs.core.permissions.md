@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.Permissions
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.permissions"></a>Labs.Core.Permissions
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示对实验室的给定用户启用的权限的静态类。
 
@@ -10,7 +10,7 @@ class Permissions
 ```
 
 
-## 值
+## <a name="values"></a>值
 
 
 |||

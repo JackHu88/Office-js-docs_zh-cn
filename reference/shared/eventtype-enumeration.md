@@ -1,6 +1,6 @@
 
-# EventType 枚举
-指定引发的事件的类型。由  **EventName**_EventArgs_ 对象的 **type** 属性返回。
+# <a name="eventtype-enumeration"></a>EventType 枚举
+指定引发的事件的类型。由 _EventName_**EventArgs** 对象的 **type** 属性返回。
 
 |||
 |:-----|:-----|
@@ -12,7 +12,7 @@ Office.EventType
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **值**
@@ -29,18 +29,18 @@ Office.EventType
 |Office.EventType.DataNodeReplaced|"nodeReplaced"|引发了 [CustomXmlPart.dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md) 事件。|
 |Office.EventType.SettingsChanged|"settingsChanged"|引发了 [Settings.settingsChanged](../../reference/shared/settings.settingschangedevent.md) 事件。|
 
-## 注解
+## <a name="remarks"></a>注解
 
 
  >**注意**：Project 的外接程序支持 **Office.EventType.ResourceSelectionChanged**、**Office.EventType.TaskSelectionChanged** 和 **Office.EventType.ViewSelectionChanged** 事件类型。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -55,11 +55,11 @@ Office.EventType
 
 |||
 |:-----|:-----|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

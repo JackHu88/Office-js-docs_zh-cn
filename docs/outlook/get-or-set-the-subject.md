@@ -1,5 +1,5 @@
 
-# 在 Outlook 中撰写约会或邮件时获取或设置主题
+# <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取或设置主题
 
 适用于 Office 的 JavaScript API 提供了异步方法（[subject.getAsync](../../reference/outlook/Subject.md) 和 [subject.setAsync](../../reference/outlook/Subject.md)）以获取和设置用户正在撰写的约会或邮件的主题。这些异步方法仅对撰写外接程序可用。若要使用这些方法，请确保已将 Outlook 的外接程序清单相应地设置为在撰写窗体中激活外接程序。
 
@@ -26,7 +26,7 @@ item.subject.getAsync
 与适用于 Office 的 JavaScript API 中的大多数异步方法相同，**getAsync** 和 **setAsync** 采用可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md)中的“向异步方法传递可选参数”。
 
 
-## 获取主题
+## <a name="to-get-the-subject"></a>获取主题
 
 
 本节演示获取用户正在撰写的约会或邮件的主题并显示主题的代码示例。此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序，如下所述。
@@ -79,7 +79,7 @@ function write(message){
 ```
 
 
-## 设置主题
+## <a name="to-set-the-subject"></a>设置主题
 
 
 本节演示设置用户正在撰写的约会或邮件的主题的代码示例。与上一示例类似，此代码示例假定外接程序清单中的某个规则将在撰写窗体中为约会或邮件激活外接程序。
@@ -132,7 +132,7 @@ function write(message){
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

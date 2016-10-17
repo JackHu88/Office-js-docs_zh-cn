@@ -1,15 +1,15 @@
 
-# officeTheme.bodyForegroundColor 属性
+# <a name="officetheme.bodyforegroundcolor-property"></a>officeTheme.bodyForegroundColor 属性
 获取 Office 主题正文的前景色。
 
- **重要提示：**此 API 目前只适用于 Windows 桌面上 [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) 中的 Excel、Outlook、PowerPoint 和 Word。
+ **重要说明：**此 API 目前只适用于 Windows 桌面上 [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) 中的 Excel、Outlook、PowerPoint 和 Word。
 
 
 |||
 |:-----|:-----|
 |**主机：**|Excel、Outlook、PowerPoint、Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|不在集合中|
-|**在其中添加**|1.3|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|不在集合中|
+|**添加内容的版本**|1.3|
 
 
 
@@ -18,22 +18,22 @@ var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
 ```
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 十六进制三元色。
 
 
-## 注解
+## <a name="remarks"></a>注解
 
 返回的颜色对应于用户（通过“**文件**” > “**Office 帐户**” > “**Office 主题**”UI）选择的 Office 主题值，这种做法适用于所有 Office 主机应用程序。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -53,7 +53,7 @@ var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

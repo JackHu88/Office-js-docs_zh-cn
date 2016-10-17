@@ -1,7 +1,7 @@
 
-# Labs.Components.ActivityComponentAttempt
+# <a name="labs.components.activitycomponentattempt"></a>Labs.Components.ActivityComponentAttempt
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示尝试完成活动组件。
 
@@ -10,12 +10,12 @@ class Permissions
 ```
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -24,14 +24,14 @@ class Permissions
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _labs_|与组件相关联的实验室实例 ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx))。|
-| _componentId_|与 attempt 关联的组件 ID。|
+| _componentId_|与尝试关联的组件 ID。|
 | _attemptId_|尝试的 ID。|
-| _值_|与组件关联的值（如有）。|
+| _values_|与组件关联的值（如有）。|
 
-### complete
+### <a name="complete"></a>complete
 
  `public function complete(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -40,11 +40,11 @@ class Permissions
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|活动完成后调用的回调函数。|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
@@ -53,6 +53,6 @@ class Permissions
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _action_|操作实例 ([Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md))。|

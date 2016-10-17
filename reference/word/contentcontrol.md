@@ -1,10 +1,10 @@
-﻿# ContentControl 对象（适用于 Word 的 JavaScript API）
+# <a name="contentcontrol-object-(javascript-api-for-word)"></a>ContentControl 对象（适用于 Word 的 JavaScript API）
 
 表示内容控件。内容控件是文档中绑定的、有可能添加标签的区域，它们充当特定类型的内容的容器。单个内容控件可能包含诸如图像、表或格式化文本段落等内容。当前仅支持富文本内容控件。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |cannotDelete|bool|获取或设置指示用户是否可以删除内容控件的值。与 removeWhenEdited 互相排斥。|
@@ -17,21 +17,21 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 |text|string|获取内容控件的文本。只读。|
 |title|string|获取或设置内容控件的标题。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问[示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
-|外观|**ContentControlAppearance**|获取或设置内容控件的外观。值可以为“boundingBox”、“tags”或“hidden”。|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|获取内容控件中内容控件对象的集合。只读。|
-|font|[字体](font.md)|获取内容控件的文本格式。使用此对象获取和设置字体名称、大小、颜色和其他属性。只读。|
-|id|**[UINT]**|获取表示内容控件标识符的整数。只读。|
+|appearance|**ContentControlAppearance**|获取或设置内容控件的外观。值可以为“boundingBox”、“tags”或“hidden”。|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|获取内容控件中的内容控件对象的集合。只读。|
+|font|[Font](font.md)|获取内容控件的文本格式。使用此对象获取和设置字体名称、大小、颜色和其他属性。只读。|
+|id|**uint**|获取表示内容控件标识符的整数。只读。|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|获取内容控件中的 inlinePicture 对象的集合。集合不包括浮动图像。只读。|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|获取内容控件中的 paragraph 对象的集合。只读。|
 |parentContentControl|[ContentControl](contentcontrol.md)|获取包含此内容控件的内容控件。如果不存在父内容控件，返回 null。只读。|
-|类型|**ContentControlType**|获取内容控件的类型。当前仅支持富文本内容控件。只读。|
+|type|**ContentControlType**|获取内容控件的类型。当前仅支持富文本内容控件。只读。|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
@@ -40,33 +40,33 @@ _请参阅属性访问[示例](#示例)。_
 |[getHtml()](#gethtml)|string|获取内容控件对象的 HTML 表示形式。|
 |[getOoxml()](#getooxml)|string|获取内容控件对象的 Office Open XML (OOXML) 表示形式。|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的对象中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Before”、“After”、“Start”或“End”。|
-|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将文档插入到当前内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将 HTML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将嵌入式图片插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。 |
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将 OOXML 或 wordProcessingML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph ](paragraph.md)|在指定位置插入段落。insertLocation 值可以为“Before”、“After”、“Start”或“End”。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range 对象设置内联图片](range.md)|将文本插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
-|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索内容控件对象的范围。搜索结果是 range 对象的集合。|
+|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|将文档插入到当前内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|将 HTML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将嵌入式图片插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。 |
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|将 OOXML 或 wordProcessingML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|在指定位置插入段落。insertLocation 值可以为“Before”、“After”、“Start”或“End”。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|将文本插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索内容控件对象的范围。搜索结果是 range 对象的集合。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|选择内容控件。这会导致 Word 滚动到选定内容。选择模式可以为“Select”、“Start”或“End”。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### Clear
+### <a name="clear()"></a>Clear
 清除内容控件的内容。用户可以对已清除的内容执行撤消操作。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.clear();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -105,23 +105,23 @@ Word.run(function (context) {
 
 ```
 
-### delete(keepContent: bool)
+### <a name="delete(keepcontent:-bool)"></a>delete(keepContent: bool)
 删除内容控件及其内容。如果将 keepContent 设置为 true，则不删除内容。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.delete(keepContent);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |keepContent|bool|必需。指示是否应使用内容控件删除内容。如果将 keepContent 设置为 true，则不删除内容。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,21 +161,21 @@ Word.run(function (context) {
 ```
 
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 获取内容控件对象的 HTML 表示形式。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.getHtml();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 string
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -213,21 +213,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 获取内容控件对象的 Office Open XML (OOXML) 表示形式。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.getOoxml();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 string
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -265,27 +265,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的对象中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Before”、“After”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertBreak(breakType, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |breakType|BreakType|必需。分隔符的类型 (breakType.md)|
 |insertLocation|InsertLocation|必需。此值可以为“Before”、“After”、“Start”或“End”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 其他详细信息
+#### <a name="additional-details"></a>其他详细信息
 除了换行符之外，您不能在标头、页脚、脚注、尾注、注释和文本框包含的对象中插入分隔符。  
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -324,41 +324,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 将文档插入到当前内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64File|string|必需。要插入的文件的 base64 编码内容。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-### insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
 将 HTML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertHtml(html, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |Html|string|必需。要插入到内容控件中的 HTML。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -396,41 +396,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
 将嵌入式图片插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|必需。将 base64 编码的图像插入内容控件中。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [InlinePicture](inlinepicture.md)
 
 
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 将 OOXML 或 wordProcessingML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |ooxml|string|必需。要插入到内容控件中的 OOXML 或 wordProcessingML。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -468,27 +468,27 @@ Word.run(function (context) {
 });
 ```
 
-#### 其他信息
+#### <a name="additional-information"></a>其他信息
 阅读[使用 Office Open XML 创建更好的 Word 外接程序](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)以获取使用 OOXML 的指南。
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 在指定位置插入段落。insertLocation 值可以为“Before”、“After”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |paragraphText|string|必需。要插入的段落文本。|
 |insertLocation|InsertLocation|必需。此值可以为“Before”、“After”、“Start”或“End”。|
 
-#### 返回
-[Paragraph ](paragraph.md)
+#### <a name="returns"></a>返回
+[Paragraph](paragraph.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -526,24 +526,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
 将文本插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.insertText(text, insertLocation);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |text|string|必需。要插入到内容控件中的文本。|
 |insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
-#### 返回
-[Range 对象设置内联图片](range.md)
+#### <a name="returns"></a>返回
+[Range](range.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -583,23 +583,23 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) 外接程序示例说明如何使用 **insertText** 方法。
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -632,40 +632,40 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 使用指定搜索选项搜索内容控件对象的范围。搜索结果是 range 对象的集合。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.search(searchText, searchOptions);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|searchText|string|必须。搜索文本。|
+|searchText|string|必需。搜索文本。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|可选。用于搜索的选项。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [SearchResultCollection](searchresultcollection.md)
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 选择内容控件。这会导致 Word 滚动到选定内容。选择模式可以为“Select”、“Start”或“End”。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlObject.select(selectionMode);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|可选。选择模式可以为“Select”、“Start”或“End”。“Select”为默认值。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -703,9 +703,9 @@ Word.run(function (context) {
 });
 ```
 
-## 属性访问示例
+## <a name="property-access-examples"></a>属性访问示例
 
-### 加载所有的内容控件属性
+### <a name="load-all-of-the-content-control-properties"></a>加载所有的内容控件属性
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -771,5 +771,5 @@ Word.run(function (context) {
 });
 ```
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。

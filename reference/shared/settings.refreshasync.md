@@ -1,12 +1,12 @@
 
 
-# Settings.refreshAsync 方法
+# <a name="settings.refreshasync-method"></a>Settings.refreshAsync 方法
 读取文档中保存的所有设置并刷新内容或任务窗格外接程序在内存中保留的这些设置的副本。
 
 |||
 |:-----|:-----|
 |**主机：**|Access、Excel、PowerPoint 和 Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|Settings|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Settings|
 |**包含最后一次更改的版本**|1.1|
 
 ```js
@@ -14,7 +14,7 @@ Office.context.document.settings.refreshAsync(callback);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;类型：**对象**
@@ -25,11 +25,11 @@ _callback_<br/>
 
 
 
-## 回调值
+## <a name="callback-value"></a>回调值
 
 在你传递给 _callback_ 参数的函数执行后，它会收到你可以从回调函数的唯一参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
-在传递给  **refreshAsync** 方法的回调函数中，您可以使用 **AsyncResult** 对象的属性返回以下信息。
+在传递给 **refreshAsync** 方法的回调函数中，可以使用 **AsyncResult** 对象的属性返回以下信息。
 
 
 
@@ -38,16 +38,16 @@ _callback_<br/>
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|访问包含刷新后的值的 [Settings](../../reference/shared/settings.md) 对象。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|确定操作是成功还是失败。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|如果操作失败，则访问提供错误信息的 [Error](../../reference/shared/error.md) 对象。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果您将用户定义的一个  **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果用户定义的一个 **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 此方法适用于采用共同创作方案的 Word 和 PowerPoint，即相同外接程序的多个实例在处理同一个文档。由于各个外接程序处理的是在用户打开文档时从文档中加载的设置的内存中副本，因此每个用户使用的设置值可能会不同步。只要外接程序实例调用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法，将用户的所有设置都保留到文档中，就会出现这种情况。从外接程序的 **settingsChanged** 事件处理程序调用 [refreshAsync](../../reference/shared/settings.settingschangedevent.md) 方法会刷新所有用户的设置值。
 
 可从为 Excel 创建的 外接程序 调用  **refreshAsync**方法，但是因为它们不支持合著，因此没有理由那么做。
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -67,12 +67,12 @@ function write(message){
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 
@@ -87,11 +87,11 @@ function write(message){
 |:-----|:-----|
 |**在要求集中可用**|Settings|
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

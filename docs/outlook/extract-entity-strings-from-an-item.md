@@ -1,7 +1,7 @@
-﻿
-# 从 Outlook 项目中提取实体字符串
 
-本文介绍如何在所选 Outlook 项目的主题和正文中创建一个提取受支持已知实体字符串实例的“**显示实体**”Outlook 外接程序。 此项目可以是约会、电子邮件或会议请求、响应或取消。 受支持的实体包括以下内容：
+# <a name="extract-entity-strings-from-an-outlook-item"></a>从 Outlook 项目中提取实体字符串
+
+本文介绍如何在所选 Outlook 项目的主题和正文中创建一个提取受支持已知实体字符串实例的“**显示实体**”Outlook 外接程序。此项目可以是约会、电子邮件或会议请求、响应或取消。受支持的实体包括以下内容：
 
 - 地址：美国通信地址，由门牌号码、街道名称、城市、州和邮政编码等所有元素或部分元素组成。
     
@@ -21,7 +21,7 @@
 
 外接程序为用户提供按钮以选择实体类型。当用户选择一个实体时，外接程序在外接程序窗格中显示所选实体的实例。以下各节列出了实体外接程序的 XML 清单及 HTML 和 JavaScript 文件，并突出显示支持各自实体提取的代码。
 
-## XML 清单
+## <a name="xml-manifest"></a>XML 清单
 
 
 实体外接程序具有两个由逻辑 OR 运算连接的激活规则。 
@@ -85,10 +85,10 @@ xsi:type="MailApp">
 ```
 
 
-## HTML 实现
+## <a name="html-implementation"></a>HTML 实现
 
 
-实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-实现)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
+实体外接程序的 HTML 文件为用户指定按钮以选择每种类型的实体，另外还指定另一个按钮以清除显示的实体实例。它包括 JavaScript 文件 default_entities.js，这在下一节的 [JavaScript 实现](#javascript-implementation)中进行介绍。JavaScript 文件包括其中每个按钮的事件处理程序。
 
 请注意，所有 Outlook 外接程序都必须包含 office.js。下面的 HTML 文件包含 CDN 上 office.js 的版本 1.1。 
 
@@ -132,7 +132,7 @@ xsi:type="MailApp">
 ```
 
 
-## 样式表
+## <a name="style-sheet"></a>样式表
 
 
 实体外接程序使用可选 CSS 文件 default_entities.css 指定输出的布局。下面为 CSS 文件的列表。
@@ -190,13 +190,13 @@ div#meeting_suggestions
 ```
 
 
-## JavaScript 实现
+## <a name="javascript-implementation"></a>JavaScript 实现
 
 
 其余部分介绍此示例（default_entities.js 文件）如何从用户查看的邮件或约会的主题和正文中提取已知实体。 
 
 
-## 初始化时提取实体
+## <a name="extracting-entities-upon-initialization"></a>初始化时提取实体
 
 
 [Office.initialize](../../reference/shared/office.initialize.md) 事件发生时，实体外接程序调用当前项目的 [getEntities](../../reference/outlook/Office.context.mailbox.item.md) 方法。**getEntities** 方法返回全局变量 `_MyEntities`，即一组受支持实体的实例。以下为相关的 JavaScript 代码。
@@ -225,10 +225,10 @@ Office.initialize = function () {
 ```
 
 
-## 提取地址
+## <a name="extracting-addresses"></a>提取地址
 
 
-当用户单击“**获取地址**”按钮时，`myGetAddresses` 事件处理程序从 `_MyEntities` 对象的 [addressess](../../reference/outlook/simple-types.md) 属性获取一个地址数组（如果已提取任何地址）。 每个提取的地址在数组中被存储为字符串。 `myGetAddresses` 在 .mdText 中形成本地 HTML 字符串以显示提取的地址列表。 以下是相关的 JavaScript 代码。
+当用户单击“**获取地址**”按钮时，`myGetAddresses` 事件处理程序从 `_MyEntities` 对象的 [addressess](../../reference/outlook/simple-types.md) 属性获取一个地址数组（如果已提取任何地址）。每个提取的地址存储为数组中的字符串。`myGetAddresses` 在 .mdText` 中形成一个本地 HTML 字符串以显示提取的地址列表。以下是相关的 JavaScript 代码。
 
 
 ```js
@@ -249,10 +249,10 @@ function myGetAddresses()
 ```
 
 
-## 提取联系人信息
+## <a name="extracting-contact-information"></a>提取联系人信息
 
 
-当用户单击“**获取联系人信息**”按钮时，`myGetContacts` 事件处理程序从 `_MyEntities` 对象的 [contacts](../../reference/outlook/simple-types.md) 属性获取一个联系人数组及其信息（如果已提取任何联系人）。 每个提取的联系人在数组中被存储为 [Contact](../../reference/outlook/simple-types.md) 对象。 `myGetContacts` 获取关于每个联系人的进一步数据。 注意上下文决定 Outlook 是否可以从某项 - 电子邮件末尾的签名或至少在联系人附近存在的以下某些信息提取一个联系人：
+当用户单击“**获取联系人信息**”按钮时，`myGetContacts` 事件处理程序从 `_MyEntities` 对象的 [contacts](../../reference/outlook/simple-types.md) 属性获取一个联系人数组及其信息（如果已提取任何联系人）。每个提取的联系人存储为数组中的 [Contact](../../reference/outlook/simple-types.md) 对象。`myGetContacts` 获取有关每个联系人的更多数据。注意上下文决定 Outlook 是否可以从某项 - 电子邮件末尾的签名或至少在联系人附近存在的以下某些信息提取一个联系人：
 
 
 - 表示 [Contact.personName](../../reference/outlook/simple-types.md) 属性中联系人名称的字符串。
@@ -337,10 +337,10 @@ function myGetContacts()
 ```
 
 
-## 提取电子邮件地址
+## <a name="extracting-email-addresses"></a>提取电子邮件地址
 
 
-当用户单击“**获取电子邮件地址**”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](../../reference/outlook/simple-types.md) 属性获取一个 SMTP 电子邮件地址数组（如果已提取任何电子邮件地址）。 每个提取的电子邮件地址在数组中被存储为字符串。 `myGetEmailAddresses` 在 `htmlText` 中形成本地 HTML 字符串以显示提取的电子邮件地址列表。 以下是相关的 JavaScript 代码。
+当用户单击“**获取电子邮件地址**”按钮时，`myGetEmailAddresses` 事件处理程序从 `_MyEntities` 对象的 [emailAddresses](../../reference/outlook/simple-types.md) 属性获取一个 SMTP 电子邮件地址数组（如果已提取任何电子邮件地址）。每个提取的电子邮件地址存储为数组中的字符串。`myGetEmailAddresses` 在 `htmlText` 中形成一个本地的 HTML 字符串以显示提取的电子邮件地址列表。以下是相关的 JavaScript 代码。
 
 
 ```js
@@ -360,7 +360,7 @@ function myGetEmailAddresses() {
 ```
 
 
-## 提取会议建议
+## <a name="extracting-meeting-suggestions"></a>提取会议建议
 
 
 当用户单击“**获取会议建议**”按钮时，`myGetMeetingSuggestions` 事件处理程序从 `_MyEntities` 对象的 [meetingSuggestions](../../reference/outlook/simple-types.md) 属性获取一个会议建议数组（如果已提取任何会议建议）。
@@ -445,10 +445,10 @@ function myGetMeetingSuggestions() {
 ```
 
 
-## 提取电话号码
+## <a name="extracting-phone-numbers"></a>提取电话号码
 
 
-当用户单击“**获取电话号码**”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](../../reference/outlook/simple-types.md) 属性获取一个电话号码数组（如果已提取任何电话号码）。 每个提取的电话号码在数组中被存储为 [PhoneNumber](../../reference/outlook/simple-types.md) 对象。 `myGetPhoneNumbers` 获取关于每个电话号码的进一步数据：
+当用户单击“**获取电话号码**”按钮时，`myGetPhoneNumbers` 事件处理程序从 `_MyEntities` 对象的 [phoneNumbers](../../reference/outlook/simple-types.md) 属性获取一个电话号码数组（如果已提取任何电话号码）。每个提取的电话号码存储为数组中的 [PhoneNumber](../../reference/outlook/simple-types.md) 对象。`myGetPhoneNumbers` 获取有关每个电话号码的更多数据：
 
 
 - [PhoneNumber.type](../../reference/outlook/simple-types.md) 属性中表示电话号码种类的字符串（例如家庭电话号码）。
@@ -496,10 +496,10 @@ function myGetPhoneNumbers()
 ```
 
 
-## 提取任务建议
+## <a name="extracting-task-suggestions"></a>提取任务建议
 
 
-当用户单击“**获取任务建议**”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](../../reference/outlook/simple-types.md) 属性获取一个任务建议数组（如果已提取任何任务建议）。 每个提取的任务建议在数组中被存储为 [TaskSuggestion](../../reference/outlook/simple-types.md) 对象。 `myGetTaskSuggestions` 获取关于每个任务建议的进一步数据：
+当用户单击“**获取任务建议**”按钮时，`myGetTaskSuggestions` 事件处理程序从 `_MyEntities` 对象的 [taskSuggestions](../../reference/outlook/simple-types.md) 属性获取一个任务建议数组（如果已提取任何任务建议）。每个提取的任务建议都存储为数组中的一个 [TaskSuggestion](../../reference/outlook/simple-types.md) 对象。`myGetTaskSuggestions` 获取有关每个任务建议的更多数据：
 
 
 - [TaskSuggestion.taskString](../../reference/outlook/simple-types.md) 属性中最初识别为任务建议的字符串。
@@ -561,10 +561,10 @@ function myGetTaskSuggestions()
 ```
 
 
-## 提取 URL
+## <a name="extracting-urls"></a>提取 URL
 
 
-当用户单击“**获取 URL**”按钮时，`myGetUrls` 事件处理程序从 `_MyEntities` 对象的 [urls](../../reference/outlook/simple-types.md) 属性获取一个 URL 数组（如果已提取任何 URL）。 每个提取的 URL 在数组中被存储为字符串。 `myGetUrls` 在 `htmlText` 中形成本地 HTML 字符串以显示提取的 URL。
+当用户单击“**获取 URL**”按钮时，`myGetUrls` 事件处理程序从 `_MyEntities` 对象的 [urls](../../reference/outlook/simple-types.md) 属性获取一个 URL 数组（如果已提取任何 URL）。每个提取的 URL 存储为数组中的字符串。`myGetUrls` 在 `htmlText` 中形成一个本地的 HTML 字符串以显示提取的 URL 列表。
 
 
 ```js
@@ -586,7 +586,7 @@ function myGetUrls()
 ```
 
 
-## 清除显示的实体字符串
+## <a name="clearing-displayed-entity-strings"></a>清除显示的实体字符串
 
 
 最后，实体外接程序指定一个 `myClearEntitiesBox` 事件处理程序，以清除任何显示的字符串。以下是相关的代码。
@@ -601,7 +601,7 @@ function myClearEntitiesBox()
 ```
 
 
-## JavaScript 列表
+## <a name="javascript-listing"></a>JavaScript 列表
 
 
 以下是 JavaScript 实现的完整列表。
@@ -819,7 +819,7 @@ function myGetUrls()
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

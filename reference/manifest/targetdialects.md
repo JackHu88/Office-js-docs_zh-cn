@@ -1,11 +1,11 @@
 
-# TargetDialects 元素
+# <a name="targetdialects-element"></a>TargetDialects 元素
 定义此字典支持的方言。
 
  **外接程序类型：**任务窗格
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -15,12 +15,12 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

@@ -1,7 +1,7 @@
-﻿
-# Labs.Components.InputComponentSubmission
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.components.inputcomponentsubmission"></a>Labs.Components.InputComponentSubmission
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示提交到输入组件。
 
@@ -10,7 +10,7 @@ class InputComponentSubmission
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |属性|说明|
@@ -19,12 +19,12 @@ class InputComponentSubmission
 | `public var result: Components.InputComponentResult`|提交的结果 ([Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md))。|
 | `public var time: number`|收到提交的时间。|
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, time: number)`
 
@@ -37,4 +37,4 @@ class InputComponentSubmission
 |:-----|:-----|
 | _answer_|与提交相关联的答案。|
 | _result_|提交的结果。|
-| _时间_|收到提交的时间。|
+| _time_|收到提交的时间。|

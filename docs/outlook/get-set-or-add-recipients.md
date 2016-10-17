@@ -1,5 +1,5 @@
 
-# 在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
+# <a name="get,-set,-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>在 Outlook 中撰写约会或邮件时获取、设置或添加收件人
 
 
 适用于 Office 的 JavaScript API 提供在约会或邮件的撰写窗体中分别获取、设置或添加收件人的异步方法（[Recipients.getAsync](../../reference/outlook/Recipients.md)、[Recipients.setAsync](../../reference/outlook/Recipients.md) 或 [Recipients.addAysnc](../../reference/outlook/Recipients.md)）。这些异步方法仅对撰写外接程序可用。若要使用这些方法，请确保已为 Outlook 正确设置外接程序清单，以在撰写窗体中激活外接程序，如[创建适用于撰写窗体的 Outlook 外接程序](../outlook/compose-scenario.md)中所述。
@@ -27,7 +27,7 @@ item.cc.getAsync
 与适用于 Office 的 JavaScript API 中的大多数异步方法一样，**getAsync**、**setAsync** 和 **addAsync** 采用可选输入参数。有关指定这些可选输入参数的详细信息，请参阅 [Office 外接程序中的异步编程](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline)中的[向异步方法传递可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md)。
 
 
-## 获取收件人
+## <a name="to-get-recipients"></a>获取收件人
 
 
 此部分显示的代码示例用于获取正在撰写的约会或邮件的收件人，并显示收件人的电子邮件地址。代码示例假设外接程序清单中有在撰写窗体中为约会或邮件激活外接程序的规则，如下所示。 
@@ -139,7 +139,7 @@ function write(message){
 ```
 
 
-## 设置收件人
+## <a name="to-set-recipients"></a>设置收件人
 
 
 此部分显示的代码示例会设置用户正在撰写的约会或邮件的收件人。设置收件人将覆盖现有的全部收件人。与之前获取撰写窗体中收件人的示例相似，此示例假设已在撰写窗体中为约会和邮件激活外接程序。此示例首先验证撰写的项目是约会还是邮件，以便对代表约会或邮件收件人的合适属性应用异步方法 **Recipients.setAsync**。
@@ -266,7 +266,7 @@ function write(message){
 ```
 
 
-## 添加收件人
+## <a name="to-add-recipients"></a>添加收件人
 
 
 如果不想覆盖约会或邮件中的任何现有收件人，可以使用  **Recipients.addAsync** 异步方法追加收件人，而不是使用 **Recipients.setAsync**。 **addAsync** 工作原理与 **setAsync** 相似，因为也需要 _recipients_ 输入实参。还可以选择使用 asyncContext 形参为回调提供回调方法和任意实参。然后，可以使用回调方法的 **asyncResult** 输出形参检查异步 _addAsync_ 调用的状态、结果和任何错误。以下示例检查正在撰写的项目是否是约会，并为该约会追加两个必需参与者。
@@ -300,7 +300,7 @@ function addAttendees() {
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

@@ -1,5 +1,5 @@
 
-# Office 外接程序中的异步编程
+# <a name="asynchronous-programming-in-office-add-ins"></a>Office 外接程序中的异步编程
 
 为什么 Office 外接程序 API 使用异步编程？因为 JavaScript 是单线程语言，如果脚本调用长时间运行的同步进程，则会阻止所有后续脚本执行，直至该进程完成。针对 Office Web 客户端（但也包括富客户端）执行的操作在同步运行时会阻止执行，因此适用于 Office 的 JavaScript API 中的大多数方法都适于异步执行。这就确保了 Office 外接程序可以做出响应并且性能很高。使用这些异步方法时，也通常会要求您编写回调函数。
 
@@ -7,14 +7,14 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.
 
 下图显示了一个调用"Async"方法的执行流，该方法可读取用户在基于服务器的 Word Online 或 Excel Online 中打开的文档中选择的数据。"Async"调用开始时，JavaScript 执行线程空闲，可以执行任何额外的客户端处理。（但图中没有显示。）当"Async"方法返回时，回调在线程上恢复执行，外接程序可以访问数据、处理数据并显示结果。当使用 Office 富客户端主机应用程序（如，Word 2013 或 Excel 2013）时，可保持同样的异步执行模式。
 
-**图 1. 异步编程执行流**
+**图 1.异步编程执行流**
 
 
 ![异步编程线程执行流](../../images/off15appAsyncProgFig01.png)
 
 在富客户端和 Web 客户端中支持此异步设计是 Office 外接程序开发模型"写入一次，跨平台运行"设计目标的一部分。例如，您可以使用将在 Excel 2013 和 Excel Online 中运行的单一基本代码创建一个内容应用程序或任务窗格外接程序。
 
-## 编写"Async"方法的回调函数
+## <a name="writing-the-callback-function-for-an-"async"-method"></a>编写"Async"方法的回调函数
 
 
 作为  _callback_ 参数传递给"Async"方法的回调函数必须声明单个参数，在执行回调函数时，加载项运行时将使用该参数提供对 [AsyncResult](../../reference/shared/asyncresult.md) 对象的访问。您可以编写以下内容：
@@ -27,7 +27,7 @@ API 中所有这些异步方法的名称均以“Async”结尾，如 [Document.
 如果您打算只使用一次代码，则可以使用匿名函数，这是因为该函数没有名称，您不能在代码的其他部分引用此代码。如果您打算重复将回调函数用于多个"Async"方法，则可以使用命名函数。
 
 
-### 编写匿名回调函数
+### <a name="writing-an-anonymous-callback-function"></a>编写匿名回调函数
 
 以下匿名回调函数声明名为 `result` 的单个参数，该参数用于在回调返回时从 [AsyncResult.value](../../reference/shared/asyncresult.status.md) 属性检索数据。
 
@@ -66,7 +66,7 @@ function write(message){
 有关使用  **getSelectedDataAsync** 方法的详细信息，请参阅 [在文档或电子表格的活动选择内容中读取和写入数据](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)。 
 
 
-### 编写命名回调函数
+### <a name="writing-a-named-callback-function"></a>编写命名回调函数
 
 或者，您也可以编写一个命名函数，并将其名称传递给"Async"方法的  _callback_ 参数。例如，可以重写前一个示例，将名为 `writeDataCallback` 的函数作为 _callback_ 参数进行传递，如下所示。
 
@@ -87,7 +87,7 @@ function write(message){
 ```
 
 
-## 返回 AsyncResult.value 属性的内容的差异
+## <a name="differences-in-what's-returned-to-the-asyncresult.value-property"></a>返回 AsyncResult.value 属性的内容的差异
 
 
 **AsyncResult** 对象的 **asyncContext**、**status** 和 **error** 属性将同种类型的信息返回到已传递给所有“Async”方法的回调函数中。但是，返回到 **AsyncResult.value** 属性的内容因“Async”方法的功能不同而不同。
@@ -99,7 +99,7 @@ function write(message){
 有关返回到“Async”方法 **AsyncResult.value** 属性的内容的说明，请参阅相关方法参考主题的“回调值”一节。有关所有提供“Async”方法的对象的汇总，请参阅 [AsyncResult](../../reference/shared/asyncresult.md) 对象主题底部的表格。
 
 
-## 异步编程模式
+## <a name="asynchronous-programming-patterns"></a>异步编程模式
 
 
 适用于 Office 的 JavaScript API 支持两种异步编程模式：
@@ -114,7 +114,7 @@ function write(message){
 使用嵌套回调是大多数 JavaScript 开发人员都熟知的编程模式，但使用了深层嵌套回调的代码难以阅读和理解。作为嵌套回调的替代，适用于 Office 的 JavaScript API 也支持实施承诺模式。但是，在适用于 Office 的 JavaScript API 的当前版本中，承诺模式仅可与 [Excel 电子表格和 Word 文档中的绑定](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)的代码一起使用。
 
 <a name="AsyncProgramming_NestedCallbacks" />
-### 使用嵌套回调函数的异步编程
+### <a name="asynchronous-programming-using-nested-callback-functions"></a>使用嵌套回调函数的异步编程
 
 
 通常，完成一项任务需要执行两个或更多个异步操作。为实现此目的，可在一个调用中嵌套另一个"Async"调用。 
@@ -151,7 +151,7 @@ function write(message){
 以下各节显示如何使用匿名函数或命名函数用于异步方法中的嵌套回调。
 
 
-#### 将匿名函数用于嵌套回调
+#### <a name="using-anonymous-functions-for-nested-callbacks"></a>将匿名函数用于嵌套回调
 
 在下面的示例中，将两个匿名函数声明为内嵌并将其作为嵌套回调传入  **getByIdAsync** 和 **getDataAsync** 方法。由于这两个函数简单且为内嵌，因此实现的意图很清晰。
 
@@ -174,7 +174,7 @@ function write(message){
 ```
 
 
-#### 将命名函数用于嵌套回调
+#### <a name="using-named-functions-for-nested-callbacks"></a>将命名函数用于嵌套回调
 
 在复杂实现中，使用命名函数对于提高代码的可读性、可维护性和可重用性可能会有帮助。在下面的示例中，将上一节的示例中的两个匿名函数重写为名为  `deleteAllData` 和 `showResult` 的函数。然后，将这两个命名函数作为回调按名称传入 **getByIdAsync** 和 **deleteAllDataValuesAsync** 方法。
 
@@ -201,7 +201,7 @@ function write(message){
 ```
 
 
-### 使用承诺模式访问绑定中的数据的异步编程
+### <a name="asynchronous-programming-using-the-promises-pattern-to-access-data-in-bindings"></a>使用承诺模式访问绑定中的数据的异步编程
 
 
 与传递回调函数并在继续执行前等待函数返回不同，承诺编程模式会立即返回一个表示预期结果的承诺对象。但是，不同于真实的同步编程，在幕后，在 Office 外接程序运行时环境达到要求之前，承诺结果的实现实际上有所延迟。如果不能达到要求，将提供  _onError_ 处理程序来处理此类情况。
@@ -253,7 +253,7 @@ function addBindingDataChangedEventHandler() {
  >**重要信息**   **Office.select** 方法返回的 **Binding** 对象仅提供对 **Binding** 对象的四个方法的访问。如果您需要访问 **Binding** 对象的其他成员，则必须改用 **Document.bindings** 属性和 **Bindings.getByIdAsync** 或 **Bindings.getAllAsync** 方法检索 **Binding** 对象。例如，如果您需要访问任何 **Binding** 对象的属性（ **document**、 **id** 或 **type** 属性），或者需要访问 [MatrixBinding](../../reference/shared/binding.matrixbinding.md) 或 [TableBinding](../../reference/shared/binding.tablebinding.md) 对象的属性，则必须使用 **getByIdAsync** 或 **getAllAsync** 方法检索 **Binding** 对象。
 
 
-## 向异步方法传递可选参数
+## <a name="passing-optional-parameters-to-asynchronous-methods"></a>向异步方法传递可选参数
 
 
 所有"异步"方法的常用语法都遵循此模式：
@@ -265,7 +265,7 @@ function addBindingDataChangedEventHandler() {
 可以创建包含可选参数内嵌的 JSON 对象，或通过创建  `options` 对象并将其作为 _options_ 参数传入。
 
 
-### 传递可选参数内嵌
+### <a name="passing-optional-parameters-inline"></a>传递可选参数内嵌
 
 例如，用可选参数内嵌调用 [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) 方法的语法类似如下：
 
@@ -298,7 +298,7 @@ function write(message){
 > **注意：**只要 JSON 对象中的可选参数的名称指定正确，就可以任何顺序指定这些参数。
 
 
-### 在 options 对象中传递可选参数
+### <a name="passing-optional-parameters-in-an-options-object"></a>在 options 对象中传递可选参数
 
 或者，也可以创建一个名为  `options` 的对象（它与方法调用分别指定可选形参），然后将 `options` 对象作为 _options_ 实参来传递。
 
@@ -380,13 +380,13 @@ function write(message){
 ```
 
 
-在两个可选形参示例中，_callback_ 形参均指定为最后一个形参（在内嵌的可选形参之后，或在 _options_ 实参对象之后）。 还可以在内嵌 JSON 对象或 `options` 对象内指定 _callback_ 参数。 但是，只能在一个位置传递 _callback_ 参数：在 _options_ 对象内（内嵌或在外部创建），或作为最后一个参数，但不能同时在两个位置。
+在两个可选形参示例中，_callback_ 形参均指定为最后一个形参（在内嵌的可选形参之后，或在 _options_ 实参对象之后）。还可以在内嵌 JSON 对象或 `options` 对象内指定 _callback_ 参数。但是，只能在一个位置传递 _callback_ 参数：在 _option_ 对象内（内嵌或在外部创建），或作为最后一个参数，但不能同时在两个位置。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
-- [了解 适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
 - [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)
      

@@ -1,19 +1,19 @@
 
-# Document.goToByIdAsync 方法
+# <a name="document.gotobyidasync-method"></a>Document.goToByIdAsync 方法
 转到文档中指定的对象或位置。
 
 |||
 |:-----|:-----|
 |**主机：**|Excel、PowerPoint 和 Word|
 |**在要求集中可用**|不在集合中|
-|**在其中添加**|1.1|
+|**添加内容的版本**|1.1|
 
 ```js
 Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 
 
@@ -21,16 +21,16 @@ Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 |:-----|:-----|:-----|:-----|
 | _id_|**string** 或 **number**|要转到的对象或位置的标识符。必需。||
 | _goToType_|[GoToType](../../reference/shared/gototype-enumeration.md)|要转到的位置类型。必需。||
-| _选项_|**object**|指定以下任一[可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
-| _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|指定是否选择（突出显示）由  _id_ 参数指定的位置。|**在 Excel 中：**<br/> **Office.SelectionMode.Selected** 选择绑定中或已命名项目中的所有内容。 <br/>**Office.SelectionMode.None** 对于文本绑定，选择单元格；对于矩阵绑定、表绑定和已命名的项目，选择第一个数据单元格（不是表格标题行中的第一个单元格）。<br/><br/> **在 PowerPoint 中：**<br/> **Office.SelectionMode.Selected** 选择幻灯片标题或幻灯片上的第一个文本框。<br/> **Office.SelectionMode.None** 不选择任何内容。<br/><br/> **在 Word 中：**<br/> **Office.SelectionMode.Selected** 选择绑定中的所有内容。 <br/>**Office.SelectionMode.None** 对于文本绑定，将光标移到文本开头；对于矩阵绑定和表绑定，选择第一个数据单元格（不是表格标题行中的第一个单元格）。|
-| _asyncContext_|**array**、 **boolean**、 **null**、 **number**、 **object** 、 **string** 或 **undefined**|在  **AsyncResult** 对象中未经改动的返回的任何类型的用户定义项。||
-| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为  **AsyncResult** 。||
+| _options_|**object**|指定以下任一 [可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|指定是否选择（突出显示）由 _id_ 参数指定的位置。|**在 Excel 中：**<br/> **Office.SelectionMode.Selected** 选择绑定中或已命名项目中的所有内容。 <br/>**Office.SelectionMode.None** 对于文本绑定，选择单元格；对于矩阵绑定、表绑定和已命名的项目，选择第一个数据单元格（不是表格标题行中的第一个单元格）。<br/><br/> **在 PowerPoint 中：**<br/> **Office.SelectionMode.Selected** 选择幻灯片标题或幻灯片上的第一个文本框。<br/> **Office.SelectionMode.None** 不选择任何内容。<br/><br/> **在 Word 中：**<br/> **Office.SelectionMode.Selected** 选择绑定中的所有内容。 <br/>**Office.SelectionMode.None** 对于文本绑定，将光标移到文本开头；对于矩阵绑定和表绑定，选择第一个数据单元格（不是表格标题行中的第一个单元格）。|
+| _asyncContext_|**array**、**boolean**、**null**、**number**、**object**、**string** 或 **undefined**|在 **AsyncResult** 对象中未经改动的返回的任何类型的用户定义项。||
+| _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为 **AsyncResult** 。||
 
-## 回调值
+## <a name="callback-value"></a>回调值
 
 当执行您传递给 _callback_ 参数的函数时，它会接收您可以从回调函数的唯一参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
-在传递给  **goToByIdAsync** 方法的回调函数中，您可以使用 **AsyncResult** 对象的属性返回以下信息。
+在传递给 **goToByIdAsync** 方法的回调函数中，可以使用 **AsyncResult** 对象的属性返回以下信息。
 
 
 
@@ -39,14 +39,14 @@ Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|返回当前视图。|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|确定操作是成功还是失败。|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|如果操作失败，则访问提供错误信息的 [Error](../../reference/shared/error.md) 对象。|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果您将用户定义的一个  **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|如果用户定义的一个 **object** 或值作为 _asyncContext_ 参数传递，则对其进行访问。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 PowerPoint 不支持“**母版视图**”中的 **goToByIdAsync** 方法。
 
 
-## 示例
+## <a name="example"></a>示例
 
  **按 ID 转到绑定（Word 和 Excel）**
 
@@ -119,7 +119,7 @@ function goToTable() {
 
 
 
- **按 id 转到当前选定的幻灯片 (PowerPoint)**
+ **按 ID 转到当前选定的幻灯片 (PowerPoint)**
 
 以下示例显示如何：
 
@@ -197,12 +197,12 @@ function goToSlideByIndex() {
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -218,11 +218,11 @@ function goToSlideByIndex() {
 |:-----|:-----|
 |**在要求集中可用**|不在集合中|
 |**最低权限级别**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

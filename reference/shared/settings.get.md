@@ -1,11 +1,11 @@
 
-# Settings.get 方法
+# <a name="settings.get-method"></a>Settings.get 方法
 检索指定设置。
 
 |||
 |:-----|:-----|
 |**主机：**|Access、Excel、PowerPoint 和 Word|
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|Settings|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Settings|
 |**包含最后一次更改的版本**|1.1|
 
 ```js
@@ -13,11 +13,11 @@ var mySetting = Office.context.document.settings.get(name);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 
 
-_名称_<br/>
+_name_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;类型：**字符串**
 
 &nbsp;&nbsp;&nbsp;&nbsp;要检索的设置的区分大小写的名称。
@@ -26,12 +26,12 @@ _名称_<br/>
 
 
 
-## 返回值
+## <a name="return-value"></a>返回值
 
 具有映射到 JSON 序列化值的属性名称的  **object**。
 
 
-## 示例
+## <a name="example"></a>示例
 
 
 
@@ -49,12 +49,12 @@ function write(message){
 
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此属性。空的单元格表示相应的 Office 主机应用程序不支持此属性。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 
@@ -69,11 +69,11 @@ function write(message){
 |:-----|:-----|
 |**在要求集中可用**|Settings|
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

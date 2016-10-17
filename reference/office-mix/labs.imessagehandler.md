@@ -1,9 +1,9 @@
-﻿
-# Labs.IMessageHandler
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.imessagehandler"></a>Labs.IMessageHandler
 
-允许您定义事件处理程序的接口。
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
+
+允许定义事件处理程序的接口。
 
 ```
 interface IMessageHandler(origin: Window, data: any, callback: Labs.Core.ILabCallback<any>): void

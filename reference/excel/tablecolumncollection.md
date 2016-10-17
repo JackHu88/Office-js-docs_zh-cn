@@ -1,21 +1,21 @@
-﻿# TableColumnCollection 对象（适用于 Excel 的 JavaScript API）
+# <a name="tablecolumncollection-object-(javascript-api-for-excel)"></a>TableColumnCollection 对象（适用于 Excel 的 JavaScript API）
 
 表示属于表的所有列的集合。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |count|INT|返回表中的列数。只读。|
-|Items|[TableColumn[]](tablecolumn.md)|tableColumn 对象的集合。只读。|
+|items|[TableColumn[]](tablecolumn.md)|tableColumn 对象的集合。只读。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问 [示例。](#property-access-examples)_
 
-## Relationships
+## <a name="relationships"></a>关系
 无
 
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
@@ -24,27 +24,27 @@ _请参阅属性访问[示例](#示例)。_
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|根据其在集合中的位置获取列。|
 |[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### add(index: number, values: (boolean or string or number)[][])
+### <a name="add(index:-number,-values:-(boolean-or-string-or-number)[][])"></a>add(index: number, values: (boolean or string or number)[][])
 向表中添加新列。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableColumnCollectionObject.add(index, values);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |index|number|指定新列的相对位置。之前位于此位置的列向右移动。索引值应等于或小于最后一列的索引值，因此不能用于在表末尾附加列。从零开始编制索引。|
 |values|(boolean or string or number)[][]|可选。未设置格式的表列值的二维数组。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 Excel.run(function (ctx) { 
@@ -64,23 +64,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItem(key: number or string)
+### <a name="getitem(key:-number-or-string)"></a>getItem(key: number or string)
 按名称或 ID 获取 column 对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableColumnCollectionObject.getItem(key);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|Key|number 或 string| 列名称或 ID。|
+|Key|number or string| 列名称或 ID。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 
 ```js
 Excel.run(function (ctx) { 
@@ -98,7 +98,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
@@ -114,23 +114,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 根据其在集合中的位置获取列。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableColumnCollectionObject.getItemAt(index);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 Excel.run(function (ctx) { 
     var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
@@ -146,22 +146,22 @@ Excel.run(function (ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,10 +1,10 @@
-﻿# Font 对象（适用于 Word 的 JavaScript API）
+# <a name="font-object-(javascript-api-for-word)"></a>Font 对象（适用于 Word 的 JavaScript API）
 
 表示字体。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |bold|bool|获取或设置表示字体是否为粗体的值。如果字体格式为粗体则为 true，否则为 false。|
@@ -17,39 +17,39 @@ _适用于：Word 2016、Word for iPad、Word for Mac_
 |subscript|bool|获取或设置表示字体是否为下标的值。如果字体格式为下标则为 true，否则为 false。|
 |superscript|bool|获取或设置表示字体是否为上标的值。如果字体格式为上标则为 true，否则为 false。|
 
-_请参阅属性访问[示例](#示例)。_
+_请参阅属性访问[示例](#property-access-examples)_。
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
 |size|**float**|获取或设置表示字体大小（以磅值表示）的值。|
 |underline|**string**|获取或设置表示字体的下划线类型的值。有效值为：“None”、“Single”、“Word”、“Double”、“Dotted”、“Hidden”、“Thick”、“Dashline”、“Dotline”、“DotDashLine”、“TwoDotDashLine” 和 “Wave”|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -88,9 +88,9 @@ Word.run(function (context) {
 });
 ```
 
-## 属性访问示例
+## <a name="property-access-examples"></a>属性访问示例
 
-### 更改字体名称
+### <a name="change-the-font-name"></a>更改字体名称
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -115,7 +115,7 @@ Word.run(function (context) {
 });
 ```
 
-### 更改字体颜色
+### <a name="change-the-font-color"></a>更改字体颜色
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -140,7 +140,7 @@ Word.run(function (context) {
 });
 ```
 
-### 更改字体大小
+### <a name="change-the-font-size"></a>更改字体大小
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -165,7 +165,7 @@ Word.run(function (context) {
 });
 ```
 
-### 突出显示选定文本
+### <a name="highlight-selected-text"></a>突出显示选定文本
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -190,7 +190,7 @@ Word.run(function (context) {
 });
 ```
 
-### 粗体格式文本
+### <a name="bold-format-text"></a>粗体格式文本
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -216,7 +216,7 @@ Word.run(function (context) {
 
 ```
 
-### 加下划线格式文本
+### <a name="underline-format-text"></a>加下划线格式文本
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -241,7 +241,7 @@ Word.run(function (context) {
 });
 ```
 
-### 加删除线格式文本
+### <a name="strike-format-text"></a>加删除线格式文本
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -266,5 +266,5 @@ Word.run(function (context) {
 });
 ```
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。

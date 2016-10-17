@@ -1,7 +1,7 @@
 
-# Labs.Components.ChoiceComponentAttempt
+# <a name="labs.components.choicecomponentattempt"></a>Labs.Components.ChoiceComponentAttempt
 
- _**适用范围：** Office 相关应用 | Office 外接程序 | Office Mix | PowerPoint_
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示选项组件上的尝试。
 
@@ -10,12 +10,12 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
 ```
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -24,13 +24,13 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _labs_|与尝试一起使用的 [Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx) 实例。|
 | _attemptId_|与尝试关联的 ID。|
-| _值_|与尝试关联的值。|
+| _values_|与尝试关联的值。|
 
-### timeout
+### <a name="timeout"></a>timeout
 
  `public function timeout(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -39,18 +39,18 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|服务器已收到超时消息后，将触发的回调函数。|
 
-### getSubmissions
+### <a name="getsubmissions"></a>getSubmissions
 
  `public function getSubmissions(): Components.ChoiceComponentSubmission[]`
 
 检索之前针对给定尝试提交的所有提交。
 
 
-### submit
+### <a name="submit"></a>submit
 
  `public function submit(answer: Components.ChoiceComponentAnswer, result: Components.ChoiceComponentResult, callback: Labs.Core.ILabCallback<Components.ChoiceComponentSubmission>): void`
 
@@ -59,13 +59,13 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _answer_|尝试的答案。|
 | _result_|提交的结果。|
 | _callback_|接收到提交后触发的回调函数。|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 

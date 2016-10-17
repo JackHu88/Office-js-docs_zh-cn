@@ -1,12 +1,12 @@
 
 
-# Settings.settingsChanged 事件
+# <a name="settings.settingschanged-event"></a>Settings.settingsChanged 事件
 在使用 [Settings.saveAsync](../../reference/shared/settings.saveasync.md) 方法将设置属性包的内存中副本保存到文档中时发生。
 
 |||
 |:-----|:-----|
 |**主机：**|Excel |
-|**在[要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)中可用**|Settings|
+|**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Settings|
 |**包含最后一次更改的版本**|1.0|
 
 ```js
@@ -14,7 +14,7 @@ Office.EventType.SettingsChanged
 ```
 
 
-## 备注
+## <a name="remarks"></a>备注
 
 若要添加 **settingsChanged** 事件的事件处理程序，请使用 [Settings](../../reference/shared/settings.addhandlerasync.md) 对象的 **addHandlerAsync** 方法。
 
@@ -26,12 +26,12 @@ Office.EventType.SettingsChanged
  >**重要提示**：当外接程序正在与任意 Excel 客户端搭配运行时，外接程序的代码可以注册 **settingsChanged** 事件的处理程序。不过，只有当用 Excel Online 中打开的电子表格加载外接程序，_并且_多个用户正在编辑电子表格（共同创作）时才会触发此事件。因此，实际上只有采用共同创作方案的 Excel Online 才支持 **settingsChanged** 事件。
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此事件。空的单元格表示相应的 Office 主机应用程序不支持此事件。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 
@@ -43,11 +43,11 @@ Office.EventType.SettingsChanged
 |:-----|:-----|
 |**在要求集中可用**|Settings|
 |**最低权限级别**|[受限](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

@@ -1,19 +1,19 @@
 
 
-# ProjectDocument 对象
+# <a name="projectdocument-object"></a>ProjectDocument 对象
 表示与 Office 外接程序交互的项目文档（活动项目）的抽象类。
 
 |||
 |:-----|:-----|
 |**主机：**|Project|
-|**在其中添加**|1.0|
+|**添加内容的版本**|1.0|
 
 ```js
 Office.context.document
 ```
 
 
-## 成员
+## <a name="members"></a>成员
 
 
 **方法**
@@ -21,7 +21,7 @@ Office.context.document
 
 |**名称**|**说明**|
 |:-----|:-----|
-|[addHandlerAsync 方法](../../reference/shared/projectdocument.addhandlerasync.md)|在  **ProjectDocument** 对象中为事件异步添加事件处理程序。|
+|[addHandlerAsync 方法](../../reference/shared/projectdocument.addhandlerasync.md)|在 **ProjectDocument** 对象中为事件异步添加事件处理程序。|
 |[getMaxResourceIndexAsync 方法](../../reference/shared/projectdocument.getmaxresourceindexasync.md)|异步获取当前项目中的资源集合的最大索引。|
 |[getMaxTaskIndexAsync 方法](../../reference/shared/projectdocument.getmaxtaskindexasync.md)|异步获取当前项目中的任务集合的最大索引。|
 |[getProjectFieldAsync 方法](../../reference/shared/projectdocument.getprojectfieldasync.md)|异步获取活动项目中指定字段的值。|
@@ -35,7 +35,7 @@ Office.context.document
 |[getTaskByIndexAsync 方法](../../reference/shared/projectdocument.gettaskbyindexasync.md)|异步获取任务集合中具有指定索引的任务的 GUID。|
 |[getTaskFieldAsync 方法](../../reference/shared/projectdocument.gettaskfieldasync.md)|异步获取指定任务的指定字段的值。|
 |[getWSSUrlAsync 方法](../../reference/shared/projectdocument.getwssurlasync.md)|异步获取同步的 SharePoint 任务列表的 URL。|
-|[removeHandlerAsync 方法](../../reference/shared/projectdocument.removehandlerasync.md)|在  **ProjectDocument** 对象中为事件异步移除事件处理程序。|
+|[removeHandlerAsync 方法](../../reference/shared/projectdocument.removehandlerasync.md)|在 **ProjectDocument** 对象中为事件异步移除事件处理程序。|
 |[setResourceFieldAsync 方法](../../reference/shared/projectdocument.setresourcefieldasync.md)|异步设置指定资源的指定字段的值。|
 |[setTaskFieldAsync 方法](../../reference/shared/projectdocument.settaskfieldasync.md)|异步设置指定任务的指定字段的值。|
 
@@ -48,12 +48,12 @@ Office.context.document
 |[TaskSelectionChanged 事件](../../reference/shared/projectdocument.taskselectionchanged.event.md)|活动项目中的任务选择更改时发生。|
 |[ViewSelectionChanged 事件](../../reference/shared/projectdocument.viewselectionchanged.event.md)|当活动项目中的活动视图发生更改时发生。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 请勿直接调用或实例化脚本中的  **ProjectDocument** 对象。
 
 
-## 示例
+## <a name="example"></a>示例
 
 以下示例实例化外接程序，然后获取 Project 文档上下文中可用的 [Document](../../reference/shared/document.md) 对象的属性。Project 文档是已打开且活动的项目，要访问 **ProjectDocument** 对象的成员，请使用 **Office.context.document** 对象，如 **ProjectDocument** 方法和事件的代码示例中所示。
 
@@ -94,12 +94,12 @@ Office.context.document
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此对象。空的单元格表示相应的 Office 主机应用程序不支持此对象。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|
@@ -108,24 +108,24 @@ Office.context.document
 
 |||
 |:-----|:-----|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 |**版本**|**更改内容**|
 |:-----|:-----|
 |1.0|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 
 [Project 的任务窗格外接程序](../../docs/project/project-add-ins.md)
-(#project-的任务窗格外接程序)[Document 对象](../../reference/shared/document.md)
+[Document 对象](../../reference/shared/document.md)
 

@@ -1,46 +1,46 @@
-﻿# ContentControlCollection 对象（适用于 Word 的 JavaScript API）
+# <a name="contentcontrolcollection-object-(javascript-api-for-word)"></a>ContentControlCollection 对象（适用于 Word 的 JavaScript API）
 
 包含 ContentControl 对象的集合。内容控件是文档中绑定的、有可能添加标签的区域，它们充当特定类型的内容的容器。单个内容控件可能包含诸如图片、表或格式化文本段落等内容。当前仅支持富文本内容控件。
 
-_适用于：Word 2016、Word for iPad、Word for Mac_
+_适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
-## 属性
+## <a name="properties"></a>属性
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
-|Items|[ContentControl[]](contentcontrol.md)|contentControl 对象的集合。只读。|
+|项目|[ContentControl[]](contentcontrol.md)|contentControl 对象的集合。只读。|
 
-## Relationships
+## <a name="relationships"></a>Relationships
 无
 
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明|
 |:---------------|:--------|:----------|
 |[getById(id: number)](#getbyidid-number)|[ContentControl](contentcontrol.md)|按其标识符获取内容控件。|
 |[getByTag(tag: string)](#getbytagtag-string)|[ContentControlCollection](contentcontrolcollection.md)|获取具有指定标记的内容控件。|
 |[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|获取具有指定标题的内容控件。|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
-### getById(id: number)
+### <a name="getbyid(id:-number)"></a>getById(id: number)
 按其标识符获取内容控件。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlCollectionObject.getById(id);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |id|number|必需。内容控件的标识符。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [ContentControl](contentcontrol.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -65,23 +65,23 @@ Word.run(function (context) {
 });
 ```
 
-### getByTag(tag: string)
+### <a name="getbytag(tag:-string)"></a>getByTag(tag: string)
 获取具有指定标记的内容控件。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlCollectionObject.getByTag(tag);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |tag|string|必需。在内容控件上设置的标记。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [ContentControlCollection](contentcontrolcollection.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -111,27 +111,27 @@ Word.run(function (context) {
 });
 ```
 
-#### 其他信息
+#### <a name="additional-information"></a>其他信息
 [Word-Add-in-DocumentAssembly][contentControls.getByTag] 示例含有使用 getByTag 方法的另一个示例。
 
 
-### getByTitle(title: string)
+### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
 获取具有指定标题的内容控件。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 contentControlCollectionObject.getByTitle(title);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |title|string|必需。内容控件的标题。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [ContentControlCollection](contentcontrolcollection.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,26 +161,26 @@ Word.run(function (context) {
 });
 ```
 
-#### 其他信息
+#### <a name="additional-information"></a>其他信息
 [Word-Add-in-DocumentAssembly][contentControls.getByTitle] 示例含有使用 getByTag 方法的另一个示例。
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -248,7 +248,7 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) 外接程序示例说明如何使用 **load** 方法加载具有 **tag** 和 **title** 属性的内容控件集合。
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 

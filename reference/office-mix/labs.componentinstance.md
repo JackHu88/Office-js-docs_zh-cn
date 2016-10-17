@@ -1,7 +1,7 @@
-﻿
-# Labs.ComponentInstance
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.componentinstance"></a>Labs.ComponentInstance
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示组件的一个实例，这是运行时对用户的指定组件的实例化。对象包含实验室特定运行的组件的已翻译视图。
 
@@ -10,24 +10,24 @@ class ComponentInstance<T> extends Labs.ComponentInstanceBase
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 无。
 
 
-## 方法
+## <a name="methods"></a>方法
 
 
 
 
-### 构造函数
+### <a name="constructor"></a>构造函数
 
  `function constructor()`
 
 初始化 **ComponentInstance** 类的新实例。
 
 
-### createAttempt
+### <a name="createattempt"></a>createAttempt
 
  `public function createAttempt(callback: Labs.Core.ILabCallback<T>): void`
 
@@ -36,11 +36,11 @@ class ComponentInstance<T> extends Labs.ComponentInstanceBase
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|创建尝试后触发的回调。|
 
-### getAttempts
+### <a name="getattempts"></a>getAttempts
 
  `public function getAttempts(callback: Labs.Core.ILabCallback<T[]>): void`
 
@@ -49,26 +49,26 @@ class ComponentInstance<T> extends Labs.ComponentInstanceBase
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _callback_|检索尝试后触发的回调。|
 
-### getCreateAttemptOptions
+### <a name="getcreateattemptoptions"></a>getCreateAttemptOptions
 
  `public function getCreateAttemptOptions(): Labs.Core.Actions.ICreateAttemptOptions`
 
 说明
 
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptResult: Labs.Core.IAction): T`
 
-检索创建尝试的默认选项。可以被派生类重写。
+从给定的操作生成尝试。应由派生类实现。
 
  **参数**
 
 
-|**Name**|**说明**|
+|**名称**|**Description**|
 |:-----|:-----|
 | _createAttemptResult_|指定尝试的创建尝试操作。|

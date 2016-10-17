@@ -1,13 +1,13 @@
 
-# 运行 Office 加载项的要求
+# <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
 
 本文介绍了运行 Office 外接程序的软件和设备要求。
 
->**注意：**有关 Office 外接程序当前支持的高级别视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability) 页面。 
+>**注意：**有关 Office 外接程序当前支持的高级别视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页面。 
 
 
-## 服务器要求
+## <a name="server-requirements"></a>服务器要求
 
 为了能够安装和运行任何 Office 外接程序，您需要首先将 UI 的清单和网页文件以及外接程序的代码部署到服务器上的合适位置。
 
@@ -16,7 +16,7 @@
 
  >**注意：**当你在 Visual Studio 中开发和调试外接程序时，Visual Studio 将使用 IIS Express 在本地部署和运行你的外接程序的网页文件，并且不需要额外的 Web 服务器。与此类似，当你在浏览器中使用 Napa 进行开发和调试时，它将从与你用于登录到 Napa 的帐户相关联的存储中部署和运行你的外接程序的网页文件。
 
-对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个 [外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) 才能上载外接程序的 XML 清单文件。
+对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个 [外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)才能上载外接程序的 XML 清单文件。
 
 要测试和运行 Outlook 外接程序，用户的 Outlook 电子邮件帐户必须位于 Exchange 2013 或更高版本上，可通过 Office 365、Exchange Online 或本地安装获得此软件。用户或管理员在该服务器上安装 Outlook 外接程序的清单文件。
 
@@ -25,7 +25,7 @@
 
 
 
-## 客户端要求：Windows 台式机和平板电脑
+## <a name="client-requirements:-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
 为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持 Office 桌面客户端或 Web 客户端开发 Office 外接程序，需要以下软件：
 
@@ -43,7 +43,7 @@
 - HTML 和 JavaScript 编辑器，如记事本、 [Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)或第三方 Web 开发工具。
 
 
-## 客户端要求：OS X 桌面
+## <a name="client-requirements:-os-x-desktop"></a>客户端要求：OS X 桌面
 
 作为 Office 365 的一部分分发的 适用于 Mac 的 Outlook 支持 Outlook 外接程序。在 适用于 Mac 的 Outlook 上运行 Outlook 外接程序与 适用于 Mac 的 Outlook 本身的要求相同：操作系统必须至少为 OS X v10.10"Yosemite"。由于 适用于 Mac 的 Outlook 使用 WebKit 作为布局引擎以呈现外接程序页，因此没有其他浏览器依赖项。
 
@@ -52,12 +52,12 @@
 - Excel for Mac 版本 15.19 (160206) 
 - PowerPoint for Mac 版本 15.24 (160614)
 
-## 客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
+## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
 
 任何支持 ECMAScript 5.1、HTML5 和 CSS3 的浏览器，如 Internet Explorer 9、Chrome 13、Firefox 5、Safari 5.0.6 以及这些浏览器的更高版本。
 
 
-## 客户端要求：非 Windows 智能手机和平板电脑
+## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
 
 特别是对于在智能手机和非 Windows 平板电脑设备上的浏览器中运行的 适用于设备的 OWA 和 Outlook Web App，测试和运行 Outlook 外接程序需要下列软件。
 
@@ -70,7 +70,7 @@
 |Outlook Web App|iPhone 4 或更高版本、iPad 2 或更高版本、iPod Touch 4 或更高版本|iOS 5 或更高版本|有关 Office 365、Exchange Online 或本地的 Exchange Server 2013 或更高版本|Safari|
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [Office 外接程序平台概述](../../docs/overview/office-add-ins.md)
 - [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)

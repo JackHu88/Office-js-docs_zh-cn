@@ -1,11 +1,11 @@
 
-# SourceLocation 元素
-指定 Office 外接程序的源文件位置为介于 1 和 2018 个字符之间的 URL。 源位置必须是 HTTPS 地址，而非文件路径。
+# <a name="sourcelocation-element"></a>SourceLocation 元素
+指定 Office 外接程序的源文件位置为介于 1 和 2018 个字符之间的 URL。源位置必须是 HTTPS 地址，而非文件路径。
 
  **外接程序类型：**内容、任务窗格、邮件
 
 
-## 语法：
+## <a name="syntax:"></a>语法：
 
 
 ```XML
@@ -13,19 +13,19 @@
 ```
 
 
-## 包含在：
+## <a name="contained-in:"></a>包含在：
 
 [DefaultSettings](../../reference/manifest/defaultsettings.md)（内容和任务窗格外接程序）
 
 [FormSettings](../../reference/manifest/formsettings.md)（邮件外接程序）
 
 
-## 可以包含：
+## <a name="can-contain:"></a>可以包含：
 
 [Override](../../reference/manifest/override.md)
 
 
-## 属性
+## <a name="attributes"></a>属性
 
 
 

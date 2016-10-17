@@ -1,11 +1,11 @@
 
-# 加载 DOM 和运行时环境
+# <a name="loading-the-dom-and-runtime-environment"></a>加载 DOM 和运行时环境
 
 
 
 外接程序在运行自己的自定义逻辑前必须确保 DOM 和 Office 外接程序运行时环境都已加载。 
 
-## 启动内容或任务窗格加载项
+## <a name="startup-of-a-content-or-task-pane-add-in"></a>启动内容或任务窗格加载项
 
 下图显示了在 Excel、PowerPoint、Project、Word 或 Access 中启动内容或任务窗格外接程序所涉及的事件流。
 
@@ -30,7 +30,7 @@
 6. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     
 
-## 启动 Outlook 外接程序
+## <a name="startup-of-an-outlook-add-in"></a>启动 Outlook 外接程序
 
 
 
@@ -57,7 +57,7 @@
 7. 当 DOM 和 HTML 正文加载完毕并且加载项完成初始化后，加载项的主函数就可以继续进行。
     
 
-## 检查加载状态
+## <a name="checking-the-load-status"></a>检查加载状态
 
 
 检查 DOM 和 运行时环境是否加载完毕的一种方式是使用 jQuery [.ready()](http://api.jquery.com/ready/) 函数： `$(document).ready()`。例如，以下  **initialize** 事件处理程序函数可确保在专门用于初始化外接程序的代码运行前先加载 DOM。随后， **initialize** 事件处理程序继续使用 [mailbox.item](../../reference/outlook/Office.context.mailbox.item.md) 属性获取 Outlook 中当前选定的项目，并调用外接程序的主函数 `initDialer`。
@@ -94,9 +94,9 @@ Office.initialize = function () {
 如果您的加载项包括多个页，则在每次加载新页时，页面必须加入或调用  **Office.initialize** 事件处理程序。
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
-- [了解 适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
+- [了解适用于 Office 的 JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)
     

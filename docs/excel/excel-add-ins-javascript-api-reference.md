@@ -1,4 +1,4 @@
-# Excel JavaScript API 参考
+# <a name="excel-javascript-api-reference"></a>Excel JavaScript API 参考
 
 你可以使用 Excel JavaScript API 构建适用于 Excel 2016 的外接程序。以下列表显示在 API 中可用的高级 Excel 对象。每个对象页面链接包含对象可用的属性、关系和方法的描述。如需了解详细信息，请浏览相应链接。
 
@@ -25,9 +25,9 @@
 * [请求上下文](../../reference/excel/requestcontext.md)：RequestContext 对象可加快对 Excel 应用程序的请求。
 
 
-##### 其他资源
+##### <a name="additional-resources"></a>其他资源
 
 *  [Excel 外接程序编程概述](excel-add-ins-javascript-programming-overview.md)
-*  [构建您的第一个 Excel 外接程序](build-your-first-excel-add-in.md)
+*  [构建你的第一个 Excel 外接程序](build-your-first-excel-add-in.md)
 *  [适用于 Excel 的代码段资源管理器](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
 

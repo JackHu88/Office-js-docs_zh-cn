@@ -1,4 +1,4 @@
-# Word JavaScript API 参考
+# <a name="word-javascript-api-reference"></a>Word JavaScript API 参考
 
 Word 提供了一组丰富的 API，你可以使用它们创建与文档内容和元数据进行交互的外接程序。使用这些 API 可以为用户带来与 Word 融为一体并扩展 Word 的精彩体验。你可以导入和导出内容、组合来自不同数据源的新文档，并能与文档工作流进行集成，从而创建自定义文档解决方案。
 
@@ -7,11 +7,11 @@ Word 提供了一组丰富的 API，你可以使用它们创建与文档内容�
 - Word JavaScript API - 在 Office 2016 中引入。
 - [适用于 Office 的 JavaScript API](../javascript-api-for-office.md) (Office.js) - 在 Office 2013 中引入。
 
-## Word JavaScript API
+## <a name="word-javascript-api"></a>Word JavaScript API
 
 Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段落等对象的交互方式。Word JavaScript API 不提供各个用于检索和更新每个对象的异步 API，而是提供与 Word 中运行的真实对象对应的“代理”JavaScript 对象。你可以通过同步读取和写入这些代理对象的属性，并调用对其执行操作的同步方法，从而与这些代理对象进行交互。与代理对象的这些交互不会立即在运行的脚本中实现。**context.sync** 方法通过执行已排入队列的指令并检索可供在脚本中使用的已加载 Word 对象的属性，在运行的 JavaScript 和 Office 真实对象之间同步状态。
 
-## 适用于 Office 的 JavaScript API
+## <a name="javascript-api-for-office"></a>适用于 Office 的 JavaScript API
 
 你可以从以下位置引用 Office.js：
 
@@ -22,7 +22,7 @@ Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段�
 
 如果你使用的是 TypeScript 并且拥有 npm，则可以在命令行接口中键入以下命令，从而获取 TypeScript 定义：```typings install office-js --ambient```。
 
-## 运行 Word 外接程序
+## <a name="running-word-add-ins"></a>运行 Word 外接程序
 
 若要运行外接程序，请使用 Office.initialize 事件处理程序。若要详细了解如何初始化外接程序，请参阅[了解 API](../../docs/develop/understanding-the-javascript-api-for-office.md)。
 
@@ -58,7 +58,7 @@ Word JavaScript API 通过 Office.js 进行加载，改变了你与文档和段�
     })();
 ```
 
-### 将 Word 文档与 Word JavaScript API 代理对象进行同步
+### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>将 Word 文档与 Word JavaScript API 代理对象进行同步
 
 Word JavaScript API 对象模型与 Word 中的对象松散耦合。Word JavaScript API 对象是 Word 文档中对象的代理。在文档状态完成同步前，对代理对象执行的操作不会在 Word 中实现。反过来说，在文档状态完成同步前，Word 文档的状态也不会在代理对象中实现。若要同步文档状态，请运行 **context.sync()** 方法。下面的示例创建了代理正文对象以及用于在代理正文对象上加载文本属性的已排入队列命令，并使用 **context.sync()** 方法将 Word 文档正文与正文代理对象同步。
 
@@ -81,7 +81,7 @@ Word JavaScript API 对象模型与 Word 中的对象松散耦合。Word JavaScr
     })
 ```
 
-### 执行一批命令
+### <a name="executing-a-batch-of-commands"></a>执行一批命令
 
 Word 代理对象具有用于访问和更新对象模型的方法。这些方法按其在批处理中的排队顺序依次执行。调用 context.sync() 后，批处理中已排入队列的所有命令都会得到执行。
 
@@ -110,12 +110,12 @@ Word 代理对象具有用于访问和更新对象模型的方法。这些方法
     })
 ```
 
-## 开放性 Word API 规范
+## <a name="open-word-api-specifications"></a>开放性 Word API 规范
 
 在我们设计和开发新的 API 以用于创建 Word 外接程序时，我们会公开它们，以便你可以在我们的[开放性 API 规范](../../reference/openspec.md)页面上提供反馈。了解即将推出的面向 Word JavaScript API 的新功能，并提供你对我们的设计规范的宝贵意见。
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 * [Word 外接程序概述](../../docs/word/word-add-ins-programming-overview.md )
 * [Office 外接程序平台概述](../../docs/overview/office-add-ins.md)
-* [GitHub 上的 Word 外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
+* [GitHub Word 上的外接程序示例](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)

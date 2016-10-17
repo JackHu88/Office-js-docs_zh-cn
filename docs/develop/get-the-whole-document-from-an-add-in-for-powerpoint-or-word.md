@@ -1,9 +1,9 @@
 
-# 从 PowerPoint 或 Word 相关外接程序获取整个文档
+# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>从 PowerPoint 或 Word 相关外接程序获取整个文档
 
 您可以创建一个只需一次单击即可将 Word 2013  或 PowerPoint 2013 文档发送到远程位置的 Office 外接程序。本文说明如何构建一个简单的 PowerPoint 2013 任务窗格外接程序，以便以数据对象的形式获取所有演示文稿并将相关数据通过 HTTP 请求发送到 Web 服务器。
 
-## 创建 PowerPoint 或 Word 外接程序的先决条件
+## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>创建 PowerPoint 或 Word 外接程序的先决条件
 
 
 本文假定您使用文本编辑器创建 PowerPoint 或 Word 任务窗格外接程序。若要创建任务窗格外接程序，您必须创建以下文件：
@@ -22,12 +22,12 @@
 您还可以使用 Visual Studio 2015 或 Napa Office 365 开发工具 创建适用于 PowerPoint 或 Word 的外接程序。有关如何创建 Office 外接程序的详细信息，请参阅表 1。
 
 
-### 创建任务窗格外接程序需要了解的核心概念
+### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格外接程序需要了解的核心概念
 
 在开始创建 PowerPoint 或 Word 的此外接程序之前，您应知道如何构建 Office 外接程序和使用 HTTP 请求。本文不讨论如何解码 Web 服务器上 HTTP 请求中 Base64 编码的文本。 
 
 
-## 为外接程序创建清单
+## <a name="create-the-manifest-for-the-add-in"></a>为外接程序创建清单
 
 
 PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信息：可以托管它的应用程序、HTML 文件的位置、外接程序标题和说明以及许多其他特征。
@@ -61,7 +61,7 @@ PowerPoint 外接程序的 XML 清单文件提供有关外接程序的重要信�
 - 使用 UTF-8 编码将文件以 GetDoc_App.xml 形式保存到网络位置或外接程序目录。
     
 
-## 为外接程序创建用户界面
+## <a name="create-the-user-interface-for-the-add-in"></a>为外接程序创建用户界面
 
 
 要为外接程序创建用户界面，可使用直接写入 GetDoc_App.html 文件的 HTML。外接程序的编程逻辑和功能必须包含在 JavaScript 文件（如 GetDoc_App.js）中。
@@ -131,7 +131,7 @@ input [type="submit"], input[type="button"]
 - 使用 UTF-8 编码将该文件以 Program.css 形式保存到网络位置，或保存到 GetDoc_App.html 文件所在的 Web 服务器。
     
 
-## 添加 JavaScript 以获取文档
+## <a name="add-the-javascript-to-get-the-document"></a>添加 JavaScript 以获取文档
 
 
 在外接程序的代码中，[Office.initialize](../../reference/shared/office.initialize.md) 事件的处理程序会向表单上**提交**按钮的 Click 事件中添加处理程序，并告知用户外接程序准备就绪。

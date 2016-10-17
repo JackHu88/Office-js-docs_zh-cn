@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.ITimelineConfiguration
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.itimelineconfiguration"></a>Labs.Core.ITimelineConfiguration
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 用于 [Labs.Timeline](../../reference/office-mix/labs.timeline.md) 的配置选项。允许您指定一组时间线配置选项。
 
@@ -10,7 +10,7 @@ interface ITimelineConfiguration
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

@@ -1,7 +1,7 @@
-﻿
-# Labs.ITimelineNextMessage
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.itimelinenextmessage"></a>Labs.ITimelineNextMessage
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 用于时间线上的下一封邮件的基本接口。
 

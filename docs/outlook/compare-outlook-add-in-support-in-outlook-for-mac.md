@@ -1,9 +1,9 @@
 
-# 比较 Outlook for Mac 与其他 Outlook 主机之间的 Outlook 外接程序支持的差异
+# <a name="compare-outlook-add-in-support-in-outlook-for-mac-with-other-outlook-hosts"></a>比较 Outlook for Mac 与其他 Outlook 主机之间的 Outlook 外接程序支持的差异
 
 您可以按照与其他主机（包括 Outlook for Windows、适用于设备的 OWA 和 Outlook Web App）相同的方式在 适用于 Mac 的 Outlook 中创建和运行 Outlook 外接程序，而无需为每个主机自定义 JavaScript。从外接程序到 适用于 Office 的 JavaScript API 的相同调用通常按同一方式工作，下表中说明的领域除外。
 
- >**注释**  适用于 Mac 的 Outlook 仅在 Outlook 阅读模式中支持适用于 Office 的 JavaScript API。
+ >**注释**  Outlook for Mac 仅在 Outlook 阅读模式中支持适用于 Office 的 JavaScript API。
 
 |**区域**|**Outlook for Windows、适用于设备的 OWA、Outlook Web App**|**Outlook for Mac**|
 |:-----|:-----|:-----|
@@ -16,7 +16,7 @@
 |字符串表示  **dateTimeCreated** 和 **dateTimeModified** 属性中的时区|例如：2014 年 3 月 13 日，星期四，14:09:11 GMT+0800（中国标准时间）|例如：2014 年 3 月 13 日，星期四，14:09:11 GMT+0800 (CST)|
 |**dateTimeCreated** 和 **dateTimeModified** 的时间准确度|如果外接程序使用以下代码，准确度精确到毫秒。<br/><pre lang="javascript">JSON.stringify(Office.context.mailbox.item, null, 4);</pre>|准确度精确到秒。|
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

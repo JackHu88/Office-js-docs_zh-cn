@@ -1,5 +1,5 @@
 
-# 从服务器获取 Outlook 项目的附件
+# <a name="get-attachments-of-an-outlook-item-from-the-server"></a>从服务器获取 Outlook 项目的附件
 
 Outlook 外接程序无法将选定项目上的附件直接传递给在您服务器上运行的远程服务。但是，外接程序可以使用附件 API 将关于附件的信息发送到远程服务。然后，该服务可以直接联系 Exchange 服务器来检索附件。
 
@@ -14,7 +14,7 @@ Outlook 外接程序无法将选定项目上的附件直接传递给在您服务
 - [Office.context.mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md) 函数 — 对托管邮箱的 Exchange 服务进行异步调用，获取服务器发回给 Exchange 服务器的回调令牌，以对附件请求进行身份验证。
     
 
-## 使用附件 API
+## <a name="using-the-attachments-api"></a>使用附件 API
 
 
 若要使用附件 API 获取 Exchange 邮箱中的附件，请执行以下步骤： 
@@ -34,7 +34,7 @@ Outlook 外接程序无法将选定项目上的附件直接传递给在您服务
  >**注释**  为强调附件信息，这些示例中的代码已被缩短。该示例包含用于向远程服务器进行外接程序身份验证和管理请求状态的额外代码。
 
 
-### 激活外接程序
+### <a name="activate-the-add-in"></a>激活外接程序
 
 
 您可以在外接程序清单文件中使用 [ItemHasAttachment](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx) 规则，以便当所选项目具有附件时显示外接程序，如以下示例中所示。
@@ -45,7 +45,7 @@ Outlook 外接程序无法将选定项目上的附件直接传递给在您服务
 ```
 
 
-### 获取回调令牌
+### <a name="get-a-callback-token"></a>获取回调令牌
 
 
 [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) 对象提供了 **getCallbackTokenAsync** 函数来获得远程服务器用来向 Exchange 服务器进行身份验证的令牌。以下代码显示了外接程序中一个启动异步请求以获得回调令牌的函数，以及一个获得响应的回调函数。回调令牌存储于在下一节中定义的服务请求对象中。
@@ -70,7 +70,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 ```
 
 
-### 向远程服务发送附件信息
+### <a name="send-attachment-information-to-the-remote-service"></a>向远程服务发送附件信息
 
 
 您的外接程序调用的远程服务定义了您应该如何向该服务发送附件信息的详情。在本示例中，远程服务是通过使用 Visual Studio 2013 创建的一个 Web API 应用程序。远程服务需要 JSON 对象中的附件信息。以下代码初始化一个包含附件信息的对象。
@@ -127,7 +127,7 @@ serviceRequest.attachments = new Array();
 ```
 
 
-### 从 Exchange 服务器获取附件
+### <a name="get-the-attachments-from-the-exchange-server"></a>从 Exchange 服务器获取附件
 
 
 您的远程服务可以使用 [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) EWS 托管 API 方法或 [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) EWS 操作从服务器检索附件。服务器应用程序需要两个对象将 JSON 字符串反序列化为可在服务器上使用的 .NET Framework 对象。以下代码显示了反序列化对象的定义。
@@ -160,7 +160,7 @@ namespace AttachmentsSample
 ```
 
 
-#### 使用 EWS 托管 API 来获取附件
+#### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>使用 EWS 托管 API 来获取附件
 
 如果使用远程服务中的 [EWS 托管 API](http://go.microsoft.com/fwlink/?LinkID=255472)，则可以使用 [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) 方法构建、发送和接收 EWS SOAP 请求以获取附件。我们建议您使用 EWS 托管 API，因为它所需的代码行数较少，并可提供用于调用 EWS 的更为直观的界面。以下代码发出一个检索所有附件的请求，并返回已处理附件的数目和名称。
 
@@ -230,7 +230,7 @@ namespace AttachmentsSample
 ```
 
 
-#### 使用 EWS 获取附件
+#### <a name="use-ews-to-get-the-attachments"></a>使用 EWS 获取附件
 
 如果使用远程服务中的 EWS，您需要构建一个 [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) SOAP 请求，以从 Exchange 服务器获取附件。以下代码返回了一个提供 SOAP 请求的字符串。远程服务使用 **String.Format** 方法将一个附件的附件 ID 插入该字符串中。
 
@@ -435,15 +435,17 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 
 - [创建适用于阅读窗体的 Outlook 外接程序](../outlook/read-scenario.md)
     
-- [在 Exchange 中浏览 EWS 托管 API、EWS 和 Web 服务](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
+- 
+  [在 Exchange 中浏览 EWS 托管 API、EWS 和 Web 服务](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
     
-- [EWS 托管 API 客户端应用程序入门](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
+- 
+  [EWS 托管 API 客户端应用程序入门](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
     
 - [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples)： `MyAttachments` 和 `AttachmentsDemo`
     

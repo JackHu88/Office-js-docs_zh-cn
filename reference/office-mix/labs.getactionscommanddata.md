@@ -1,9 +1,9 @@
-﻿
-# Labs.GetActionsCommandData
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.getactionscommanddata"></a>Labs.GetActionsCommandData
 
-允许您检索与 [LabsJS.Labs.Core.GetActions](../../reference/office-mix/labsjs.labs.core.getactions.md) 命令关联的数据。
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
+
+允许检索与 [LabsJS.Labs.Core.GetActions](../../reference/office-mix/labsjs.labs.core.getactions.md) 命令关联的数据。
 
 ```
 interface GetActionsCommandData

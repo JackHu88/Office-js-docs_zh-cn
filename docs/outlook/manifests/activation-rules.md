@@ -1,5 +1,5 @@
-﻿
-# Outlook 外接程序的激活规则
+
+# <a name="activation-rules-for-outlook-add-ins"></a>Outlook 外接程序的激活规则
 
 如果用户当前阅读或撰写的邮件或约会满足外接程序的激活规则，则 Outlook 可激活某些类型的外接程序。这对使用 1.1 清单架构的所有外接程序以及自定义窗格外接程序均适用。然后，用户可以在 Outlook UI 中选择该外接程序，以针对当前项目启动。
 
@@ -8,29 +8,29 @@
 ![显示已激活阅读邮件应用的应用栏](../../../images/mod_off15_MailAppAppBar.png)
 
 
-## 在清单中指定激活规则
+## <a name="specify-activation-rules-in-a-manifest"></a>在清单中指定激活规则
 
 
 若要让 Outlook 针对特定条件激活外接程序，请使用以下 **Rule** 元素之一在外接程序清单中指定激活规则：
 
-- [Rule 元素 (MailApp complexType)](../../../reference/manifest/rule.md)) - 指定单个规则。
-- [Rule 元素 (RuleCollection complexType)](#rule-元素-rulecollection-complextype)) - 使用逻辑操作组合多个规则。
+- [Rule 元素 (MailApp complexType)](../../../reference/manifest/rule.md) - 指定单个规则。
+- [Rule 元素 (RuleCollection complexType)](#rulecollection-rule) - 使用逻辑操作组合多个规则。
     
 
- > **注意：**用于指定单个规则的 **Rule** 元素是抽象的 [Rule](../../../reference/manifest/rule.md) 复杂类型。 每个以下类型的规则扩展此抽象的 **Rule** 复杂类型。 因此当你在清单中指定单个规则时，你必须使用 [xsi:type](http://www.w3.org/TR/xmlschema-1/) 属性来进一步定义某个以下类型的规则。 例如，以下规则定义了 [ItemIs](#itemis) 规则：`<Rule xsi:type="ItemIs" ItemType="Message" />` **FormType** 属性适用于清单 v1.1 中的激活规则，但是这些规则未在 **VersionOverrides** v1.0 中定义。 因此当 [ItemIs](#itemis) 用于 **VersionOverrides** 节点时无法使用。
+ > **注意：**用于指定单个规则的 **Rule** 元素是抽象的 [Rule](../../../reference/manifest/rule.md) 复杂类型。每个以下类型的规则扩展此抽象的 **Rule** 复杂类型。因此当在清单中指定单个规则时，必须使用 [xsi:type](http://www.w3.org/TR/xmlschema-1/) 属性来进一步定义某个以下类型的规则。例如，以下规则定义了 [ItemIs](#itemis-rule) 规则：`<Rule xsi:type="ItemIs" ItemType="Message" />` **FormType** 属性适用于清单 v1.1 中的激活规则，但是这些规则未在 **VersionOverrides** v1.0 中定义。因此，当 [ItemIs](#itemis-rule) 用于 **VersionOverrides** 节点时无法使用。
 
 下表列出了可用的规则类型。你可以在表后面以及[创建适用于阅读窗体的 Outlook 外接程序](../../outlook/read-scenario.md)中指定的文章中查找更多信息。
 
 
 |**规则名称**|**适用的窗体**|**说明**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis)|读取、 撰写，自定义窗格|检查当前项目是否属于指定类型（邮件或约会），另外还可以检查项目类别、窗体类型和（可选）项目邮件类别。|
-|[ItemHasAttachment](#itemhasattachment)|读取、自定义窗格|检查所选项是否包含附件。|
-|[ItemHasKnownEntity](#itemhasknownentity)|读取、自定义窗格|检查所选项是否包含一个或多个已知实体。更多信息：[将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)。|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch)|读取、自定义窗格|检查发件人的电子邮件地址、所选项的主题和/或所选项的正文是否包含正则表达式的匹配项。更多信息： [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)。|
-|[RuleCollection](#rulecollection)|读取、 撰写，自定义窗格|组合一组规则以便形成更复杂的规则。|
+|[ItemIs](#itemis-rule)|读取、撰写、自定义窗格|检查当前项目是否属于指定类型（邮件或约会），另外还可以检查项目类别、窗体类型和（可选）项目邮件类别。|
+|[ItemHasAttachment](#itemhasattachment-rule)|读取、自定义窗格|检查所选项是否包含附件。|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|读取、自定义窗格|检查所选项是否包含一个或多个已知实体。更多信息：[将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)。|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|读取、自定义窗格|检查发件人的电子邮件地址、所选项的主题和/或所选项的正文是否包含正则表达式的匹配项。更多信息： [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)。|
+|[RuleCollection](#rulecollection-rule)|读取、撰写、自定义窗格|组合一组规则以便形成更复杂的规则。|
 
-## ItemIs 规则
+## <a name="itemis-rule"></a>ItemIs 规则
 
 
 **ItemIs** 复杂类型定义一个计算结果为 **true** 的规则（如果当前项目匹配项目类型）和（可选）项目邮件类（如果在规则中指明）。
@@ -41,7 +41,7 @@
 
 |**值**|**说明**|
 |:-----|:-----|
-|**Appointment**|在 Outlook 日历中指定一个项目。这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
+|**约会**|在 Outlook 日历中指定一个项目。这包括已获取响应并且具有组织者和参与者的会议项目，或者没有组织者或参与者且仅为日历上的一个项目的约会。这与 Outlook 中的 IPM.Appointment 邮件类别相对应。|
 |**邮件**|指定通常在"收件箱"中收到的以下项目之一： <ul><li><p>电子邮件。这与 Outlook 中的 IPM.Note 邮件类别相对应。</p></li><li><p>会议请求、响应或取消。对应于 Outlook 中的以下邮件类别：</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 **FormType** 属性用于指定应激活外接程序的模式（阅读或撰写）。
 
@@ -70,7 +70,7 @@
 ```
 
 
-## ItemHasAttachment 规则
+## <a name="itemhasattachment-rule"></a>ItemHasAttachment 规则
 
 
 **ItemHasAttachment** 复杂类型定义检查所选项是否包含附件的规则。
@@ -80,7 +80,7 @@
 ```
 
 
-## ItemHasKnownEntity 规则
+## <a name="itemhasknownentity-rule"></a>ItemHasKnownEntity 规则
 
 在项对外接程序可用之前，服务器将对其进行检查以确定主题和正文是否包含可能为某个已知实体的任何文本。如果发现其中任何实体，系统会将其置于您使用该项的  **getEntities** 或 **getEntitiesByType** 方法访问的已知实体集合中。
 
@@ -115,7 +115,7 @@
 有关激活规则中的实体的详细信息，请参阅 [将 Outlook 项目中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)。
 
 
-## ItemHasRegularExpressionMatch 规则
+## <a name="itemhasregularexpressionmatch-rule"></a>ItemHasRegularExpressionMatch 规则
 
 
 **ItemHasRegularExpressionMatch** 复杂类型定义使用正则表达式来匹配项的指定属性内容的规则。如果在项的指定属性中发现与正则表达式匹配的文本，则 Outlook 会激活外接程序栏并显示外接程序。你可以使用代表当前所选项的对象的 **getRegExMatches** 或 **getRegExMatchesByName** 方法获取指定正则表达式的匹配项。
@@ -129,7 +129,7 @@
 有关使用  **ItemHasRegularExpressionMatch** 规则的详细信息，请参阅 [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)。
 
 
-## RuleCollection 规则
+## <a name="rulecollection-rule"></a>RuleCollection 规则
 
 
 **RuleCollection** 复杂类型将多个规则组合为单个规则。你可以使用 **Mode** 属性指定集合中的规则是应该通过逻辑 OR 还是逻辑 AND 进行组合。
@@ -161,7 +161,7 @@
 ```
 
 
-## 规则和正则表达式的限制
+## <a name="limits-for-rules-and-regular-expressions"></a>规则和正则表达式的限制
 
 
 为了提供使用 Outlook 外接程序的满意体验，您应该遵守激活和 API 使用准则。下表显示了正则表达式和规则的常规限制，但不同主机存在特定规则。有关详细信息，请参阅 [Outlook 外接程序的激活和 JavaScript API 的限制](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)和 [排查 Outlook 外接程序激活问题](../../outlook/troubleshoot-outlook-add-in-activation.md)。
@@ -173,12 +173,13 @@
 |ItemHasKnownEntity|Outlook 富客户端将对正文的前 1 MB 内容应用规则，对正文其余部分则不应用。|
 |正则表达式|对于所有 Outlook 主机的 ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则：<br><ul><li>在 Outlook 外接程序的激活规则中指定不超过 5 个正则表达式。如果超过该限制，则无法安装外接程序。</li><li>指定由 <b>getRegExMatches</b> 方法调用在前 50 个匹配项内返回其预期结果的正则表达式。 </li><li>在正则表达式中指定向前断言，但不支持向后 (?<=text) 和否定向后 (?<!text) 断言。</li><li>指定其匹配不超过下表中的限制的正则表达式。<br/><br/><table><tr><th>正则表达式匹配项的长度限制</th><th>Outlook 富客户端</th><th>Outlook Web App for Devices</th></tr><tr><td>项目正文采用纯文本</td><td>1.5 KB</td><td>3 KB</td></tr><tr><td>项目正文采用 HTML</td><td>3 KB</td><td>3 KB</td></tr></table>|
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 - [Outlook 外接程序](../../outlook/outlook-add-ins.md)
 - [创建适用于撰写窗体的 Outlook 外接程序](../../outlook/compose-scenario.md)
-- [激活限制和适用于 Outlook 外接程序 的 JavaScript API](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [Outlook 外接程序的激活和 JavaScript API 限制](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- 
+  [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [将 Outlook 项目中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

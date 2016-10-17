@@ -1,5 +1,5 @@
 
-# Table 枚举
+# <a name="table-enumeration"></a>Table 枚举
 指定_表格式方法_的 [cellFormat](../../docs/excel/format-tables-in-add-ins-for-excel.md) 参数中 `cells:` 属性的枚举值。
 
 |||
@@ -11,7 +11,7 @@
 Office.Table
 ```
 
-## 成员
+## <a name="members"></a>成员
 
 
 **值**
@@ -23,12 +23,12 @@ Office.Table
 |Office.Table.Data|"data"|Office.Table.Headers|
 |Office.Table.Headers|"headers"|仅标题行。|
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此枚举。空的单元格表示相应的 Office 主机应用程序不支持此枚举。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 **支持的主机（按平台）**
@@ -40,11 +40,11 @@ Office.Table
 
 |||
 |:-----|:-----|
-|**应用程序类型**|内容、任务窗格|
+|**外接程序类型**|内容、任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 
 

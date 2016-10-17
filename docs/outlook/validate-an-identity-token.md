@@ -1,5 +1,5 @@
 
-# 验证 Exchange 标识令牌
+# <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
 Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任请求之前对该令牌进行验证，以确保它来自你预期的 Exchange 服务器。本文中的示例演示如何通过用 C# 编写的验证对象验证 Exchange 标识令牌；但是，你可以使用任何编程语言来进行验证。[JSON Web 令牌 (JWT) Internet 草案](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)介绍了验证令牌所需的步骤。 
 
@@ -9,7 +9,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
 
 
 
-## 进行设置以验证标识令牌
+## <a name="set-up-to-validate-your-identity-token"></a>进行设置以验证标识令牌
 
 
 本文中的代码示例依赖于 Windows Identity Foundation (WIF) 以及用 JSON 令牌的处理程序扩展 WIF 的 DLL。可从以下位置下载所需程序集：
@@ -22,7 +22,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
 - [用于 64 位应用程序的 Windows.IdentityModel.Extensions.dll](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
     
 
-## 提取 JSON Web 令牌
+## <a name="extract-the-json-web-token"></a>提取 JSON Web 令牌
 
 
 **Decode** 工厂方法将来自 Exchange 服务器的 JWT 分割为构成令牌的三个字符串，然后使用 **Base64Decode** 方法（在第二个示例中显示）将 JWT 标头和负载解码为 JSON 字符串。再将这些字符串传递给 **JsonToken** 构造函数，其中会验证 JWT 的内容并返回一个新 **JsonToken** 对象实例。
@@ -92,7 +92,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
 ```
 
 
-## 分析 JWT
+## <a name="parse-the-jwt"></a>分析 JWT
 
 
 **JsonToken** 对象的构造函数会检查 JWT 的结构和内容，以确定它是否有效。最好在请求身份验证元数据文档之前执行此操作。如果 JWT 不包含正确声明或它在生命周期之外，则可避免对 Exchange 服务器的调用以及关联的延迟。
@@ -148,7 +148,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
 ```
 
 
-### ValidateHeader 方法
+### <a name="validateheader-method"></a>ValidateHeader 方法
 
 **ValidateHeader** 方法通过检查确保所需声明在令牌标头中，并且声明具有正确的值。该标题必须设置如下；否则，该方法将引发应用程序异常并结束。
 
@@ -185,7 +185,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
 ```
 
 
-### ValidateLifetime 方法
+### <a name="validatelifetime-method"></a>ValidateLifetime 方法
 
 JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期和时间，“exp”给出了令牌到期的时间。只有在这两个日期之间提供的令牌应视为有效。为了适应服务器和客户端之间时钟设置的细微区别，此方法将对令牌进行验证，最多验证令牌时间的前五分钟和后五分钟。
 
@@ -229,7 +229,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 **validFrom** ("nbf") 和 **validTo** ("exp") 日期作为自 Unix 纪元 1970 年 1 月 1 日以来的秒数发送。使用 UTC 来计算日期和时间，以避免因 Exchange 服务器与运行验证代码的服务器之间的时区差异产生任何问题。
 
 
-### ValidateAudience 方法
+### <a name="validateaudience-method"></a>ValidateAudience 方法
 
 标识令牌只对请求它的外接程序有效。**ValidateAudience** 方法检查令牌中的访问群体声明，以确保它与 Outlook 外接程序的预期 URL 匹配。
 
@@ -256,7 +256,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### ValidateVersion 方法
+### <a name="validateversion-method"></a>ValidateVersion 方法
 
 **ValidateVersion** 方法检查标识令牌的版本并确保它与预期版本匹配。不同版本的令牌可以携带不同的声明。检查版本可确保预期的声明将在标识令牌中。
 
@@ -280,7 +280,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### ValidateMetadataLocation 方法
+### <a name="validatemetadatalocation-method"></a>ValidateMetadataLocation 方法
 
 在 Exchange 服务器中存储的身份验证元数据对象包含对标识令牌中包括的签名进行验证所需的信息。**ValidateMetadataLocation** 方法确保标识令牌中包含身份验证元数据 URL 声明，并实际验证签名的过程发生在下一步中。
 
@@ -297,7 +297,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-## 验证标识令牌签名
+## <a name="validate-the-identity-token-signature"></a>验证标识令牌签名
 
 
 在了解到 JWT 包含验证签名所需的声明后，可以使用 Windows Identity Foundation (WIF) 和 WIF 扩展验证令牌中的签名。您需要以下信息来验证签名：
@@ -362,7 +362,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 **IdentityToken** 对象构造函数中的大部分代码都使用来自 Exchange 服务器的声明设置实例中的属性。该构造函数调用 **GetSecurityTokenHandler** 方法来获取将验证 Exchange 标识令牌的令牌处理程序。**GetSecurityTokenHandler** 方法调用两个实用程序方法 **GetMetadataDocument** 和 **GetSigningCertificate**，它们用于执行从 Exchange 服务器获取签名证书的工作。以下章节对每种方法进行了介绍。
 
 
-### GetSecurityTokenHandler 方法
+### <a name="getsecuritytokenhandler-method"></a>GetSecurityTokenHandler 方法
 
 **GetSecurityTokenHandler** 方法返回将验证标识令牌的 WIF 令牌处理程序。该方法中的大部分代码都用于初始化令牌处理程序，以执行验证；但是，该方法会调用 **GetSigningCertificate** 方法，以从 Exchange 服务器中检索用于对令牌签名的 X.509 证书。
 
@@ -398,7 +398,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### GetSigningCertificate 方法
+### <a name="getsigningcertificate-method"></a>GetSigningCertificate 方法
 
 **GetSigningCertificate** 方法调用 **GetMetadataDocument** 方法，以从 Exchange 服务器中检索身份验证元数据，然后返回身份验证元数据文档中的第一个 X.509 证书。如果该文档不存在，该方法将引发应用程序异常。
 
@@ -424,7 +424,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### GetMetadataDocument 方法
+### <a name="getmetadatadocument-method"></a>GetMetadataDocument 方法
 
 身份验证元数据文档包含对 Exchange 标识令牌中的签名进行验证所需的信息。该文档作为 JSON 字符串发送。**GetMetatDataDocument** 方法从 Exchange 标识令牌中指定的位置请求文档并返回将 JSON 字符串封装为对象的对象。如果 URL 不包含身份验证元数据文档，该方法会引发应用程序异常。
 
@@ -462,7 +462,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
  **安全说明**  如果使用证书验证回调方法，则必须确保其满足组织的安全要求。
 
 
-## 计算 Exchange 帐户的唯一 ID
+## <a name="compute-the-unique-id-for-an-exchange-account"></a>计算 Exchange 帐户的唯一 ID
 
 
 你可以通过将身份验证元数据文档 URL 与帐户的 Exchange 标识符进行哈希运算来创建 Exchange 帐户的唯一标识符。在拥有此唯一标识符后，你可以将其用于为 Outlook 外接程序 Web 服务创建单一登录 (SSO) 系统。有关将唯一标识符用于 SSO 的详细信息，请参阅[使用 Exchange 的标识令牌对用户进行身份验证](../outlook/authenticate-a-user-with-an-identity-token.md)
@@ -504,7 +504,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-## 实用程序对象
+## <a name="utility-objects"></a>实用程序对象
 
 
 本文中的代码示例取决于一些为使用的常量提供友好名称的实用程序对象。下表列出了这些实用程序对象。
@@ -513,13 +513,13 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 **表 1：实用程序对象**
 
 
-|**Object**|**说明**|
+|**对象**|**说明**|
 |:-----|:-----|
 |**AuthClaimsType**|将令牌验证代码所用的声明标识符收集到一个位置。|
 |**Config**|提供用于验证标识令牌的常量。 |
 |**JsonAuthMetadataDocument**|封装从 Exchange 服务器发送的 JSON 身份验证元数据文档。|
 
-### AuthClaimTypes 对象
+### <a name="authclaimtypes-object"></a>AuthClaimTypes 对象
 
 **AuthClaimTypes** 对象将令牌验证代码所用的声明标识符收集到一个位置。其中既包括标准 JWT 声明，还包括 Exchange 标识令牌中的特定声明。
 
@@ -554,7 +554,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### Config 对象
+### <a name="config-object"></a>Config 对象
 
 **Config** 对象包含用于验证标识令牌的常量，以及可在服务器没有追溯到根证书的 X509 证书时使用的证书验证回调方法。
 
@@ -595,7 +595,7 @@ JWT: "nbf" ("not before") 中提供的两个日期给出了令牌生效的日期
 ```
 
 
-### JsonAuthMetadataDocument 对象
+### <a name="jsonauthmetadatadocument-object"></a>JsonAuthMetadataDocument 对象
 
 **JsonAuthMetadataDocument** 对象通过属性公开身份验证元数据文档的内容。
 
@@ -641,7 +641,7 @@ namespace IdentityTest
 ```
 
 
-## 其他资源
+## <a name="additional-resources"></a>其他资源
 
 
 

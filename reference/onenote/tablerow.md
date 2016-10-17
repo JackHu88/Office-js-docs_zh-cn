@@ -1,70 +1,70 @@
-﻿# TableRow 对象（适用于 OneNote 的 JavaScript API）
+# <a name="tablerow-object-(javascript-api-for-onenote)"></a>TableRow 对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_  
 
 
 表示表中的行。
 
-## 属性
+## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
-|cellCount|int|获取行中的单元格数。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
-|id|string|获取行的 ID。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
-|rowIndex|int|获取其父表中的行索引。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
+|cellCount|int|获取行中的单元格数。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cellCount)|
+|id|字符串|获取行的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
+|rowIndex|int|获取其父表中的行索引。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
 
-_查看属性访问 [示例](#示例)。_
+_请参阅属性访问 [示例。](#property-access-examples)_
 
-## Relationships
+## <a name="relationships"></a>关系
 | 关系 | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|单元格|[TableCellCollection](tablecellcollection.md)|获取行中的单元格。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
-|parentTable|[表格](table.md)|获取父表。 只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
+|cells|[TableCellCollection](tablecellcollection.md)|获取行中的单元格。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
+|parentTable|[Table](table.md)|获取父表。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
 |[clear()](#clear)|void|清除行的内容。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-clear)|
 |[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|在当前行之前或之后插入一行。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-insertRowAsSibling)|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|设置行中所有单元格的底纹色。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-setShadingColor)|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### clear()
+### <a name="clear()"></a>clear()
 清除行的内容。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableRowObject.clear();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### insertRowAsSibling(insertLocation: string, values: string[])
+### <a name="insertrowassibling(insertlocation:-string,-values:-string[])"></a>insertRowAsSibling(insertLocation: string, values: string[])
 在当前行之前或之后插入一行。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableRowObject.insertRowAsSibling(insertLocation, values);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|insertLocation|string|新行应插入的位置对应于当前行。  可能的值是：Before、After|
-|值|string[]|可选。 在新行中插入的字符串，指定为数组。 单元格不能多于当前行中的单元格。 可选。|
+|insertLocation|字符串|新行应插入的位置对应于当前行。可能的值是：Before、After|
+|值|string[]|可选。在新行中插入的字符串，指定为数组。单元格不能多于当前行中的单元格。可选。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [TableRow](tablerow.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -104,38 +104,38 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### setShadingColor(colorCode: string)
+### <a name="setshadingcolor(colorcode:-string)"></a>setShadingColor(colorCode: string)
 设置行中所有单元格的底纹色。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 tableRowObject.setShadingColor(colorCode);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |colorCode|string|要为单元格设置的颜色代码。/参数|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
-### 属性访问示例
+### <a name="property-access-examples"></a>属性访问示例
 **id、cellCount、rowIndex**
 ```js
 OneNote.run(function(ctx) {

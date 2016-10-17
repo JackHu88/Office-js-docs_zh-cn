@@ -1,11 +1,11 @@
-# Office 外接程序 UI 元素
+# <a name="office-add-in-ui-elements"></a>Office 外接程序 UI 元素
 
 您可以在 Office 外接程序中使用两种类型的 UI 元素： 
 
 - 外接程序命令 
 - 基于 HTML 的自定义界面
 
-## 外接程序命令
+## <a name="add-in-commands"></a>外接程序命令
 命令在[外接程序 XML 清单](../../outlook/manifests/define-add-in-commands.md)中定义，并作为本机 UX 扩展向 Office UI 呈现。例如，您可以使用外接程序命令将按钮添加到 Office 功能区。 
 
 ![显式外接程序命令以及外接程序中的自定义 HTML UI 元素的图片](../../../images/layouts_addInCommands_v0.03.png)
@@ -16,7 +16,7 @@ Excel、PowerPoint 和 Word 已在 Office 功能区的“插入”选项卡上�
 
 ![显示 Word 功能区上的“插入”选项卡的图片](../../../images/Word-insert-tab.png)
 
-## 基于 HTML 的自定义 UI
+## <a name="custom-html-based-ui"></a>基于 HTML 的自定义 UI
 外接程序可以在 Office 客户端内嵌入基于 HTML 的自定义 UI。可用于显示 UI 的容器因外接程序类型而异。例如，任务窗格外接程序在文档的右窗格中显示基于 HTML 的自定义 UI，内容外接程序直接在 Office 文档内显示自定义 UI。
 
 不论您创建的外接程序类型如何，您都可以使用通用构建块来创建基于 HTML 的自定义 UI。我们建议您对这些 UI 元素使用 [Office UI 结构](https://github.com/OfficeDev/Office-UI-Fabric)，使您的外接程序可以与 Office 外观集成。我们也欢迎您使用自己的 UI 元素展示您自己的品牌。
@@ -37,7 +37,7 @@ Office UI 结构提供下列 UI 元素：
 
 **备注：**如果您决定使用自己的字体和图标集，请确保它们不会与 Office 冲突。例如，请勿使用与 Office 中相同或相似的图标，而应在您的外接程序中呈现不同的图标。 
 
-### 创建自定义调色板
+### <a name="creating-a-customized-color-palette"></a>创建自定义调色板
 如果您决定使用自己的调色板，请牢记以下事项： 
  
 - 使用颜色向用户传达您的品牌价值，并在您的外接程序用户体验中增加情感和快乐。
@@ -46,7 +46,7 @@ Office UI 结构提供下列 UI 元素：
 - 当在彩色背景上对文本或白文本使用颜色时，确保颜色具有足够的对比度以满足辅助功能准则（4.5:1 对比率）。
 - 关注色盲群体—不只是使用颜色来指示交互性。
 
-### 主题 
+### <a name="theming"></a>主题 
 无论您决定采用 Office 配色方案还是使用您自己的方案，我们都建议您使用我们的主题 API。属于 Office 主题体验的外接程序与 Office 的集成程度更高。
 
 

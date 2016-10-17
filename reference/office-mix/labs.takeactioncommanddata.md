@@ -1,7 +1,7 @@
-﻿
-# Labs.TakeActionCommandData
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.takeactioncommanddata"></a>Labs.TakeActionCommandData
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 与采取操作命令关联的数据。
 
@@ -17,6 +17,6 @@ interface TakeActionCommandData(type: string, options: options: Labs.Core.IActio
 
 |||
 |:-----|:-----|
-| _类型_|操作类型。|
-| _选项_|与操作关联的选项。|
-| _result_|操作的结果。|
+| _type_|操作类型。|
+| _options_|与操作关联的选项。|
+| _result_|操作结果。|

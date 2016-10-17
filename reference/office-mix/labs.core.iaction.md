@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.IAction
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.iaction"></a>Labs.Core.IAction
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 表示实验室操作，即用户与指定实验室的交互。
 
@@ -10,7 +10,7 @@ interface IAction
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

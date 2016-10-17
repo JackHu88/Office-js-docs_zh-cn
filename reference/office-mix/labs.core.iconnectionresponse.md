@@ -1,7 +1,7 @@
-﻿
-# Labs.Core.IConnectionResponse
 
- _**适用范围：** Office 相关应用程序 | Office 外接程序 | Office Mix | PowerPoint_
+# <a name="labs.core.iconnectionresponse"></a>Labs.Core.IConnectionResponse
+
+ _**适用范围：**Office 相关应用? | Office 外接程序? | Office Mix? | PowerPoint_
 
 从连接调用中返回的响应信息。
 
@@ -10,7 +10,7 @@ interface IConnectionResponse
 ```
 
 
-## 属性
+## <a name="properties"></a>属性
 
 
 |||

@@ -1,6 +1,6 @@
 
 
-# ProjectDocument.getTaskByIndexAsync 方法
+# <a name="projectdocument.gettaskbyindexasync-method"></a>ProjectDocument.getTaskByIndexAsync 方法
 异步获取任务集合中具有指定索引的任务的 GUID。
 
 **重要说明：**此 API 仅可在 Windows 桌面上的 Project 2016 中运行。
@@ -9,35 +9,35 @@
 |:-----|:-----|
 |**主机：**|Project|
 |**在 [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md) 中可用**|Selection|
-|**在其中添加**|1.1|
+|**添加内容的版本**|1.1|
 
 ```js
 Office.context.document.getTaskByIndexAsync(taskIndex[, options][, callback]);
 ```
 
 
-## 参数
+## <a name="parameters"></a>参数
 
 _taskIndex_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;类型：**数字**
 
-&nbsp;&nbsp;&nbsp;&nbsp;项目的任务集合中的任务索引。 必需。
+&nbsp;&nbsp;&nbsp;&nbsp;项目的任务集合中的任务索引。必需。
 
     
-_选项_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;以下是 [可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)：
+_options_<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;以下是[可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)：
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;_asyncContext_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型：**数组、布尔值、null、数字、对象、字符串**或**未定义**<br/></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AsyncResult](../../reference/shared/asyncresult.md) 对象中未经改动的返回的任何类型的用户定义项。 可选。</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如，可以使用 `{asyncContext: 'Some text'}` 或 `{asyncContext: <object>}` 格式传递 _asyncContext_ 参数。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型：**数组、布尔值、null、数字、对象、字符串**或**未定义**<br/></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AsyncResult](../../reference/shared/asyncresult.md) 对象中未经改动的返回的任何类型的用户定义项。可选。</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如，可以使用 `{asyncContext: 'Some text'}` 或 `{asyncContext: <object>}` 格式传递 _asyncContext_ 参数。
 
 _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;类型：**函数**
 
-&nbsp;&nbsp;&nbsp;&nbsp;返回方法调用时调用的函数，其唯一的参数的类型为 [AsyncResult](../../reference/shared/asyncresult.md)。 可选。
+&nbsp;&nbsp;&nbsp;&nbsp;返回方法调用时调用的函数，其唯一的参数的类型为 [AsyncResult](../../reference/shared/asyncresult.md)。可选。
 
 
-## 回调值
+## <a name="callback-value"></a>回调值
 
 在 _callback_ 函数执行后，它会收到你可以从回调函数的参数访问的 [AsyncResult](../../reference/shared/asyncresult.md) 对象。
 
@@ -46,17 +46,17 @@ _callback_<br/>
 
 |**名称**|**说明**|
 |:-----|:-----|
-|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|在可选  _asyncContext_ 参数中传递的数据（如果使用了参数）。|
-|[错误](../../reference/shared/asyncresult.error.md)|关于错误的信息（ 如果  **status** 属性为 **failed**）|
-|[status](../../reference/shared/asyncresult.status.md)|异步调用的  **succeeded** 或 **failed** 状态。|
+|[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|在可选 _asyncContext_ 参数中传递的数据（如果使用了参数）。|
+|[error](../../reference/shared/asyncresult.error.md)|关于错误的信息（如果 **status** 属性为 **failed**）|
+|[status](../../reference/shared/asyncresult.status.md)|异步调用的 **succeeded** 或 **failed** 状态。|
 |[value](../../reference/shared/asyncresult.value.md)|**string** 形式的任务的 GUID。|
 
-## 备注
+## <a name="remarks"></a>备注
 
 要获取项目的任务集合的最大索引，请使用 [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md) 方法。0 索引请求表示项目摘要任务。
 
 
-## 示例
+## <a name="example"></a>示例
 
 下面的代码示例调用 [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md) 以获取项目的任务集合中的最大索引，然后调用 **getTaskByIndexAsync**获取每个任务的 GUID。
 
@@ -144,12 +144,12 @@ _callback_<br/>
 ```
 
 
-## 支持详细信息
+## <a name="support-details"></a>支持详细信息
 
 
 下列矩阵中的大写字母 Y 表示相应的 Office 主机应用程序支持此方法。空的单元格表示相应的 Office 主机应用程序不支持此方法。
 
-有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
+有关 Office 主机应用程序和服务器要求的详细信息，请参阅 [运行 Office 外接程序的要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|
@@ -160,23 +160,23 @@ _callback_<br/>
 |:-----|:-----|
 |**在要求集中可用**||
 |**最低权限级别**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**应用程序类型**|任务窗格|
+|**外接程序类型**|任务窗格|
 |**库**|Office.js|
 |**命名空间**|Office|
 
-## 支持历史记录
+## <a name="support-history"></a>支持历史记录
 
 |**版本**|**更改内容**|
 |:-----|:-----|
 |1.1|引入|
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 
 
 
-#### 其他资源
+#### <a name="other-resources"></a>其他资源
 
 
 [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md)
-(#getmaxtaskindexasync)[AsyncResult 对象](../../reference/shared/asyncresult.md)
-(#asyncresult-对象)[ProjectDocument 对象](../../reference/shared/projectdocument.projectdocument.md)
+[AsyncResult 对象](../../reference/shared/asyncresult.md)
+[ProjectDocument 对象](../../reference/shared/projectdocument.projectdocument.md)

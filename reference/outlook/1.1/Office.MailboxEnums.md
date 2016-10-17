@@ -1,52 +1,52 @@
-﻿ 
+ 
 
-# MailboxEnums
+# <a name="mailboxenums"></a>MailboxEnums
 
 ## [Office](Office.md).MailboxEnums
 
-##### 要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写|
 
-### 成员
+### <a name="members"></a>成员
 
-#### AttachmentType :String
+#### <a name="attachmenttype-:string"></a>AttachmentType :String
 
 指定附件的类型。仅限撰写模式。
 
 AttachmentType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
 |`File`| String|附件是一个文件。|
 |`Item`| 字符串|附件是一个 Exchange 项目。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写|
-#### EntityType :String
+#### <a name="entitytype-:string"></a>EntityType :String
 
 指定实体的类型。仅限撰写模式。
 
 EntityType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -58,46 +58,46 @@ EntityType
 |`TaskSuggestion`| String|指定实体为任务建议。|
 |`URL`| String|指定实体为 Internet URL。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写|
-#### ItemType :String
+#### <a name="itemtype-:string"></a>ItemType :String
 
 指定项目的类型。仅限撰写模式。
 
 ItemType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
 |`Message`| String|电子邮件、会议请求、会议响应或会议取消。|
 |`Appoinment`| String|约会项目。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.0|
 |适用的 Outlook 模式| 撰写|
-#### RecipientType :String
+#### <a name="recipienttype-:string"></a>RecipientType :String
 
 指定约会收件人的类型。仅限撰写模式。
 
 RecipientType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -106,23 +106,23 @@ RecipientType
 |`User`| String|收件人是位于 Exchange 服务器上的 SMTP 电子邮件地址。|
 |`ExternalUser`| String|收件人是不位于 Exchange 服务器上的 SMTP 电子邮件地址。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
 |[最低版本的邮箱要求集](../tutorial-api-requirement-sets.md)| 1.1|
 |适用的 Outlook 模式| 撰写|
-#### ResponseType :String
+#### <a name="responsetype-:string"></a>ResponseType :String
 
 指定对会议邀请的响应类型。仅限撰写模式。
 
 ResponseType
 
-##### 类型：
+##### <a name="type:"></a>类型：
 
 *   字符串
 
-##### 属性：
+##### <a name="properties:"></a>属性：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -132,7 +132,7 @@ ResponseType
 |`Accepted`| String|参与者已接受会议请求。|
 |`Declined`| 字符串|参与者已拒绝会议请求。|
 
-##### 要求
+##### <a name="requirements"></a>要求
 
 |要求| 值|
 |---|---|
