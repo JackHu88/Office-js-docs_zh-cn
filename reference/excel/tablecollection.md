@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|address|string|表示数据源的 range 对象的地址或名称。如果该地址不包含工作表名称，则使用当前活动的工作表。|
+|address|string|表示数据源的 Range 对象的地址或名称。请注意，Range 地址应包括需要添加表的工作表。示例 `Sheet1!A1:D4`。|
 |hasHeaders|bool|指示导入的数据是否具有列标签的布尔值。如果源不包含标头（例如，当此属性设置为 false 时），Excel 将自动生成标头，数据将向下移动一行。|
 
 #### <a name="returns"></a>返回

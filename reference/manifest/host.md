@@ -37,7 +37,7 @@
 ---
 
 ## <a name="versionoverrides-node"></a>VersionOverrides 节点
-在 [VersionOverrides](./versionoverrides) 中定义时，主机类型由 `xsi:type` 属性决定。 
+在 [VersionOverrides](./versionoverrides.md) 中定义时，主机类型由 `xsi:type` 属性决定。 
 
 ### <a name="attributes"></a>属性
 

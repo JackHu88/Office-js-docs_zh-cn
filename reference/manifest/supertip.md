@@ -1,5 +1,5 @@
 ## <a name="supertip"></a>Supertip
-定义丰富的工具提示（标题和说明）。它由“[按钮](./button.md)”和“[菜单](./menu-control.md)”控件使用。 
+定义丰富的工具提示（标题和说明）。它由“[按钮](./control.md#button-control)”或“[菜单](./control.md#menu-dropdown-button-controls)”控件使用。 
 
 ## <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |

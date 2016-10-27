@@ -20,7 +20,7 @@
 必需。组的标签。 **resid** 属性必须设置为 **ShortStrings** 元素（位于 **Resources** 元素）中 [String](./resources.md#shortstrings) 元素的 [id](./resources.md) 属性的值。
 
 ## <a name="control"></a>控件
-一个组需要至少一个控件。目前，仅支持“[按钮](./control.md#button-control)”和“[菜单](./menu.md#menu-control)”。 
+一个组需要至少一个控件。目前，仅支持“[按钮](./control.md#button-control)”和“[菜单](./control.md#menu-dropdown-button-controls)”。 
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

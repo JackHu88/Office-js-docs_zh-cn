@@ -125,5 +125,5 @@
 
 - [Office 外接程序 API 和架构参考](../reference/reference.md)
     
-- [Office 外接程序开发生命周期](../docs/design/add-in-development-lifecycle.md)
+- [Office 外接程序开发生命周期](../docs/develop/add-in-development-lifecycle.md)
     

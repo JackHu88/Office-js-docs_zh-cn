@@ -24,9 +24,7 @@ OAuth 的基本概念是，应用程序本身可以是一个安全主体，就�
 
 [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-存储库的 \demo 文件夹中包含使用库来访问某些热门服务（包括 Google、Facebook 和 Office 365）的示例外接程序。
-
-请参阅本文后面中的**库**部分。
+请参阅本文后面的**库**部分。
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>在 Office 外接程序中使用授权代码流
 
@@ -39,7 +37,8 @@ OAuth 的基本概念是，应用程序本身可以是一个安全主体，就�
 
 ### <a name="relay/proxy-functions"></a>中继/代理函数
 
-通过存储托管在如 [Azure 函数](https://azure.microsoft.com/en-us/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 服务的简单函数中的*客户端 ID* 和*客户端密码*值，甚至可以在无服务器的 Web 应用程序上使用授权代码流。函数将以给定的代码交换适当的*访问令牌*，并将其重新传递给客户端。这种方法的安全性取决于对函数访问的保护程度。
+通过存储托管在如 [Azure 函数](https://azure.microsoft.com/en-us/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 服务的简单函数中的*客户端 ID* 和*客户端密码*值，甚至可以在无服务器的 Web 应用程序上使用授权代码流。
+函数将以给定的代码交换适当的*访问令牌*，并将其重新传递给客户端。这种方法的安全性取决于对函数访问的保护程度。
 
 若要使用此技术，外接程序会显示 UI/弹出窗口来显示联机服务（如 Google、Facebook 等）的登录屏幕。当用户登录并对外接程序授予其联机服务中的资源时，开发人员会收到一个代码，然后可以将其发送给联机函数。本文**中间人服务**中描述的服务使用与此类似的流。 
 

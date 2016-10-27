@@ -9,7 +9,7 @@
 
 - 一个 [Microsoft 帐户](http://www.microsoft.com/en-us/account/default.aspx)(microsoft-帐户)
     
-- 适用于 [Napa](https://www.napacloudapp.com/ ) Web 应用的 URL
+- 适用于 [Napa](https://www.napacloudapp.com) Web 应用的 URL
 
 >**注意：**若要开始创建适用于 OneNote 的外接程序，请参阅 [生成第一个 OneNote 外接程序](../onenote/onenote-add-ins-getting-started.md)。
 
@@ -17,7 +17,7 @@
 
 
 
-1. 在浏览器中打开 [Napa](https://www.napacloudapp.com/ )。
+1. 在浏览器中打开 [Napa](https://www.napacloudapp.com)。
     
 2. 选择“**添加新项目**”磁贴。
     
@@ -31,7 +31,8 @@
 
     代码编辑器打开并显示默认网页，该网页已包含一些无需执行任何其他操作便可运行的示例代码。
     
-4. 在页面的一侧，选择“运行”按钮（![运行按钮](../../images/Apps_NAPA_Run_Button.png)）。
+4. 在页面的一侧，选择“运行”按钮（
+![运行按钮](../../images/Apps_NAPA_Run_Button.png)）。
     
     打开与所选外接程序类型相关的 Office 应用程序，显示示例外接程序。现在可以尝试使用外接程序的功能。
     

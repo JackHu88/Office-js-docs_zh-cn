@@ -20,7 +20,7 @@
 
 ## <a name="control"></a>Control
 
-每个 **OfficeMenu** 元素都需要一个或多个 [menu](./menu.md#menu-control) 控件。 
+每个 **OfficeMenu** 元素都需要一个或多个 [menu](./control.md#menu-dropdown-button-controls) 控件。 
 
 
 ## <a name="example"></a>示例

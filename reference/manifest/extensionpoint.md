@@ -85,7 +85,7 @@ CustomPane 扩展点在满足指定规则时将定义激活的外接程序。仅
 |:-----|:-----|:-----|
 |  **RequestedHeight** | 否 |  显示窗格在桌面计算机上运行时所请求的高度（以像素为单位）。请求的高度可以是 32 到 450 像素。  |
 |  **SourceLocation**  | 是 |  外接程序的源代码文件的 URL。这是指 [Resources](./resources.md) 元素中的 **Url** 元素。  |
-|  **Rule**  | 是 |  指定外接程序激活时间的规则或规则集。有关详细信息，请参阅 [Outlook 外接程序的激活规则](../../outlook/manifests/activation-rules.md)。 |
+|  **Rule**  | 是 |  指定外接程序激活时间的规则或规则集。有关详细信息，请参阅 [Outlook 外接程序的激活规则](../../docs/outlook/manifests/activation-rules.md)。 |
 |  **DisableEntityHighlighting**  | 否 |  指定是否应关闭实体突出显示。 |
 
 

@@ -16,7 +16,6 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
     
 - 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
     
-有关示例，请参阅 [清单 v1.1 XML 文件示例](#manifest-v1.1-xml-file-examples-and-schemas)。
 
 ## <a name="required-elements"></a>必需元素
 
@@ -36,57 +35,74 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 |**元素**|**内容**|**任务窗格**|**Outlook**|
 |:-----|:-----|:-----|:-----|
-|
-  [OfficeApp](http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
-|
-  [Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
-|
-  [版本](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
-|
-  [ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
-|
-  [DefaultLocale](http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
-|
-  [DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
-|
-  [说明](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
-|
-  [IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
-|
-  [HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|||X|
-|
-  [DefaultSettings (ContentApp)](http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>
-  [DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
-|
-  [SourceLocation (ContentApp)](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>
-  [SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
-|
-  [DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
-|
-  [SourceLocation (MailApp)](http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
-|
-  [Permissions (ContentApp)](http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>
-  [Permissions (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>
-  [Permissions (MailApp)](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
-|
-  [Rule (RuleCollection)](http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>
-  [Rule (MailApp)](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
-|
-  [Dictionary](http://msdn.microsoft.com/en-us/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
-|
-  [*Requirements (MailApp)](http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
-|
-  [*Set](http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>
-  [**Sets (MailAppRequirements)](http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
-|
-  [*Form](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>
-  [**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
-|
-  [*Sets (Requirements)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
-|
-  [*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
+|[OfficeApp](http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
+|[Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
+|[版本](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
+|[ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
+|[DefaultLocale](http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
+|[DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
+|[说明](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
+|[IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
+|[HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|||X|
+|[DefaultSettings (ContentApp)](http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>[DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
+|[SourceLocation (ContentApp)](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>[SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
+|[DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
+|[SourceLocation (MailApp)](http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
+|[Permissions (ContentApp)](http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>[Permissions (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>[Permissions (MailApp)](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
+|[Rule (RuleCollection)](http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>[Rule (MailApp)](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
+|[Dictionary](http://msdn.microsoft.com/en-us/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
+|[*Requirements (MailApp)](http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
+|[*Set](http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>[**Sets (MailAppRequirements)](http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
+|[*Form](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
+|[*Sets (Requirements)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
+|[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
+
 *已添加在 Office 外接程序清单架构版本 1.1 中。
 
+
+## <a name="validate-the-office-add-ins-manifest"></a>验证 Office 外接程序清单
+
+若要确保描述 Office 外接程序的清单文件正确且完整，请使用 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) 文件对其验证。可使用 XML 架构验证工具或 [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) 来验证清单。 
+
+若要使用 Visual Studio，请转到“生成”>“发布”，然后选择“**执行验证检查**”。
+
+若要使用命令行 XML 架构验证工具来验证清单：
+
+1.  安装 [tar](https://www.gnu.org/software/tar/) 和 [libxml](http://xmlsoft.org/FAQ.html)（如果尚未安装）。 
+2.  运行以下命令。将 XSD_FILE 替换为清单 XSD 文件的路径，并将 XML_FILE 替换为清单 XML 文件的路径。
+
+    xmllint --noout --schema XSD_FILE XML_FILE
+
+
+
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定想要在外接程序窗口中打开的域
+
+
+默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
+
+若要重写此操作，请在清单文件的 [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
+
+以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序主页。它还指定 [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 元素列表内的 **AppDomains** 元素中的 `https://www.northwindtraders.com` 域。如果外接程序转至 www.northwindtraders.com 域中的页面，则在外接程序窗格中打开该页面。
+
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
+  <Version>1.0</Version>
+  <ProviderName>Contoso, Ltd</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Northwind Traders Excel" />
+  <Description DefaultValue="Search Northwind Traders data from Excel"/>
+  <AppDomains>
+    <AppDomain>https://www.northwindtraders.com</AppDomain>
+  </AppDomains>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
+```
 
 ## <a name="manifest-v1.1-xml-file-examples-and-schemas"></a>清单 v1.1 XML 文件示例和架构
 
@@ -416,44 +432,6 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
   </Rule>
 </OfficeApp>
 
-```
-
-
-## <a name="validate-the-office-add-ins-manifest"></a>验证 Office 加载项清单
-
-
-若要确保描述 Office 外接程序的清单文件正确且完整，请针对 [XML 架构定义 (XSD) 文件](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)验证清单文件。你可以使用 XML 架构验证工具或 Visual Studio 来验证清单。你还可以下载 [Office 应用兼容性工具包](https://www.microsoft.com/en-us/download/details.aspx?id=46831)并在外接程序上运行。
-
-有关针对架构验证清单的信息，请参阅 [XML 架构 (XSD) 验证工具](http://stackoverflow.com/questions/124865/xml-schema-xsd-validation-tool)。
-
-
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定想要在外接程序窗口中打开的域
-
-
-默认情况下，如果外接程序尝试转到托管起始页（如清单文件的 [SourceLocation](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx) 元素中所指定的）的域之外的域中的 URL，则该 URL 将在 Office 主机应用程序的外接程序窗格外的新浏览器窗口中打开。此默认行为将防止用户在外接程序窗格从嵌入的 **iframe** 元素中进行意外页面导航。
-
-若要重写此操作，请在清单文件的 [AppDomains](http://msdn.microsoft.com/en-us/library/13cf867d-9b24-786f-0687-6bcdc954628e%28Office.15%29.aspx) 元素中指定的域列表中指定要在外接程序窗口中打开的每个域。如果外接程序尝试转至在列表之外的域的 URL，则该 URL 将在新的浏览器窗口中（外接程序窗格之外）打开。
-
-以下 XML 清单示例在 **SourceLocation** 元素中指定的 `https://www.contoso.com` 域中托管其外接程序主页。它还指定 [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) 元素列表内的 **AppDomains** 元素中的 `https://www.northwindtraders.com` 域。如果外接程序转至 www.northwindtraders.com 域中的页面，则该页面将在外接程序窗格中打开。
-
-
-```XML
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>c6890c26-5bbb-40ed-a321-37f07909a2f0</Id>
-  <Version>1.0</Version>
-  <ProviderName>Contoso, Ltd</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Northwind Traders Excel" />
-  <Description DefaultValue="Search Northwind Traders data from Excel"/>
-  <AppDomains>
-    <AppDomain>https://www.northwindtraders.com</AppDomain>
-  </AppDomains>
-  <DefaultSettings>
-    <SourceLocation DefaultValue="https://www.contoso.com/search_app/Default.aspx" />
-  </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
-</OfficeApp>
 ```
 
 ## <a name="additional-resources"></a>其他资源

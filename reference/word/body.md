@@ -10,7 +10,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 |style|string|获取或设置用于正文的样式。这是预安装样式或自定义样式的名称。|
 |text|string|获取正文的文本。使用 insertText 方法插入文本。只读。|
 
-_请参阅属性访问[示例](#property-access-examples)_。
+_请参阅属性访问 [示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
@@ -361,6 +361,9 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 
 #### <a name="returns"></a>返回
 [Range](range.md)
+
+#### <a name="known-issues"></a>已知问题
+此方法导致 Word Online 中的延迟时间较长，从而影响用户对外接程序的体验。我们建议仅当其他解决方案不可用时才使用此方法。 
 
 #### <a name="examples"></a>示例
 ```js

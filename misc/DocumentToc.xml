@@ -20,7 +20,8 @@
       </Item>	
     	<Item text="UX 设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
 	<Item text="Excel、Word 和 PowerPoint 的外接程序命令" url="design/add-in-commands" SEODescription="使用外接程序中的外接程序命令扩展 Excel、Word 和 PowerPoint 中的默认 Office UI。" />
-  	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
+  	<Item text="外接程序命令的设计图标" url="design/design-icons" SEODescription="与 Office UI 无缝集成的外接程序命令的设计图标。" />
+	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
     	<Item text="语音准则" url="design/voice-guidelines" SEODescription="找到要在 Office 外接程序的 UI 文本中使用的语音准则" />
     	<Item text="辅助功能准则" url="design/accessibility-guidelines" SEODescription="了解如何让 Office 外接程序可供所有用户访问。" />
     </Item>

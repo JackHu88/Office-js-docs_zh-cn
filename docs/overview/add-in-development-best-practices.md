@@ -35,7 +35,7 @@
 
     ![显示没有数据的内容外接程序旁边具有数据的内容外接程序的屏幕截图](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- 提供 [免费试用版](http://msdn.microsoft.com/library/145d9466-3c3d-4294-aa23-82068a8e7ae9.aspx%28Office.15%29.aspx#sectionSection1)。如果外接程序需要订阅，那么让某些功能在不订阅的情况下也可使用。
+- 提供 [免费试用版](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1)。如果外接程序需要订阅，那么让某些功能在不订阅的情况下也可使用。
 
 - 让注册非常简单。预先填充某些信息（如电子邮件、显示名称），并跳过电子邮件验证。
 
@@ -60,32 +60,9 @@
   - 对组进行命名以与外接程序的名称相匹配。如果你拥有多个组，则基于对应组中的命令提供的功能为每个组命名。
   - 不要添加不必要的按钮，从而为您的外接程序留出更多的空间。
 
-     >
-  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >**注意**  占用过多空间的外接程序可能无法通过 [Office 应用商店验证](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。
 
-- 对于所有图标：
-    - 为按钮提供可明确标识用户所采取的操作的有意义的图标和 [标签](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx)。
-
-
- - 使用具有透明背景的 PNG 格式。
-
- - 包括 [所有八种支持的大小](https://msdn.microsoft.com/EN-US/library/mt267547.aspx#bk_resources)。这将为所有受支持的解决方案创建最佳体验。
-
-  - 匹配 Office 可视样式。例如：
-
-    - 使您的形状保持简单，并避免使用多种颜色。如果使用较小的大小和分辨率，复杂的图形很难查看。
-
-    - 请勿对不同的命令重复使用视觉隐喻。将同一图标用于不同操作将会引起混淆。
-
-    - 使您的按钮标签清晰、简洁。将视觉和文本信息结合使用以传达含义。
-
-    - 使用浅色和深色 Office 主题以及高对比度设置测试您的图标。请注意，在深色背景或高对比度模式下，图标可能很难看清。
-
-    - 使用一致的图标大小和位置以便于在功能区上进行目视调整。
-
-
-    ![显示与 Office 风格相符的外接程序命令按钮的屏幕截图，这些按钮位于与 Office 风格不符的按钮旁边](../../images/31e11214-61e8-41c1-888c-29d167cb9486.png)
-
+- 对于所有图标，请遵循[图标设计准则](../design/design-icons.md)。
 
 - 提供也可以在不支持命令的主机上运行的外接程序的版本。单个外接程序清单可以在命令感知（带有命令）和非命令感知（作为任务窗格）的主机中工作。
 
@@ -109,9 +86,9 @@
 
 - 不包含未授权的图像。
 
-- 在外接程序中使用 [清楚而简单的语言](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx)。
+- 在外接程序中使用 [清楚而简单的语言](../design/voice-guidelines.md)。
 
-- 考虑 [可访问性](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx) - 方便所有用户与其进行交互，并适应屏幕读取器等辅助技术。
+- 考虑 [可访问性](../design/accessibility-guidelines.md) - 方便所有用户与其进行交互，并适应屏幕读取器等辅助技术。
 
 - 针对所有平台和输入方法（包括鼠标/键盘和 [触摸](#optimize-for-touch)）的设计。确保您的 UI 可响应不同的外观设置。
 

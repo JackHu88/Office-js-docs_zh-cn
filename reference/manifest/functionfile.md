@@ -1,6 +1,6 @@
 # <a name="functionfile-element"></a>FunctionFile 元素
 
-为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。**FunctionFile** 元素是 [FormFactor](./formfactor) 的子元素。**FunctionFile** 元素的 **resid** 属性被设置为 **Resources** 元素中的 **Url** 元素的 **id** 属性值，Resources 元素包含 HTML 文件的 URL，其中包含或加载所有由“无 UI 外接程序命令”按钮使用的 JavaScript 函数（由 [Control 元素](control.md)定义）。
+为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。**FunctionFile** 元素是 [FormFactor](./formfactor.md) 的子元素。**FunctionFile** 元素的 **resid** 属性被设置为 **Resources** 元素中的 **Url** 元素的 **id** 属性值，Resources 元素包含 HTML 文件的 URL，其中包含或加载所有由“无 UI 外接程序命令”按钮使用的 JavaScript 函数（由 [Control 元素](control.md)定义）。
 
 以下是 **FunctionFile** 元素的示例。
 
@@ -17,7 +17,7 @@
         </DesktopFormFactor>
 ```
 
-**FunctionFile** 元素指示的 HTML 文件中的 JavaScript 必须调用 `Office.initialize` 并定义使用单个参数 (`event`) 的命名函数。该函数应使用 [item.notificationMessages](../../../reference/outlook/Office.context.mailbox.item.md) API 向用户指示进度及成功与否。执行完之后，它还应调用 [event.completed](../../../reference/shared/event.completed.md)。函数的名称在无用户界面按钮的 **FunctionName** 元素中使用。
+**FunctionFile** 元素指示的 HTML 文件中的 JavaScript 必须调用 `Office.initialize` 并定义使用单个参数 (`event`) 的命名函数。该函数应使用 [item.notificationMessages](../../reference/outlook/Office.context.mailbox.item.md) API 向用户指示进度及成功与否。执行完之后，它还应调用 [event.completed](../../reference/shared/event.completed.md)。函数的名称在无用户界面按钮的 **FunctionName** 元素中使用。
 
 以下是定义 **trackMessage** 函数的 HTML 文件的示例。
 

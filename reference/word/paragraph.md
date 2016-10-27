@@ -350,7 +350,7 @@ Word.run(function (context) {
 [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] 示例演示如何使用 insertContentControl 方法。
 
 ### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
-将文档插入到当前段落中的指定位置。insertLocation 值可以为“Start”或“End”。
+将文档插入到当前段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -361,7 +361,7 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64File|string|必需。要插入的 base64 编码的文件内容。|
-|insertLocation|InsertLocation|必需。此值可以为“Start”或“End”。|
+|insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
 #### <a name="returns"></a>返回
 [Range](range.md)
@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
-将图片插入到段落中的指定位置。insertLocation 值可以为“Before”、“After”、“Start”或“End”。
+将图片插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -470,7 +470,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|必需。要插入到段落中的 HTML。|
-|insertLocation|InsertLocation|必需。此值可以为“Before”、“After”、“Start”或“End”。|
+|insertLocation|InsertLocation|必需。此值可以为“Replace”、“Start”或“End”。|
 
 #### <a name="returns"></a>返回
 [InlinePicture](inlinepicture.md)
@@ -516,7 +516,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>其他信息
 [Word-Add-in-DocumentAssembly][paragraph.insertpicture] 示例提供了另一个示例，演示如何将一个图像插入到一个段落中。
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 将 OOXML 或 wordProcessingML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -532,6 +532,9 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 
 #### <a name="returns"></a>返回
 [Range](range.md)
+
+#### <a name="known-issues"></a>已知问题
+此方法导致 Word Online 中的延迟时间较长，从而影响用户对外接程序的体验。我们建议仅当其他解决方案不可用时才使用此方法。 
 
 #### <a name="examples"></a>示例
 ```js

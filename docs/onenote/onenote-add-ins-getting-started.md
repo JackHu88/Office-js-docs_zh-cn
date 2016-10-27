@@ -151,11 +151,13 @@ function addOutlineToPage() {
 
 3 - 转到 [OneNote Online](https://www.onenote.com/notebooks) 并打开一个笔记本。
 
-4 - 选择“**插入 > Office 外接程序**”。这将打开 Office 外接程序对话框。
-  - 如果使用消费者帐户登录，请选择“**我的外接程序**”选项卡，然后选择“**上载我的外接程序**”。
-  - 如果使用工作或学校帐户登录，请选择“**我的组织**”选项卡，然后选择“**上载我的外接程序**”。 
+4 - 选择“**插入 > Office 外接程序**”。该操作将打开 Office 外接程序对话框。
+
+  -如果使用消费者帐户登录，请选择“**我的外接程序**”选项卡，然后选择“**上载我的外接程序**”。
   
-  以下图像显示消费者笔记本的“**我的外接程序**”选项卡。
+  -如果使用工作或学校帐户登录，请选择“**我的组织**”选项卡，然后选择“**上载我的外接程序**”。 
+  
+  下图显示消费者笔记本的“**我的外接程序**”选项卡。
 
   ![显示“我的外接程序”选项卡的 Office 外接程序对话框](../../images/onenote-office-add-ins-dialog.png)
 
@@ -164,20 +166,22 @@ function addOutlineToPage() {
 6 - 该外接程序在 OneNote 页旁的 iFrame 中打开。在文本区域中输入一些文本，然后选择“**添加边框**”。您输入的文本将添加至页面。 
 
 ## <a name="troubleshooting-and-tips"></a>故障排除和提示
-- 您可以使用浏览器的开发者工具调试外接程序。当您在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，您可以本地保存您的更改，然后仅刷新外接程序的 iFrame。
+-可以使用浏览器的开发者工具调试外接程序。在 Internet Explorer 或 Chrome 中使用 Gulp Web 服务器并进行调试时，可以本地保存更改，然后仅刷新外接程序的 iFrame。
 
-- 当您检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示 *未定义*。展开 `_proto_` 节点以查看在对象上被定义但未加载的属性。
+-检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示“*未定义*”。展开 `_proto_` 节点以查看在对象上被定义但未加载的属性。
 
       ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
 
-- 如果您的外接程序使用任何 HTTP 资源，则需要启用浏览器中的混合内容。生产外接程序应当仅使用安全 HTTPS 资源。
+-如果你的外接程序使用任何 HTTP 资源，则需启用浏览器中的混合内容。生产外接程序应仅使用安全 HTTPS 资源。
 
--  可以从任何位置打开任务窗格外接程序，但只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入内容外接程序。 
+-任务窗格外接程序可以从任何位置打开，但内容外接程序只能在常规页面内容（即不在标题、图像、IFrame 等中）内插入。 
 
 ## <a name="additional-resources"></a>其他资源
 
-- [OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+-[OneNote JavaScript API 编程概述](onenote-add-ins-programming-overview.md)
 
+-[OneNote JavaScript API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+
+-[Rubric Grader 示例](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+
+-[Office 外接程序平台概述](https://dev.office.com/docs/add-ins/overview/office-add-ins)

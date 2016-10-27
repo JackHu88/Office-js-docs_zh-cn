@@ -1,5 +1,5 @@
 # <a name="icon-element"></a>图标元素
-定义“[按钮](./button.md)”和“[菜单](./menu-control.md)”控件的“**图像**”元素。
+定义“[按钮](./control.md#button-control)”或“[菜单](./control.md#menu-dropdown-button-controls)”控件的 **Image** 元素。
 
 ## <a name="child-elements"></a>子元素
 |  元素 |  必需  |  说明  |

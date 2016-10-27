@@ -10,7 +10,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 |cannotDelete|bool|获取或设置指示用户是否可以删除内容控件的值。与 removeWhenEdited 互相排斥。|
 |cannotEdit|bool|获取或设置指示用户是否可以编辑内容控件的内容的值。|
 |color|string|获取或设置内容控件的颜色。颜色以“#RRGGBB”格式或使用颜色名称设置。|
-|placeholderText|string|获取或设置内容控件的占位符文本。内容控件为空时，将显示灰色的文本。|
+|placeholderText|string|获取或设置内容控件的占位符文本。内容控件为空时，将显示灰色的文本。Word Online 中目前不支持此属性。|
 |removeWhenEdited|bool|获取或设置指示内容控件在编辑后是否可以删除的值。与 cannotDelete 互相排斥。|
 |style|string|获取或设置用于内容控件的样式。这是预安装样式或自定义样式的名称。|
 |tag|string|获取或设置用于标识内容控件的标记。[Silly stories](https://aka.ms/sillystorywordaddin) 外接程序示例说明如何使用 **tag** 属性。|
@@ -411,7 +411,8 @@ contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>返回
 [InlinePicture](inlinepicture.md)
 
-
+#### <a name="known-issues"></a>已知问题
+在 Word Online 中，对 _insertLocation_ 参数仅支持“Replace”值。如果使用“Start”或“End”值，则操作将失败。
 
 ### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 将 OOXML 或 wordProcessingML 插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
@@ -429,6 +430,9 @@ contentControlObject.insertOoxml(ooxml, insertLocation);
 
 #### <a name="returns"></a>返回
 [Range](range.md)
+
+#### <a name="known-issues"></a>已知问题
+此方法导致 Word Online 中的延迟时间较长，从而影响用户对外接程序的体验。我们建议仅当其他解决方案不可用时才使用此方法。 
 
 #### <a name="examples"></a>示例
 ```js
@@ -542,6 +546,9 @@ contentControlObject.insertText(text, insertLocation);
 
 #### <a name="returns"></a>返回
 [Range](range.md)
+
+#### <a name="known-issues"></a>已知问题
+在 Word Online 中，对 _insertLocation_ 参数仅支持“Replace”值。如果使用“Start”或“End”值，则操作将失败。
 
 #### <a name="examples"></a>示例
 ```js
