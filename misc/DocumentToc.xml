@@ -26,9 +26,10 @@
     	<Item text="辅助功能准则" url="design/accessibility-guidelines" SEODescription="了解如何让 Office 外接程序可供所有用户访问。" />
     </Item>
   <Item text="开发" url="develop">
-	<Item text="外接程序开发生命周期" url="design/add-in-development-lifecycle" SEODescription="计划端到端过程以开发用于扩展 Office 应用程序的任务窗格、内容和 Outlook 外接程序。" />
+	<Item text="外接程序开发生命周期" url="develop/add-in-development-lifecycle" SEODescription="计划端到端过程以开发用于扩展 Office 应用程序的任务窗格、内容和 Outlook 外接程序。" />
 	<Item text="安装最新的 Office 版本" url="develop/install-latest-office-version" SEODescription="了解如何选择加入以获取 Office 的最新版本。" />
-	<Item text="开发适用于 iPad 的外接程序" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="使你的 Office 外接程序可用于 Office for iPad。" />
+	<Item text="开发适用于 iPad 的外接程序" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="让 Office 外接程序用于 Office for iPad。" />
+	<Item text="使用 Angular 2 创建外接程序的技巧" url="develop/add-ins-with-angular2" SEODescription="使用 Angular 2 开发 Office 外接程序。" />
 	<Item text="清单" url="overview/add-in-manifests">	
 		<Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="使用外接程序清单中的 VersionOverrides 元素定义外接程序命令。" />
 		<Item text="指定 Office 主机" url="overview/specify-office-hosts-and-api-requirements" SEODescription="查看如何在清单中指定 Office 主机和 API 要求。" /> 	
@@ -85,8 +86,7 @@
     <Item text="概述" url="outlook/overview" SEODescription="了解 Outlook 外接程序体系结构和功能。" Scope="outlook" />
     <Item text="适用于 Outlook 的外接程序命令" url="outlook/add-in-commands-for-outlook" SEODescription="使用外接程序命令将 Outlook 外接程序与 Outlook UI 集成。" Scope="outlook" />
     <Item text="上下文 Outlook 外接程序" url="outlook/contextual-outlook-add-ins" SEODescription="基于邮件或约会中的指定文本激活 Outlook 外接程序。" Scope="outlook" />
-    <Item text="自定义窗格 Outlook 外接程序" url="outlook/custom-pane-outlook-add-ins" SEODescription="了解如何定义基于特定规则激活的 Outlook 外接程序。" Scope="outlook" />
-	<Item text="模块扩展 Outlook 外接程序" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="通过向导航栏添加模块扩展来扩展 Outlook UI。" /> 
+    <Item text="模块扩展 Outlook 外接程序" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="通过向导航栏添加模块扩展来扩展 Outlook UI。" /> 
 	<Item text="API" url="outlook/apis" SEODescription="了解如何指定您的 Outlook 外接程序所需的 API。" Scope="outlook" />
 	<Item text="清单" url="overview/add-in-manifests" Scope="outlook" SEODescription="使用 XML 清单指定外接程序的激活方式。">
       <Item text="清单" url="outlook/manifests/manifests" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。" Scope="outlook" /><Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />

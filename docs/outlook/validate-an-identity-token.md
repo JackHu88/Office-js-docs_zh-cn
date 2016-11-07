@@ -1,7 +1,7 @@
 
 # <a name="validate-an-exchange-identity-token"></a>验证 Exchange 标识令牌
 
-Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任请求之前对该令牌进行验证，以确保它来自你预期的 Exchange 服务器。本文中的示例演示如何通过用 C# 编写的验证对象验证 Exchange 标识令牌；但是，你可以使用任何编程语言来进行验证。[JSON Web 令牌 (JWT) Internet 草案](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)介绍了验证令牌所需的步骤。 
+Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任请求之前对该令牌进行验证，以确保它来自你预期的 Exchange 服务器。本文中的示例演示如何通过用 C# 编写的验证对象验证 Exchange 标识令牌；但是，你可以使用任何编程语言来进行验证。[JSON Web 令牌 (JWT) Internet 草案](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)介绍了验证令牌所需的步骤。 
 
 建议你使用分四步的过程验证标识令牌并获取用户的唯一标识符。首先，从 base64 URL 编码的字符串中提取 JSON Web 令牌 (JWT)。然后，确保该令牌格式正确、它是用于 Outlook 外接程序的令牌、它未过期且你可以提取身份验证元数据文档的有效 URL。接下来，从 Exchange 服务器中检索身份验证元数据文档并验证附加到标识令牌的签名。最后，通过将用户的 Exchange ID 与身份验证元数据文档的 URL 进行哈希运算来计算用户的唯一标识符。整个过程可能看似复杂，但每个步骤其实很简单。你可以从 Web 上的以下位置下载包含这些示例的解决方案：[Outlook-Add-in-JavaScript-ValidateIdentityToken](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ValidateIdentityToken)。
  
@@ -54,7 +54,7 @@ Outlook 外接程序可以向你发送一个标识令牌，但你必须在信任
     }
 ```
 
-**Base64Decode** 方法可实现在 [JSON Web 令牌 (JWT) Internet 草稿](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl)的“有关无边距实现 base64url 编码的注意事项”附录中介绍的解码逻辑。
+**Base64Decode** 方法可实现在 [JSON Web 令牌 (JWT) Internet 草稿](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)的“有关无边距实现 base64url 编码的注意事项”附录中介绍的解码逻辑。
 
 
 

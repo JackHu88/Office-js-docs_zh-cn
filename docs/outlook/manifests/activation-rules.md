@@ -1,9 +1,9 @@
 
-# <a name="activation-rules-for-outlook-add-ins"></a>Outlook 外接程序的激活规则
+# <a name="activation-rules-for-outlook-addins"></a>Outlook 外接程序的激活规则
 
-如果用户当前阅读或撰写的邮件或约会满足外接程序的激活规则，则 Outlook 可激活某些类型的外接程序。这对使用 1.1 清单架构的所有外接程序以及自定义窗格外接程序均适用。然后，用户可以在 Outlook UI 中选择该外接程序，以针对当前项目启动。
+如果用户正在读取或撰写的邮件或约会符合外接程序的激活规则，则 Outlook 将激活某些类型的外接程序。这一点对使用 1.1 清单架构的所有外接程序均适用。然后，用户可从 Outlook UI 选择外接程序，以开始将其用于当前项目。
 
-下图显示在阅读窗格中的邮件的外接程序栏中激活的 Outlook 外接程序。 
+下图显示在“阅读”窗格中的邮件的外接程序栏中激活的 Outlook 外接程序。 
 
 ![显示已激活阅读邮件应用的应用栏](../../../images/mod_off15_MailAppAppBar.png)
 
@@ -24,11 +24,11 @@
 
 |**规则名称**|**适用的窗体**|**说明**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis-rule)|读取、撰写、自定义窗格|检查当前项目是否属于指定类型（邮件或约会），另外还可以检查项目类别、窗体类型和（可选）项目邮件类别。|
-|[ItemHasAttachment](#itemhasattachment-rule)|读取、自定义窗格|检查所选项是否包含附件。|
-|[ItemHasKnownEntity](#itemhasknownentity-rule)|读取、自定义窗格|检查所选项是否包含一个或多个已知实体。更多信息：[将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)。|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|读取、自定义窗格|检查发件人的电子邮件地址、所选项的主题和/或所选项的正文是否包含正则表达式的匹配项。更多信息： [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)。|
-|[RuleCollection](#rulecollection-rule)|读取、撰写、自定义窗格|组合一组规则以便形成更复杂的规则。|
+|[ItemIs](#itemis-rule)|读取，撰写|检查当前项目是否属于指定类型（邮件或约会），另外还可以检查项目类别、窗体类型和（可选）项目邮件类别。|
+|[ItemHasAttachment](#itemhasattachment-rule)|读取|检查所选项是否包含附件。|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|读取|检查所选项是否包含一个或多个已知实体。更多信息：[将 Outlook 项中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)。|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|读取|检查发件人的电子邮件地址、所选项的主题和/或所选项的正文是否包含正则表达式的匹配项。更多信息： [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)。|
+|[RuleCollection](#rulecollection-rule)|读取，撰写|组合一组规则以便形成更复杂的规则。|
 
 ## <a name="itemis-rule"></a>ItemIs 规则
 
@@ -178,8 +178,7 @@
 - [Outlook 外接程序](../../outlook/outlook-add-ins.md)
 - [创建适用于撰写窗体的 Outlook 外接程序](../../outlook/compose-scenario.md)
 - [Outlook 外接程序的激活和 JavaScript API 限制](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- 
-  [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [使用正则表达式激活规则显示 Outlook 外接程序](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [将 Outlook 项目中的字符串作为已知实体进行匹配](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

@@ -2,11 +2,11 @@
 
 # <a name="item"></a>item
 
-## <a name="[office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).item
+## <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).item
 
 `item` 命名空间用于访问当前选定的邮件、会议请求或约会。可以通过使用 [itemType](Office.context.mailbox.item.md#itemtype-officemailboxenumsitemtype) 属性确定 `item` 的类型。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -34,11 +34,11 @@ Office.initialize = function () {
 
 ### <a name="members"></a>成员
 
-#### <a name="attachments-:array.<[attachmentdetails](simple-types.md#attachmentdetails)>"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailssimpletypesmdattachmentdetails"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
 获取项目的附件数组。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
@@ -74,11 +74,11 @@ if (_Item.attachments.length > 0) {
 // Do something with outputString
 ```
 
-####  <a name="bcc-:[recipients](recipients.md)"></a>bcc :[Recipients](Recipients.md)
+####  <a name="bcc-recipientsrecipientsmd"></a>bcc :[Recipients](Recipients.md)
 
-获取或设置邮件的密件抄送 (Bcc) 行上的收件人。仅限撰写模式。
+获取或设置邮件“密件抄送”行上的收件人。仅限撰写模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   [收件人](Recipients.md)
 
@@ -101,11 +101,11 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-:[body](body.md)"></a>body :[Body](Body.md)
+####  <a name="body-bodybodymd"></a>body :[Body](Body.md)
 
 获取一个提供用于处理项目正文的方法的对象。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   [Body](Body.md)
 
@@ -128,7 +128,7 @@ function callback(asyncResult) {
 
 `cc` 属性返回 `Recipients` 对象，该对象提供用于处理邮件的**抄送**行上收件人的方法。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -151,7 +151,7 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="(nullable)-conversationid-:string"></a>(nullable) conversationId :String
+####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
 
 获取包含特定消息的电子邮件会话的标识符。
 
@@ -159,7 +159,7 @@ function callback(asyncResult) {
 
 对于撰写窗体的新项目，此属性获得一个 null 值。如果用户设置一个主题并保存该项目，`conversationId` 属性将返回一个值。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   String
 
@@ -170,11 +170,11 @@ function callback(asyncResult) {
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 撰写或阅读|
-#### <a name="datetimecreated-:date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
 
 获取项目创建的日期和时间。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   日期
 
@@ -192,11 +192,11 @@ function callback(asyncResult) {
 var created = Office.context.mailbox.item.dateTimeCreated;
 ```
 
-#### <a name="datetimemodified-:date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified :Date
 
 获取项目最近一次修改的日期和时间。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   日期
 
@@ -214,7 +214,7 @@ var created = Office.context.mailbox.item.dateTimeCreated;
 var modified = Office.context.mailbox.item.dateTimeModified;
 ```
 
-####  <a name="end-:date|[time](time.md)"></a>end :Date|[Time](Time.md)
+####  <a name="end-datetimetimemd"></a>end :Date|[Time](Time.md)
 
 获取或设置约会结束的日期和时间。
 
@@ -230,7 +230,7 @@ var modified = Office.context.mailbox.item.dateTimeModified;
 
 使用 [`Time.setAsync`](Time.md#setasyncdatetime-options-callback) 方法设置结束时间时，应使用 [`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Date | [Time](Time.md)
 
@@ -263,13 +263,13 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### <a name="from-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="from-emailaddressdetailssimpletypesmdemailaddressdetails"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 获取邮件发件人的电子邮件地址。仅限阅读模式。
 
 `from` 和 [`sender`](Office.context.mailbox.item.md#sender-emailaddressdetails) 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -280,11 +280,11 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### <a name="internetmessageid-:string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId :String
 
 获取电子邮件的 Internet 消息标识符。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   String
 
@@ -302,7 +302,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-:string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass :String
 
 获取选定项目的 Exchange Web 服务项目类。仅限阅读模式。
 
@@ -315,7 +315,7 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 
 你可以创建用于扩展默认邮件类别的自定义邮件类别，例如，自定义约会邮件类别 `IPM.Appointment.Contoso`。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   String
 
@@ -333,15 +333,15 @@ var internetMessageId = Office.context.mailbox.item.internetMessageId;
 var itemClass = Office.context.mailbox.item.itemClass;
 ```
 
-#### <a name="(nullable)-itemid-:string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
 
 获取当前项目的 Exchange Web 服务项目标识符。仅限阅读模式。
 
 `itemId` 属性返回的标识符与 Exchange Web 服务项目标识符相同。`itemId` 属性不等同于 Outlook 条目 ID。
 
-在撰写模式下，对于尚未保存到存储的项目，`itemId` 属性返回 `null`。如果项目标识符是必需的，[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](simple-types.md#asyncresult) 参数中返回项目标识符。
+`itemId` 属性在撰写模式下不可用。如果项目标识符是必需的，[`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) 方法可用于将项目保存到存储，这将在回调函数的 [`AsyncResult.value`](simple-types.md#asyncresult) 参数中返回项目标识符。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>Type:
 
 *   String
 
@@ -366,13 +366,13 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-:[office.mailboxenums.itemtype](office.mailboxenums.md#itemtype-string)"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
+####  <a name="itemtype-officemailboxenumsitemtypeofficemailboxenumsmditemtypestring"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
 获取实例表示的项的类型。
 
 `itemType` 属性返回其中一个 `ItemType` 枚举值，指示 `item` 对象实例是邮件还是约会。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   [Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
@@ -393,7 +393,7 @@ else
   // do something else
 ```
 
-####  <a name="location-:string|[location](location.md)"></a>location :String|[Location](Location.md)
+####  <a name="location-stringlocationlocationmd"></a>location :String|[Location](Location.md)
 
 获取或设置约会的位置。
 
@@ -405,7 +405,7 @@ else
 
 `location` 属性返回一个 `Location` 对象，该对象提供用于获取和设置约会位置的方法。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   String | [Location](Location.md)
 
@@ -429,13 +429,13 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="normalizedsubject-:string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject :String
 
 获取删除了所有前缀（包括 `RE:` 和 `FWD:`）的项目主题。仅限阅读模式。
 
 normalizedSubject 属性获取包含由电子邮件程序添加的任何标准前缀（如 `RE:` 和 `FW:`）的项目主题。若要获取包含完整前缀的项目主题，请使用 [`subject`](Office.context.mailbox.item.md#subject-stringsubject) 属性。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   String
 
@@ -453,11 +453,11 @@ normalizedSubject 属性获取包含由电子邮件程序添加的任何标准�
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
 
-####  <a name="notificationmessages-:[notificationmessages](notificationmessages.md)"></a>notificationMessages :[NotificationMessages](NotificationMessages.md)
+####  <a name="notificationmessages-notificationmessagesnotificationmessagesmd"></a>notificationMessages :[NotificationMessages](NotificationMessages.md)
 
 获取项目的通知邮件。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   [NotificationMessages](NotificationMessages.md)
 
@@ -469,7 +469,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 撰写或阅读|
 |[收件人](Recipients.md)|
-####  <a name="optionalattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>
+####  <a name="optionalattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetails"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>
 获取或设置可选与会者的电子邮件地址列表。
 
 ##### <a name="read-mode"></a>阅读模式
@@ -480,7 +480,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 `optionalAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取和设置可选与会者的方法。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -503,11 +503,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="organizer-emailaddressdetailssimpletypesmdemailaddressdetails"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 获取指定会议的会议组织者的电子邮件地址。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -526,7 +526,7 @@ var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
-####  <a name="requiredattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>|[recipients](recipients.md)"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="requiredattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 获取或设置必需与会者的电子邮件地址的列表。
 
@@ -538,7 +538,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 `requiredAttendees` 属性返回一个 `Recipients` 对象，该对象提供用于获取和设置必需与会者的方法。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -561,11 +561,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="resources-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="resources-emailaddressdetailssimpletypesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 获取约会所需的资源。仅限阅读模式。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -576,13 +576,13 @@ function callback(asyncResult) {
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.0|
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
-#### <a name="sender-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="sender-emailaddressdetailssimpletypesmdemailaddressdetails"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 获取电子邮件发件人的电子邮件地址。仅限阅读模式。
 
 [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) 和 `sender` 属性表示同一个人，邮件由代理人发送的除外。在此情况下，`from` 属性表示代理程序，而 sender 属性表示代理人。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -601,7 +601,7 @@ var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 ```
 
-####  <a name="start-:date|[time](time.md)"></a>start :Date|[Time](Time.md)
+####  <a name="start-datetimetimemd"></a>start :Date|[Time](Time.md)
 
 获取或设置约会开始的日期和时间。
 
@@ -617,7 +617,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 
 使用 [`Time.setAsync`](Time.md#setasyncdatetime-options-callback) 方法设置开始时间时，应使用 [`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) 方法将客户端的本地时间转换为服务器的 UTC。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Date | [Time](Time.md)
 
@@ -650,7 +650,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-####  <a name="subject-:string|[subject](subject.md)"></a>subject :String|[Subject](Subject.md)
+####  <a name="subject-stringsubjectsubjectmd"></a>subject :String|[Subject](Subject.md)
 
 获取或设置显示在项目的主题字段中的说明。
 
@@ -676,7 +676,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   String | [Subject](Subject.md)
 
@@ -699,7 +699,7 @@ function callback(asyncResult) {
 
 `to` 属性返回 `Recipients` 对象，该对象提供用于处理邮件的**收件人**行上收件人的方法。
 
-##### <a name="type:"></a>类型：
+##### <a name="type"></a>类型：
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -724,7 +724,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>方法
 
-####  <a name="addfileattachmentasync(uri,-attachmentname,-[options],-[callback])"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 将文件作为附件添加到邮件或约会。
 
@@ -732,12 +732,12 @@ function callback(asyncResult) {
 
 你随后可以将该标识符与 [`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
-##### <a name="parameters:removeattachmentasyncattachmentid-options-callback"></a>Parameters:removeattachmentasyncattachmentid-options-callback
+##### <a name="parametersremoveattachmentasyncattachmentidoptionscallback"></a>Parameters:removeattachmentasyncattachmentid-options-callback
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`uri`| string||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
-|`attachmentName`| string||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
+|`uri`| 字符串||提供附加到邮件或约会的文件的位置的 URI。最大长度为 2048 个字符。|
+|`attachmentName`| 字符串||在附件上载过程中显示的附件名称。最大长度为 255 个字符。|
+|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果上载附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。<br/><table class="nested-table"><thead><tr><th>错误代码</th><th>说明</th></tr></thead><tbody><tr><td><code>AttachmentSizeExceeded</code></td><td>附件大小超过了允许的大小。</td></tr><tr><td><code>FileTypeNotSupported</code></td><td>该附件的扩展名不是允许的扩展名。</td></tr><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>邮件或约会具有的附件过多。</td></tr></tbody></table>|
 
 ##### <a name="requirements"></a>要求
@@ -768,23 +768,23 @@ function addAttachment() {
 }
 ```
 
-####  <a name="additemattachmentasync(itemid,-attachmentname,-[options],-[callback])"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 将 Exchange 项目（如邮件）作为附件添加到邮件或约会。
 
 `addItemAttachmentAsync` 方法将包含指定 Exchange 标识符的项目附加到撰写窗体中的项目。如果指定一个回调方法，此方法使用 `asyncResult` 参数调用，该参数包含一个附件标识符或代码，指示附加项目过程中出现的任何错误。可以使用 `options` 参数将状态信息传递给回调方法（如果需要）。
 
-随后可以将该标识符与 [`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) 方法一同使用，删除同一个会话中的附件。
+你随后可以将该标识符与 [`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) 方法一同使用，以删除同一个会话中的附件。
 
 如果 Office 外接程序在 Outlook Web App 中运行，则 `addItemAttachmentAsync` 方法可以将项目附加到项目（正在编辑的项目除外）中；然而，不支持也不建议这样做。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`itemId`| string||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
-|`attachmentName`| string||要附加的项目的主题。最大长度为 255 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
+|`itemId`| 字符串||要附加的项目的 Exchange 标识符。最大长度为 100 个字符。|
+|`attachmentName`| 字符串||要附加的项目的主题。最大长度为 255 个字符。|
+|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果成功，附件标识符将在 `asyncResult.value` 属性中提供。<br/>如果添加附件失败，`asyncResult` 对象将包含一个提供错误说明的 `Error` 对象。<br/><table class="nested-table"><thead><tr><th>错误代码</th><th>说明</th></tr></thead><tbody><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>邮件或约会具有的附件过多。</td></tr></tbody></table>|
 
 ##### <a name="requirements"></a>要求
@@ -820,7 +820,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="close()"></a>close()
+####  <a name="close"></a>close()
 
 关闭当前正在撰写的项目。
 
@@ -835,7 +835,7 @@ function addAttachment() {
 |[最低版本的邮箱要求集](./tutorial-api-requirement-sets.md)| 1.3|
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 受限|
 |适用的 Outlook 模式| 撰写|
-#### <a name="displayreplyallform(formdata)"></a>displayReplyAllForm(formData)
+#### <a name="displayreplyallformformdata"></a>displayReplyAllForm(formData)
 
 显示答复窗体，其中包括所选邮件的发件人和所有收件人或所选约会的组织者和所有与会者。
 
@@ -845,13 +845,13 @@ function addAttachment() {
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`formData`| string &#124; 对象|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**OR**<br/>包含正文或附件数据和回调函数的对象。对象定义如下：<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>字符串</td><td>&lt;可选&gt;</td><td>一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;可选&gt;</td><td>JSON 对象（是文件或项目附件）的数组。<br/><br/><strong>属性</strong><br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>type</code></td><td>字符串</td><td>指示附件的类型。必须是文件附件的 <code>file</code> 或项目附件的 <code>item</code>。</td></tr><tr><td><code>name</code></td><td>字符串</td><td>一个包含附件的名称的字符串，最多包含 255 个字符。</td></tr><tr><td><code>url</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。文件的位置的 URI。</td></tr><tr><td><code>itemId</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>item</code> 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>函数</td><td>&lt;可选&gt;</td><td>方法完成后，使用单个参数 <code>asyncResult</code>（一个 <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> 对象）调用在 <code>callback</code> 参数中传递的函数。有关详细信息，请参阅<a href="tutorial-asynchronous.html">使用异步方法</a>。</td></tr></tbody></table>|
+|`formData`| 字符串 &#124; 对象|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**OR**<br/>包含正文或附件数据和回调函数的对象。对象定义如下：<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>字符串</td><td>&lt;可选&gt;</td><td>一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;可选&gt;</td><td>JSON 对象（是文件或项目附件）的数组。<br/><br/><strong>属性</strong><br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>type</code></td><td>字符串</td><td>指示附件的类型。必须是文件附件的 <code>file</code> 或项目附件的 <code>item</code>。</td></tr><tr><td><code>name</code></td><td>字符串</td><td>一个包含附件的名称的字符串，最多包含 255 个字符。</td></tr><tr><td><code>url</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。文件的位置的 URI。</td></tr><tr><td><code>itemId</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>item</code> 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>函数</td><td>&lt;可选&gt;</td><td>方法完成后，使用单个参数 <code>asyncResult</code>（一个 <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> 对象）调用在 <code>callback</code> 参数中传递的函数。有关详细信息，请参阅<a href="tutorial-asynchronous.html">使用异步方法</a>。</td></tr></tbody></table>|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -943,7 +943,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyform(formdata)"></a>displayReplyForm(formData)
+#### <a name="displayreplyformformdata"></a>displayReplyForm(formData)
 
 显示答复窗体，其中仅包括所选邮件的发件人或所选约会的组织者。
 
@@ -953,13 +953,13 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 当在 `formData.attachments` 参数中指定附件时，Outlook 和 Outlook Web App 尝试下载所有附件并将其附加到答复窗体。如果无法添加任何附件，则在窗体 UI 中显示错误。如果这不可能，则不引发错误消息。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 说明|
 |---|---|---|
-|`formData`| string &#124; 对象|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**OR**<br/>包含正文或附件数据和回调函数的对象。对象定义如下：<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>字符串</td><td>&lt;可选&gt;</td><td>一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;可选&gt;</td><td>JSON 对象（是文件或项目附件）的数组。<br/><br/><strong>属性</strong><br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>type</code></td><td>字符串</td><td>指示附件的类型。必须是文件附件的 <code>file</code> 或项目附件的 <code>item</code>。</td></tr><tr><td><code>name</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。一个包含附件的名称的字符串，最多包含 255 个字符。</td></tr><tr><td><code>url</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。文件的位置的 URI。</td></tr><tr><td><code>itemId</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>item</code> 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>函数</td><td>&lt;可选&gt;</td><td>方法完成后，使用单个参数 <code>asyncResult</code>（一个 <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> 对象）调用在 <code>callback</code> 参数中传递的函数。有关详细信息，请参阅<a href="tutorial-asynchronous.html">使用异步方法</a>。</td></tr></tbody></table>|
+|`formData`| 字符串 &#124; 对象|一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。<br/>**OR**<br/>包含正文或附件数据和回调函数的对象。对象定义如下：<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>htmlBody</code></td><td>字符串</td><td>&lt;可选&gt;</td><td>一个包含文本和 HTML 且表示答复窗体的正文的字符串。字符串限制为 32 KB。</td></tr><tr><td><code>attachments</code></td><td>Array.&lt;Object&gt;</td><td>&lt;可选&gt;</td><td>JSON 对象（是文件或项目附件）的数组。<br/><br/><strong>属性</strong><br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>type</code></td><td>字符串</td><td>指示附件的类型。必须是文件附件的 <code>file</code> 或项目附件的 <code>item</code>。</td></tr><tr><td><code>name</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。一个包含附件的名称的字符串，最多包含 255 个字符。</td></tr><tr><td><code>url</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>file</code> 时使用。文件的位置的 URI。</td></tr><tr><td><code>itemId</code></td><td>字符串</td><td>仅在 <code>type</code> 设置为 <code>item</code> 时使用。附件的 EWS 项目 ID。字符串最长为 100 个字符。</td></tr></tbody></table></td></tr><tr><td><code>callback</code></td><td>函数</td><td>&lt;可选&gt;</td><td>方法完成后，使用单个参数 <code>asyncResult</code>（一个 <a href="simple-types.md#asyncresult"><code>AsyncResult</code></a> 对象）调用在 <code>callback</code> 参数中传递的函数。有关详细信息，请参阅<a href="tutorial-asynchronous.html">使用异步方法</a>。</td></tr></tbody></table>|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1051,7 +1051,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities()-→-{[entities](simple-types.md#entities)}"></a>getEntities() → {[Entities](simple-types.md#entities)}
+#### <a name="getentities-entitiessimpletypesmdentities"></a>getEntities() → {[Entities](simple-types.md#entities)}
 
 获取在所选项目中找到的实体。
 
@@ -1063,10 +1063,9 @@ Office.context.mailbox.item.displayReplyForm(
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
-类型：
-[Entities](simple-types.md#entities)
+类型：[Entities](simple-types.md#entities)
 
 ##### <a name="example"></a>示例
 
@@ -1076,11 +1075,11 @@ Office.context.mailbox.item.displayReplyForm(
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytype(entitytype)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getentitiesbytypeentitytype-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 获取所选项目中找到的指定实体类型的所有实体的数组。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -1094,7 +1093,7 @@ var contacts = Office.context.mailbox.item.getEntities().contacts;
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 受限|
 |适用的 Outlook 模式| 阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 如果在 `entityType` 中传递的值不是 `EntityType` 枚举的有效成员，该方法返回 null。如果指定类型的任何实体都不存在于该项目上，该方法将返回空数组。否则，返回的数组中对象的类型取决于 `entityType` 参数中请求的实体类型。
 
@@ -1130,17 +1129,19 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbyname(name)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getfilteredentitiesbynamename-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 返回传递清单 XML 文件中定义的命名筛选器的所选项目中的已知实体。
 
-`getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) 规则元素中定义的正则表达式的实体。
 
-##### <a name="parameters:"></a>参数：
+
+  `getFilteredEntitiesByName` 方法返回匹配在具有指定 `FilterName` 元素值的清单 XML 文件中的 [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) 规则元素中定义的正则表达式的实体。
+
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
-|`name`| string|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
+|`name`| 字符串|定义筛选器匹配的 `ItemHasKnownEntity` 规则元素的名称。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1150,14 +1151,13 @@ Office.initialize = function () {
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 如果具有匹配 `name` 参数的 `FilterName` 元素值的清单中没有任何 `ItemHasKnownEntity` 元素，则该方法返回 `null`。如果 `name` 参数匹配清单中的 `ItemHasKnownEntity` 元素，但在匹配的当前项目中没有实体，则该方法返回一个空数组。
 
-类型：
-Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
+类型：Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
-#### <a name="getregexmatches()-→-{object}"></a>getRegExMatches() → {Object}
+#### <a name="getregexmatches-object"></a>getRegExMatches() → {Object}
 
 返回所选项目中匹配在清单 XML 文件中定义的正则表达式的字符串值。
 
@@ -1186,7 +1186,7 @@ Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-typ
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。而是使用 [`Body.getAsync`](Body.md#getasynccoerciontype-options-callback) 方法检索整个正文。
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1194,7 +1194,7 @@ Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-typ
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串数组的对象。每个数组的名称等于匹配 `ItemHasRegularExpressionMatch` 规则的 `RegExName` 属性或匹配 `ItemHasKnownEntity` 规则的 `FilterName` 属性的相应值。
 
@@ -1216,7 +1216,7 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbyname(name)-→-(nullable)-{array.<string>}"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
+#### <a name="getregexmatchesbynamename-nullable-arraystring"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 返回匹配在清单 XML 文件中定义的命名正则表达式的所选项目中的字符串值。
 
@@ -1224,11 +1224,11 @@ var veges = allMatches.veggies;
 
 如果在项目的正文属性上指定 `ItemHasRegularExpressionMatch` 规则，则正则表达式应进一步筛选正文，不应尝试返回该项目的整个正文。使用正则表达式（如 `.*`）获取项目的整个正文并不总是返回预期的结果。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
-|`name`| string|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
+|`name`| 字符串|定义筛选器匹配的 `ItemHasRegularExpressionMatch` 规则元素的名称。|
 
 ##### <a name="requirements"></a>要求
 
@@ -1238,7 +1238,7 @@ var veges = allMatches.veggies;
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 一个包含匹配在清单 XML 文件中定义的正则表达式的字符串的数组。
 
@@ -1257,23 +1257,23 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasync(coerciontype,-[options],-callback)-→-{string}"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  <a name="getselecteddataasynccoerciontype-options-callback-string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 以异步方式返回邮件的主题或正文中选定的数据。
 
 如果没有选定内容，但光标位于正文或主题中，此方法将会为所选数据返回 null。如果选定的是字段，而不是正文或主题，则此方法返回 `InvalidSelection` 错误。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`coercionType`| [Office.CoercionType](Office.md#coerciontype-string)||请求数据的格式。如果为文本，则此方法返回纯文本作为字符串，删除任何显示的 HTML 标记。如果为 HTML，则此方法返回所选文本，不论是纯文本还是 HTML。|
 |`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](simple-types.md#asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。
 
 若要从回调方法访问所选数据，请调用 `asyncResult.value.data`。若要访问选定内容的源属性，请调用 `asyncResult.value.sourceProperty`，这将为 `body` 或 `subject`。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1281,7 +1281,7 @@ var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |适用的 Outlook 模式| 撰写|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 作为字符串的所选数据的格式由 `coercionType` 确定。
 
@@ -1313,22 +1313,22 @@ function setCallback(asyncResult) {
 }
 ```
 
-####  <a name="loadcustompropertiesasync(callback,-[usercontext])"></a>loadCustomPropertiesAsync(callback, [userContext])
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 异步加载所选项目上此外接程序的自定义属性。
 
 自定义属性基于每个应用、每个项目存储为键/值对。此方法在回调中返回 `CustomProperties` 对象，该回调提供访问特定于当前项目和当前外接程序的自定义属性的方法。自定义属性未在项目上加密，因此这不应用作安全存储。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](simple-types.md#asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。
 
 自定义属性作为 `asyncResult.value` 属性中的 [`CustomProperties`](CustomProperties.md) 对象提供。此对象可用于获取、设置以及从项目中删除自定义属性，并将自定义属性集的更改重新保存到服务器。| 
 |`userContext`| 对象| &lt;可选&gt;|开发人员可以提供他们想要在回调函数中访问的任何对象。此对象可以通过回调函数中的 `asyncResult.asyncContext` 属性进行访问。|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>Requirements
 
 |要求| 值|
 |---|---|
@@ -1363,18 +1363,18 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasync(attachmentid,-[options],-[callback])"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 将附件从邮件或约会中删除。
 
 `removeAttachmentAsync` 方法删除项目中带指定标识符的附件。最佳做法是，仅当同一个邮件应用程序在同一会话中添加了一个附件时，你才应使用该附件标识符来删除该附件。在 Outlook Web App 和适用于设备的 OWA 中，附件标识符只在同一个会话中才有效。当用户关闭应用程序，或者如果用户开始在内嵌窗体中撰写，并在随后弹出的内嵌窗体中继续在单独的窗口撰写时，会话即结束。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`attachmentId`| string||要删除的附件的标识符。字符串的最大长度为 100 个字符。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
+|`attachmentId`| 字符串||要删除的附件的标识符。字符串的最大长度为 100 个字符。|
+|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr></tbody></table>|
 |`callback`| 函数| &lt;可选&gt;|方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。 <br/>如果删除附件失败，`asyncResult.error` 属性将包含一个说明失败原因的错误代码。<br/><table class="nested-table"><thead><tr><th>错误代码</th><th>说明</th></tr></thead><tbody><tr><td><code>InvalidAttachmentId</code></td><td>附件标识符不存在。</td></tr></tbody></table>|
 
 ##### <a name="requirements"></a>要求
@@ -1400,13 +1400,13 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  <a name="saveasync([options],-callback)"></a>saveAsync([options], callback)
+####  <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
 
 异步保存项目。
 
 调用时，此方法将当前邮件保存为草稿，并通过回调方法返回项目 ID。在 Outlook Web App 或 Outlook 联机模式下，该项目被保存到服务器中。在 Outlook 缓存模式下，该项目被保存到本地缓存中。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -1441,16 +1441,16 @@ Office.context.mailbox.item.saveAsync(
 }
 ```
 
-####  <a name="setselecteddataasync(data,-[options],-callback)"></a>setSelectedDataAsync(data, [options], callback)
+####  <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
 
 以异步方式将数据插入到邮件的正文或主题中。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
-|`data`| string||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
-|`options`| 对象| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr><tr><td><code>coercionType</code></td><td><a href="Office.md#coerciontype-string">Office.CoercionType</a></td><td>&lt;可选&gt;</td><td>如果为 <code>text</code>，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。</td></tr></tbody></table><p>如果 <code>html</code> 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 <code>InvalidDataFormat</code> 错误。</p><p>如果未设置 <code>coercionType</code>，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|</p>|
+|`data`| 字符串||要插入的数据。数据不得超过 1,000,000 个字符。如果传入的数据超过 1,000,000 个字符，则会引发 `ArgumentOutOfRange` 异常。|
+|`options`| Object| &lt;可选&gt;|包含一个或多个以下属性的对象文字。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>属性</th><th>说明</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;可选&gt;</td><td>开发人员可以提供他们想要在回调方法中访问的任何对象。</td></tr><tr><td><code>coercionType</code></td><td><a href="Office.md#coerciontype-string">Office.CoercionType</a></td><td>&lt;可选&gt;</td><td>如果为 <code>text</code>，则在 Outlook Web App 和 Outlook 中应用当前样式。如果该字段是 HTML 编辑器，则仅插入文本数据，即使数据为 HTML。</td></tr></tbody></table><p>如果 <code>html</code> 和该字段支持 HTML（主题不支持），则在 Outlook Web App 中应用当前样式，而在 Outlook 中应用默认样式。如果该字段是文本字段，则返回 <code>InvalidDataFormat</code> 错误。</p><p>如果未设置 <code>coercionType</code>，则结果取决于该字段：如果该字段是 HTML，则使用 HTML；如果该字段是文本，则使用纯文本。|</p>|
 |`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](simple-types.md#asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。 |
 
 ##### <a name="requirements"></a>Requirements

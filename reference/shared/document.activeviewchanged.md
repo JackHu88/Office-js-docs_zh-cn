@@ -1,5 +1,5 @@
 
-# <a name="document.activeviewchanged-event"></a>Document.ActiveViewChanged 事件
+# <a name="documentactiveviewchanged-event"></a>Document.ActiveViewChanged 事件
 用户更改文档的当前视图时出现。
 
 |||
@@ -30,7 +30,7 @@ Office.EventType.ActiveViewChanged
 
 ||**Office for Windows Desktop**|**Office Online（在浏览器中）**|**Office for iPad**|
 |:-----|:-----|:-----|:-----|
-|**PowerPoint**|Y|Y|Y|
+|**PowerPoint**|Y||Y|
 
 |||
 |:-----|:-----|

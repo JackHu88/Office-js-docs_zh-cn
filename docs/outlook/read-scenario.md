@@ -1,5 +1,5 @@
 
-# <a name="create-outlook-add-ins-for-read-forms"></a>创建适用于阅读窗体的 Outlook 外接程序
+# <a name="create-outlook-addins-for-read-forms"></a>创建适用于阅读窗体的 Outlook 外接程序
 
 阅读外接程序是在 Outlook 中的阅读窗格或阅读检查器中激活的 Outlook 外接程序。与撰写外接程序（用户创建邮件或约会时激活的 Outlook 外接程序）不同，阅读外接程序在以下用户方案中可用：
 
@@ -18,10 +18,10 @@
 
 **图 1.对于所选的包含地址的 Outlook 邮件，显示必应地图外接程序的外接程序窗格处于活跃状态**
 
-![Outlook 中的必应地图邮件应用程序](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
+![Outlook 中的 Bing 地图邮件应用程序](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## <a name="types-of-add-ins-available-in-read-mode"></a>阅读模式下可用的外接程序的类型
+## <a name="types-of-addins-available-in-read-mode"></a>阅读模式下可用的外接程序的类型
 
 
 阅读外接程序可以为下列类型的任意组合。
@@ -31,10 +31,8 @@
     
 - [上下文 Outlook 外接程序](../outlook/contextual-outlook-add-ins.md)
     
-- [自定义窗格 Outlook 外接程序](../outlook/custom-pane-outlook-add-ins.md)
-    
 
-## <a name="api-features-available-to-read-add-ins"></a>阅读外接程序可用的 API 功能
+## <a name="api-features-available-to-read-addins"></a>阅读外接程序可用的 API 功能
 
 
 有关适用于 Office 的 JavaScript API 为阅读窗体中的 Outlook 外接程序提供的功能列表，请参阅 [每个版本的邮件应用程序](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx)中的表 1 和表 2。 

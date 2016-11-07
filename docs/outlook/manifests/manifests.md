@@ -1,12 +1,9 @@
 
-# <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
+# <a name="outlook-addin-manifests"></a>Outlook 外接程序清单
 
 Outlook 外接程序由两部分组成：XML 外接程序清单和网页，由 Office 外接程序的 JavaScript 库 (office.js) 提供支持。清单介绍了外接程序如何跨 Outlook 客户端集成。目前清单架构有 3 个版本，其中包括 **VersionOverrides**。我们建议你使用清单架构版本 1.1 和 **VersionOverrides** 1.0 构建外接程序。下面是一个示例。
 
  >**注释**  以下示例中的所有 URL 值均以"YOUR_WEB_SERVER"开头。该值是一个占位符。在实际的有效清单中，这些值将包含有效的 https Web URL。
-
-
-
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -112,16 +109,6 @@ Outlook 外接程序由两部分组成：XML 外接程序清单和网页，由 O
 
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-
-                    <!-- Custom pane, only applies to read form -->
-                    <ExtensionPoint xsi:type="CustomPane">
-                        <RequestedHeight>100</RequestedHeight>
-                        <SourceLocation resid="customPaneUrl" />
-                        <Rule xsi:type="RuleCollection" Mode="Or">
-                            <Rule xsi:type="ItemIs" ItemType="Message" />
-                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
-                        </Rule>
-                    </ExtensionPoint>
 
                     <!-- Message compose form -->
                     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -549,7 +536,6 @@ Outlook 外接程序由两部分组成：XML 外接程序清单和网页，由 O
                 <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
                 <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
                 <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
-                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
@@ -683,7 +669,7 @@ Outlook 外接程序的根元素是  **OfficeApp**。此元素还声明默认命
   </Resources>
 ```
 
-架构引用包含可本地化的元素的完整信息。
+架构引用包含可本地化元素的完整信息。
 
 
 ## <a name="hosts"></a>Hosts
@@ -794,7 +780,7 @@ Outlook 外接程序指定如下所示的  **Hosts** 元素。
 有关激活规则的详细信息和示例，请参阅 [Outlook 外接程序的激活规则](../../outlook/manifests/activation-rules.md)。
 
 
-## <a name="next-steps:-add-in-commands"></a>后续步骤：外接程序命令
+## <a name="next-steps-addin-commands"></a>后续步骤：外接程序命令
 
 
 定义基本清单后， [为外接程序定义外接程序命令](../../outlook/manifests/define-add-in-commands.md)。外接程序命令代表功能区中的按钮，因此用户可以一种简单、直观的方式激活您的外接程序。有关详细信息，请参阅 [用于 Outlook 的外接程序命令](../../outlook/add-in-commands-for-outlook.md)。
@@ -810,8 +796,7 @@ Outlook 外接程序指定如下所示的  **Hosts** 元素。
     
 - [Office 外接程序的本地化](../../develop/localization.md)
     
-- 
-  [创建运行在台式机、平板电脑和移动设备上的 Outlook 邮件外接程序（架构 v1.1）](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- [创建运行在台式机、平板电脑和移动设备上的 Outlook 邮件外接程序（架构 v1.1）](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Outlook 外接程序的隐私、权限和安全性](../../outlook/privacy-and-security.md)
     
@@ -821,8 +806,7 @@ Outlook 外接程序指定如下所示的  **Hosts** 元素。
     
 - [Office 外接程序清单的架构参考 (v1.1)](../../overview/add-in-manifests.md)
     
-- 
-  [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [项目类型和邮件类](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
 - [Office 外接程序的设计准则](../../design/add-in-design.md)
     

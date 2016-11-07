@@ -6,12 +6,12 @@
 
 Exchange 服务器发送到您的 Outlook 外接程序的身份验证标识令牌对您的外接程序并非透明的；您不需要为了将令牌发送到您的服务器而了解令牌中的内容。但是，如果要编写与您的 Outlook 外接程序交互的 Web 服务代码，则需要了解标识令牌包含的内容。
 
-## <a name="what-is-an-identity-token?"></a>什么是标识令牌？
+## <a name="what-is-an-identity-token"></a>什么是标识令牌？
 
 
 标识令牌是一个 64 位编码的 URL 字符串，由发送它的 Exchange 服务器自签名。令牌不经过加密，您用来验证签名的公钥存储在颁发该令牌的 Exchange 服务器上。令牌包含三个部分：标头、有效负载和签名。在令牌字符串中，各个部分用"."字符分隔开，以便您拆分令牌。
 
-Exchange 2013 使用 JSON Web Token (JWT) 作为标识令牌。有关 JWT 令牌的信息，请参阅 [JSON Web Token (JWT) Internet 草案](http://self-issued.info/docs/draft-goland-json-web-token-00.html)。
+Exchange 2013 使用 JSON Web Token (JWT) 作为标识令牌。有关 JWT 令牌的信息，请参阅 [JSON Web Token (JWT) Internet 草案](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)。
 
 
 ### <a name="identity-token-header"></a>标识令牌标头

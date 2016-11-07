@@ -1,5 +1,5 @@
 
-# <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
+# <a name="requirements-for-running-office-addins"></a>运行 Office 加载项的要求
 
 
 本文介绍了运行 Office 外接程序的软件和设备要求。
@@ -25,7 +25,7 @@
 
 
 
-## <a name="client-requirements:-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
+## <a name="client-requirements-windows-desktop-and-tablet"></a>客户端要求：Windows 台式机和平板电脑
 
 为基于 Windows 的台式机、笔记本电脑或平板电脑设备上运行的受支持 Office 桌面客户端或 Web 客户端开发 Office 外接程序，需要以下软件：
 
@@ -36,14 +36,14 @@
 
     - Excel 2013、Outlook 2013、PowerPoint 2013、Project Professional 2013、Project 2013 SP1、Word 2013 或更高版本的 Office 客户端，（如果您正在专门为这些 Office 桌面客户端测试或运行 Office 外接程序）。Office 桌面客户端可以在本地安装或通过即点即用安装在客户端计算机上。
 
-- 必须安装 Internet Explorer 9 或更高版本，但不一定作为默认浏览器。为了支持 Office 外接程序，作为主机的 Office 客户端使用属于 Internet Explorer 9 或更高版本的一部分的浏览器组件。
+- 必须安装的 Internet Explorer 11 或更高版本无需是默认浏览器。为了支持 Office 外接程序，充当主机的 Office 客户端所使用的浏览器组件是 Internet Explorer 11 或更高版本的一部分。
 
-- 使用下列浏览器之一作为默认浏览器：Internet Explorer 9、Safari 5.0.6、Firefox 5、Chrome 13 或这些浏览器的更高版本。
+- 将以下任一浏览器作为默认浏览器：Internet Explorer 11 或更高版本，或 Edge的最新版本、Chrome、Firefox 或 Safari (Mac OS)。
 
-- HTML 和 JavaScript 编辑器，如记事本、 [Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs)或第三方 Web 开发工具。
+- HTML 和 JavaScript 编辑器（如记事本）、 [Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
 
 
-## <a name="client-requirements:-os-x-desktop"></a>客户端要求：OS X 桌面
+## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
 
 作为 Office 365 的一部分分发的 适用于 Mac 的 Outlook 支持 Outlook 外接程序。在 适用于 Mac 的 Outlook 上运行 Outlook 外接程序与 适用于 Mac 的 Outlook 本身的要求相同：操作系统必须至少为 OS X v10.10"Yosemite"。由于 适用于 Mac 的 Outlook 使用 WebKit 作为布局引擎以呈现外接程序页，因此没有其他浏览器依赖项。
 
@@ -52,12 +52,12 @@
 - Excel for Mac 版本 15.19 (160206) 
 - PowerPoint for Mac 版本 15.24 (160614)
 
-## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
 
-任何支持 ECMAScript 5.1、HTML5 和 CSS3 的浏览器，如 Internet Explorer 9、Chrome 13、Firefox 5、Safari 5.0.6 以及这些浏览器的更高版本。
+任何支持 ECMAScript 5.1、HTML5 和 CSS3 的浏览器，如 Internet Explorer 11 或更高版本、或 Edge 的最新版本、Chrome、Firefox 或 Safari (Mac OS)。
 
 
-## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
+## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
 
 特别是对于在智能手机和非 Windows 平板电脑设备上的浏览器中运行的 适用于设备的 OWA 和 Outlook Web App，测试和运行 Outlook 外接程序需要下列软件。
 

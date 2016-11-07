@@ -1,5 +1,5 @@
 
-# <a name="office-add-in-requirement-sets"></a>Office 外接程序要求集
+# <a name="office-addin-requirement-sets"></a>Office 外接程序要求集
 
 要求集是 API 成员的命名组。Office 外接程序使用清单中指定的要求集或使用运行时检查以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
@@ -23,7 +23,7 @@
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>Excel Online<br/>PowerPoint Online|支持使用 Document.getFileAsync 方法时输出作为字节数组 (Office.FileType.Compressed) 的 Office Open XML (OOXML) 格式<br>。|
 | CustomXmlParts    | 1.1 |Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogAPI | 1.1 | Excel<br>PowerPoint<br>Word 2016<br>Outlook|Office.context.ui.displayDialogAsync()<br>Office.context.ui.messageParent()<br>Office.context.ui.close()|
-| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | 文件  | 1.1 | PowerPoint<br>Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | 1.1 | Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为 HTML (Office.CoercionType.Html)<br>。|
 | ImageCoercion | 1.1 | Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|支持在使用 Document.setSelectedDataAsync 方法写入数据时转换为图像 (Office.CoercionType.Image)。|
@@ -41,7 +41,7 @@
 | TextCoercion  | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>项目<br>Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad|支持在使用 Document.getSelectedDataAsync、Document.setSelectedDataAsync、Binding.getDataAsync 或 Binding.setDataAsync 方法读取和写入数据时强制转换为文本格式 (Office.CoercionType.Text)。|
 | TextFile  | 1.1 | Word 2013 及更高版本<br>Word 2016 for Mac<br>Word Online<br>Word for iPad<br/>|支持在使用 Document.getFileAsync 方法时输出文本格式 (Office.FileType.Text)。|
 
-## <a name="methods-that-aren't-part-of-a-requirement-set"></a>不作为要求集一部分的方法
+## <a name="methods-that-arent-part-of-a-requirement-set"></a>不作为要求集一部分的方法
 
 
 适用于 Office 的 JavaScript API 中的以下方法不是要求集的一部分。如果外接程序需要这些方法的任意一个，请使用外接程序清单中的 **Methods** 和 **Method** 元素以声明需要这些方法，或使用 if 语句执行运行时检查。有关详细信息，请参阅 [指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。

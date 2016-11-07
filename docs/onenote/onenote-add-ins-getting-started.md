@@ -1,4 +1,4 @@
-# <a name="build-your-first-onenote-add-in"></a>生成你的第一个 OneNote 外接程序
+# <a name="build-your-first-onenote-addin"></a>生成你的第一个 OneNote 外接程序
 
 本文介绍生成可将一些文本添加到 OneNote 页面的简单任务窗格外接程序的步骤。
 
@@ -7,7 +7,7 @@
    ![构建自此演练的 OneNote 外接程序](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-## <a name="step-1:-set-up-your-dev-environment-and-create-an-add-in-project"></a>步骤 1：设置开发环境并创建外接程序项目
+## <a name="step-1-set-up-your-dev-environment-and-create-an-addin-project"></a>步骤 1：设置开发环境并创建外接程序项目
 按照说明 [使用任何编辑器创建 Office 外接程序](../get-started/create-an-office-add-in-using-any-editor.md)，安装必需的系统必备组件并运行 Office Yeoman 生成器以创建新的外接程序项目。下表列出了要在 Yeoman 生成器中进行选择的项目属性。
 
 | 选项 | 值 |
@@ -19,7 +19,7 @@
 | 要使用的技术 | HTML、CSS 和 JavaScript |
 
 <a name="develop"></a>
-## <a name="step-2:-modify-the-add-in"></a>步骤 2：修改外接程序
+## <a name="step-2-modify-the-addin"></a>步骤 2：修改外接程序
 可以使用任何文本编辑器或 IDE 编辑外接程序文件。如果尚未尝试过 Visual Studio 代码，可以在 Linux、Mac OSX 和 Windows 上[免费下载](https://code.visualstudio.com/)。
 
 1 - 在 **app/home** 文件夹中打开 *home.html*。 
@@ -128,7 +128,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-## <a name="step-3:-test-the-add-in-on-onenote-online"></a>步骤 3：在 OneNote Online 上测试外接程序
+## <a name="step-3-test-the-addin-on-onenote-online"></a>步骤 3：在 OneNote Online 上测试外接程序
 1 - 运行 Gulp Web 服务器。  
 
   a.打开 **cmd** 提示符并转到外接程序项目文件夹。 
@@ -170,7 +170,7 @@ function addOutlineToPage() {
 
 -检查 OneNote 对象时，目前可用的属性显示实际值。需要加载的属性显示“*未定义*”。展开 `_proto_` 节点以查看在对象上被定义但未加载的属性。
 
-      ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
+![在调试程序中上载 OneNote 对象](../../images/onenote-debug.png)
 
 -如果你的外接程序使用任何 HTTP 资源，则需启用浏览器中的混合内容。生产外接程序应仅使用安全 HTTPS 资源。
 
