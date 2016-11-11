@@ -38,9 +38,9 @@
 
 - 必须安装的 Internet Explorer 11 或更高版本无需是默认浏览器。为了支持 Office 外接程序，充当主机的 Office 客户端所使用的浏览器组件是 Internet Explorer 11 或更高版本的一部分。
 
-- 将以下任一浏览器作为默认浏览器：Internet Explorer 11 或更高版本，或 Edge的最新版本、Chrome、Firefox 或 Safari (Mac OS)。
+- 将以下任一浏览器作为默认浏览器：Internet Explorer 11 或更高版本，或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
 
-- HTML 和 JavaScript 编辑器（如记事本）、 [Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
+- HTML 和 JavaScript 编辑器（如记事本）、[Visual Studio 和 Microsoft 开发人员工具](https://www.visualstudio.com/features/office-tools-vs) 或第三方 Web 开发工具。
 
 
 ## <a name="client-requirements-os-x-desktop"></a>客户端要求：OS X 桌面
@@ -52,9 +52,9 @@
 - Excel for Mac 版本 15.19 (160206) 
 - PowerPoint for Mac 版本 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：支持 Office Online Web 客户端和 SharePoint 的浏览器
 
-任何支持 ECMAScript 5.1、HTML5 和 CSS3 的浏览器，如 Internet Explorer 11 或更高版本、或 Edge 的最新版本、Chrome、Firefox 或 Safari (Mac OS)。
+支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器，如 Internet Explorer 11 或更高版本、或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
 
 
 ## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑

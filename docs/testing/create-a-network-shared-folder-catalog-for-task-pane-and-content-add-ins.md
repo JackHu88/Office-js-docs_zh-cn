@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 外接程序以进行测试
+# <a name="sideload-office-addins-for-testing"></a>旁加载 Office 外接程序以进行测试
 
 你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。 
 
@@ -8,6 +8,11 @@
 仅向共享文件夹目录部署清单文件。将 Web 应用程序本身部署到 Web 服务器并制定清单文件的 **SourceLocation** 元素中的 URL。
 
  >**重要提示：**若要帮助保护访问外部数据和服务的外接程序，外接程序应使用一个安全协议（例如安全超文本传输协议 (HTTPS)）连接到外部数据和服务。如果你的外接程序使用外接程序命令，你必须使用 HTTPS。
+
+下面的视频演示将外接程序旁加载到 Office 桌面或 Office Online 上的流程。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
 
 ## <a name="share-a-folder"></a>共享文件夹
 
@@ -38,7 +43,7 @@
 
 9. 关闭 Office 应用程序，你的更改将生效。
     
-## <a name="sideload-your-add-in"></a>旁加载外接程序
+## <a name="sideload-your-addin"></a>旁加载外接程序
 
 
 1. 放入在共享文件夹目录中进行测试的所有外接程序的清单文件。

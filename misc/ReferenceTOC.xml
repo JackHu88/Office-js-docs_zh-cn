@@ -47,8 +47,8 @@
     
 	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="指定提供外接程序支持信息的页面的 URL。" />
     <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="指定在平板电脑上使用邮件外接程序时应用的控制设置。" />
-    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="定义该词典支持的、表示为区域性名称字符串的方言。" />
-    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="定义此字典支持的方言。" />
+    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="定义此字典支持的、表示为区域性名称字符串的区域语言。" />
+    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="定义此字典支持的区域语言。" />
     <Item text="版本" url="manifest/version" SEODescription="指定 Office 外接程序的版本。" />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="根元素包含由外接程序实现的外接程序命令的信息。"> 
 		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="指定用户选择“按钮”或“菜单”控件时将执行的操作。" />
@@ -139,7 +139,7 @@
     <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="表示属于表的所有行的集合。" />
     <Item text="TableSort" url="excel/tablesort" SEODescription="管理对 Table 对象的排序操作。" />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="允许外接程序管理各 sync() 批次的 range 对象引用。" />
-    <Item text="Workbook" url="excel/workbook" SEODescription="包含相关工作簿对象，例如 worksheet、table、range 等。" />
+    <Item text="工作簿" url="excel/workbook" SEODescription="包含相关工作簿对象，例如 worksheet、table、range 等。" />
     <Item text="Worksheet" url="excel/worksheet" SEODescription="表示包含数据、表格和图表的单元格的网格。" />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="表示属于工作簿的 worksheet 对象的集合。" />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="用作可从 JavaScript 或 REST 中调用的 Excel 工作表函数的容器。" />

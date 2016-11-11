@@ -1,19 +1,22 @@
 
-# <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格外接程序
+# <a name="create-a-dictionary-task-pane-addin"></a>创建字典任务窗格外接程序
 
 
 本文显示任务窗格加载项和伴随的 Web 服务的示例，该 Web 服务为用户在 Word 2013 文档中的当前选择提供字典定义或同义词库同义词。 
 
 字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。 
 
-在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
+在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。
+XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。
+图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
 
 **图 1.显示选定字词的定义的字典外接程序**
 
 
-![显示定义的字典应用](../../images/DictionaryAgave01.jpg)
+![显示定义的字典应用程序](../../images/DictionaryAgave01.jpg)
 
-由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
+由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。
+图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 **图 2.定义上下文菜单中的命令**
 
@@ -178,7 +181,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a>创建字典加载项的组件
+## <a name="creating-the-components-of-a-dictionary-addin"></a>创建字典加载项的组件
 
 
 字典加载项包含三个主要组件文件。
@@ -191,7 +194,7 @@ public class WebService : System.Web.Services.WebService {
 - JavaScript 文件，用于提供从文档中获取用户选择的逻辑，将选择作为查询发送给 Web 服务，然后在外接程序的 UI 中显示返回的结果。
     
 
-### <a name="creating-a-dictionary-add-in's-manifest-file"></a>创建字典加载项的清单文件
+### <a name="creating-a-dictionary-addins-manifest-file"></a>创建字典加载项的清单文件
 
 下面是字典加载项的示例清单文件。
 
@@ -222,7 +225,7 @@ public class WebService : System.Web.Services.WebService {
   <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
   <Dictionary>
-    <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
     <TargetDialects>
       <TargetDialect>EN-AU</TargetDialect>
       <TargetDialect>EN-BZ</TargetDialect>
@@ -277,7 +280,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialects-element"></a>TargetDialects 元素
 
 
-指定此字典支持的方言。必需（字典外接程序）。
+指定此字典支持的多种区域语言。必需（字典外接程序）。
 
  **父元素**
 
@@ -289,7 +292,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-**TargetDialects** 元素及其子元素指定字典支持的方言集。例如，如果字典适用于西班牙语（墨西哥）和西班牙语（秘鲁）方言，但不适用于西班牙语（西班牙），则可在此元素中指定这种情况。此元素仅用于指定同一语言的不同方言。不要在此清单中指定多种语言（例如，西班牙语和英语）。将不同的语言作为不同的字典发布。
+ **TargetDialects** 元素及其子元素指定字典包含的区域语言集。例如，如果字典同时应用于西班牙语（墨西哥）和西班牙语（秘鲁），而不是西班牙语（西班牙），则可以在此元素中进行指定。不要在此清单中指定多种语言（例如西班牙语和英语）。将各语言发布为单独的字典。
 
  **示例**
 
@@ -323,7 +326,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="targetdialect-element"></a>TargetDialect 元素
 
 
-指定此字典支持的方言。必需（字典外接程序）。
+指定此字典支持的一种区域语言。必需（字典外接程序）。
 
  **父元素**
 
@@ -331,7 +334,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-以 RFC1766 `language` 标记格式指定方言的值，如 EN-US。
+以 RFC1766 `language` 标记格式中指定区域语言的值，如 EN-US。
 
  **示例**
 
@@ -346,7 +349,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="queryuri-element"></a>QueryUri 元素
 
 
-指定词典查询服务的终结点。必需（字典外接程序）。
+为字典查询服务指定端点。必需（字典外接程序）。
 
  **父元素**
 
@@ -354,7 +357,7 @@ public class WebService : System.Web.Services.WebService {
 
  **备注**
 
-这是字典提供程序的 XML Web 服务的 URI。被正确转义的查询将被追加到此 URI。 
+这是用于字典提供程序的 XML Web 服务的 URI。将把正确转义的查询附加到此 URI。 
 
  **示例**
 
@@ -369,7 +372,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="citationtext-element"></a>CitationText 元素
 
 
-指定引文中要使用的文本。必需（字典外接程序）。
+指定要在引文中使用的文本。必需（字典外接程序）。
 
  **父元素**
 
@@ -394,7 +397,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="dictionaryname-element"></a>DictionaryName 元素
 
 
-指定该词典的名称。必需（字典外接程序）。
+指定此字典的名称。必需（字典外接程序）。
 
  **父元素**
 
@@ -419,7 +422,7 @@ public class WebService : System.Web.Services.WebService {
 #### <a name="dictionaryhomepage-element"></a>DictionaryHomePage 元素
 
 
-指定该词典的主页的 URL。必需（字典外接程序）。
+指定字典主页的 URL。必需（字典外接程序）。
 
  **父元素**
 
@@ -441,7 +444,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
+### <a name="creating-a-dictionary-addins-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
 
 
 以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。
@@ -533,7 +536,7 @@ a:hover, a:active
 
 **图 6.演示词典 UI**
 
-![演示词典 UI](../../images/DictionaryAgave06.jpg)
+![演示字典 UI](../../images/DictionaryAgave06.jpg)
 
 
 ### <a name="writing-the-javascript-implementation"></a>编写 JavaScript 实现
@@ -554,7 +557,7 @@ a:hover, a:active
     
 - `selectedTextCallback` 函数中剩余的代码查询定义的 XML Web 服务。它还调入 Microsoft Translator API，以提供具有所选字词拼音的 .wav 文件的 URL。
     
-- Dictionary.js 中的其余代码会在外接程序的 HTML UI 中显示定义的列表和拼音链接。
+- Dictionary.js 中的其余代码会在加载项的 HTML UI 中显示定义的列表和拼音链接。
     
 
 

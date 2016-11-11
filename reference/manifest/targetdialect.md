@@ -1,11 +1,11 @@
 
 # <a name="targetdialect-element"></a>TargetDialect 元素
- 定义该词典支持的、表示为区域性名称字符串的方言。
+ 定义此字典支持的、表示为区域性名称字符串的区域语言。
 
  **外接程序类型：**任务窗格
 
 
-## <a name="syntax:"></a>语法：
+## <a name="syntax"></a>语法：
 
 
 ```XML
@@ -15,7 +15,7 @@
 ```
 
 
-## <a name="contained-in:"></a>包含在：
+## <a name="contained-in"></a>包含在：
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 
