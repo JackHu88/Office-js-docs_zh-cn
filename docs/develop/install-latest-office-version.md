@@ -20,4 +20,14 @@
 
 在安装进程完成后，你已安装最新的 Office 2016 应用程序。要验证你是否拥有最新版本，请从任何 Office 应用程序转到“**文件**” > “**帐户**”。在“Office 更新”下，你将看到版本号上面的 (Office Insiders) 标签。
 
-![显示带有 Office Insiders 标签的产品信息的屏幕截图](../../images/officeinsider.PNG)
+![显示产品信息的屏幕截图（带有 Office Insiders 标签）](../../images/officeinsider.PNG)
+
+## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Office JavaScript API 要求集对应的最低 Office 内部版本
+
+若要了解 API 要求集对应的各个平台的最低产品内部版本，请参阅以下资源：
+
+- [Word JavaScript API 要求集](../../reference/requirement-sets/word-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](../../reference/requirement-sets/excel-api-requirement-sets.md)
+- [OneNote JavaScript API 要求集](../../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Dialog API 要求集](../../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Office 通用 API 要求集](../../reference/requirement-sets/office-add-in-requirement-sets.md)

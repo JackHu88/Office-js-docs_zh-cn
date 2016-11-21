@@ -1,4 +1,4 @@
-# <a name="uidisplaydialogasync-method"></a>UI.displayDialogAsync 方法
+﻿# <a name="uidisplaydialogasync-method"></a>UI.displayDialogAsync 方法
 
 在 Office 主机中显示一个对话框。 
 
@@ -38,6 +38,7 @@
 ### <a name="supported-platforms"></a>支持的平台
 目前，以下平台支持 DialogAPI 要求集：
 
+  - Office for Windows Desktop 2013（版本 15.0.4855.1000 或更高版本）
   - Office for Windows Desktop 2016（版本 16.0.6741.0000 或更高版本）
   - Office for IPad（版本 1.22 或更高版本）
   - Office for Mac（版本 15.20 或更高版本） 
@@ -67,7 +68,7 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|startAddress|字符串|接受在对话框中打开的初始 HTTPS(TLS) URL。 <ul><li>初始网页必须与父页位于相同的域。初始网页加载后，你可以转到其他域。</li><li>调用 [office.context.ui.messageParent](officeui.messageparent.md) 的所有页也必须都与父页位于相同的域。</li></ul>|
+|startAddress|string|接受在对话框中打开的初始 HTTPS(TLS) URL。 <ul><li>初始网页必须与父页位于相同的域。初始网页加载后，你可以转到其他域。</li><li>调用 [office.context.ui.messageParent](officeui.messageparent.md) 的所有页也必须都与父页位于相同的域。</li></ul>|
 |选项|object|可选。接受用于定义对话框行为的 options 对象。|
 |callback|对象|接受用于处理对话框创建尝试的 callback 方法。|
     

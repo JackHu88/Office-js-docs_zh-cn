@@ -86,7 +86,8 @@
     <Item text="SearchOptions" url="word/searchoptions" FriendlyUrl="word/referencesearchoptions" Scope="word" SEODescription="指定要包括在搜索操作中的选项。" />
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="包含搜索操作产生的 range 对象的集合。" />
     <Item text="节" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="表示 Word 文档中的一节。" />
-    <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="包含文档的 section 对象的集合。" />
+    <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="包含文档的一组 section 对象。" />
+	<Item text="Word JavaScript API 要求集" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="了解 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。" />
   </Item>
   
   <Item text="Excel" url="excel" Scope="excel">
@@ -140,10 +141,11 @@
     <Item text="TableSort" url="excel/tablesort" SEODescription="管理对 Table 对象的排序操作。" />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="允许外接程序管理各 sync() 批次的 range 对象引用。" />
     <Item text="工作簿" url="excel/workbook" SEODescription="包含相关工作簿对象，例如 worksheet、table、range 等。" />
-    <Item text="Worksheet" url="excel/worksheet" SEODescription="表示包含数据、表格和图表的单元格的网格。" />
+    <Item text="工作表" url="excel/worksheet" SEODescription="表示包含数据、表格和图表的单元格的网格。" />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="表示属于工作簿的 worksheet 对象的集合。" />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="用作可从 JavaScript 或 REST 中调用的 Excel 工作表函数的容器。" />
-    <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="表示对工作表对象的保护。" />
+    <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="表示保护 sheet 对象。" />
+	<Item text="Excel JavaScript API 要求集" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="了解 Excel 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。" />
   </Item>
   
   <Item text="Outlook" url="outlook" Scope="Outlook">
@@ -412,11 +414,12 @@
     <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="OneNote 外接程序引用。" />
     <Item text="Outline" url="onenote/outline" SEODescription="OneNote 外接程序引用。" />
     <Item text="Image" url="onenote/image" SEODescription="OneNote 外接程序引用。" />
+	<Item text="OneNote JavaScript API 要求集" url="requirement-sets/onenote-api-requirement-sets" SEODescription="了解 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。" />
   </Item>  
   <Item text="共享的 API" url="shared/shared-api">
     <Item text="适用于 Office 的 JavaScript API" url="javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 包括可在 Office 外接程序代码中使用的对象、方法、属性、事件和枚举。" />
-	<Item text="JavaScript API for Office 中的更改内容" url="what's-changed-in-the-javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 使用新的和更新的对象、方法、属性、事件和枚举定期进行更新来扩展 Office 外接程序的功能。" />
-	<Item text="Office 外接程序要求集" url="office-add-in-requirement-sets" SEODescription="要求集是 API 成员的命名组。Office 外接程序使用清单中指定要求集或使用运行时检查确定 Office 主机是否支持外接程序所需的 API。" />
+	<Item text="JavaScript API for Office 中的更改内容" url="what's-changed-in-the-javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 会定期更新和新增对象、方法、属性、事件和枚举，以扩展 Office 外接程序的功能。" />
+	<Item text="Office 通用要求集" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定要求集或使用运行时检查确定 Office 主机是否支持外接程序所需的 API。" />
 	<Item text="适用于 Office 的 JavaScript API 的错误代码" url="javascript-api-for-office-error-codes" SEODescription="使用适用于 Office 的 JavaScript API (Office.js) 时，可能遇到的错误消息。" />
 	<Item text="枚举" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
       <Item text="ActiveView 枚举" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="指定文档活动视图的状态，例如，用户是否可以编辑文档。" />
@@ -643,6 +646,7 @@
     	<Item text="Dialog object" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="调用 displayDialogAsync 方法时返回的对象。" />
     	<Item text="DisplayDialog method" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="显示 Office 主机中的 Web 对话框。" />
     	<Item text="MessageParent method" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="将对话框中的消息传送到其父页/开始页。" />
+		<Item text="Dialog API 要求集" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="了解 Dialog API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。" />
     </Item>
   </Item>
   <Item text="开放性规范" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="了解日常设计 API 工作量并提供反馈" />
