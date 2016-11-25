@@ -1,6 +1,6 @@
 # <a name="onenote-javascript-api-requirement-sets"></a>OneNote JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。
+要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
 下表列出了 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。
 

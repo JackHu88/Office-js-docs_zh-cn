@@ -1,7 +1,7 @@
 
 # <a name="dialog-api-requirement-sets"></a>Dialog API 要求集
 
-要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。
+要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
 Office 外接程序在多个 Office 版本中运行。下表列出了 Dialog API 要求集、支持该要求集的 Office 主机应用程序，以及 Office 应用程序的内部版本或版本号。
 
@@ -25,5 +25,6 @@ Dialog API 1.1 是首版 API。有关 API 的详细信息，请参阅 [Dialog AP
 
 ## <a name="additional-resources"></a>其他资源
 
-- [指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序 XML 清单](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
+

@@ -1,18 +1,18 @@
 # <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 
-要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。
+要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
 若要了解 Office 主机何时支持外接程序，请参阅 [Office 外接程序主机和平台可用性](https://dev.office.com/add-in-availability)。
 
-## <a name="hostspecific-api-requirement-sets"></a>视具体主机而定的 API 要求集
+## <a name="host-specific-api-requirement-sets"></a>视具体主机而定的 API 要求集
 
-若要了解 Excel、Word、OneNote、Outlook 和 Dialog API 要求集，请参阅：
+若要了解 Excel、Word、OneNote、Outlook 和对话框 API 要求集，请参阅：
 
-- [Excel JavaScript API 要求集](excel-api-requirement-sets.md)
-- [Word JavaScript API 要求集](word-api-requirement-sets.md)
-- [OneNote JavaScript API 要求集](onenote-api-requirement-sets.md)
-- [了解 Outlook API 要求集](../outlook/tutorial-api-requirement-sets.md)
-[Dialog API 要求集](dialog-api-requirement-sets.md)
+- [Excel JavaScript API 要求集](excel-api-requirement-sets.md) (ExcelApi)
+- [Word JavaScript API 要求集](word-api-requirement-sets.md) (WordApi)
+- [OneNote JavaScript API 要求集](onenote-api-requirement-sets.md) (OneNoteApi)
+- [了解 Outlook API 要求集](../outlook/tutorial-api-requirement-sets.md) (MailBox)
+- [对话框 API 要求集](dialog-api-requirement-sets.md) (DialogApi)
 
 ## <a name="common-api-requirement-sets"></a>通用 API 要求集
 
@@ -68,7 +68,9 @@
 
 ## <a name="additional-resources"></a>其他资源
 
-- [指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
+
 
 
 

@@ -32,6 +32,9 @@ Office.EventType.ActiveViewChanged
 |:-----|:-----|:-----|:-----|:-----|
 |**PowerPoint**|Y||Y|Y|
 
+>**注意：此事件不会在 PowerPoint Online 应用场景中触发，因为幻灯片放映模式被视为新会话。若要获取活动视图，必须在 Office.Initialize 期间查询它。
+ 
+
 |||
 |:-----|:-----|
 |**引入版本**|1.1|

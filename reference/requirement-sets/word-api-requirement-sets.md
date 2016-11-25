@@ -1,6 +1,6 @@
 # <a name="word-javascript-api-requirement-sets"></a>Word JavaScript API 要求集
 
-要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)。
+要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
 Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windows、Office for iPad、Office for Mac 和 Office Online。下表列出了 Word 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
@@ -187,7 +187,7 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [getNext()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#getnext)|获取下一个 table。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [getRange(rangeLocation:RangeLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#getrangerangelocation-rangelocation)|获取包含此 table 的 range，或此 table 开头或结尾的 range。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [insertContentControl()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertcontentcontrol)|在 table 中插入 contentControl。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [insertParagraph(paragraphText: 字符串, insertLocation:InsertLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|在指定位置插入 paragraph。insertLocation 的可取值为“Before”或“After”。|1.3|
+|[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [insertParagraph(paragraphText: 字符串, insertLocation:InsertLocation)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|在指定位置插入段落。insertLocation 值可以为“Before”或“After”。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [insertTable(rowCount: 数字, columnCount: 数字, insertLocation:InsertLocation, values: string[][])](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|插入包含指定行数和列数的 table。insertLocation 的可取值为“Before”或“After”。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_Method_ > [search(searchText: 字符串, searchOptions:ParamTypeStrings.SearchOptions)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|使用指定的 searchOptions 在 table 对象范围内执行搜索。搜索结果是一组 range 对象。|1.3|
 |[table](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md)|_方法_ > [select(selectionMode:SelectionMode)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/table.md#selectselectionmode-selectionmode)|选择 table 或其开头或结尾位置，然后将 Word UI 导航到相应位置。|1.3|
@@ -217,7 +217,7 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_属性_ > items|一组 tableCell 对象。只读。|1.3|
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_方法_ > [getFirst()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md#getfirst)|获取此集合中的第一个 tableCell。|1.3|
 |[tableCellCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md)|_方法_ > [getItem(index: 数字)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecellcollection.md#getitemindex-number)|按 tableCell 对象在集合中的索引获取此对象。|1.3|
-|[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_属性_ > items|一组 table 对象。只读。|1.3|
+|[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_属性_ > items|table 对象的集合。只读。|1.3|
 |[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_方法_ > [getFirst()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md#getfirst)|获取此集合中的第一个 table。|1.3|
 |[tableCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md)|_方法_ > [getItem(index: 数字)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablecollection.md#getitemindex-number)|按 table 对象在集合中的索引获取此对象。|1.3|
 |[tableRow](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md)|_属性_ > cellCount|获取行单元格数。只读。|1.3|
@@ -240,7 +240,7 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 |[tableRow](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md)|_Method_ > [search(searchText: 字符串, searchOptions:ParamTypeStrings.SearchOptions)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|使用指定的 searchOptions 在行范围内执行搜索。搜索结果是一组 range 对象。|1.3|
 |[tableRow](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md)|_方法_ > [select(selectionMode:SelectionMode)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md#selectselectionmode-selectionmode)|选择行，然后将 Word UI 导航到相应位置。|1.3|
 |[tableRow](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md)|_方法_ > [setCellPadding(cellPaddingLocation:CellPaddingLocation, cellPadding: 浮点数)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerow.md#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|设置单元格填充（以磅为单位）。|1.3|
-|[tableRowCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md)|_属性_ > items|一组 tableRow 对象。只读。|1.3|
+|[tableRowCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md)|_属性_ > items|tableRow 对象的集合。只读。|1.3|
 |[tableRowCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md)|_方法_ > [getFirst()](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md#getfirst)|获取此集合中的第一行。|1.3|
 |[tableRowCollection](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md)|_方法_ > [getItem(index: 数字)](https://github.com/OfficeDev/office-js-docs/blob/WordJs_1.3_Openspec/reference/word/tablerowcollection.md#getitemindex-number)|按 tableRow 对象在集合中的索引获取此对象。|1.3|
 
@@ -250,15 +250,15 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 
 |对象| 最近更新| 说明|要求集|
 |:-----|-----|:----|:----|
-|[contentControl](../word/contentcontrol.md)|_方法_ > [insertInlinePictureFromBase64(base64EncodedImage: 字符串, insertLocation:InsertLocation)](../word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|将 inlinePicture 插入 contentControl 中的指定位置。insertLocation 的可取值为“Replace”、“Start”或“End”。|1.2|
+|[contentControl](../word/contentcontrol.md)|_方法_ > [insertInlinePictureFromBase64(base64EncodedImage: 字符串, insertLocation:InsertLocation)](../word/contentcontrol.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|将嵌入式图片插入到内容控件中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_关系_ > paragraph|获取包含嵌入式图像的父段落。只读。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [delete()](../word/inlinepicture.md#delete)|从 document 中删除 inlinePicture。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertBreak(breakType:BreakType, insertLocation:InsertLocation)](../word/inlinepicture.md#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|在主文档的指定位置插入分隔符。insertLocation 的可取值为“Before”或“After”。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](../word/inlinepicture.md#insertfilefrombase64base64file-string-insertlocation-insertlocation)|在指定位置插入 document。insertLocation 的可取值为“Before”或“After”。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertHtml(html: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#inserthtmlhtml-string-insertlocation-insertlocation)|在指定位置插入 HTML。insertLocation 的可取值为“Before”或“After”。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertHtml(html: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#inserthtmlhtml-string-insertlocation-insertlocation)|在指定位置插入 HTML。insertLocation 值可以为“Before”或“After”。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertInlinePictureFromBase64(base64EncodedImage: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|在指定位置插入 inlinePicture。insertLocation 的可取值为“Replace”、“Before”或“After”。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertOoxml(ooxml: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|在指定位置插入 OOXML。insertLocation 的可取值为“Before”或“After”。|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertParagraph(paragraphText: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|在指定位置插入 paragraph。insertLocation 的可取值为“Before”或“After”。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertOoxml(ooxml: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|在指定位置插入 OOXML。insertLocation 值可以为“Before”或“After”。|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertParagraph(paragraphText: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|在指定位置插入段落。insertLocation 值可以为“Before”或“After”。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [insertText(text: 字符串, insertLocation:InsertLocation)](../word/inlinepicture.md#inserttexttext-string-insertlocation-insertlocation)|在指定位置插入文本。insertLocation 的可取值为“Before”或“After”。|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_方法_ > [select(selectionMode:SelectionMode)](../word/inlinepicture.md#selectselectionmode-selectionmode)|选择 inlinePicture。这会导致 Word 滚动到选定内容。|1.2|
 |[range](../word/range.md)|_关系_ > inlinePictures|获取 range 中的一组 inlinePicture 对象。只读。|1.2|
@@ -269,5 +269,6 @@ Word JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅 [
 
 ## <a name="additional-resources"></a>其他资源
 
-- [指定 Office 主机和 API 要求](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Office 外接程序 XML 清单](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
+
