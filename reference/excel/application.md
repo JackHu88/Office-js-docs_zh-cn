@@ -1,14 +1,14 @@
-# <a name="application-object-(javascript-api-for-excel)"></a>Application 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="application-object-javascript-api-for-excel"></a>Application 对象（适用于 Excel 的 JavaScript API）
 
 表示用于管理工作簿的 Excel 应用程序。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|calculationMode|string|返回工作簿中使用的计算模式。只读。可能的值是：`Automatic` Excel 控制重新计算，`AutomaticExceptTables` Excel 控制重新计算，但忽略表中的更改，`Manual` 在用户请求时执行计算。|
+| 属性     | 类型   |说明|要求集|
+|:---------------|:--------|:----------|:----------|
+|calculationMode|string|返回工作簿中使用的计算模式。只读。可能的值是：`Automatic` Excel 控制重新计算，`AutomaticExceptTables` Excel 控制重新计算，但忽略表中的更改，`Manual` 在用户请求时执行计算。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -16,15 +16,15 @@ _请参阅属性访问 [示例](#property-access-examples)_。
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|重新计算 Excel 中当前打开的所有工作簿。|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明|要求集|
+|:---------------|:--------|:----------|:----------|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|重新计算 Excel 中当前打开的所有工作簿。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="calculate(calculationtype:-string)"></a>calculate(calculationType: string)
+### <a name="calculatecalculationtype-string"></a>calculate(calculationType: string)
 重新计算 Excel 中当前打开的所有工作簿。
 
 #### <a name="syntax"></a>语法
@@ -35,7 +35,7 @@ applicationObject.calculate(calculationType);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|calculationType|string|指定要使用的计算类型。可能的值是：`Recalculate` 默认选项，通过计算工作簿中的所有公式执行正常计算，`Full` 强制执行数据的完整计算，`FullRebuild` 强制执行数据的完整计算并重新构建依存关系。|
+|calculationType|string|指定要使用的计算类型。可取值为：`Recalculate`：这是软重新计算，主要是为了确保向后兼容性。`Full`：重新计算 Excel 已标记为脏的所有单元格（即易失或已更改的数据的从属单元格），以及以编程方式标记为脏的单元格。`FullRebuild`：重新计算所有已打开工作簿中的全部单元格。|
 
 #### <a name="returns"></a>返回
 void
@@ -54,7 +54,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -84,4 +84,3 @@ Excel.run(function (ctx) {
         }
 });
 ```
-

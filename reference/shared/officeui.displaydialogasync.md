@@ -80,7 +80,7 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 |:---------------|:--------|:----------|
 |**width**|object|可选。以占当前显示器的百分比的形式，定义对话框的宽度。默认值为 80%。最小分辨率为 250 像素。|
 |**height**|object|可选。以占当前显示器的百分比的形式，定义对话框的高度。默认值为 80%。最小分辨率为 150 像素。|
-|**displayInIframe**|object|可选。确定对话框是否应在 Office Online 客户端中的 IFrame 内显示。桌面客户端会忽略此设置。以下是可能的值：<ul><li>False（默认值）- 对话框将显示为一个新的浏览器窗口（弹出窗口）。对于无法在 IFrame 中显示的身份验证页建议使用此值。 </li><li>True - 对话框将显示为使用 IFrame 的浮动重叠窗口。对于用户体验和性能而言，这是最佳选择。</li>|
+|**displayInIframe**|对象|可选。确定是否应在 IFrame 内显示对话框。**此设置仅适用于 Office Online 客户端**，桌面客户端可忽略此设置。可取值如下：<ul><li>False（默认值）- 对话框将显示为一个新的浏览器窗口（弹出窗口）。对于无法在 IFrame 中显示的身份验证页建议使用此值。 </li><li>True - 对话框将显示为使用 IFrame 的浮动重叠窗口。对于用户体验和性能而言，这是最佳选择。</li>|
 
 
 ## <a name="callback-value"></a>回调值

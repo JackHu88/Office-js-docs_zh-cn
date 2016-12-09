@@ -1,15 +1,15 @@
-# <a name="binding-object-(javascript-api-for-excel)"></a>Binding 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="binding-object-javascript-api-for-excel"></a>Binding 对象（适用于 Excel 的 JavaScript API）
 
 表示工作簿中定义的 Office.js 绑定。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|id|string|表示绑定标识符。只读。|
-|type|string|返回绑定的类型。只读。可能的值是：Range、Table、Text。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|id|string|表示绑定标识符。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|返回绑定的类型。只读。可能的值是：Range、Table、Text。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -17,17 +17,32 @@ _请参阅属性访问 [示例](#property-access-examples)_。
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[getRange()](#getrange)|[Range](range.md)|返回绑定表示的区域。如果绑定类型不正确，将引发错误。|
-|[getTable()](#gettable)|[Table](table.md)|返回绑定表示的表。如果绑定类型不正确，将引发错误。|
-|[getText()](#gettext)|字符串|返回绑定表示的文本。如果绑定类型不正确，将引发错误。|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|删除绑定。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|返回绑定表示的区域。如果绑定类型不正确，将引发错误。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTable()](#gettable)|[Table](table.md)|返回绑定表示的表。如果绑定类型不正确，将引发错误。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getText()](#gettext)|string|返回绑定表示的文本。如果绑定类型不正确，将引发错误。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="delete"></a>delete()
+删除绑定。
+
+#### <a name="syntax"></a>语法
+```js
+bindingObject.delete();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+void
+
+### <a name="getrange"></a>getRange()
 返回绑定表示的区域。如果绑定类型不正确，将引发错误。
 
 #### <a name="syntax"></a>语法
@@ -61,7 +76,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettable()"></a>getTable()
+### <a name="gettable"></a>getTable()
 返回绑定表示的表。如果绑定类型不正确，将引发错误。
 
 #### <a name="syntax"></a>语法
@@ -93,7 +108,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettext()"></a>getText()
+### <a name="gettext"></a>getText()
 返回绑定表示的文本。如果绑定类型不正确，将引发错误。
 
 #### <a name="syntax"></a>语法
@@ -113,7 +128,7 @@ string
 Excel.run(function (ctx) { 
     var binding = ctx.workbook.bindings.getItemAt(0);
     var text = binding.getText();
-    ctx.load('text');
+    binding.load('text');
     return ctx.sync().then(function() {
         console.log(text);
     });
@@ -126,8 +141,8 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -136,8 +151,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者接受 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void

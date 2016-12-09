@@ -1,15 +1,15 @@
-# <a name="tablecolumncollection-object-(javascript-api-for-excel)"></a>TableColumnCollection 对象（适用于 Excel 的 JavaScript API）
+# <a name="tablecolumncollection-object-javascript-api-for-excel"></a>TableColumnCollection 对象（适用于 Excel 的 JavaScript API）
 
 表示属于表的所有列的集合。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|count|INT|返回表中的列数。只读。|
-|items|[TableColumn[]](tablecolumn.md)|tableColumn 对象的集合。只读。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|count|int|返回表中的列数。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableColumn[]](tablecolumn.md)|tableColumn 对象的集合。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例。](#property-access-examples)_
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -17,17 +17,18 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|向表中添加新列。|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取 column 对象。|
-|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|根据其在集合中的位置获取列。|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[add(index: number, values: (boolean 或 string 或 number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|向表中添加新列。|[1.1：1.1 要求索引小于列总数，1.4 允许索引为可选（NUll 或 -1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number 或 string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取列对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|按列在集合中的位置获取此对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(key: number 或 string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取列对象。如果列对象不存在，则返回的对象 isNull 属性为 true。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="add(index:-number,-values:-(boolean-or-string-or-number)[][])"></a>add(index: number, values: (boolean or string or number)[][])
+### <a name="addindex-number-values-boolean-or-string-or-number"></a>add(index: number, values: (boolean or string or number)[][])
 向表中添加新列。
 
 #### <a name="syntax"></a>语法
@@ -37,9 +38,9 @@ tableColumnCollectionObject.add(index, values);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|index|number|指定新列的相对位置。之前位于此位置的列向右移动。索引值应等于或小于最后一列的索引值，因此不能用于在表末尾附加列。从零开始编制索引。|
-|values|(boolean or string or number)[][]|可选。未设置格式的表列值的二维数组。|
+|:---------------|:--------|:----------|:---|
+|index|number|可选。指定新列的相对位置。如果为 NULL 或 -1，将在末尾进行添加。索引更高的列将被移到一侧。从零开始编制索引。|
+|值|(boolean or string or number)[][]|可选。未设置格式的表列值的二维数组。|
 
 #### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
@@ -64,7 +65,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitem(key:-number-or-string)"></a>getItem(key: number or string)
+### <a name="getitemkey-number-or-string"></a>getItem(key: number or string)
 按名称或 ID 获取 column 对象。
 
 #### <a name="syntax"></a>语法
@@ -74,7 +75,7 @@ tableColumnCollectionObject.getItem(key);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |Key|number or string| 列名称或 ID。|
 
 #### <a name="returns"></a>返回
@@ -84,7 +85,7 @@ tableColumnCollectionObject.getItem(key);
 
 ```js
 Excel.run(function (ctx) { 
-    var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+    var tablecolumn = ctx.workbook.tables.getItem('Table1').columns.getItem(0);
     tablecolumn.load('name');
     return ctx.sync().then(function() {
             console.log(tablecolumn.name);
@@ -114,7 +115,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 根据其在集合中的位置获取列。
 
 #### <a name="syntax"></a>语法
@@ -124,7 +125,7 @@ tableColumnCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
 #### <a name="returns"></a>返回
@@ -146,8 +147,24 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="getitemornullkey-number-or-string"></a>getItemOrNull(key: number 或 string)
+按名称或 ID 获取列对象。如果列对象不存在，则返回的对象 isNull 属性为 true。
+
+#### <a name="syntax"></a>语法
+```js
+tableColumnCollectionObject.getItemOrNull(key);
+```
+
+#### <a name="parameters"></a>参数
+| 参数    | 类型   |说明|
+|:---------------|:--------|:----------|:---|
+|Key|number or string| 列名称或 ID。|
+
+#### <a name="returns"></a>返回
+[TableColumn](tablecolumn.md)
+
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -156,8 +173,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -165,7 +182,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
+    var tablecolumns = ctx.workbook.tables.getItem('Table1').columns;
     tablecolumns.load('items');
     return ctx.sync().then(function() {
         console.log("tablecolumns Count: " + tablecolumns.count);

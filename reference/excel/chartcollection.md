@@ -1,15 +1,15 @@
-# <a name="chartcollection-object-(javascript-api-for-excel)"></a>ChartCollection 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="chartcollection-object-javascript-api-for-excel"></a>ChartCollection 对象（适用于 Excel 的 JavaScript API）
 
 工作表中的所有 chart 对象的集合。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|count|int|返回工作表中的图表数。只读。|
-|项目|[Chart[]](chart.md)|chart 对象的集合。只读。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|count|int|返回工作表中的图表数。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Chart[]](chart.md)|chart 对象的集合。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -17,17 +17,18 @@ _请参阅属性访问 [示例](#property-access-examples)_。
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|创建新图表。|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。|
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|根据其在集合中的位置获取图表。|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|新建图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|按名称获取图表。如果有多个同名的图表，此方法返回第一个图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|按图表在集合中的位置获取此对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|按名称获取图表。如果有多个同名的图表，此方法返回第一个图表。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="add(type:-string,-sourcedata:-range,-seriesby:-string)"></a>add(type: string, sourceData:Range, seriesBy: string)
+### <a name="addtype-string-sourcedata-range-seriesby-string"></a>add(type: string, sourceData:Range, seriesBy: string)
 创建新图表。
 
 #### <a name="syntax"></a>语法
@@ -37,9 +38,9 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|string|表示图表的类型。可能的值是：ColumnClustered、ColumnStacked、ColumnStacked100、BarClustered、BarStacked、BarStacked100、LineStacked、LineStacked100、LineMarkers、LineMarkersStacked、LineMarkersStacked100、PieOfPie 等。|
-|sourceData|Range|包含源数据的 range 对象。|
+|sourceData|Range|对应于源数据的 Range 对象。|
 |seriesBy|string|可选。指定列或行在图表上用作数据系列的方式。可能的值是：Auto、Columns、Rows|
 
 #### <a name="returns"></a>返回
@@ -47,14 +48,15 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### <a name="examples"></a>示例
 
-在工作表“Charts”上添加图表 `chartType`“ColumnClustered”，其中区域“A1:B4”中的 `sourceData` 和 `seriesBy` 设置为“auto”。
+在工作表“Charts”上添加 `chartType` 为“ColumnClustered”的图表，其中 `sourceData` 设置为范围“A1:B4”，`seriresBy` 设置为“auto”。
 
 ```js
 Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var sourceData = sheetName + "!" + "A1:B4";
-    var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-    return ctx.sync().then(function() {
+    var rangeSelection = "A1:B4";
+    var range = ctx.workbook.worksheets.getItem(sheetName)
+        .getRange(rangeSelection);
+    var chart = ctx.workbook.worksheets.getItem(sheetName)
+        .charts.add("ColumnClustered", range, "auto");  return ctx.sync().then(function() {
             console.log("New Chart Added");
     });
 }).catch(function(error) {
@@ -66,7 +68,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitem(name:-string)"></a>getItem(name: string)
+### <a name="getitemname-string"></a>getItem(name: string)
 使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。
 
 #### <a name="syntax"></a>语法
@@ -76,7 +78,7 @@ chartCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|要检索的图表的名称。|
 
 #### <a name="returns"></a>返回
@@ -137,7 +139,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 根据其在集合中的位置获取图表。
 
 #### <a name="syntax"></a>语法
@@ -147,7 +149,7 @@ chartCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
 #### <a name="returns"></a>返回
@@ -171,8 +173,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
+按名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。
+
+#### <a name="syntax"></a>语法
+```js
+chartCollectionObject.getItemOrNull(name);
+```
+
+#### <a name="parameters"></a>参数
+| 参数    | 类型   |说明|
+|:---------------|:--------|:----------|:---|
+|name|string|要检索的图表的名称。|
+
+#### <a name="returns"></a>返回
+[Chart](chart.md)
+
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -181,8 +199,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -196,7 +214,6 @@ Excel.run(function (ctx) {
         for (var i = 0; i < charts.items.length; i++)
         {
             console.log(charts.items[i].name);
-            console.log(charts.items[i].index);
         }
     });
 }).catch(function(error) {

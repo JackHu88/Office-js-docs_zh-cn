@@ -1,14 +1,14 @@
-# <a name="chartlineformat-object-(javascript-api-for-excel)"></a>ChartLineFormat 对象（适用于 Excel 的 JavaScript API）
+# <a name="chartlineformat-object-javascript-api-for-excel"></a>ChartLineFormat 对象（适用于 Excel 的 JavaScript API）
 
 封装线条元素的格式选项。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|color|string|表示图表中的线条颜色的 HTML 颜色代码。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|color|string|表示图表中的线条颜色的 HTML 颜色代码。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -16,15 +16,15 @@ _请参阅属性访问 [示例](#property-access-examples)_。
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|清除图表元素的线条格式。|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|清除图表元素的线条格式。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 清除图表元素的线条格式。
 
 #### <a name="syntax"></a>语法
@@ -44,7 +44,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -57,8 +57,8 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -67,8 +67,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -77,16 +77,16 @@ void
 将值坐标轴上的图表主要网格线设置为红色。
 
 ```js
-Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
+Excel.run(function (ctx) {
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;
     gridlines.format.line.color = "#FF0000";
-    return ctx.sync().then(function() {
-            console.log("Chart Gridlines Color Updated");
+    return ctx.sync().then(function () {
+        console.log("Chart Gridlines Color Updated");
     });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 ```

@@ -6,17 +6,19 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 
 |  要求集  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | 版本 1608 或更高版本| 1.27 或更高版本 |  15.27 或更高版本| 2016 年 9 月 | 
-| ExcelApi 1.2  | 版本 1601 或更高版本 | 1.21 或更高版本 | 15.22 或更高版本| 2016 年 1 月 |
+| ExcelApi 1.3  | 版本 1608（内部版本 7369.2055）或更高版本| 1.27 或更高版本 |  15.27 或更高版本| 2016 年 9 月 | 
+| ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本 | 1.21 或更高版本 | 15.22 或更高版本| 2016 年 1 月 |
 | ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本 | 1.19 或更高版本 | 15.20 或更高版本| 2016 年 1 月 |
 
 > &#42;**注意**：通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1 要求集。
 
 若要详细了解版本号和内部版本号，请参阅：
 
-- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用的是哪一版 Office？](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
@@ -166,4 +168,3 @@ Excel JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅�
 
 - [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
-

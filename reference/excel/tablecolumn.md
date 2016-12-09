@@ -1,38 +1,38 @@
-# <a name="tablecolumn-object-(javascript-api-for-excel)"></a>TableColumn 对象（适用于 Excel 的 JavaScript API）
+# <a name="tablecolumn-object-javascript-api-for-excel"></a>TableColumn 对象（适用于 Excel 的 JavaScript API）
 
 代表表格中的一列。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|id|int|返回标识表内的列的唯一键。只读。|
-|index|int|返回表的列集合内列的索引编号。从零开始编制索引。只读。|
-|name|string|返回表格列的名称。只读。|
-|values|object[][]|表示指定区域的原始值。返回的数据类型可能是字符串、数字或布尔值。包含错误的单元格将返回错误的字符串。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|id|INT|返回标识表内的列的唯一键。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|index|INT|返回表的列集合内列的索引编号。从零开始编制索引。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|返回表列的名称。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|表示指定区域的原始值。返回的数据类型可能是字符串、数字或布尔值。包含一个将返回错误字符串的错误的单元格。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例。](#property-access-examples)_
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
-| 关系 | 类型   |说明|
-|:---------------|:--------|:----------|
-|筛选器|[Filter](filter.md)|检索应用于列的筛选器。只读。|
+| 关系 | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|filter|[Filter](filter.md)|检索应用于列的筛选器。只读。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|从表中删除列。|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|获取与列的数据体相关的 range 对象。|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|获取与列的标头行相关的 range 对象。|
-|[getRange()](#getrange)|[Range](range.md)|获取与整个列相关的 range 对象。|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|获取与列的总计行相关的 range 对象。|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|从表中删除列。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|获取与列的数据主体相关联的范围对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|获取与列的标题行相关联的范围对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|获取与整个列相关联的范围对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|获取与列的总计行相关联的范围对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 从表中删除列。
 
 #### <a name="syntax"></a>语法
@@ -51,7 +51,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
     column.delete();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -63,7 +63,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getdatabodyrange()"></a>getDataBodyRange()
+### <a name="getdatabodyrange"></a>getDataBodyRange()
 获取与列的数据体相关的 range 对象。
 
 #### <a name="syntax"></a>语法
@@ -82,7 +82,7 @@ tableColumnObject.getDataBodyRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var dataBodyRange = column.getDataBodyRange();
     dataBodyRange.load('address');
     return ctx.sync().then(function() {
@@ -96,7 +96,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getheaderrowrange()"></a>getHeaderRowRange()
+### <a name="getheaderrowrange"></a>getHeaderRowRange()
 获取与列的标头行相关的 range 对象。
 
 #### <a name="syntax"></a>语法
@@ -115,7 +115,7 @@ tableColumnObject.getHeaderRowRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var headerRowRange = columns.getHeaderRowRange();
     headerRowRange.load('address');
     return ctx.sync().then(function() {
@@ -129,7 +129,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 获取与整个列相关的 range 对象。
 
 #### <a name="syntax"></a>语法
@@ -148,7 +148,7 @@ tableColumnObject.getRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var columnRange = columns.getRange();
     columnRange.load('address');
     return ctx.sync().then(function() {
@@ -163,7 +163,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettotalrowrange()"></a>getTotalRowRange()
+### <a name="gettotalrowrange"></a>getTotalRowRange()
 获取与列的总计行相关的 range 对象。
 
 #### <a name="syntax"></a>语法
@@ -182,7 +182,7 @@ tableColumnObject.getTotalRowRange();
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+    var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
     var totalRowRange = columns.getTotalRowRange();
     totalRowRange.load('address');
     return ctx.sync().then(function() {
@@ -197,8 +197,8 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -207,8 +207,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -217,7 +217,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItem(0);
     column.load('index');
     return ctx.sync().then(function() {
         console.log(column.index);
@@ -232,9 +232,10 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
+    var tableName = 'Table1';
     var tables = ctx.workbook.tables;
     var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
-    var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+    var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
     column.values = newValues;
     column.load('values');
     return ctx.sync().then(function() {

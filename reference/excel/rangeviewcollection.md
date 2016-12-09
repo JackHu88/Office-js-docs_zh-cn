@@ -1,12 +1,12 @@
-# <a name="rangereference-object-javascript-api-for-excel"></a>RangeReference 对象（适用于 Excel 的 JavaScript API）
+# <a name="rangeviewcollection-object-javascript-api-for-excel"></a>RangeViewCollection 对象（适用于 Excel 的 JavaScript API）
 
-表示对表单 SheetName!A1:B5 或全局/本地命名范围的字符串引用
+表示一组属于工作簿的工作表对象。
 
 ## <a name="properties"></a>属性
 
 | 属性     | 类型   |说明| 要求集|
 |:---------------|:--------|:----------|:----|
-|address|string|表示当前范围的可见行。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeView[]](rangeview.md)|一组 rangeView 对象。只读。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _请参阅属性访问[示例。](#property-access-examples)_
 
@@ -18,10 +18,27 @@ _请参阅属性访问[示例。](#property-access-examples)_
 
 | 方法           | 返回类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeView](rangeview.md)|按索引获取 RangeView 行。从零开始编制索引。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
+
+### <a name="getitematindex-number"></a>getItemAt(index: number)
+按索引获取 RangeView 行。从零开始编制索引。
+
+#### <a name="syntax"></a>语法
+```js
+rangeViewCollectionObject.getItemAt(index);
+```
+
+#### <a name="parameters"></a>参数
+| 参数    | 类型   |说明|
+|:---------------|:--------|:----------|:---|
+|index|number|可见行的索引。|
+
+#### <a name="returns"></a>返回
+[RangeView](rangeview.md)
 
 ### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。

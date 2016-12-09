@@ -1,15 +1,15 @@
-# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>RangeBorderCollection 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="rangebordercollection-object-javascript-api-for-excel"></a>RangeBorderCollection 对象（适用于 Excel 的 JavaScript API）
 
 表示构成区域边框的 border 对象。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|count|int|集合中的 border 对象数量。只读。|
-|项目|[RangeBorder[]](rangeborder.md)|rangeBorder 对象的集合。只读。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|count|int|集合中的 border 对象数量。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeBorder[]](rangeborder.md)|rangeBorder 对象的集合。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-_请参阅属性访问 [示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -17,17 +17,17 @@ _请参阅属性访问 [示例](#property-access-examples)_。
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|使用其名称获取 border 对象|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|使用其索引获取 border 对象|
-|[load(param: object)](#loadparam-object)|void|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|按名称获取边框对象|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|按边框索引获取此对象|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="getitem(index:-string)"></a>getItem(index: string)
-使用其名称获取 border 对象 
+### <a name="getitemindex-string"></a>getItem(index: string)
+使用其名称获取 border 对象
 
 #### <a name="syntax"></a>语法
 ```js
@@ -36,7 +36,7 @@ rangeBorderCollectionObject.getItem(index);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|string|要检索的 border 对象的索引值。可能的值是：EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
 
 #### <a name="returns"></a>返回
@@ -72,7 +72,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 使用其索引获取 border 对象
 
 #### <a name="syntax"></a>语法
@@ -96,7 +96,7 @@ rangeBorderCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
 #### <a name="returns"></a>返回
@@ -110,7 +110,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -124,8 +124,8 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -134,8 +134,8 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
     var borders = range.format.borders;
-    borders.load('items');
+    border.load('items');
     return ctx.sync().then(function() {
         console.log(borders.count);
         for (var i = 0; i < borders.items.length; i++)

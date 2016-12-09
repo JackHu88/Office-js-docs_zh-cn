@@ -1,33 +1,31 @@
-# <a name="worksheetprotection-object-(javascript-api-for-excel)"></a>WorksheetProtection 对象（适用于 Excel 的 JavaScript API）
+# <a name="worksheetprotection-object-javascript-api-for-excel"></a>WorksheetProtection 对象（适用于 Excel 的 JavaScript API）
 
-_适用于：Excel 2016、Excel Online、Excel for iOS、Office 2016_
-
-表示对工作表对象的保护。
+表示保护工作表对象。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明
-|:---------------|:--------|:----------|
-|受保护|bool|表示该工作表是否受保护。只读。|
+| 属性     | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|protected|bool|表示该工作表是否受保护。只读。只读。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
-## <a name="relationships"></a>Relationships
-| 关系 | 类型   |说明|
-|:---------------|:--------|:----------|
-|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|工作表保护选项。只读。|
+## <a name="relationships"></a>关系
+| 关系 | 类型   |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|工作表保护选项。只读。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|使用工作表的保护详细信息填充代理对象。|
-|[protect(options:WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoption)|void|保护工作表。如果工作表处于受保护状态，则会引发它。|
-|[Unprotect](#unprotect)|void|解除工作表保护|
+| 方法           | 返回类型    |说明| 要求集|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[protect(options:WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|保护工作表。如果工作表处于受保护状态，则无法执行此方法。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[Unprotect](#unprotect)|void|解除对工作表的保护。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="load(param:-object)"></a>load(param: object)
-使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
+### <a name="loadparam-object"></a>load(param: object)
+使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -36,35 +34,14 @@ object.load(param);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
-|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|:---------------|:--------|:----------|:---|
+|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
 
-#### <a name="examples"></a>示例
-本示例加载活动工作表保护的详细信息。
-```js
-Excel.run(function (ctx) {
-    var worksheet = ctx.workbook.worksheets.getActiveWorksheet();
-    worksheet.protection.load();            
-    return ctx.sync()
-        .then(function () {
-            console.log("Active worksheet's protection status: " + worksheet.protection.protected);
-        });
-})
-.catch(function (error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-### <a name="protect(options:-worksheetprotectionoptions)"></a>protect(options:WorksheetProtectionOptions)
-通过可选的保护策略保护工作表。如果工作表处于受保护状态，则引发异常。 
-
-当指定选项时，可在启用或禁用之间切换各个策略。如果不指定策略，则默认情况下为启用。 
+### <a name="protectoptions-worksheetprotectionoptions"></a>protect(options:WorksheetProtectionOptions)
+保护工作表。如果工作表处于受保护状态，则无法执行此方法。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -73,9 +50,8 @@ worksheetProtectionObject.protect(options);
 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |选项|WorksheetProtectionOptions|可选。工作表保护选项。|
-
 
 #### <a name="returns"></a>返回
 void
@@ -95,8 +71,8 @@ Excel.run(function (ctx) {
 });
 
 ```
-### <a name="unprotect()"></a>unprotect()
-解除工作表保护。 
+### <a name="unprotect"></a>unprotect()
+解除对工作表的保护。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -108,17 +84,3 @@ worksheetProtectionObject.unprotect();
 
 #### <a name="returns"></a>返回
 void
-
-#### <a name="examples"></a>示例
-```js
-Excel.run(function (ctx) { 
-    var sheet = ctx.workbook.worksheets.getItem("Sheet1");  
-    sheet.protection.unprotect();
-    return ctx.sync(); 
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-});
-```

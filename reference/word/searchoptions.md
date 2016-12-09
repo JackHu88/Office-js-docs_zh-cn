@@ -1,4 +1,4 @@
-# <a name="searchoptions-object-(javascript-api-for-word)"></a>SearchOptions 对象（适用于 Word 的 JavaScript API）
+# <a name="searchoptions-object-javascript-api-for-word"></a>SearchOptions 对象（适用于 Word 的 JavaScript API）
 
 指定要包括在搜索操作中的选项。
 
@@ -14,9 +14,9 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 |matchSoundsLike|bool|**此选项已在 2016 年 6 月更新中停用**。获取或设置指示是否查找读音与搜索字符串类似的字词。对应于“查找和替换”对话框中的“读音类似”复选框。|
 |matchSuffix|bool|获取或设置指示是否匹配以搜索字符串结尾的单词。对应于“查找和替换”对话框中的“匹配后缀”复选框。|
 |matchWholeWord|bool|获取或设置指示是否只查找整个单词，而不查找长单词的一部分的值。对应于“查找和替换”对话框中的“全字匹配”复选框。|
-|matchWildCards|bool|获取或设置指示搜索是否使用特殊搜索操作符执行的值。对应于“查找和替换”对话框中的“使用通配符”复选框。|
+|matchWildCards|bool|获取或设置指示搜索是否使用特殊搜索操作符执行的值。对应于“查找和替换”对话框中的“使用通配符”复选框。有关使用此选项的重要信息，请参阅下面的通配符指南。|
 
-_请参阅属性访问[示例](#property-access-examples)_。
+_请参阅属性访问[示例。](#property-access-examples)_
 
 搜索选项是可选的。应使用对象文本，在所有搜索方法中指定搜索选项：
 
@@ -38,7 +38,7 @@ _请参阅属性访问[示例](#property-access-examples)_。
 
 ## <a name="method-details"></a>方法详细信息
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -218,6 +218,9 @@ Word.run(function (context) {
 |前一个字符或表达式出现 n 到 m 次|{n,m} |10{1,3} 找到 10、100 和 1000。|
 |前一个字符或表达式出现一次或多次|@ |lo@t 找到 lot 和 loot。|
 
+### <a name="escaping-the-special-characters"></a>转义特殊字符
+
+通配符搜索与正则表达式搜索大致相同。正则表达式中有特殊字符，包括“[”、“]”、“(”、“)”、“{”、“}”、“\*”、“?”、“<”、“>”、“!”和“@”。如果其中一个字符属于代码要搜索的文本字符串，则需要转义这个字符，以便让 Word 知道应该以文本形式（而不是作为正则表达式逻辑的一部分）处理这个字符。若要在 Word  UI 搜索中转义字符，请在字符前面添加“\'”字符。不过，若要以编程方式转义，请将字符置于“[]”字符之间。例如，“[\*]\*”搜索以“\*”开头、后跟任意数量的其他字符的所有字符串。 
 
 ## <a name="support-details"></a>支持详细信息
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
