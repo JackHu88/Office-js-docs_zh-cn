@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-word)"></a>Paragraph 对象（适用于 Word 的 JavaScript API）
+# <a name="paragraph-object-javascript-api-for-word"></a>Paragraph 对象（适用于 Word 的 JavaScript API）
 
 表示选定内容、区域、内容控件或文档正文中的单个段落。
 
@@ -8,7 +8,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 | 属性     | 类型   |说明
 |:---------------|:--------|:----------|
 |outlineLevel|int|获取或设置段落的大纲级别。|
-|style|string|获取或设置用于段落的样式。这是预安装样式或自定义样式的名称。[Word-Add-in-DocumentAssembly][paragraph.style] 示例显示如何设置段落样式。|
+|style|string|获取或设置用于段落的样式。这是预安装样式或自定义样式的名称。[Word-Add-in-DocumentAssembly][paragraph.style] 示例展示了如何设置段落样式。|
 |text|string|获取段落的文本。只读。|
 
 ## <a name="relationships"></a>Relationships
@@ -38,19 +38,19 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 |[getOoxml()](#getooxml)|string|获取 paragraph 对象的 Office Open XML (OOXML) 表示形式。|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的段落中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“After”或“Before”。|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|使用富文本内容控件封装 paragraph 对象。|
-|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|将文档插入到当前段落中的指定位置。insertLocation 值可以为“Start”或“End”。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|将 HTML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[区域](range.md)|将文档插入到当前段落中的指定位置。insertLocation 值可以为“Start”或“End”。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[区域](range.md)|将 HTML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将图片插入到段落中的指定位置。insertLocation 值可以为“Before”、“After”、“Start”或“End”。|
-|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|将 OOXML 或 wordProcessingML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[区域](range.md)|将 OOXML 或 wordProcessingML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|在指定位置插入段落。insertLocation 值可以为“Before”或“After”。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|将文本插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[区域](range.md)|将文本插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 |[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索 paragraph 对象的范围。搜索结果是 range 对象的集合。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|选择并在 Word UI 中导航到段落。选择模式可以为“Select”、“Start”或“End”。“Select”为默认值。|
 
 ## <a name="method-details"></a>方法详细信息
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 清除 paragraph 对象的内容。用户可以对已清除的内容执行撤消操作。
 
 #### <a name="syntax"></a>语法
@@ -97,7 +97,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 从文档中删除段落及其内容。
 
 #### <a name="syntax"></a>语法
@@ -144,7 +144,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 获取 paragraph 对象的 HTML 表示形式。
 
 #### <a name="syntax"></a>语法
@@ -191,7 +191,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 获取 paragraph 对象的 Office Open XML (OOXML) 表示形式。
 
 #### <a name="syntax"></a>语法
@@ -238,7 +238,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 在指定位置插入分隔符。分隔符只能插入到包含在主文档正文内的段落中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Before”或“After”。
 
 #### <a name="syntax"></a>语法
@@ -295,7 +295,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 使用富文本内容控件封装 paragraph 对象。
 
 #### <a name="syntax"></a>语法
@@ -347,9 +347,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][paragraph.insertContentControl] 示例演示如何使用 insertContentControl 方法。
+[Word-Add-in-DocumentAssembly][paragraph.insertContentControl] 示例展示了如何使用 insertContentControl 方法。
 
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 将文档插入到当前段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -403,7 +403,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation:InsertLocation)
 将 HTML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -458,7 +458,7 @@ Word.run(function (context) {
 
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
 将图片插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -514,9 +514,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][paragraph.insertpicture] 示例提供了另一个示例，演示如何将一个图像插入到一个段落中。
+[Word-Add-in-DocumentAssembly][paragraph.insertpicture] 示例还展示了如何将图像插入段落。
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
 将 OOXML 或 wordProcessingML 插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -577,7 +577,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>其他信息
 阅读[使用 Office Open XML 创建更好的 Word 外接程序](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)以获取使用 OOXML 的指南。
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 在指定位置插入段落。insertLocation 值可以为“Before”或“After”。
 
 #### <a name="syntax"></a>语法
@@ -631,7 +631,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation:InsertLocation)
 将文本插入到段落中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -685,7 +685,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -696,7 +696,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -747,7 +747,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 使用指定搜索选项搜索 paragraph 对象的范围。搜索结果是 range 对象的集合。
 
 #### <a name="syntax"></a>语法
@@ -758,13 +758,13 @@ paragraphObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|searchText|string|必需。搜索文本。|
+|searchText|string|必须。搜索文本。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|可选。用于搜索的选项。|
 
 #### <a name="returns"></a>返回
 [SearchResultCollection](searchresultcollection.md)
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 选择并在 Word UI 中导航到段落。
 
 #### <a name="syntax"></a>语法

@@ -1,5 +1,5 @@
 
-# <a name="outlook-addins"></a>Outlook 外接程序
+# <a name="outlook-add-ins"></a>Outlook 外接程序
 
 Outlook 外接程序是由第三方使用基于 Web 技术的新平台构建到 Outlook 中的集成。Outlook 外接程序具有三个关键方面：
 
@@ -14,6 +14,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 
 支持邮件外接程序的 Outlook 项目包括电子邮件、会议请求、响应和取消及约会。每个邮件外接程序均定义其可用的上下文，包括项目类型以及用户是在阅读还是撰写项目。
 
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
 
 ## <a name="extension-points"></a>扩展点
 
@@ -34,7 +35,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
     ![在卡片中显示上下文相关应用程序](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-addins"></a>外接程序可用的邮箱项目
+## <a name="mailbox-items-available-to-add-ins"></a>外接程序可用的邮箱项目
 
 
 在撰写或阅读时，Outlook 外接程序对邮件或约会可用，但对其他项目类型不可用。如果撰写或阅读窗体中的当前邮件项目为以下项之一，则 Outlook 不会激活邮件外接程序：
@@ -59,7 +60,7 @@ Outlook 外接程序与 COM 或 VSTO 外接程序（特定于在 Windows 上运�
 在 Outlook 2013 和更高版本、Outlook 2016 for Mac、Exchange 2013 内部环境中的 Outlook Web App、Office 365 和 Outlook.com 中的 Outlook Web App 中均支持 Outlook 外接程序。不是所有最新功能都会同时在所有客户端中受到支持。请参阅各个主题和 API 参考，以查看它们在哪些主机中不受支持。
 
 
-## <a name="get-started-building-outlook-addins"></a>开始构建 Outlook 外接程序
+## <a name="get-started-building-outlook-add-ins"></a>开始构建 Outlook 外接程序
 
 
 若要开始构建 Outlook 外接程序，请参阅 [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted)。

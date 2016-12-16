@@ -12,9 +12,11 @@
     
 **Office 外接程序在多个 Office 版本中运行**，包括 Windows 桌面版 Office、Office Online、Office for Mac 和 Office for iPad。
 
->**注意：**有关 Office 外接程序当前支持的高级别视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页面。 
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
 
-## <a name="what-can-an-office-add-in-do?"></a>Office 外接程序可以执行什么操作？
+有关 Office 外接程序当前受支持情况的简要视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页。 
+
+## <a name="what-can-an-office-add-in-do"></a>Office 外接程序可以执行什么操作？
 
 网页在浏览器中能做的事，Office 外接程序差不多都能做，如下所示：
 
@@ -42,7 +44,7 @@
 - 新建对象的 Excel 和 PowerPoint 外接程序
 - 扩展功能的 Outlook 外接程序
 
-### <a name="word,-excel,-and-powerpoint-add-ins-that-extend-functionality"></a>扩展功能的 Word、Excel 和 PowerPoint 外接程序 
+### <a name="word-excel-and-powerpoint-add-ins-that-extend-functionality"></a>扩展功能的 Word、Excel 和 PowerPoint 外接程序 
 您可以通过使用**任务窗格外接程序清单**注册外接程序，来向 Word、Excel 或 PowerPoint [添加新功能](../design/add-in-commands.md)。此清单支持**两种集成模式**：
 
 - 外接程序命令
@@ -110,7 +112,9 @@ Office 外接程序的基本组件是 XML 清单文件和您自己的 Web 应用
     
 - 外接程序的显示名称、说明、ID、版本和默认区域设置。
     
-- 如何将外接程序与 Office 集成：     - 对于扩展 Word/Excel/PowerPoint/Outlook 的外接程序：外接程序用来公开功能的本机扩展点，如功能区上的按钮。     - 对于新建嵌入对象的外接程序：对象加载的默认页面的 URL。
+- 如何将外接程序与 Office 集成：     
+      - 对于扩展 Word/Excel/PowerPoint/Outlook 的外接程序：外接程序用来公开功能的本机扩展点，如功能区上的按钮。     
+      - 对于新建嵌入对象的外接程序：对象加载的默认页面的 URL。
        
     
 - 加载项的权限级别和数据访问要求。

@@ -1,53 +1,53 @@
-﻿# Application 对象（适用于 OneNote 的 JavaScript API）
+﻿# <a name="application-object-javascript-api-for-onenote"></a>Application 对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_
 
 
-表示包含所有全局可寻址的 OneNote 对象（例如笔记本、活动笔记本和活动分区）的顶级对象。
+表示包含所有全局可寻址的 OneNote 对象（如笔记本、活动笔记本和活动分区）的顶级对象。
 
-## 属性
+## <a name="properties"></a>属性
 
 无
 
-## Relationships
+## <a name="relationships"></a>Relationships
 | 关系 | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|笔记本|[NotebookCollection](notebookcollection.md)|获取 OneNote 应用程序实例中打开的笔记本集合。在 OneNote Online 的应用程序实例中，笔记本一次仅能打开一个。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
+|notebooks|[NotebookCollection](notebookcollection.md)|获取 OneNote 应用程序实例中打开的笔记本集合。在 OneNote Online 的应用程序实例中，笔记本一次仅能打开一个。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
 
-## 方法
+## <a name="methods"></a>方法
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
-|[getActiveNotebook()](#getactivenotebook)|[笔记本](notebook.md)|如果活动笔记本存在，则对其获取。 如果没有处于活动状态的部分，则引发 ItemNotFound。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebook)|
-|[getActiveNotebookOrNull()](#getactivenotebookornull)|[笔记本](notebook.md)|如果活动笔记本存在，则对其获取。 如果没有处于活动状态的部分，则返回 null。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebookOrNull)|
-|[getActiveOutline()](#getactiveoutline)|[边框](outline.md)|如果活动边框存在，则对其获取，如果没有处于活动状态的边框，则引发 ItemNotFound。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutline)|
-|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[边框](outline.md)|如果活动边框存在，则对其获取，否则，返回 null。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutlineOrNull)|
-|[getActivePage()](#getactivepage)|[页面](page.md)|如果活动页面存在，则对其获取。 如果没有处于活动状态的页面，则引发 ItemNotFound。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePage)|
-|[getActivePageOrNull()](#getactivepageornull)|[页面](page.md)|如果活动页面存在，则对其获取。 如果没有处于活动状态的页面，则返回 null。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePageOrNull)|
-|[getActiveSection()](#getactivesection)|[分区](section.md)|如果活动分区存在，则对其获取。 如果没有处于活动状态的分区，则引发 ItemNotFound。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSection)|
-|[getActiveSectionOrNull()](#getactivesectionornull)|[分区](section.md)|如果活动分区存在，则对其获取。 如果没有处于活动状态的分区，则返回 null。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSectionOrNull)|
-|[load(param: object)](#loadparam-object)|void|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-load)|
-|[navigateToPage(page:Page)](#navigatetopagepage-page)|void|打开应用程序实例中指定的页面。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
-|[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[页面](page.md)|获取特定页面，并在应用程序实例中将其打开。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPageWithClientUrl)|
+|[getActiveNotebook()](#getactivenotebook)|[Notebook](notebook.md)|获取活动笔记本（若有）。如果没有活动笔记本，则引发 ItemNotFound。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebook)|
+|[getActiveNotebookOrNull()](#getactivenotebookornull)|[Notebook](notebook.md)|获取活动笔记本（若有）。如果没有活动笔记本，则返回 NULL。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebookOrNull)|
+|[getActiveOutline()](#getactiveoutline)|[Outline](outline.md)|获取活动边框（若有）。如果没有活动边框，则引发 ItemNotFound。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutline)|
+|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[Outline](outline.md)|获取活动边框（若有）。如果没有活动边框，则返回 NULL。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutlineOrNull)|
+|[getActivePage()](#getactivepage)|[Page](page.md)|获取活动页（若有）。如果没有活动页，则引发 ItemNotFound。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePage)|
+|[getActivePageOrNull()](#getactivepageornull)|[Page](page.md)|获取活动页（若有）。如果没有活动页，则返回 NULL。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePageOrNull)|
+|[getActiveSection()](#getactivesection)|[Section](section.md)|获取活动分区（若有）。如果没有活动分区，则引发 ItemNotFound。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSection)|
+|[getActiveSectionOrNull()](#getactivesectionornull)|[Section](section.md)|获取活动分区（若有）。如果没有活动分区，则返回 NULL。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSectionOrNull)|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-load)|
+|[navigateToPage(page:Page)](#navigatetopagepage-page)|void|在应用程序实例中打开指定页。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
+|[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|获取指定页，然后在应用程序实例中打开它。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPageWithClientUrl)|
 
-## 方法详细信息
+## <a name="method-details"></a>方法详细信息
 
 
-### getActiveNotebook()
-如果活动笔记本存在，则对其获取。 如果没有处于活动状态的部分，则引发 ItemNotFound。
+### <a name="getactivenotebook"></a>getActiveNotebook()
+如果活动笔记本存在，则对其获取。如果没有处于活动状态的部分，则引发 ItemNotFound。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveNotebook();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[笔记本](notebook.md)
+#### <a name="returns"></a>返回
+[Notebook](notebook.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
         
@@ -77,21 +77,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveNotebookOrNull()
-如果活动笔记本存在，则对其获取。 如果没有处于活动状态的部分，则返回 null。
+### <a name="getactivenotebookornull"></a>getActiveNotebookOrNull()
+如果活动笔记本存在，则对其获取。如果没有处于活动状态的部分，则返回 null。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveNotebookOrNull();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[笔记本](notebook.md)
+#### <a name="returns"></a>返回
+[Notebook](notebook.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -122,21 +122,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutline()
+### <a name="getactiveoutline"></a>getActiveOutline()
 如果活动边框存在，则对其获取，如果没有处于活动状态的边框，则引发 ItemNotFound。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveOutline();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[分级显示](outline.md)
+#### <a name="returns"></a>返回
+[Outline](outline.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -163,21 +163,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutlineOrNull()
+### <a name="getactiveoutlineornull"></a>getActiveOutlineOrNull()
 如果活动边框存在，则对其获取，否则，返回 null。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveOutlineOrNull();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[分级显示](outline.md)
+#### <a name="returns"></a>返回
+[Outline](outline.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -205,21 +205,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePage()
-如果活动页面存在，则对其获取。 如果没有处于活动状态的页面，则引发 ItemNotFound。
+### <a name="getactivepage"></a>getActivePage()
+如果活动页面存在，则对其获取。如果没有处于活动状态的页面，则引发 ItemNotFound。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActivePage();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 [Page](page.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
         
@@ -249,21 +249,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePageOrNull()
-如果活动页面存在，则对其获取。 如果没有处于活动状态的页面，则返回 null。
+### <a name="getactivepageornull"></a>getActivePageOrNull()
+如果活动页面存在，则对其获取。如果没有处于活动状态的页面，则返回 null。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActivePageOrNull();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
+#### <a name="returns"></a>返回
 [Page](page.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -294,21 +294,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSection()
-如果活动分区存在，则对其获取。 如果没有处于活动状态的分区，则引发 ItemNotFound。
+### <a name="getactivesection"></a>getActiveSection()
+如果活动分区存在，则对其获取。如果没有处于活动状态的分区，则引发 ItemNotFound。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveSection();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[节](section.md)
+#### <a name="returns"></a>返回
+[Section](section.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
         
@@ -338,21 +338,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSectionOrNull()
-如果活动分区存在，则对其获取。 如果没有处于活动状态的分区，则返回 null。
+### <a name="getactivesectionornull"></a>getActiveSectionOrNull()
+如果活动分区存在，则对其获取。如果没有处于活动状态的分区，则返回 null。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.getActiveSectionOrNull();
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 无
 
-#### 返回
-[节](section.md)
+#### <a name="returns"></a>返回
+[Section](section.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 
@@ -382,39 +382,39 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 object.load(param);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-### navigateToPage(page:Page)
+### <a name="navigatetopagepage-page"></a>navigateToPage(page:Page)
 打开应用程序实例中指定的页面。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.navigateToPage(page);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |page|Page|要打开的页面。|
 
-#### 返回
+#### <a name="returns"></a>返回
 void
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js        
 OneNote.run(function (context) {
         
@@ -448,23 +448,23 @@ OneNote.run(function (context) {
 ```
 
 
-### navigateToPageWithClientUrl(url: string)
+### <a name="navigatetopagewithclienturlurl-string"></a>navigateToPageWithClientUrl(url: string)
 获取特定页面，并在应用程序实例中将其打开。
 
-#### 语法
+#### <a name="syntax"></a>语法
 ```js
 applicationObject.navigateToPageWithClientUrl(url);
 ```
 
-#### 参数
+#### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
 |url|string|要打开页面的客户端 url。|
 
-#### 返回
+#### <a name="returns"></a>返回
 [Page](page.md)
 
-#### 示例
+#### <a name="examples"></a>示例
 ```js
 OneNote.run(function (context) {
 

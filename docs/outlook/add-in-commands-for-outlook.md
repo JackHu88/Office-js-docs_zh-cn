@@ -1,15 +1,15 @@
 
-# <a name="addin-commands-for-outlook"></a>用于 Outlook 的外接程序命令
+# <a name="add-in-commands-for-outlook"></a>用于 Outlook 的外接程序命令
 
 
 Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单从功能区启动特定外接程序操作。这使用户可以使用简单直观且不引人注目的方式访问外接程序。因为它们通过无缝的方式提供增强功能，因此您可以使用外接程序命令创建更具吸引力的解决方案。
 
-> **注意**：外接程序命令仅在适用于 Windows 的 Outlook 2016 和 Outlook 2013 中可用。支持外接程序命令需要使用 [2016 年 3 月 8 日安全更新](https://support.microsoft.com/en-us/kb/3114829)。
+> **注意**：外接程序命令仅适用于 Outlook 2016 for Windows、Outlook 2013 for Windows、Outlook 网页版（Office 365 和 Outlook.com）。必须安装 [2016 年 3 月 8 日发布的安全更新程序](https://support.microsoft.com/en-us/kb/3114829)，才支持在 Outlook 2013 中使用外接程序命令。
 
-外接程序命令仅适用于不使用 [temHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](manifests/activation-rules.md)限制其激活的项目类型的上下文外接程序。但是，上下文外接程序可以显示不同的命令，具体取决于当前选定的项目是邮件还是约会，并且可以选择是在阅读还是撰写方案中出现。如可能，使用外接程序命令将是[最佳做法](../../docs/overview/add-in-development-best-practices.md)。
+外接程序命令仅适用于不使用 [ItemHasAttachment、ItemHasKnownEntity 或 ItemHasRegularExpressionMatch 规则](manifests/activation-rules.md)来限制激活项类型的上下文外接程序。不过，上下文外接程序可以显示不同的命令（具体取决于当前选定的项是邮件还是约会），并且可以选择是在阅读还是在撰写应用场景中显示命令。如可能，使用外接程序命令将是[最佳做法](../../docs/overview/add-in-development-best-practices.md)。
 
 
-## <a name="creating-the-addin-command"></a>创建外接程序命令
+## <a name="creating-the-add-in-command"></a>创建外接程序命令
 
 外接程序命令在  **VersionOverrides** 元素中的外接程序清单中声明。该元素是对清单架构 v1.1 的额外添加，用以确保向后兼容性。在不支持 **VersionOverrides** 的环境中，现有的外接程序会照常像没有外接程序命令一样正常运行。
 
@@ -20,7 +20,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 开发人员应定义适用于所有所需大小的图标，以便外接程序命令顺利地调整功能区。图标大小有 80 x 80 像素、32 x 32 像素和 16 x 16 像素。
 
 
-## <a name="how-do-addin-commands-appear"></a>外接程序命令的显示方式
+## <a name="how-do-add-in-commands-appear"></a>外接程序命令的显示方式
 
 外接程序命令在功能区上以按钮形式显示。当用户安装外接程序时，其命令在 UI 中以一组使用外接程序名称标记的按钮显示。这既可以在功能区的默认选项卡，也可以在自定义选项卡上。对于邮件，默认是“**主页**”或“**邮件**”选项卡。对于日历，默认是“**会议**”、“**会议事件**”、“**会议系列**”或“**约会**”选项卡。对于模块扩展，默认是一个自定义选项卡。在默认选项卡，每个外接程序可以包含一个命令数目最多为 6 个的功能区组。在自定义选项卡上，外接程序最多可有 10 组，每组有 6 个命令。外接程序仅限于一个自定义选项卡。
 
@@ -32,7 +32,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 向某个外接程序添加了外接程序命令后，外接程序名称将从应用栏删除。仅在功能区上保留外接程序命令按钮。
 
 
-## <a name="what-ux-shapes-exist-for-addin-commands"></a>外接程序命令存在哪些 UX 形状？
+## <a name="what-ux-shapes-exist-for-add-in-commands"></a>外接程序命令存在哪些 UX 形状？
 
 外接程序命令的 UX 形状由主机应用程序中的一个功能区选项卡组成，其中包含可执行各种功能的按钮。当前支持三种 UI 形状：
 
@@ -68,7 +68,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 如果用户选择另一个可打开任务窗格的外接程序命令，任务窗格将被替换为最近使用过的命令。当任务窗格处于打开状态时，如果用户选择执行函数的外接程序命令按钮或选择下拉菜单，会完成操作且任务窗格仍将保持为打开状态。
 
 
-### <a name="dropdown-menu"></a>下拉菜单
+### <a name="drop-down-menu"></a>下拉菜单
 
 下拉菜单外接程序命令定义按钮静态列表。菜单中的按钮可为执行函数或打开任务窗格的按钮的组合。不支持子菜单。
 
@@ -76,7 +76,7 @@ Outlook 外接程序命令提供多种方法，通过添加按钮或下拉菜单
 ![用于下拉 Outlook 功能区上的菜单的按钮。](../../images/3eff90d6-7822-4fdb-9153-68f754c0c746.png)
 
 
-## <a name="where-do-addin-commands-appear-in-the-ui"></a>外接程序命令显示在 UI 中的什么位置？
+## <a name="where-do-add-in-commands-appear-in-the-ui"></a>外接程序命令显示在 UI 中的什么位置？
 
 以下四种方案支持外接程序命令：
 

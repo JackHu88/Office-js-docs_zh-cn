@@ -1,11 +1,12 @@
 
-# <a name="requirements-for-running-office-addins"></a>运行 Office 加载项的要求
+# <a name="requirements-for-running-office-add-ins"></a>运行 Office 加载项的要求
 
 
 本文介绍了运行 Office 外接程序的软件和设备要求。
 
->**注意：**有关 Office 外接程序当前支持的高级别视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页面。 
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
 
+有关 Office 外接程序当前受支持情况的简要视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页。
 
 ## <a name="server-requirements"></a>服务器要求
 
@@ -52,12 +53,12 @@
 - Excel for Mac 版本 15.19 (160206) 
 - PowerPoint for Mac 版本 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：支持 Office Online Web 客户端和 SharePoint 的浏览器
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>客户端要求：针对 Office Online Web 客户端和 SharePoint 的浏览器支持
 
 支持 ECMAScript 5.1、HTML5 和 CSS3 的任何浏览器，如 Internet Explorer 11 或更高版本、或 Microsoft Edge、Chrome、Firefox 或 Safari (Mac OS) 的最新版本。
 
 
-## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>客户端要求：非 Windows 智能手机和平板电脑
 
 特别是对于在智能手机和非 Windows 平板电脑设备上的浏览器中运行的 适用于设备的 OWA 和 Outlook Web App，测试和运行 Outlook 外接程序需要下列软件。
 

@@ -1,6 +1,5 @@
 
-# <a name="deploy-and-publish-your-office-addin"></a>部署和发布 Office 外接程序
-
+# <a name="deploy-and-publish-your-office-add-in"></a>部署和发布 Office 外接程序
 
 可以使用几种方法之一来部署 Office 外接程序，以用于对用户进行测试或分发： 
 
@@ -9,9 +8,10 @@
 - [Office 应用商店] - 用于向用户公开分发你的外接程序。
 - [SharePoint 目录](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) - 用作测试外接程序或在本地环境中向组织中的用户分发外接程序的开发过程的一部分。
 
-可用的选项取决于所面向的 Office 主机以及所创建的外接程序的类型。
+具体什么选项可用取决于你定位的 Office 主机以及所创建的外接程序的类型。
+> **注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
 
-### <a name="deployment-options-for-word-excel-and-powerpoint-addins"></a>Word、Excel 和 PowerPoint 外接程序的部署选项
+## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Word、Excel 和 PowerPoint 外接程序的部署选项
 
 | 扩展点            | 旁加载 | Office 365 管理中心预览 |Office 应用商店  | SharePoint 目录  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@
 
 > **注意：**SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 Office 外接程序，必须将其提交到 [Office 应用商店]。    
 
-### <a name="deployment-options-for-outlook-addins"></a>Outlook 外接程序的部署选项
+## <a name="deployment-options-for-outlook-add-ins"></a>Outlook 外接程序的部署选项
 
 | 扩展点     | 旁加载 | Exchange 服务器 | Office 应用商店 |
 |:---------|:-----------:|:---------------:|:------------:|

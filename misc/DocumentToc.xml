@@ -3,9 +3,9 @@
   <Item text="概述" url="overview">
     <Item text="平台概述" url="overview/office-add-ins" SEODescription="了解 Office 外接程序，允许将您的解决方案成为跨越 Windows、Office Online、Mac 和 IPad 的 Office 本地的一部分。" />
 	<Item text="运行外接程序的要求" url="overview/requirements-for-running-office-add-ins" SEODescription="了解运行 Office 外接程序的软件和设备要求。" />	
-	<Item text="外接程序开发的最佳做法" url="overview/add-in-development-best-practices" SEODescription="应用构建可优化用户体验的 Office 外接程序的最佳实践。" />
+	<Item text="外接程序开发的最佳做法" url="overview/add-in-development-best-practices" SEODescription="遵循生成可优化用户体验的 Office 外接程序的最佳做法。" />
 	</Item>
-  <Item text="开始使用" url="get-started">
+  <Item text="开始" url="get-started">
     <Item text="使用 Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="使用 Visual Studio 开始构建一个 Office 外接程序" />
 	  <Item text="使用任何编辑器" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="在 Mac 或 Windows PC 上使用任意编辑器开始构建 Office 外接程序。" />
     <Item text="使用 Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="通过从您的浏览器使用 Napa Office 365 开发工具，创建适用于 Excel、Outlook、PowerPoint、Project 或 Word 的基本内容、任务窗格或 Outlook 外接程序，从而开始使用 Office 外接程序。" />
@@ -119,8 +119,7 @@
 		<Item text="使用令牌验证库" url="outlook/use-the-token-validation-library" SEODescription="了解如何使用 EWS 托管 API 验证库验证 Exchange 标识令牌。" Scope="outlook" />
 		<Item text="验证标识令牌" url="outlook/validate-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
 		<Item text="使用 PHP 验证标识令牌" url="outlook/use-php-to-validate-an-identity-token" SEODescription="了解如何使用 PHP 验证将 Outlook 外接程序客户的电子邮件帐户与您的服务所提供的信息相关联的 Exchange 2013 标识令牌。" Scope="outlook" />
-		<Item text="使用标识令牌验证用户" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="请参阅代码示例，该示例说明身份验证对象如何匹配由包含一组服务凭据的标识令牌所表示的唯一标识。" Scope="outlook" />    
-    	 </Item>
+		<Item text="使用标识令牌验证用户" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="请参阅代码示例，该示例说明身份验证对象如何匹配由包含一组服务凭据的标识令牌所表示的唯一标识。" Scope="outlook" /></Item>
 	<Item text="测试和提示" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
 		<Item text="在 Outlook for Mac 中比较 Outlook 外接程序支持" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="转到 dev.office.com 的错误链接。 我在表中固定了项目符号列表。" Scope="outlook" />
 		<Item text="处理 Outlook 外接程序中的日期值的提示" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="使用 Date 对象处理 Outlook 外接程序中的日期值。" />

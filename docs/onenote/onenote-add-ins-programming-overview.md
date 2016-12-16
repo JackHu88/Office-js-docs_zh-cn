@@ -2,6 +2,8 @@
 
 OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你可以创建任务窗格外接程序、内容外接程序和与 OneNote 对象交互并连接至 Web 服务或其他基于 Web 的资源的外接程序命令。
 
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
+
 外接程序包含两个基本组件：
 
 - **Web 应用程序**包含网页和任何所需的 JavaScript、CSS 或其他文件。这些文件托管在 Web 服务器或 Web 托管服务上，例如 Microsoft Azure。在 OneNote Online 中，Web 应用程序在浏览器控件或 iframe 中显示。
@@ -19,7 +21,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
 - 适用于 OneNote 特定操作的**丰富 API**，通过 **Application** 对象访问。
 - 跨 Office 应用程序分享的**通用 API**，通过**Document** 对象访问。
 
-#### <a name="accessing-the-rich-api-through-the-*application*-object"></a>通过 *Application* 对象访问丰富 API。
+#### <a name="accessing-the-rich-api-through-the-application-object"></a>通过 *Application* 对象访问丰富 API。
 
 使用 **Application** 对象以访问 OneNote 对象，例如 **Notebook**、**Section** 和 **Page**。通过丰富 API，您可在代理对象上运行批处理操作。基本流程类似如下： 
 
@@ -69,7 +71,7 @@ OneNote 引入了适用于 OneNote Online 外接程序的 JavaScript API。你�
 
 您可以在 [API 参考](../../reference/onenote/onenote-add-ins-javascript-reference.md) 中找到受支持的 OneNote 对象和操作。
 
-### <a name="accessing-the-common-api-through-the-*document*-object"></a>通过 *Document* 对象访问通用 API
+### <a name="accessing-the-common-api-through-the-document-object"></a>通过 *Document* 对象访问通用 API
 
 使用 **Document** 对象以访问通用 API，例如 [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) 和 [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync) 方法。 
 
@@ -93,14 +95,10 @@ OneNote 外接程序仅支持以下通用 API：
 
 | API | 注释 |
 |:------|:------|
-| 
-  [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
-| 
-  [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
-| 
-  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | 设置仅受内容外接程序支持 | 
-| 
-  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | 仅限 **Office.CoercionType.Text** 和 **Office.CoercionType.Matrix** |
+| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | 仅限 **Office.CoercionType.Text**、**Office.CoercionType.Image** 和 **Office.CoercionType.Html** | 
+| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | 设置仅受内容外接程序支持 | 
+| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | 设置仅受内容外接程序支持 | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 一般情况下，您仅能使用通用 API 执行在丰富 API 中不支持的操作。若要了解有关使用通用 API 的详细信息，请参阅 Office 外接程序[文档](https://dev.office.com/docs/add-ins/overview/office-add-ins)和[引用](https://dev.office.com/reference/add-ins/javascript-api-for-office)。

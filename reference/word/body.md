@@ -1,4 +1,4 @@
-# <a name="body-object-(javascript-api-for-word)"></a>Body 对象（适用于 Word 的 JavaScript API）
+# <a name="body-object-javascript-api-for-word"></a>Body 对象（适用于 Word 的 JavaScript API）
 
 表示文档或节的正文。
 
@@ -10,14 +10,14 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 |style|string|获取或设置用于正文的样式。这是预安装样式或自定义样式的名称。|
 |text|string|获取正文的文本。使用 insertText 方法插入文本。只读。|
 
-_请参阅属性访问 [示例。](#property-access-examples)_
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 | 关系 | 类型   |说明|
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|获取正文中的富文本内容控件对象集合。只读。|
 |font|[Font](font.md)|获取正文的文本格式。使用此对象获取和设置字体名称、大小、颜色和其他属性。只读。|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|获取正文中的嵌入式图片对象集合。集合不包括浮动图像。只读。|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|获取正文中的 inlinePicture 对象集合。集合不包括浮动图像。只读。|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|获取正文中的段落对象集合。只读。|
 |parentContentControl|[ContentControl](contentcontrol.md)|获取包含正文的内容控件。如果不存在父内容控件，返回 null。只读。|
 
@@ -30,19 +30,19 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 |[getOoxml()](#getooxml)|string|获取 body 对象的 OOXML (Office Open XML) 表示形式。|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|在指定位置插入分隔符。分隔符只能插入到主文档正文中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Start”或“End”。|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|使用富文本内容控件封装 body 对象。|
-|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|将文档插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
-|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|在指定位置插入 HTML。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertFileFromBase64(base64File: string, insertLocation:InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[区域](range.md)|将文档插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertHtml(html: string, insertLocation:InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[区域](range.md)|在指定位置插入 HTML。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|将图片插入到正文中的指定位置。insertLocation 值可以为“Start”或“End”。 |
-|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|在指定位置插入 OOXML。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertOoxml(ooxml: string, insertLocation:InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[区域](range.md)|在指定位置插入 OOXML。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[insertParagraph(paragraphText: string, insertLocation:InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|在指定位置插入段落。insertLocation 值可以为“Start”或“End”。|
-|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|将文本插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
+|[insertText(text: string, insertLocation:InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[区域](range.md)|将文本插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。|
 |[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 |[search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|使用指定搜索选项搜索 body 对象的范围。搜索结果是 range 对象的集合。|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|选择正文并在 Word UI 中进行浏览。SelectionMode 值可以为“Select”、“Start”或“End”。|
 
 ## <a name="method-details"></a>方法详细信息
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 清除 body 对象的内容。用户可以对已清除的内容执行撤消操作。
 
 #### <a name="syntax"></a>语法
@@ -83,7 +83,7 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) 外接程序示例说明如何使用 **clear** 方法清除文档内容。
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 获取 body 对象的 HTML 表示形式。
 
 #### <a name="syntax"></a>语法
@@ -122,7 +122,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 获取 body 对象的 OOXML (Office Open XML) 表示形式。
 
 #### <a name="syntax"></a>语法
@@ -161,7 +161,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 在指定位置插入分隔符。分隔符只能插入到主文档正文中，除非它是可以插入到任何 body 对象的换行符。insertLocation 值可以为“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -205,7 +205,7 @@ Word.run(function (ctx) {
     }
 });
 ```
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 使用富文本内容控件封装 body 对象。
 
 #### <a name="syntax"></a>语法
@@ -243,7 +243,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation:InsertLocation)
 将文档插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -288,7 +288,7 @@ Word.run(function (context) {
 
 [Silly stories](https://aka.ms/sillystorywordaddin) 外接程序示例说明如何使用 **insertFileFromBase64** 方法插入服务中的 docx 文件。
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation:InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation:InsertLocation)
 在指定位置插入 HTML。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -330,7 +330,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation:InsertLocation)
 将图片插入到正文中的指定位置。insertLocation 值可以为“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -345,7 +345,7 @@ bodyObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>返回
 [InlinePicture](inlinepicture.md)
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation:InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 在指定位置插入 OOXML。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -391,9 +391,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-阅读 [使用 Office Open XML 创建更好的 Word 外接程序](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) 以获取使用 OOXML 的指南。[Word-Add-in-DocumentAssembly][body.insertOoxml] 示例显示如何使用此 API 来汇编文档。
+有关使用 OOXML 的指南，请参阅[使用 Office Open XML 创建更优质的 Word 外接程序](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx)。[Word-Add-in-DocumentAssembly][body.insertOoxml] 示例展示了如何使用此 API 汇编文档。
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation:InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation:InsertLocation)
 在指定位置插入段落。insertLocation 值可以为“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -436,9 +436,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][body.insertParagraph] 示例显示如何使用 insertParagraph 方法来汇编文档。
+[Word-Add-in-DocumentAssembly][body.insertParagraph] 示例展示了如何使用 insertParagraph 方法汇编文档。
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation:InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation:InsertLocation)
 将文本插入到正文中的指定位置。insertLocation 值可以为“Replace”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -479,7 +479,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -490,7 +490,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -526,7 +526,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions:ParamTypeStrings.SearchOptions)
 使用指定搜索选项搜索 body 对象的范围。搜索结果是 range 对象的集合。
 
 #### <a name="syntax"></a>语法
@@ -537,7 +537,7 @@ bodyObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|searchText|string|必需。搜索文本。|
+|searchText|string|必须。搜索文本。|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|可选。用于搜索的选项。|
 
 #### <a name="returns"></a>返回
@@ -586,9 +586,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][body.search] 示例提供了如何搜索文档的另一个示例。
+[Word-Add-in-DocumentAssembly][body.search] 示例还展示了如何搜索文档。
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 选择正文并在 Word UI 中进行浏览。SelectionMode 值可以为“Select”、“Start”或“End”。
 
 #### <a name="syntax"></a>语法
@@ -656,7 +656,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="get-the-style-and-the-font-size,-font-name,-and-font-color-properties-on-the-body-object."></a>获取 body 对象的样式和字体大小、字体名称和字体颜色属性。
+### <a name="get-the-style-and-the-font-size-font-name-and-font-color-properties-on-the-body-object"></a>获取 body 对象的样式和字体大小、字体名称和字体颜色属性。
 
 ```js
 // Run a batch operation against the Word object model.

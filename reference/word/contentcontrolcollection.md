@@ -1,4 +1,4 @@
-# <a name="contentcontrolcollection-object-(javascript-api-for-word)"></a>ContentControlCollection 对象（适用于 Word 的 JavaScript API）
+# <a name="contentcontrolcollection-object-javascript-api-for-word"></a>ContentControlCollection 对象（适用于 Word 的 JavaScript API）
 
 包含 ContentControl 对象的集合。内容控件是文档中绑定的、有可能添加标签的区域，它们充当特定类型的内容的容器。单个内容控件可能包含诸如图片、表或格式化文本段落等内容。当前仅支持富文本内容控件。
 
@@ -24,7 +24,7 @@ _适用于：Word 2016、Word for iPad、Word for Mac、Word Online_
 
 ## <a name="method-details"></a>方法详细信息
 
-### <a name="getbyid(id:-number)"></a>getById(id: number)
+### <a name="getbyidid-number"></a>getById(id: number)
 按其标识符获取内容控件。
 
 #### <a name="syntax"></a>语法
@@ -65,7 +65,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getbytag(tag:-string)"></a>getByTag(tag: string)
+### <a name="getbytagtag-string"></a>getByTag(tag: string)
 获取具有指定标记的内容控件。
 
 #### <a name="syntax"></a>语法
@@ -112,10 +112,10 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][contentControls.getByTag] 示例含有使用 getByTag 方法的另一个示例。
+[Word-Add-in-DocumentAssembly][contentControls.getByTag] 示例还展示了如何使用 getByTag 方法。
 
 
-### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
+### <a name="getbytitletitle-string"></a>getByTitle(title: string)
 获取具有指定标题的内容控件。
 
 #### <a name="syntax"></a>语法
@@ -162,9 +162,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>其他信息
-[Word-Add-in-DocumentAssembly][contentControls.getByTitle] 示例含有使用 getByTag 方法的另一个示例。
+[Word-Add-in-DocumentAssembly][contentControls.getByTitle] 示例还展示了如何使用 getByTitle 方法。
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -175,7 +175,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
@@ -252,6 +252,6 @@ Word.run(function (context) {
 在运行时检查过程中使用[要求设置](../office-add-in-requirement-sets.md)可以确保您的应用程序受到 Word 主机版本的支持。有关 Office 主机应用程序和服务器要求的详细信息，请参阅[运行 Office 外接程序要求](../../docs/overview/requirements-for-running-office-add-ins.md)。
 
 
-[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "通过标记获取"
-[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "通过标题获取"
+[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "按标记获取"
+[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "按标题获取"
 

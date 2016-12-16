@@ -4,21 +4,20 @@
 
 Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。 
 
-|  要求集  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |
-|:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | 版本 1608（内部版本 7369.2055）或更高版本| 1.27 或更高版本 |  15.27 或更高版本| 2016 年 9 月 | 
-| ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本 | 1.21 或更高版本 | 15.22 或更高版本| 2016 年 1 月 |
-| ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本 | 1.19 或更高版本 | 15.20 或更高版本| 2016 年 1 月 |
+|  要求集  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
+|:-----|-----|:-----|:-----|:-----|:-----|
+| ExcelApi 1.3  | 版本 1608（内部版本 7369.2055）或更高版本| 1.27 或更高版本 |  15.27 或更高版本| 2016 年 9 月 | 版本 1608（内部版本 7601.6800）或更高版本|
+| ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本 | 1.21 或更高版本 | 15.22 或更高版本| 2016 年 1 月 ||
+| ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本 | 1.19 或更高版本 | 15.20 或更高版本| 2016 年 1 月 ||
 
-> &#42;**注意**：通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1 要求集。
+> **注意**：通过 MSI 安装的 Office 2016 的内部版本号为 16.0.4266.1001。此版本只包含 ExcelApi 1.1 要求集。
 
-若要详细了解版本号和内部版本号，请参阅：
+若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- 
-  [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用的是哪一版 Office？](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- 
-  [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Office Online Server 概述](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
@@ -28,53 +27,53 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 
 |对象| 最近更新| 说明|要求集|
 |:----|:----|:----|:----|
-|[binding](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md)|_方法_ > [delete()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/binding.md#delete)|删除 binding 对象。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_方法_ > [add(range:区域或字符串, bindingType: 字符串, id: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|将新的 binding 对象添加到特定区域。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_方法_ > [addFromNamedItem(name: 字符串, bindingType: 字符串, id: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|根据工作簿中的命名项添加新的 binding 对象。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_方法_ > [addFromSelection(bindingType: 字符串, id: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|根据当前选择的内容添加新的 binding 对象。|1.3|
-|[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_方法_ > [getItemOrNull(id: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#getitemornullid-string)|按 ID 获取 binding 对象。如果 binding 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[chartCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md)|_方法_ > [getItemOrNull(name: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md#getitemornullname-string)|使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。|1.3|
-|[namedItemCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md)|_方法_ > [getItemOrNull(name: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md#getitemornullname-string)|按 nameditem 对象的名称获取此对象。如果 nameditem 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_属性_ > name|PivotTable 对象的名称。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_关系_ > worksheet|包含当前 PivotTable 对象的工作表。只读。|1.3|
-|[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_方法_ > [refresh()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md#refresh)|刷新 PivotTable 对象。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_属性_ > items|一组 PivotTable 对象。只读。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_方法_ > [getItem(name: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md#getitemname-string)|按名称获取 PivotTable 对象。|1.3|
-|[pivotTableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md)|_方法_ > [getItemOrNull(name: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottablecollection.md#getitemornullname-string)|按名称获取 PivotTable 对象。如果 PivotTable 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[range](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md)|_方法_ > [getIntersectionOrNull(anotherRange:区域或字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md#getintersectionornullanotherrange-range-or-string)|获取表示指定区域的矩形交集的 range 对象。如果找不到任何交集，则此方法返回空对象。|1.3|
-|[range](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md)|_方法_ > [getVisibleView()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/range.md#getvisibleview)|表示当前 range 对象的可见行。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > cellAddresses|表示 RangeView 的单元格地址。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > columnCount|返回可见列数。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > formulas|表示采用 A1 表示法的公式。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > formulasLocal|使用用户语言和数字格式区域设置表示采用 A1 表示法的公式。例如，用英语表示的公式 "=SUM(A1, introduced in 1.5)" 在德语中将变为 "=SUMME(A1; 1,5)"。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > formulasR1C1|表示采用 R1C1 表示法的公式。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > index|返回表示 RangeView 的索引的值。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > numberFormat|表示 Excel 中指定单元格的数字格式代码。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > rowCount|返回可见行数。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > text|指定区域的文本值。文本值与单元格宽度无关。在 Excel UI 中替代 # 符号不会影响 API 返回的文本值。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > valueTypes|表示每个单元格的数据类型。只读。可能的值是：Unknown、Empty、String、Integer、Double、Boolean、Error。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_属性_ > values|表示指定的 RangeView 的原始值。返回的数据可能是字符串、数字，也可能是布尔值。包含错误的单元格将返回错误字符串。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_关系_ > rows|表示一组与 range 相关联的 RangeView。只读。|1.3|
-|[rangeView](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md)|_方法_ > [getRange()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeview.md#getrange)|获取与当前 RangeView 相关联的父 range。|1.3|
-|[rangeViewCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md)|_属性_ > items|一组 rangeView 对象。只读。|1.3|
-|[rangeViewCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md)|_方法_ > [getItemAt(index: 数字)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/rangeviewcollection.md#getitematindex-number)|按索引获取 RangeView 行。从零开始编制索引。|1.3|
-|[setting](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md)|_属性_ > key|返回表示 setting 对象的 ID 的键。只读。|1.3|
-|[setting](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md)|_方法_ > [delete()](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/setting.md#delete)|删除 setting 对象。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_属性_ > items|一组 setting 对象。只读。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_方法_ > [getItem(key: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#getitemkey-string)|按键获取 setting 项。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_方法_ > [getItemOrNull(key: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#getitemornullkey-string)|按键获取 setting 项。如果 setting 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[settingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md)|_方法_ > [set(key: 字符串, value: 字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingcollection.md#setkey-string-value-string)|设置指定的 setting 对象，或将其添加到工作簿中。|1.3|
-|[settingsChangedEventArgs](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/settingschangedeventargs.md)|_关系_ > settingCollection|获取表示引发了 SettingsChanged 事件的 binding 的 setting 对象。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_属性_ > highlightFirstColumn|指明第一列是否包含特殊格式。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_属性_ > highlightLastColumn|指明最后一列是否包含特殊格式。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_属性_ > showBandedColumns|指明列是否采用镶边格式来以不同的方式突出显示奇数列与偶数列，让表更易于阅读。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_属性_ > showBandedRows|指明行是否采用镶边格式来以不同的方式突出显示奇数行与偶数行，让表更易于阅读。|1.3|
-|[table](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/table.md)|_属性_ > showFilterButton|指明是否在每个列标题的顶部显示筛选器按钮。仅当 table 中包含标题行时，才允许设定此设置。|1.3|
-|[tableCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecollection.md)|_方法_ > [getItemOrNull(key: 数字或字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecollection.md#getitemornullkey-number-or-string)|按名称或 ID 获取 table 对象。如果 table 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[tableColumnCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecolumncollection.md)|_方法_ > [getItemOrNull(key: 数字或字符串)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/tablecolumncollection.md#getitemornullkey-number-or-string)|按名称或 ID 获取 column 对象。如果 column 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
-|[workbook](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/workbook.md)|_关系_ > pivotTables|表示一组与 workbook 相关联的 PivotTable 对象。只读。|1.3|
-|[workbook](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/workbook.md)|_关系_ > settings|表示一组与 workbook 相关联的 setting 对象。只读。|1.3|
-|[worksheet](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/worksheet.md)|_关系_ > pivotTables|一组属于 worksheet 的 PivotTable 对象。只读。|1.3|
+|[binding](../excel/binding.md)|_方法_ > [delete()](../excel/binding.md#delete)|删除 binding 对象。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_ > [add(range:区域或字符串, bindingType: 字符串, id: 字符串)](../excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|将新的 binding 对象添加到特定区域。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_ > [addFromNamedItem(name: 字符串, bindingType: 字符串, id: 字符串)](../excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|根据工作簿中的命名项添加新的 binding 对象。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_ > [addFromSelection(bindingType: 字符串, id: 字符串)](../excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|根据当前选择的内容添加新的 binding 对象。|1.3|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_ > [getItemOrNull(id: 字符串)](../excel/bindingcollection.md#getitemornullid-string)|按 ID 获取 binding 对象。如果 binding 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[chartCollection](../excel/chartcollection.md)|_方法_ > [getItemOrNull(name: 字符串)](../excel/chartcollection.md#getitemornullname-string)|使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。|1.3|
+|[namedItemCollection](../excel/nameditemcollection.md)|_方法_ > [getItemOrNull(name: 字符串)](../excel/nameditemcollection.md#getitemornullname-string)|按 nameditem 对象的名称获取此对象。如果 nameditem 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[pivotTable](../excel/pivottable.md)|_属性_ > name|PivotTable 对象的名称。|1.3|
+|[pivotTable](../excel/pivottable.md)|_关系_ > worksheet|包含当前 PivotTable 对象的工作表。只读。|1.3|
+|[pivotTable](../excel/pivottable.md)|_方法_ > [refresh()](../excel/pivottable.md#refresh)|刷新 PivotTable 对象。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_属性_ > items|一组 PivotTable 对象。只读。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_方法_ > [getItem(name: 字符串)](../excel/pivottablecollection.md#getitemname-string)|按名称获取 PivotTable 对象。|1.3|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_方法_ > [getItemOrNull(name: 字符串)](../excel/pivottablecollection.md#getitemornullname-string)|按名称获取 PivotTable 对象。如果 PivotTable 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[range](../excel/range.md)|_方法_ > [getIntersectionOrNull(anotherRange:区域或字符串)](../excel/range.md#getintersectionornullanotherrange-range-or-string)|获取表示指定区域的矩形交集的 range 对象。如果找不到任何交集，则此方法返回空对象。|1.3|
+|[range](../excel/range.md)|_方法_ > [getVisibleView()](../excel/range.md#getvisibleview)|表示当前 range 对象的可见行。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > cellAddresses|表示 RangeView 的单元格地址。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > columnCount|返回可见列数。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > formulas|表示采用 A1 表示法的公式。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > formulasLocal|使用用户语言和数字格式区域设置表示采用 A1 表示法的公式。例如，用英语表示的公式 "=SUM(A1, introduced in 1.5)" 在德语中将变为 "=SUMME(A1; 1,5)"。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > formulasR1C1|表示采用 R1C1 表示法的公式。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > index|返回表示 RangeView 的索引的值。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > numberFormat|表示 Excel 中指定单元格的数字格式代码。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > rowCount|返回可见行数。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > text|指定区域的文本值。文本值与单元格宽度无关。在 Excel UI 中替代 # 符号不会影响 API 返回的文本值。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > valueTypes|表示每个单元格的数据类型。只读。可能的值是：Unknown、Empty、String、Integer、Double、Boolean、Error。|1.3|
+|[rangeView](../excel/rangeview.md)|_属性_ > values|表示指定的 RangeView 的原始值。返回的数据可能是字符串、数字，也可能是布尔值。包含错误的单元格将返回错误字符串。|1.3|
+|[rangeView](../excel/rangeview.md)|_关系_ > rows|表示一组与 range 相关联的 RangeView。只读。|1.3|
+|[rangeView](../excel/rangeview.md)|_方法_ > [getRange()](../excel/rangeview.md#getrange)|获取与当前 RangeView 相关联的父 range。|1.3|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_属性_ > items|一组 rangeView 对象。只读。|1.3|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_方法_ > [getItemAt(index: 数字)](../excel/rangeviewcollection.md#getitematindex-number)|按索引获取 RangeView 行。从零开始编制索引。|1.3|
+|[setting](../excel/setting.md)|_属性_ > key|返回表示 setting 对象的 ID 的键。只读。|1.3|
+|[setting](../excel/setting.md)|_方法_ > [delete()](../excel/setting.md#delete)|删除 setting 对象。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_属性_ > items|一组 setting 对象。只读。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_方法_ > [getItem(key: 字符串)](../excel/settingcollection.md#getitemkey-string)|按键获取 setting 项。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_方法_ > [getItemOrNull(key: 字符串)](../excel/settingcollection.md#getitemornullkey-string)|按键获取 setting 项。如果 setting 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[settingCollection](../excel/settingcollection.md)|_方法_ > [set(key: 字符串, value: 字符串)](../excel/settingcollection.md#setkey-string-value-string)|设置指定的 setting 对象，或将其添加到工作簿中。|1.3|
+|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_关系_ > settingCollection|获取表示引发了 SettingsChanged 事件的 binding 的 setting 对象。|1.3|
+|[table](../excel/table.md)|_属性_ > highlightFirstColumn|指明第一列是否包含特殊格式。|1.3|
+|[table](../excel/table.md)|_属性_ > highlightLastColumn|指明最后一列是否包含特殊格式。|1.3|
+|[table](../excel/table.md)|_属性_ > showBandedColumns|指明列是否采用镶边格式来以不同的方式突出显示奇数列与偶数列，让表更易于阅读。|1.3|
+|[table](../excel/table.md)|_属性_ > showBandedRows|指明行是否采用镶边格式来以不同的方式突出显示奇数行与偶数行，让表更易于阅读。|1.3|
+|[table](../excel/table.md)|_属性_ > showFilterButton|指明是否在每个列标题的顶部显示筛选器按钮。仅当 table 中包含标题行时，才允许设定此设置。|1.3|
+|[tableCollection](../excel/tablecollection.md)|_方法_ > [getItemOrNull(key: 数字或字符串)](../excel/tablecollection.md#getitemornullkey-number-or-string)|按名称或 ID 获取 table 对象。如果 table 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_方法_ > [getItemOrNull(key: 数字或字符串)](../excel/tablecolumncollection.md#getitemornullkey-number-or-string)|按名称或 ID 获取 column 对象。如果 column 对象不存在，则返回对象的 isNull 属性为 true。|1.3|
+|[workbook](../excel/workbook.md)|_关系_ > pivotTables|表示一组与 workbook 相关联的 PivotTable 对象。只读。|1.3|
+|[workbook](../excel/workbook.md)|_关系_ > settings|表示一组与 workbook 相关联的 setting 对象。只读。|1.3|
+|[worksheet](../excel/worksheet.md)|_关系_ > pivotTables|一组属于 worksheet 的 PivotTable 对象。只读。|1.3|
 
 ## <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
 下面介绍了要求集 1.2 中 Excel JavaScript API 的新增内容。 

@@ -3,9 +3,13 @@
 
 您想要创建一个解决方案以扩展 Word 功能？例如，涉及自动化文档程序集，或从其他数据源绑定到并访问 Word 文档中的数据。Office 外接程序平台包括 Word JavaScript API 和适用于 Office 的 JavaScript API，可用于扩展在 Windows 桌面、Mac 或云中运行的客户端。
 
-Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)中的众多开发选项之一。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档中的内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。下图显示了在任务窗格中运行的 Word 外接程序的一个示例。
+Word 外接程序是 [Office 外接程序平台](../overview/office-add-ins.md)上众多开发选项中的一项。外接程序命令可用于扩展 Word 用户界面并启动运行 JavaScript 并与 Word 文档中内容交互的任务窗格。在浏览器中可以运行的任何代码均可在 Word 外接程序中运行。与 Word 文档内容进行交互的外接程序可创建作用于 Word 对象的请求并同步对象状态。 
 
-**图 1.在 Word 的任务窗格中运行的外接程序**
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
+
+下图中的示例展示了在任务窗格中运行的 Word 外接程序。
+
+**图 1：在 Word 的任务窗格中运行的外接程序**
 
 ![在 Word 的任务窗格中运行的外接程序](../../images/WordAddinShowHostClient.png)
 
@@ -65,7 +69,7 @@ Word.run(function (context) {
 
 开发外接程序后，可以将其[发布](../publish/publish.md)到网络共享、应用目录或 Office 应用商店。
 
-## <a name="what's-coming-up-for-word-add-ins?"></a>Word 外接程序未来发展趋势如何？
+## <a name="whats-coming-up-for-word-add-ins"></a>Word 外接程序未来发展趋势如何？
 
 在我们设计和开发用于 Word 外接程序的新 API 时，我们将使它们可在[开放 API 规范](../../reference/openspec.md)页面上接收您的反馈。了解面向 Word JavaScript API 的管道中的新增功能，并在我们的设计规范中提供您的输入。
 

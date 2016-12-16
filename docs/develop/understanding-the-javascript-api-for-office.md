@@ -1,9 +1,11 @@
-﻿
+
 # <a name="understanding-the-javascript-api-for-office"></a>了解适用于 Office 的 JavaScript API
 
 
 
 本文提供了有关适用于 Office 的 JavaScript API 的信息以及使用方法。有关参考信息，请参阅 [适用于 Office 的 JavaScript API](../../reference/javascript-api-for-office.md)。有关将 Visual Studio 项目文件更新到适用于 Office 的 JavaScript API 的最新当前版本的信息，请参阅 [更新适用于 Office 的 JavaScript API 版本和清单架构文件](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md)。
+
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
 
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>在外接程序中引用适用于 Office 的 JavaScript API 库
 
@@ -20,7 +22,7 @@
 ## <a name="initializing-your-add-in"></a>初始化加载项
 
 
- **适用于：**所有外接程序类型
+ **适用于：**所有加载项类型
 
 
 Office.js 提供初始化事件，API 完全加载并准备与用户开始交互时会触发该事件。你可以使用 **initialize** 事件处理程序实现常见的外接程序初始化方案，例如，可以提示用户选择 Excel 中的一些单元格，然后插入使用选定值初始化的图表。还可以使用 initialize 事件处理程序初始化外接程序的其他自定义逻辑，例如建立绑定、提示默认外接程序设置值等。
@@ -227,7 +229,7 @@ var item = Office.context.mailbox.item;
 |||||||||
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 ||**主机名**|数据库|工作簿|邮箱|演示文稿|文档|Project|
-||**支持的** **主机应用程序**|Access Web 应用程序|ExcelExcel Online|OutlookOutlook Web AppOWA for Devices|PowerPointPowerPoint Online|Word|项目|
+||**支持的****主机应用程序**|Access Web 应用程序|ExcelExcel Online|OutlookOutlook Web AppOWA for Devices|PowerPointPowerPoint Online|Word|项目|
 |**支持的外接程序类型**|内容|Y|Y||Y|||
 ||任务窗格||Y||Y|Y|Y|
 ||Outlook|||Y||||

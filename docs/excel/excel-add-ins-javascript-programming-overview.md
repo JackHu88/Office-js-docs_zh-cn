@@ -2,6 +2,8 @@
 
 本文介绍如何使用 Excel JavaScript API 生成适用于 Excel 2016 的外接程序。它介绍了使用 API（例如 RequestContext、JavaScript 代理对象、sync()、Excel.run() 和 load()）的基本关键概念。文章结尾部分的代码示例介绍了如何应用这些概念。
 
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
+
 ## <a name="requestcontext"></a>RequestContext
 
 RequestContext 对象可加快对 Excel 应用程序的请求。由于 Office 外接程序和 Excel 应用程序在两个不同的进程中运行，需要请求上下文来获得对 Excel 及外接程序中相关对象（如工作表、表）的访问权限。如下所示创建请求上下文。
@@ -20,17 +22,17 @@ var ctx = new Excel.RequestContext();
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-## <a name="sync()"></a>sync()
+## <a name="sync"></a>sync()
 
 请求上下文中可用的 sync() 方法通过执行在上下文中排队的指令以及检索用于您代码中的已加载 Office 对象的属性，在 JavaScript 代理对象和 Excel 中的真实对象之间同步状态。此方法返回一个将在同步完成时实现的承诺。
 
-## <a name="excel.run(function(context)-{-batch-})"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() 运行一个对 Excel 对象模型执行操作的批处理脚本。批处理命令包括定义本地 JavaScript 代理对象、在本地和 Excel 对象之间同步状态的 sync() 方法以及承诺实现。Excel.run() 中的批处理请求的优势在于，当实现承诺时，在执行期间分配的任何被跟踪的 range 对象将会自动释放。
 
 运行方法包括 RequestContext 并返回一个承诺（通常只是 ctx.sync() 的结果）。可以在 Excel.run() 之外运行批处理操作。但是，在这种情况下，任何 range 对象引用需要手动进行跟踪和管理。
 
-## <a name="load()"></a>load()
+## <a name="load"></a>load()
 
 load() 方法用于填充在外接程序 JavaScript 层中创建的代理对象。尝试检索对象（例如工作表）时，将首先在 JavaScript 层中创建一个本地代理对象。此类对象可以用于对其属性和调用方法的设置进行排队。但是，要读取对象属性或关系，则需首先调用 load() 和 sync() 方法。load() 方法包括在调用 sync() 方法时需加载的属性和关系。
 
@@ -48,7 +50,7 @@ object.load({loadOption});
 * `properties` 列出了要加载的属性和/或关系名称，指定为逗号分隔的字符串或名称数组。有关详细信息，请参阅每个对象下的 .load() 方法。
 * `loadOption` 指定的对象描述了选择、展开、置顶和跳过选项。有关详细信息，请参阅对象加载 [选项](../../reference/excel/loadoption.md)。
 
-## <a name="example:-write-values-from-an-array-to-a-range-object"></a>示例：将数组中的值写入一个范围对象
+## <a name="example-write-values-from-an-array-to-a-range-object"></a>示例：将数组中的值写入一个范围对象
 
 以下示例介绍了如何将数组中的值写入一个范围对象。
 
@@ -83,7 +85,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## <a name="example:-copy-values"></a>示例：复制值
+## <a name="example-copy-values"></a>示例：复制值
 
 下面的示例演示如何通过对 range 对象执行 load() 方法，将值从活动工作表的区域 A1:A2 复制到 B1:B2。
 

@@ -3,7 +3,7 @@
 
 您可以使用 Visual Studio 开发和调试 Windows 上的外接程序。但是，无法使用它调试 iPad 或 Mac 上的外接程序。由于外接程序使用 HTML 和 Javascript 开发，它们应旨在跨平台工作，但不同浏览器呈现您的 HTML 的方式可能存在细微差异。本文介绍如何调试在 iPad 或 Mac 上运行的外接程序。 
 
-## <a name="debugging-with-vorlon.js"></a>使用 Vorlon.js 进行调试 
+## <a name="debugging-with-vorlonjs"></a>使用 Vorlon.js 进行调试 
 
 Vorlon.js 是网页的调试程序，与 F12 工具类似，它设计为远程工作，让您可以跨不同设备调试网页。有关详细信息，请参阅 [Vorlon 网站](http://www.vorlonjs.com)。  
 
@@ -19,7 +19,7 @@ Vorlon.js 是网页的调试程序，与 F12 工具类似，它设计为远程�
 
 5.  使用命令 `sudo vorlon` 运行 Vorlon 服务器。 
 
-6.  打开浏览器窗口，然后转到 Vorlon 界面 [http://localhost:1337](http://localhost:1337)。信任安全证书，应会提示你执行此操作。还可以在 /Server/cert 下的 Vorlon 文件夹中找到该安全证书。 
+6.  打开浏览器窗口，然后转到 Vorlon 界面 [http://localhost:1337](http://localhost:1337)。在系统提示时，选择“**始终**”，信任安全证书。还可以在 /Server/cert 下的 Vorlon 文件夹中找到安全证书。 
 
 7.  向外接程序的 home.html 文件（或主 HTML 文件）的 `<head>` 部分添加以下脚本标记：
 ```    

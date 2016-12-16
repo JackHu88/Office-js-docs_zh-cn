@@ -5,7 +5,7 @@
 Outlook 外接程序激活是上下文相关的，并且基于外接程序清单中的激活规则。当前选定项的条件符合外接程序的激活规则时，主机应用程序会激活外接程序按钮并将其显示在 Outlook UI 中（用于撰写外接程序的外接程序选择窗格，用于阅读外接程序的外接程序栏）。但是，如果你的外接程序未按预期激活，则应调查以下方面，确定可能的原因。
 
 <a name="troubleshootingmailapps"></a>
-## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>用户邮箱是否位于至少为 Exchange 2013 的某个版本的 Exchange Server 上？
+## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>用户邮箱是否位于至少为 Exchange 2013 的某个版本的 Exchange Server 上？
 
 
 首先，确保你正在测试的用户电子邮件帐户位于至少为 Exchange 2013 的某个版本的 Exchange Server 上。如果你正在使用在Exchange 2013 之后发布的特定功能，那么请确保用户的帐户使用合适的 Exchange 版本。
@@ -25,8 +25,8 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
     
       2. 在功能区的“**开发人员**”选项卡上，选择“**Visual Basic**”。
     
-     >
-  **注意**  没看到“**开发人员**”选项卡？请参阅 [操作说明：在功能区显示“开发人员”选项卡](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) 以将其打开。3.在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
+     >**注意**  没看到“**开发人员**”选项卡？请参阅 [操作说明：在功能区显示“开发人员”选项卡](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) 以将其打开。
+	  3.在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
     
       4. 在即时窗口中键入以下内容以显示 Exchange Server 的版本。返回值的主版本必须等于或大于 15。
     
@@ -49,7 +49,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
         
 
 
-## <a name="is-the-add-in-disabled?"></a>外接程序是否已禁用？
+## <a name="is-the-add-in-disabled"></a>外接程序是否已禁用？
 
 
 任何 Outlook 富客户端可出于性能原因禁用外接程序，这些原因包括超出 CPU 内核或内存的使用阈值、超出崩溃容忍度以及超出处理外接程序的所有正则表达式的时间。发生这种情况时，Outlook 富客户端会显示一条禁用外接程序的通知。 
@@ -67,7 +67,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 - 在 Outlook for Mac 中，在外接程序栏上选择“**管理外接程序**”。登录 Exchange 管理中心验证外接程序是否已启用。
     
 
-## <a name="does-the-tested-item-support-outlook-add-ins?-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>已测试项是否支持 Outlook 外接程序？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
+## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>已测试项是否支持 Outlook 外接程序？所选项目是否由至少为 Exchange 2013 的某个版本的 Exchange Server 提供？
 
 
 如果您的 Outlook 外接程序为阅读外接程序并且应该在用户查看邮件（包括电子邮件、会议请求、响应和取消）或约会时激活，尽管这些项目通常支持外接程序，但如果选定项存在以下情形之一，则会出现例外：
@@ -92,7 +92,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 如果您的外接程序为撰写外接程序并且应该在用户撰写邮件或会议请求时激活，请确保该项目未受 IRM 保护。
 
 
-## <a name="is-the-add-in-manifest-installed-properly,-and-does-outlook-have-a-cached-copy?"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
+## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>加载项清单是否安装正确，Outlook 是否有已缓存副本？
 
 
 此方案仅适用于 Outlook for Windows。正常情况下，为邮箱安装 Outlook 外接程序时，Exchange Server 会将外接程序清单从你指示的位置复制到该 Exchange Server 上的邮箱。每次启动 Outlook 时，它都会将为该邮箱安装的所有清单读取到以下位置的临时缓存中： 
@@ -154,16 +154,20 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 ```
     Start Outlook and test whether Outlook now activates the add-in.
     
-7. 如果 Outlook 无法激活外接程序，请返回步骤 3 再次验证 Outlook 是否已正确读取清单。
+7. 如果 Outlook 无法激活外接程序，请返回第 3 步，再次确认 Outlook 是否已正确读取清单。
     
 
-## <a name="are-you-using-the-appropriate-activation-rules?"></a>使用的激活规则是否合适？
+## <a name="is-the-add-in-manifest-valid"></a>外接程序清单有效吗？
+
+请尝试使用[运行时日志记录](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)，针对外接程序清单存在的问题进行调试。
+
+## <a name="are-you-using-the-appropriate-activation-rules"></a>使用的激活规则是否合适？
 
 
 自 Office 外接程序清单架构的版本 1.1 起，你可以创建当用户位于撰写窗体（撰写外接程序）或阅读窗体（阅读外接程序）中时激活的外接程序。确保为外接程序将在其中激活的每种窗体类型指定相应的激活规则。例如，你可以仅使用 [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) 规则（**FormType** 属性设置为 **Edit** 或 **ReadOrEdit**）激活撰写外接程序，你无法使用任何其他类型的规则，例如用于撰写外接程序的 [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) 和 [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) 规则。有关详细信息，请参阅 [Outlook 外接程序的激活规则](../outlook/manifests/activation-rules.md)。
 
 
-## <a name="if-you-use-a-regular-expression,-is-it-properly-specified?"></a>如果使用正则表达式，该表达式的指定是否正确？
+## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>如果使用正则表达式，该表达式的指定是否正确？
 
 
 由于激活规则中的正则表达式是阅读加载项的 XML 清单文件的一部分，因此当正则表达式使用特定字符时，请务必遵守 XML 处理器支持的相应转义序列。表 1 列出了这些特殊字符。 
@@ -180,7 +184,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 |<|小于号|&amp;lt;|
 |>|大于号|&amp;gt;|
 
-## <a name="if-you-use-a-regular-expression,-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices,-but-not-in-any-of-the-outlook-rich-clients?"></a>如果使用正则表达式，阅读加载项是否在 Outlook Web App 或适用于设备的 OWA（而不是个别 Outlook 富客户端）中激活？
+## <a name="if-you-use-a-regular-expression-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices-but-not-in-any-of-the-outlook-rich-clients"></a>如果使用正则表达式，阅读加载项是否在 Outlook Web App 或适用于设备的 OWA（而不是个别 Outlook 富客户端）中激活？
 
 
 Outlook 富客户端使用的正则表达式引擎与 Outlook Web App 和适用于设备的 OWA 使用的不同。Outlook 富客户端使用作为 Visual Studio 标准模板库一部分提供的 C++ 正则表达式引擎。该引擎符合 ECMAScript 5 标准。Outlook Web App 和适用于设备的 OWA 使用属于 JavaScript 一部分的正则表达式评估，由浏览器提供，且支持 ECMAScript 5 超集。 
@@ -190,7 +194,7 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook Web App 和适用�
 全面测试正则表达式。如果它返回不同的结果，请重新编写该正则表达式，以便同时与两个引擎相兼容。若要验证某个 Outlook 富客户端上的评估结果，请编写一个小 C++ 程序，针对你尝试匹配的文本示例应用该正则表达式。C++ 测试程序在 Visual Studio 上运行，它将使用标准模板库，以便模拟运行同一正则表达式时的 Outlook 富客户端行为。若要验证 Outlook Web App 或适用于设备的 OWA 上的评估结果，请使用你最喜爱的 JavaScript 正则表达式测试程序。
 
 
-## <a name="if-you-use-an-itemis,-itemhasattachment,-or-itemhasregularexpressionmatch-rule,-have-you-verified-the-related-item-property?"></a>如果使用 ItemIs、ItemHasAttachment 或 ItemHasRegularExpressionMatch 规则，您是否已验证相关项属性？
+## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>如果使用 ItemIs、ItemHasAttachment 或 ItemHasRegularExpressionMatch 规则，您是否已验证相关项属性？
 
 
 如果使用 **ItemHasRegularExpressionMatch** 激活规则，请验证 **PropertyName** 属性的值是否为你预期的选定项的值。下面是调试相应属性的一些提示：
@@ -239,18 +243,14 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook Web App 和适用�
 
 |**规则类型**|**请验证此 MAPI 属性**|
 |:-----|:-----|
-|使用 **Subject** 的 **ItemHasRegularExpressionMatch** 规则|
-  [PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
-|使用 **SenderSMTPAddress** 的 **ItemHasRegularExpressionMatch** 规则|
-  [PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) 和 [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
-|**ItemIs**|
-  [PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
-|**ItemHasAttachment**|
-  [PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
+|使用 **Subject** 的 **ItemHasRegularExpressionMatch** 规则|[PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
+|使用 **SenderSMTPAddress** 的 **ItemHasRegularExpressionMatch** 规则|[PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) 和 [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
+|**ItemIs**|[PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
+|**ItemHasAttachment**|[PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
 验证属性值后，即可使用正则表达式评估工具来测试正则表达式是否在该值中找到匹配项。
 
 
-## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect?"></a>主机应用程序是否按预期将所有正则表达式应用到项目正文部分？
+## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>主机应用程序是否按预期将所有正则表达式应用到项目正文部分？
 
 
 本节适用于使用正则表达式的所有激活规则，尤其是应用于项目正文的那些规则，这些规则可能较大，需要较长时间才能对匹配项进行评估。你应意识到，即使激活规则所依赖的项目属性具有预期的值，主机应用程序也可能无法评估整个项目属性值的所有正则表达式。为了提供合理的性能和控制阅读加载项的过量资源使用率，Outlook、Outlook Web App 和适用于设备的 OWA 可考虑有关在运行时处理激活规则中的正则表达式的以下限制：
@@ -287,15 +287,14 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook Web App 和适用�
     
 - [打开事件查看器](http://windows.microsoft.com/en-US/windows7/Open-Event-Viewer)
     
-- 
-  [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
+- [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
     
-- 
-  [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
+- [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
     
-- 
-  [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
+- [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
     
-- 
-  [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
+- [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
+- - [使用运行时日志记录调试清单](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+    
+
