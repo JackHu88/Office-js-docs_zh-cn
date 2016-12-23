@@ -12,7 +12,8 @@
     
 **Office 外接程序在多个 Office 版本中运行**，包括 Windows 桌面版 Office、Office Online、Office for Mac 和 Office for iPad。
 
->**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
+
 
 有关 Office 外接程序当前受支持情况的简要视图，请参阅 [Office 外接程序主机和平台可用性](http://dev.office.com/add-in-availability)页。 
 
@@ -112,9 +113,9 @@ Office 外接程序的基本组件是 XML 清单文件和您自己的 Web 应用
     
 - 外接程序的显示名称、说明、ID、版本和默认区域设置。
     
-- 如何将外接程序与 Office 集成：     
-      - 对于扩展 Word/Excel/PowerPoint/Outlook 的外接程序：外接程序用来公开功能的本机扩展点，如功能区上的按钮。     
-      - 对于新建嵌入对象的外接程序：对象加载的默认页面的 URL。
+- 如何将外接程序与 Office 集成：
+     - 对于扩展 Word/Excel/PowerPoint/Outlook 的外接程序：外接程序用来公开功能的本机扩展点，如功能区上的按钮。
+     - 对于新建嵌入对象的外接程序：对象加载的默认页面的 URL。
        
     
 - 加载项的权限级别和数据访问要求。

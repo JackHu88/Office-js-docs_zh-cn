@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-addins-for-testing"></a>旁加载 Office 外接程序以进行测试
+# <a name="sideload-office-add-ins-for-testing"></a>旁加载 Office 外接程序以进行测试
 
 你可以安装 Office 外接程序以在 Windows 上运行的 Office 客户端中进行测试（通过使用共享文件夹，以将清单发布到网络文件共享）。 
 
@@ -43,7 +43,7 @@
 
 9. 关闭 Office 应用程序，你的更改将生效。
     
-## <a name="sideload-your-addin"></a>旁加载外接程序
+## <a name="sideload-your-add-in"></a>旁加载外接程序
 
 
 1. 放入在共享文件夹目录中进行测试的所有外接程序的清单文件。
@@ -57,6 +57,6 @@
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用运行时日志记录调试清单](../develop/use-runtime-logging-to-debug-manifest.md)
+- [验证并排查清单问题](troubleshoot-manifest.md)
 - [发布 Office 外接程序](../publish/publish.md)
     

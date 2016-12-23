@@ -35,8 +35,7 @@
 		<Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="使用外接程序清单中的 VersionOverrides 元素定义外接程序命令。" />
 		<Item text="指定 Office 主机" url="overview/specify-office-hosts-and-api-requirements" SEODescription="查看如何在清单中指定 Office 主机和 API 要求。" /> 	
 		<Item text="在内容和任务窗格外接程序中请求 API 的使用权限" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="在清单中指定外接程序所需的 API 访问权限的级别。" />
-		<Item text="更新 API 和清单版本" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。" />
-		<Item text="使用运行时日志记录调试清单" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="使用运行时日志记录调试 Office 外接程序的清单" />
+		<Item text="更新 API 和清单版本" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="将 Office 外接程序项目中使用的 JavaScript 文件（Office.js 和特定于应用的 .js 文件）和外接程序清单验证文件更新到版本 1.1。" />		
 	</Item>	
 	<Item text="Office JavaScript API" url="develop/understanding-the-javascript-api-for-office" SEODescription="了解在 Office.js 文件中实现的适用于 Office 的 JavaScript API 的功能区域。">
 		<Item text="对于内容和任务窗格外接程序的支持" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="描述您可以在内容或任务窗格外接程序中声明的不同权限级别，以指定您的外接程序为实现其功能所要求的 JavaScript API 访问的级别。" />
@@ -49,9 +48,9 @@
 	<Item text="隐私和安全性" url="develop/privacy-and-security" SEODescription="Office 外接程序受运行时框架保护，该框架是多层权限模型，可以管理内存、CPU 和网络资源的使用。" />
 	<Item text="解决同一来源策略限制" url="develop/addressing-same-origin-policy-limitations" SEODescription="提供了解决同源策略限制的方法的简要概述，该限制防止从一个域获取或操作属性的文档与 Office 外接程序中的另一个域中加载脚本。" />
 	<Item text="本地化" url="develop/localization" SEODescription="为 Office 外接程序提供区域设置特定的内容，包括 UI 字符串、外接程序名称、说明、图标、源文件和日期/时间格式。" />
-    <Item text="性能" url="develop/resource-limits-and-performance-optimization" SEODescription="向您的 Office 外接程序应用资源使用限制，并优化外接程序的性能。" />
+    <Item text="性能" url="develop/resource-limits-and-performance-optimization" SEODescription="向 Office 外接程序应用资源使用状况限制，并优化外接程序的性能。" />
   </Item>
-  <Item text="测试" url="testing">
+  <Item text="测试和调试" url="testing">
     	<Item text="旁加载 Office 外接程序进行测试" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="安装在 Windows 上运行的 Office 外接程序进行测试。" Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="在 Office Online 中旁加载 Office 外接程序进行测试" url="testing/sideload-office-add-ins-for-testing" SEODescription="了解如何将外接程序加载到 Office 应用程序中进行测试。" />
 	    <Item text="旁加载 Outlook 外接程序进行测试" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="安装 Outlook 外接程序进行测试" />
@@ -59,12 +58,14 @@
     	<Item text="使用 F12 开发人员工具调试" url="testing/debug-add-ins-using-f12-developer-tools-on-windows-10" SEODescription="在 Windows 10 上使用 F12 开发人员工具的调试器来调试 Office 外接程序。" />
     	<Item text="在 Office Onlie 中调试" url="testing/debug-add-ins-in-office-online" SEODescription="不在 Windows 平台上运行 Office 的情况下（例如，您正在 Mac 上进行开发），使用 Office Online 调试外接程序。" />
     	<Item text="在 iPad 和 Mac 上进行调试" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="使用 Weinre 远程 Web 检查器调试在 iPad 或 Mac 上运行的 Office 外接程序。" />
-        <Item text="用户错误疑难解答" url="testing/testing-and-troubleshooting" SEODescription="解决您的用户在使用 Office 外接程序时遇到的问题。" />
+        <Item text="用户错误疑难解答" url="testing/testing-and-troubleshooting" SEODescription="排查你的用户在使用 Office 外接程序时遇到的问题。" />
+		<Item text="验证并排查清单问题" url="testing/troubleshoot-manifest" SEODescription="排查 Office 外接程序清单问题。" />
 	</Item>
   <Item text="发布" url="publish/publish">
     <Item text="在 Microsoft Azure 上托管 Office 外接程序" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="使用 Visual Studio 2015 和 Microsoft Office 开发人员工具发布到 Microsoft Azure，然后在它上面托管 Office 外接程序。" />
     <Item text="使用 Napa 或 Visual Studio 打包您的外接程序" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="打包您的 Office 外接程序为发布做准备。" />
     <Item text="将任务窗格和内容外接程序发布到外接程序目录" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="配置 Office 客户端以便你的外接程序在 Office 外接程序对话框中可用" />
+	<Item text="将外接程序提交到 Office 应用商店" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="使用 JavaScript API 创建 Word 外接程序。" Scope="word">
@@ -144,6 +145,7 @@
     <Item text="使用文本编辑器为项目创建您的第一个任务窗格外接程序" url="project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor" SEODescription="开发一个使用指向 HTML 文件的 XML 清单的 Office 外接程序" Scope="project" /> 
   </Item>
   <Item text="访问" url="access" Scope="access">
-    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，它通过使用自定义 HTML 和 JavaScript 扩展 Access Web App。" Scope="access" />
+    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，通过使用自定义 HTML 和 JavaScript 扩展 Access Web 应用。" Scope="access" />
   </Item>
+  <Item text="JavaScript API 参考" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

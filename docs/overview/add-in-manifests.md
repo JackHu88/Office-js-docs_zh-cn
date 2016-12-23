@@ -16,7 +16,8 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
     
 - 对于 Outlook 外接程序，定义一个或多个规则，以指定将在其中激活规则并与邮件、约会或会议请求项目交互的上下文。
 
->**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你在清单内“要求”元素中定义的方法的所有平台，才能通过验证（见 [4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)）。
+>**注意：**生成外接程序时，如果计划将外接程序[发布](../publish/publish.md)到 Office 应用商店，请务必遵循 [Office 应用商店验证策略](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。例如，外接程序必须适用于支持你定义的方法的所有平台，才能通过验证（有关详细信息，请参阅[第 4.12 部分](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)以及 [Office 外接程序主机和可用性](https://dev.office.com/add-in-availability)页）。
+
 
 ## <a name="required-elements"></a>必需元素
 
@@ -59,21 +60,6 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
 *已添加在 Office 外接程序清单架构版本 1.1 中。
-
-
-## <a name="validate-the-office-add-ins-manifest"></a>验证 Office 外接程序清单
-
-若要确保描述 Office 外接程序的清单文件正确且完整，请使用 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) 文件对其验证。可使用 XML 架构验证工具或 [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) 来验证清单。 
-
-若要使用 Visual Studio，请转到“生成”>“发布”，然后选择“**执行验证检查**”。
-
-若要使用命令行 XML 架构验证工具来验证清单：
-
-1.  安装 [tar](https://www.gnu.org/software/tar/) 和 [libxml](http://xmlsoft.org/FAQ.html)（如果尚未安装）。 
-2.  运行以下命令。将 XSD_FILE 替换为清单 XSD 文件的路径，并将 XML_FILE 替换为清单 XML 文件的路径。
-
-    xmllint --noout --schema XSD_FILE XML_FILE
-
 
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>指定想要在外接程序窗口中打开的域
@@ -435,6 +421,10 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 
 ```
 
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>验证并排查清单问题
+
+如需排查清单问题，请参阅[验证并排查清单问题](../../docs/testing/troubleshoot-manifest.md)。其中介绍了如何针对 [XML 架构定义 (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) 验证清单，以及如何使用运行时日志记录功能调试清单。
+
 ## <a name="additional-resources"></a>其他资源
 
 
@@ -442,5 +432,5 @@ Office 外接程序的 XML 清单文件描述，当最终用户安装外接程�
 - [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office 外接程序的本地化](../../docs/develop/localization.md)
 - [Office 外接程序清单的架构参考](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [使用运行时日志记录调试清单](../develop/use-runtime-logging-to-debug-manifest.md)
+- [验证并排查清单问题](../../docs/testing/troubleshoot-manifest.md)
 

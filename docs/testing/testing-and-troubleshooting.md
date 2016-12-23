@@ -47,7 +47,7 @@
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>外接程序无法在任务窗格中加载，或外接程序清单存在其他问题
 
-请尝试使用[运行时日志记录](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)，针对外接程序清单存在的问题进行调试。
+请参阅[验证并排查清单问题](troubleshoot-manifest.md)，针对外接程序清单问题进行调试。
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -63,5 +63,5 @@
     
 - [部署和安装 Outlook 外接程序以供测试](../outlook/testing-and-tips.md)
     
-- [使用运行时日志记录调试清单](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [验证并排查清单问题](troubleshoot-manifest.md)
     

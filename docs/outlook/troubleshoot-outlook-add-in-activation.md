@@ -26,7 +26,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
       2. 在功能区的“**开发人员**”选项卡上，选择“**Visual Basic**”。
     
      >**注意**  没看到“**开发人员**”选项卡？请参阅 [操作说明：在功能区显示“开发人员”选项卡](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) 以将其打开。
-	  3.在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
+	 3.在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
     
       4. 在即时窗口中键入以下内容以显示 Exchange Server 的版本。返回值的主版本必须等于或大于 15。
     
@@ -159,7 +159,7 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 
 ## <a name="is-the-add-in-manifest-valid"></a>外接程序清单有效吗？
 
-请尝试使用[运行时日志记录](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)，针对外接程序清单存在的问题进行调试。
+请参阅[验证并排查清单问题](../testing/troubleshoot-manifest.md)，针对外接程序清单问题进行调试。
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>使用的激活规则是否合适？
 
@@ -295,6 +295,6 @@ Outlook 富客户端使用的正则表达式引擎与 Outlook Web App 和适用�
     
 - [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
-- - [使用运行时日志记录调试清单](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [验证并排查清单问题](../testing/troubleshoot-manifest.md)
     
 
