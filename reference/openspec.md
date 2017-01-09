@@ -38,7 +38,7 @@ Word JavaScript API 1.4 更新中新增了重要内容，具体包括：
 * 表合并单元格
 * 表行合并和列拆分
 
-**请访问 [Word JS API 1.4 页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word)，了解详细信息并提供反馈。**
+**请访问 [Word JS API 1.4 页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)，了解详细信息并提供反馈。**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>主机、平台信息和诊断信息 
 请参阅出于向开发者提供外接程序运行时环境信息和诊断信息的目的，计划在 Office.Context 对象中新增的内容。 

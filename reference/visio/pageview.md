@@ -7,12 +7,13 @@
 
 ## <a name="properties"></a>属性
 
-无
-
-## <a name="relationships"></a>Relationships
-| 关系 | 类型   |说明| 反馈|
+| 属性 | 类型 |说明| 反馈|
 |:---------------|:--------|:----------|:---|
-|zoom|[Double](double.md)|获取并设置页面的缩放级别。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+|zoom|int|获取并设置页面的缩放级别。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+
+## <a name="relationships"></a>关系
+
+无
 
 ## <a name="methods"></a>方法
 

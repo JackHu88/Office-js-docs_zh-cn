@@ -28,7 +28,7 @@ Office 图标均基于以下设计原则完成：
 - 使用具有透明背景的 PNG 格式。 
 - 避免在图标中使用可本地化的内容，包括印刷字符、段落标记指示和问号。 
 - 不要对不同的命令重复使用视觉隐喻。对不同的操作使用同一图标可能会引起混淆。 
-- 让按钮标签清晰、简洁。结合使用视觉和文本信息，准确传达含义。 
+- 使您的按钮标签清晰、简洁。将视觉和文本信息结合使用以传达含义。 
 
 
 ## <a name="icon-size-recommendations-and-requirements"></a>图标大小的建议和要求
@@ -43,6 +43,10 @@ Office 2016 桌面图标是位图图像。根据用户的 DPI 设置和触摸模
 - 48 像素
 - 64 像素（推荐）
 - 80 像素（必需）  
+
+确保根据每个尺寸重新绘制你的图标，而非将其缩小。
+
+![显示调整图标大小而非缩小图标的建议的图示](../../images/icon_resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
