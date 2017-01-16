@@ -16,9 +16,9 @@
       	<Item text="内容外接程序的布局" url="design/ui-elements/layout-for-content-add-ins" SEODescription="使用建议的设计布局为内容外接程序创建一致的外观和风格。" />
       	<Item text="任务窗格外接程序的布局" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="使用建议的设计布局为任务窗格外接程序创建一致的外观和风格。" />
       	<Item text="Outlook 外接程序的布局" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="对邮件外接程序使用这些布局" Scope="outlook" />
-      	<Item text="使用 Office UI 结构" url="design/ui-elements/using-office-ui-fabric" SEODescription="向你演示使用结构的基础知识。" />
+      	<Item text="使用 Office UI Fabric JS" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="逐步展示了使用 Fabric JS 的基础知识。" />
       </Item>	
-    	<Item text="UX 设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
+    	<Item text="用户体验设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
 	<Item text="Excel、Word 和 PowerPoint 的外接程序命令" url="design/add-in-commands" SEODescription="使用外接程序中的外接程序命令扩展 Excel、Word 和 PowerPoint 中的默认 Office UI。" />
   	<Item text="外接程序命令的设计图标" url="design/design-icons" SEODescription="与 Office UI 无缝集成的外接程序命令的设计图标。" />
 	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
@@ -90,11 +90,12 @@
     <Item text="上下文 Outlook 外接程序" url="outlook/contextual-outlook-add-ins" SEODescription="基于邮件或约会中的指定文本激活 Outlook 外接程序。" Scope="outlook" />
     <Item text="模块扩展 Outlook 外接程序" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="通过向导航栏添加模块扩展来扩展 Outlook UI。" /> 
 	<Item text="API" url="outlook/apis" SEODescription="了解如何指定您的 Outlook 外接程序所需的 API。" Scope="outlook" />
-	<Item text="清单" url="overview/add-in-manifests" Scope="outlook" SEODescription="使用 XML 清单指定外接程序的激活方式。">
-      <Item text="清单" url="outlook/manifests/manifests" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。" Scope="outlook" /><Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />
-      <Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="使用 Outlook 外接程序清单中的 VersionOverrides 元素定义外接程序命令。" Scope="outlook" />
-  	</Item>
-  <Item text="获取和设置阅读或撰写窗体中的项目数据" url="outlook/item-data" SEODescription="了解从 Outlook 外接程序的约会或邮件上获取或设置数据的方法" Scope="outlook" />
+	<Item text="清单" url="outlook/manifests/manifests" Scope="outlook" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。">
+      <Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />
+      <Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="在 Outlook 外接程序清单中使用 VersionOverrides 元素可以定义外接程序命令。" Scope="outlook" />
+      <Item text="可固定的任务窗格" url="outlook/manifests/pinnable-taskpane" SEODescription="在 Outlook 外接程序中实现可固定的任务窗格。" Scope="outlook" />
+  </Item>
+  <Item text="在阅读或撰写窗体中获取并设置项数据" url="outlook/item-data" SEODescription="了解从 Outlook 外接程序的约会或邮件上获取或设置数据的方法" Scope="outlook" />
 	<Item text="获取和设置外接程序元数据" url="outlook/metadata-for-an-outlook-add-in" SEODescription="了解加载和存储只有您的 Outlook 外接程序可以访问的自定义数据 - 通过漫游设置和自定义属性。" Scope="outlook" />
 	<Item text="隐私和安全性" url="outlook/privacy-and-security" SEODescription="最终用户" Scope="outlook">
 		<Item text="了解 Outlook 外接程序权限" url="outlook/understanding-outlook-add-in-permissions" SEODescription="在 Outlook 外接程序清单中指定权限级别。" />

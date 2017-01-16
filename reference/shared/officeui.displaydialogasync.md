@@ -7,33 +7,55 @@
 |主机|引入版本|包含最后一次更改的版本|
 |:---------------|:--------|:----------|
 |Word、Excel、PowerPoint|1.1|1.1|
-|Outlook|Mailbox 1.4|Mailbox 1.4|
+|Outlook|Mailbox 1.4|邮箱 1.4|
 
-此方法适用于 DialogAPI [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)。若要指定 DialogAPI 要求集，请在清单中使用以下内容。
+此方法在 Word、Excel 或 PowerPoint 外接程序的 DialogAPI [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)以及 Outlook 的邮箱要求集 1.4 中引入。若要指定 DialogAPI 要求集，请在清单中运行以下代码。
 
 ```xml
- <Requirements> 
-   <Sets DefaultMinVersion="1.1"> 
-     <Set Name="DialogAPI"/> 
-   </Sets> 
- </Requirements> 
-
+<Requirements> 
+  <Sets DefaultMinVersion="1.1"> 
+    <Set Name="DialogAPI"/> 
+  </Sets> 
+</Requirements> 
 ```
 
-若要在运行时检测此 API，请使用以下代码。
+若要指定邮箱 1.4 要求集，请在清单中运行以下代码。
+
+```xml
+<Requirements> 
+  <Sets DefaultMinVersion="1.4"> 
+    <Set Name="Mailbox"/> 
+  </Sets> 
+</Requirements> 
+```
+
+若要在运行时在 Word、Excel 或 PowerPoint 外接程序中检测此 API，请运行以下代码。
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
-    {  
-         // Use Office UI methods; 
-    } 
- else 
-     { 
-         // Alternate path 
-     } 
+if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
 ```
 
+若要在运行时在 Outlook 外接程序中检测此 API，请运行以下代码。
 
+```js
+if (Office.context.requirements.isSetSupported('Mailbox', 1.4)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
+```
+
+或者，可以先检查 `displayDialogAsync` 方法是否未定义，然后再使用它。
+
+```js
+if (Office.context.ui.displayDialogAsync !== undefined) {
+  // Use Office UI methods
+}
+```
 
 ### <a name="supported-platforms"></a>支持的平台
 有关支持的平台的信息，请参阅[对话框 API 要求集](../requirement-sets/dialog-api-requirement-sets.md)。

@@ -1,5 +1,5 @@
 
-# <a name="outlook-addin-manifests"></a>Outlook 外接程序清单
+# <a name="outlook-add-in-manifests"></a>Outlook 外接程序清单
 
 Outlook 外接程序由两部分组成：XML 外接程序清单和网页，由 Office 外接程序的 JavaScript 库 (office.js) 提供支持。清单介绍了外接程序如何跨 Outlook 客户端集成。目前清单架构有 3 个版本，其中包括 **VersionOverrides**。我们建议你使用清单架构版本 1.1 和 **VersionOverrides** 1.0 构建外接程序。下面是一个示例。
 
@@ -780,11 +780,12 @@ Outlook 外接程序指定如下所示的  **Hosts** 元素。
 有关激活规则的详细信息和示例，请参阅 [Outlook 外接程序的激活规则](../../outlook/manifests/activation-rules.md)。
 
 
-## <a name="next-steps-addin-commands"></a>后续步骤：外接程序命令
+## <a name="next-steps-add-in-commands"></a>后续步骤：外接程序命令
 
 
 定义基本清单后， [为外接程序定义外接程序命令](../../outlook/manifests/define-add-in-commands.md)。外接程序命令代表功能区中的按钮，因此用户可以一种简单、直观的方式激活您的外接程序。有关详细信息，请参阅 [用于 Outlook 的外接程序命令](../../outlook/add-in-commands-for-outlook.md)。
 
+有关定义外接程序命令的示例外接程序，请参阅[命令演示](https://github.com/jasonjoh/command-demo)。
 
 ## <a name="additional-resources"></a>其他资源
 

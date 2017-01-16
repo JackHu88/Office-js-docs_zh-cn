@@ -1,5 +1,5 @@
 
-#<a name="use-office-ui-fabric-in-office-addins"></a>在 Office 外接程序中使用 Office UI 结构
+#<a name="use-office-ui-fabric-261-in-office-add-ins"></a>在 Office 外接程序中使用 Office UI Fabric 2.6.1
 
 如果您要构建 Office 外接程序，我们建议您使用 [Office UI 结构](https://github.com/OfficeDev/Office-UI-Fabric)创建用户体验。以下步骤将向您演示使用结构的基础知识。  
 

@@ -15,12 +15,14 @@
 |  [FunctionName](#functionname) |    指定要执行的函数的名称。 |
 |  [SourceLocation](#sourcelocation) |    指定该操作的源文件位置。 |
 |  [TaskpaneId](#taskpaneid) | 指定任务窗格容器的 ID。|
+|  [SupportsPinning](#supportspinning) | 指定任务窗格支持固定，即使用户选择其他对象，任务窗格也可以继续处于打开状态。|
   
 
-## <a name="xsi:type"></a>xsi:type
-此属性指定当用户选择按钮时所执行的操作类型。它可以是下列值之一：
-- ExecuteFunction
-- ShowTaskpane
+## <a name="xsitype"></a>xsi:type
+此属性指定当用户选择按钮时所执行的操作类型。可取值如下：
+
+- `ExecuteFunction`
+- `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
@@ -28,7 +30,7 @@
 
 ```xml
 <Action xsi:type="ExecuteFunction">
-    <FunctionName>getSubject</FunctionName>
+  <FunctionName>getSubject</FunctionName>
 </Action>
 ```
 
@@ -36,9 +38,9 @@
 **xsi:type** 为 ShowTaskpane 时的必需元素。指定此操作的源文件位置。 **resid** 属性必须设置为 **Urls** 元素（位于 **Resources** 元素）中 [Url](./resources.md#urls) 元素的 [id](./resources.md) 属性的值。
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <SourceLocation resid="readTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+</Action>
 ```  
 
 ## <a name="taskpaneid"></a>TaskpaneId
@@ -46,17 +48,29 @@
 
 >**注意：**在 Outlook 中不支持此元素。
 
-以下示例介绍了共享相同 **TaskpaneId** 的两个操作。 
+以下示例展示了两个使用同一 **TaskpaneId** 的 Action。 
 
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="aTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="aTaskPaneUrl" />
+</Action>
 
-  <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="anotherTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="anotherTaskPaneUrl" />
+</Action>
 ```  
+
+## <a name="supportspinning"></a>SupportsPinning
+**xsi: type** 是“ShowTaskpane”时的可选元素。包含 [ VersionOverrides ](./versionoverrides.md) 的元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。添加此元素时将值设为 `true` 可以支持任务窗格固定。这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。
+
+>**注意：**暂只有 Outlook 2016 支持此元素。
+
+```xml
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+  <SupportsPinning>true</SupportsPinning>
+</Action>
+```
