@@ -1,4 +1,4 @@
-﻿# <a name="chartcollection-object-javascript-api-for-excel"></a>ChartCollection 对象（适用于 Excel 的 JavaScript API）
+# <a name="chartcollection-object-javascript-api-for-excel"></a>ChartCollection 对象（适用于 Excel 的 JavaScript API）
 
 工作表中的所有 chart 对象的集合。
 
@@ -19,10 +19,10 @@ _请参阅属性访问[示例。](#property-access-examples)_
 
 | 方法           | 返回类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
-|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|新建图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|按名称获取图表。如果有多个同名的图表，此方法返回第一个图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(type: string, sourceData:Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[图表](chart.md)|新建图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[图表](chart.md)|使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|按图表在集合中的位置获取此对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|按名称获取图表。如果有多个同名的图表，此方法返回第一个图表。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[图表](chart.md)|使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
@@ -39,9 +39,14 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|:---|
-|type|string|表示图表的类型。可能的值是：ColumnClustered、ColumnStacked、ColumnStacked100、BarClustered、BarStacked、BarStacked100、LineStacked、LineStacked100、LineMarkers、LineMarkersStacked、LineMarkersStacked100、PieOfPie 等。|
+|type|string|表示图表的类型。请参阅以下可能的图表类型。|
 |sourceData|Range|对应于源数据的 Range 对象。|
 |seriesBy|string|可选。指定列或行在图表上用作数据系列的方式。可能的值是：Auto、Columns、Rows|
+
+**下面是有效的图表类型：**
+
+`ColumnClustered`, `ColumnStacked`, `ColumnStacked100`, `_3DColumnClustered`, `_3DColumnStacked`, `_3DColumnStacked100`, `BarClustered`, `BarStacked`, `BarStacked100`, `_3DBarClustered`, `_3DBarStacked`, `_3DBarStacked100`, `LineStacked`, `LineStacked100`, `LineMarkers`, `LineMarkersStacked`, `LineMarkersStacked100`, `PieOfPie`, `PieExploded`, `_3DPieExploded`, `BarOfPie`, `XYScatterSmooth`, `XYScatterSmoothNoMarkers`, `XYScatterLines`, `XYScatterLinesNoMarkers`, `AreaStacked`, `AreaStacked100`, `_3DAreaStacked`, `_3DAreaStacked100`, `DoughnutExploded`, `RadarMarkers`, `RadarFilled`, `Surface`, `SurfaceWireframe`, `SurfaceTopView`, `SurfaceTopViewWireframe`, `Bubble`, `Bubble3DEffect`, `StockHLC`, `StockOHLC`, `StockVHLC`, `StockVOHLC`, `CylinderColClustered`, `CylinderColStacked`, `CylinderColStacked100`, `CylinderBarClustered`, `CylinderBarStacked`, `CylinderBarStacked100`, `CylinderCol`, `ConeColClustered`, `ConeColStacked`, `ConeColStacked100`, `ConeBarClustered`, `ConeBarStacked`, `ConeBarStacked100`, `ConeCol`, `PyramidColClustered`, `PyramidColStacked`, `PyramidColStacked100`, `PyramidBarClustered`, `PyramidBarStacked`, `PyramidBarStacked100`, `PyramidCol`, `_3DColumn`, `Line`, `_3DLine`, `_3DPie`, `Pie`, `XYScatter`, `_3DArea`, `Area`, `Doughnut`, `Radar`
+
 
 #### <a name="returns"></a>返回
 [Chart](chart.md)
@@ -174,7 +179,7 @@ Excel.run(function (ctx) {
 
 
 ### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
-按名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。
+使用图表名称获取图表。如果存在多个名称相同的图表，将返回第一个图表。
 
 #### <a name="syntax"></a>语法
 ```js
@@ -200,7 +205,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|:---|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void

@@ -47,7 +47,7 @@
 			<Item text="Control" url="manifest/control" SEODescription="指定用户选择“按钮”或“菜单”时将执行的控件。" />
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="指定外接程序命令的选项卡和组。" />
 			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="定义外接程序公开功能的位置。" />
-			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="指定对给定外形规格的外接程序的设置。" />
+			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="指定对给定外形规格的外接程序的设置。" />
 			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。" />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="提供在 Word、Excel、和 PowerPoint 主机中安装此外接程序时显示的标注所使用的信息。" />
 			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="定义选项卡中的一组 UI 扩展点。" />

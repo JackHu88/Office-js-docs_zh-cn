@@ -1,8 +1,10 @@
-# <a name="build-your-first-word-add-in"></a>构建第一个 Word 外接程序
+# <a name="build-your-first-word-add-in"></a>构建您的第一个 Word 外接程序
 
 _适用于：Word 2016、Word for iPad、Word for Mac_
 
 Word JavaScript API 是用于扩展 Office 应用程序的 Office 外接程序编程模型的一部分。外接程序编程模型使用 Web 应用程序托管您的 Word 扩展。现在您可以使用您喜欢的任何 Web 平台或语言扩展 Word。
+
+> **注意**：如果想要开发 Word 2013 外接程序，则需使用共享 [Office Javascript API]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word)可以在[此处](https://dev.office.com/add-in-availability)了解有关可用的平台和不同的 API 的详细信息。除非已调出某个应用于 Word 2016 的主题，否则该主题应该适用于不同的主机。
 
 Word 外接程序在 Word 内运行，并且可以使用 Word 2016 中的 Word JavaScript API 与文档内容交互。概括地说，创建外接程序分为两个部分：1) 可在任何位置托管的 Web 应用程序，以及 2) [外接程序清单](../../docs/overview/add-in-manifests.md)，Word 会使用该清单发现您的 Web 应用程序在何处托管（清单提供的功能不止于此，更多详情，请阅读[编程概述](word-add-ins-programming-overview.md)）。
 
@@ -167,15 +169,15 @@ Word 外接程序在 Word 内运行，并且可以使用 Word 2016 中的 Word J
 
 5- 生成 GUID，并将 <code>OfficeApp/Id</code> 元素中的值替换为 GUID。
 
-6- 保存所有文件。现在你已编写了第一个 Word 外接程序。
+6- 保存所有文件。您现在已编写了第一个 Word 外接程序。
 
 7- 将 home.js、home.html 和 BoilerplateManifest.xml 复制到 [网络上的共享文件夹](https://technet.microsoft.com/en-us/library/cc770880.aspx) (Windows) 或将其托管到本地服务器 (Mac) 上。
 
 8- 编辑 BoilerplateManifest.xml 中的 [SourceLocation](../../reference/manifest/sourcelocation.md) 元素，使其指向 home.html 的位置。
 
-现在，您已部署了第一个外接程序。现在，你需要让 Word 知道在哪里可以找到该外接程序。
+现在，您已部署了第一个外接程序。现在，您需要让 Word 知道在哪里查找外接程序。
 
-#### <a name="try-this-out-in-word-2016-for-windows"></a>在 Windows 的 Word 2016 中尝试
+#### <a name="try-this-out-in-word-2016-for-windows"></a>在适用于 Windows 的 Word 2016 中尝试一下
 
 1. 启动 Word，然后打开一个文档。
 2. 选择**文件**选项卡，然后选择**选项**。
@@ -201,7 +203,7 @@ Word 外接程序在 Word 内运行，并且可以使用 Word 2016 中的 Word J
 
 1. 在 Users/Library/Containers/com.microsoft.word/Data/Documents/ 中创建一个名称为“wef”的文件夹
 2. 将清单 BoilerplateManifest.xml 放入 wef 文件夹 (Users/Library/Containers/com.microsoft.word/Data/Documents/wef) 中
-3. 打开 Mac 上的 Word 2016，并单击“插入”选项卡 >“我外接程序”下拉列表。您应该看到下拉列表中列出了该外接程序。选择该外接程序，它将加载该外接程序。
+3. 打开 Mac 上的 Word 2016，并单击“插入”选项卡 >“我外接程序”下拉列表。您应该看到下拉列表中列出了该外接程序。选择该外接程序，然后将加载该外接程序。
 
 __图 1.在 Word 中加载的样本内容外接程序__
 ![加载了样本外接程序的 Word 应用程序的图片。](../../images/boilerplateAddin.png "用于输入样本文本的简单 Word 外接程序。")

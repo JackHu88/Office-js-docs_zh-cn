@@ -49,10 +49,10 @@
 
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  是   |  定义受影响的外形规则。 |
+|  [DesktopFormFactor](./desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
 
 
-### <a name="xsi:type"></a>xsi:type
+### <a name="xsitype"></a>xsi:type
 控制所包含的设置也适用的 Office 主机类别（Word、Excel、PowerPoint、Outlook 和 OneNote）。值必须为以下值之一：
 
 - `Document` (Word)

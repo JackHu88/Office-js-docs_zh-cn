@@ -3,6 +3,8 @@
 
 如果您要构建 Office 外接程序，我们建议您使用 [Office UI 结构](https://github.com/OfficeDev/Office-UI-Fabric)创建用户体验。以下步骤将向您演示使用结构的基础知识。  
 
+> **注意：**有关 Office UI Fabric JS 的信息，请参阅[在 Office 外接程序中使用 Office UI Fabric](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js)。
+
 ##<a name="1-set-up-fabric"></a>1.设置结构
 将以下行添加到 HTML 的 head 部分，以引用 CDN 中的结构。
 

@@ -16,9 +16,9 @@
       	<Item text="内容外接程序的布局" url="design/ui-elements/layout-for-content-add-ins" SEODescription="使用建议的设计布局为内容外接程序创建一致的外观和风格。" />
       	<Item text="任务窗格外接程序的布局" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="使用建议的设计布局为任务窗格外接程序创建一致的外观和风格。" />
       	<Item text="Outlook 外接程序的布局" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="对邮件外接程序使用这些布局" Scope="outlook" />
-      	<Item text="使用 Office UI Fabric JS" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="逐步展示了使用 Fabric JS 的基础知识。" />
       </Item>	
-    	<Item text="用户体验设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
+    	<Item text="使用 Office UI Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="逐步展示了使用 Fabric JS 的基础知识。" />
+		<Item text="用户体验设计模式" url="design/ux-design-patterns" SEODescription="使用 Office 外接程序的 UX 设计模式模板创建 UI 扩展。" />
 	<Item text="Excel、Word 和 PowerPoint 的外接程序命令" url="design/add-in-commands" SEODescription="使用外接程序中的外接程序命令扩展 Excel、Word 和 PowerPoint 中的默认 Office UI。" />
   	<Item text="外接程序命令的设计图标" url="design/design-icons" SEODescription="与 Office UI 无缝集成的外接程序命令的设计图标。" />
 	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
@@ -146,7 +146,7 @@
     <Item text="使用文本编辑器为项目创建您的第一个任务窗格外接程序" url="project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor" SEODescription="开发一个使用指向 HTML 文件的 XML 清单的 Office 外接程序" Scope="project" /> 
   </Item>
   <Item text="访问" url="access" Scope="access">
-    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，通过使用自定义 HTML 和 JavaScript 扩展 Access Web 应用。" Scope="access" />
+    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，它通过使用自定义 HTML 和 JavaScript 扩展 Access Web App。" Scope="access" />
   </Item>
-  <Item text="JavaScript API 参考" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
+
 </Menu>

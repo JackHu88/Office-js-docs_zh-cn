@@ -30,4 +30,10 @@
 - 为用户提供打开字幕或音频说明与音频源的方法。
 - 提供用于警示用户的声音替代方法，例如视觉提示或振动。
 
+##<a name="accessibility-resources"></a>辅助功能资源
+
+- [Web 内容辅助功能准则 (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
+- [向非 Web 信息和通信技术 (WCAG2ICT) 应用 WCAG 2.0 的指南](http://www.w3.org/TR/wcag2ict/)
+- [关于信息和通信技术 (ICT) 的辅助功能要求的欧洲标准](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf)
+
 

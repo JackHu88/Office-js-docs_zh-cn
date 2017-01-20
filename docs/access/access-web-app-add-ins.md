@@ -1,12 +1,10 @@
-
 # <a name="create-add-ins-for-access-web-apps"></a>创建 Access Web 应用的外接程序
 
 
 
 本文介绍如何使用 Visual Studio 2015 开发面向 Access Web 应用的 Office 外接程序。
 
->
-  **注意：**有关使用 VBA 开发 Access 解决方案的信息，请参阅 MSDN 上的 [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)。
+>**注意：**有关使用 VBA 开发 Access 解决方案的信息，请参阅 MSDN 上的 [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx)。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -18,7 +16,7 @@
 - SharePoint Online 站点（包括在多个 Office 365 订阅中）。此站点必须包括外接程序目录。有关详细信息，请参阅 [在 SharePoint 上设置外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)。
 
 
- >**注释**  Office 外接程序将能与承载在 SharePoint Online 或 Office 365 上的 Access Web 应用程序一起使用。Access 2013 桌面应用程序不支持 Office 外接程序。Office.js 版本 1.1 及更高版本支持面向 Access Web 应用程序的 Office 外接程序。
+ >**注意：**Office 外接程序适用于托管在 SharePoint Online 或 Office 365 上的 Access Web 应用。Access 2013 桌面应用程序不支持 Office 外接程序。面向 Access Web 应用的 Office 外接程序受 Office.js 版本 1.1 及其更高版本的支持。
 
 
 ## <a name="create-a-project-in-visual-studio"></a>在 Visual Studio 中创建项目
@@ -27,6 +25,8 @@
 1.  打开 Visual Studio，然后在菜单中选择“**文件**”、“**新建**”、“**项目**”。“**新建项目**”对话框将会打开。
 
 2. 在“**新建项目**”对话框的左侧窗格中，依次导航到“**已安装**”、“**模板**”、“**Visual C#**”、“**Office/SharePoint**”、“**Office 外接程序**”。
+
+ >**注意：**如果尚未安装此模板，请参阅[适用于 Visual Studio 2015 的最新 Microsoft Office 开发人员工具](https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/) 博客文章，了解相关信息。
 
 3. 在“**新建项目**”对话框的中心窗格中，选择“**Office 外接程序**”。
 
@@ -56,7 +56,7 @@
  >**注意**  你必须使用 Access Web  App 部署外接程序，才能对其进行调试。
 
 
-## <a name="review-the-manifest-and-the-home.html-file"></a>查看清单和 Home.Html 文件
+## <a name="review-the-manifest-and-the-homehtml-file"></a>查看清单和 Home.Html 文件
 
 
 1. 在 Visual Studio 项目中打开“**Home.html**”文件，并查找引用 office.js 脚本库的行。
@@ -112,7 +112,7 @@ Office 和 SharePoint 的外接程序基于 Web。加载项代码必须承载在
 
 3. 在“**网站内容 – 你的外接程序**”页中，使用页面顶部的搜索栏搜索“**Access 应用程序**”。
 
-4. 现在应该能看到“**Access 应用程序**”的磁贴。
+4. 现在你应该能看到“**Access 应用程序**”的磁贴。
 
      >**注意**  请记得这并非你的 Office 外接程序，而是新的 Access Web App。这个 Access Web App 将托管你的 Office 外接程序。
 5. 选择此磁贴将显示“**添加 Access 应用程序**”对话框。输入 Access 应用程序的唯一名称，并选择“**创建**”。SharePoint 可能需要一段时间才能创建应用。完成后，你将看到“**网站内容**”页中列出的 Access 应用程序，并且带有“**新建**”标签。
@@ -123,7 +123,7 @@ Office 和 SharePoint 的外接程序基于 Web。加载项代码必须承载在
 ## <a name="add-your-add-in-to-an-access-web-apps"></a>将加载项添加到 Access Web 应用程序
 
 
-1. 打开 Access Web App。
+1. 打开 Access Web 应用程序。
 
 2. 在 SharePoint 选项卡栏中，选择左上角的齿轮图标。将会显示菜单。选择“**Office 外接程序**”菜单项。这将打开“**Office 外接程序**”对话框。
 
@@ -132,7 +132,7 @@ Office 和 SharePoint 的外接程序基于 Web。加载项代码必须承载在
     对话框中的外接程序之一应为上一步骤中所注册的 Office 外接程序。选择该外接程序，以将其插入到 Access Web App。请记得此应用必须在 Visual Studio 中运行，以使其在 Access Web App 页上检测得到并显示。
 
 
-## <a name="debug-your-add-in-for-office"></a>调试 Office 外接程序
+## <a name="debug-your-add-in-for-office"></a>调试 Office 加载项
 
 若要调试加载项，请在 Internet Explorer 中，按 F12 或选择浏览器选项卡栏中的齿轮图标（不是 SharePoint 页上的齿轮图标）。将显示 Internet Explorer 11 提供的 F12 调试工具。如果您使用的是其他浏览器，请检查浏览器文档以确认输入调试模式的方式。
 

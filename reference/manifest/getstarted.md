@@ -1,6 +1,6 @@
-﻿# <a name="getstarted-element"></a>GetStarted 元素
+# <a name="getstarted-element"></a>GetStarted 元素
 
-提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。**GetStarted** 元素是 [FormFactor](./formfactor.md) 的子元素。
+提供在 Word、Excel、PowerPoint 和 OneNote 主机中安装此外接程序时显示的标注所使用的信息。**GetStarted** 元素是 [DesktopFormFactor](./desktopformfactor.md) 的子元素。
 
 ## <a name="child-elements"></a>子元素
 
@@ -20,4 +20,4 @@
 ## <a name="learnmoreurl"></a>LearnMoreUrl
 必需。指向用户可以了解你的外接程序详细信息的页面 URL。**resid** 属性引用 [Resources](./resources.md) 分区的 [Urls](./resources.md#urls) 元素中的有效 ID。
 
-> **注意：** **LearnMoreUrl** 当前无法在 Word、Excel 或 PowerPoint 客户端中呈现。我们建议为所有客户端添加此 URL，以便 URL 在可用时呈现。 
+> **注意：****LearnMoreUrl** 当前无法在 Word、Excel 或 PowerPoint 客户端中呈现。我们建议为所有客户端添加此 URL，以便 URL 在可用时呈现。 

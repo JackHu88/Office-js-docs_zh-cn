@@ -35,10 +35,9 @@ OAuth 的基本概念是，应用程序本身可以是一个安全主体，就�
 
 许多库可用于在各种语言和框架中实现授权代码流。有关详细信息，请参阅本文后面中的**库**部分。
 
-### <a name="relay/proxy-functions"></a>中继/代理函数
+### <a name="relayproxy-functions"></a>中继/代理函数
 
-通过存储托管在如 [Azure 函数](https://azure.microsoft.com/en-us/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 服务的简单函数中的*客户端 ID* 和*客户端密码*值，甚至可以在无服务器的 Web 应用程序上使用授权代码流。
-函数将以给定的代码交换适当的*访问令牌*，并将其重新传递给客户端。这种方法的安全性取决于对函数访问的保护程度。
+通过存储托管在如 [Azure 函数](https://azure.microsoft.com/en-us/services/functions) 或 [Amazon Lambda](https://aws.amazon.com/lambda) 服务的简单函数中的*客户端 ID* 和*客户端密码*值，甚至可以在无服务器的 Web 应用程序上使用授权代码流。函数将以给定的代码交换适当的*访问令牌*，并将其重新传递给客户端。这种方法的安全性取决于对函数访问的保护程度。
 
 若要使用此技术，外接程序会显示 UI/弹出窗口来显示联机服务（如 Google、Facebook 等）的登录屏幕。当用户登录并对外接程序授予其联机服务中的资源时，开发人员会收到一个代码，然后可以将其发送给联机函数。本文**中间人服务**中描述的服务使用与此类似的流。 
 
@@ -56,12 +55,16 @@ OAuth 的基本概念是，应用程序本身可以是一个安全主体，就�
 
 ## <a name="middleman-services"></a>中间人服务
 
-外接程序可以使用一个中间人服务（如 Auth0）为许多热门联机服务提供访问令牌或简化启用外接程序社交登录的进程，或同时具备这两个功能。通过极少量的代码，外接程序可以使用客户端脚本或服务器端代码连接到中间人，并且它将为联机服务发送回任何所需的令牌。所有授权实现代码都在中间人服务中。 
+外接程序可以使用一个中间人服务（如 OAuth.io 或 Auth0）为许多热门联机服务提供访问令牌或简化启用外接程序社交登录的进程，或同时具备这两个功能。通过极少量的代码，外接程序可以使用客户端脚本或服务器端代码连接到中间人，并且它将为联机服务发回任何所需的令牌。所有授权实现代码都在中间人服务中。 
 
 我们有一个示例，它使用 Auth0 来启用 Facebook、Google 和 Microsoft 帐户的社交登录：
 
 [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 
-## <a name="what-is-cors?"></a>什么是 CORS？
+我们有使用 OAuth.io 从 Facebook 和 Google获取访问令牌的示例：
+
+[Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+
+## <a name="what-is-cors"></a>什么是 CORS？
 
 CORS 代表[跨域资源共享](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)。有关如何使用外接程序内的 CORS 进行工作的信息，请参阅 [在 Office 外接程序中解决同源策略限制](http://dev.office.com/docs/add-ins/develop/addressing-same-origin-policy-limitations)。

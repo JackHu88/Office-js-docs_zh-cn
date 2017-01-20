@@ -155,7 +155,10 @@ if (loginSuccess) {
 }
 ```
 
-有关使用条件消息的示例，请参阅[使用 Auth0 服务简化社交登录的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-Auth0)示例。
+有关使用条件消息的示例，请参阅 
+
+- [使用 Auth0 服务简化社交登录的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [使用 OAuth.io 服务简化热门联机服务访问的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 主机页中的处理程序代码使用 `messageType` 属性的值设置分支，如以下示例所示。请注意，`showUserName` 函数的用法与上面的示例相同，`showNotification` 函数在主机页的 UI 中显示错误。 
 
@@ -302,7 +305,10 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-有关这样使用本地存储的示例外接程序，请参阅[使用 Auth0 服务简化社交登录的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-Auth0)示例。
+有关以此种方式使用本地存储的外接程序的示例，请参阅 
+
+- [使用 Auth0 服务简化社交登录的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [使用 OAuth.io 服务简化热门联机服务访问的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ### <a name="using-query-parameters"></a>使用查询参数
 
@@ -353,7 +359,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 #### <a name="addressing-slow-network"></a>处理慢速网络
 
-如果网络或标识提供程序的速度慢，对话框可能无法在用户选择 UI 时立即打开。这会让用户觉得什么都没有发生。确保更佳体验的一种方法是在对话框中打开外接程序的域（即主机窗口的域）中托管的本地页面作为第一个页面。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 
+如果网络或标识提供程序的速度慢缓慢，对话框可能无法在用户选择 UI 元素时立即打开。这会让用户觉得什么都没有发生。确保更佳体验的一种方法是在对话框中打开外接程序的域（即主机窗口的域）中托管的本地页面作为第一个页面。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 
 
 此页面中的代码使用传递给对话框的信息构建标识提供程序的登录页 URL，如[向对话框传递信息](#passing-information-to-the-dialog-box)中所述。然后，重定向到登录页。在此设计中，由于提供程序的页面不是对话框中打开的第一个页面，因此无需在外接程序清单的 `<AppDomains>` 部分中列出提供程序的域
 
@@ -386,6 +392,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 - [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - 将访问令牌存储在数据库中。
 - [使用 ASP.NET 和 QuickBooks 的 Excel 外接程序](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - 在 `messageParent` 中传递访问令牌。
+- [使用 OAuth.io 服务简化热门联机服务访问的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>有关外接程序中身份验证和授权的详细信息
 
@@ -397,5 +404,5 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，而不是传递各个完整 HTML 页面的 URL。 
 
-> **重要说明：**对话框位于新窗口中，其中包含它自己的执行上下文。如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。因此，此技术会在对话框窗口中启动应用程序的第二个实例。在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。 
+>**重要说明：**对话框位于新窗口中，其中包含它自己的执行上下文。如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。因此，此技术会在对话框窗口中启动应用程序的第二个实例。在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。 
 

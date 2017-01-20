@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
- 定义 Office UI 中外接程序公开功能的位置。**ExtensionPoint** 元素是 [FormFactor](./formfactor.md) 的子元素。 
+ 定义 Office UI 中外接程序公开功能的位置。**ExtensionPoint** 元素是 [DesktopFormFactor](./desktopformfactor.md) 的子元素。 
 
 ## <a name="attributes"></a>属性
 
@@ -9,7 +9,7 @@
 |  **xsi:type**  |  是  | 定义的扩展点类型。|
 
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-addin-commands"></a>适用于 Word、Excel、PowerPoint 和 OneNote 外接程序命令的扩展点
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>适用于 Word、Excel、PowerPoint 和 OneNote 外接程序命令的扩展点
 
 - **PrimaryCommandSurface** - Office 中的功能区。
 - **ContextMenu** - Office UI 中右键单击时出现的快捷菜单。
@@ -66,13 +66,13 @@
 |**Tooltip**|可选。组的工具提示**resid** 属性必须设置为 **String** 元素的 **id** 属性的值。**String** 元素是 **LongStrings** 元素的子元素，而 LongStrings 元素是 **Resources** 元素的子元素。|
 |**Control**|每个组都要求至少有一个控件。 **Control** 元素可以是 **Button** 或 **Menu**。使用  **Menu** 可指定按钮控件的下拉列表。当前，仅支持按钮和菜单。请参阅 [按钮控件](#button-controls)和 [菜单控件](#menu-controls)各节了解详细信息。<br/>**注意** 为了使故障排除变得更简单，我们建议一次性添加 **Control** 元素和相关的 **Resources** 子元素。
 
-## <a name="extension-points-for-outlook-addin-commands"></a>Outlook 外接程序命令的扩展点
+## <a name="extension-points-for-outlook-add-in-commands"></a>Outlook 外接程序命令的扩展点
 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [模块](#module)（仅能在 [DesktopFormFactor](./formfactor.md) 中使用。）
+- [模块](#module)（仅能在 [DesktopFormFactor](./desktopformfactor.md) 中使用。）
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 此扩展点将按钮放置在邮件阅读窗体的命令界面。在 Outlook 桌面，它显示在功能区中。
