@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|V1.3|V1.2|V1.1|">
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|" SupportedVersion="|V1.3|V1.2|V1.1|">
 	<Item text="清单" url="manifest">
 		<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="指定是否将内容外接程序的快照图像与主机文档一起保存。" />
 		<Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="指定由 Office 应用商店发布的 Office 外接程序的备用 ID。" />
@@ -285,22 +285,7 @@
 		<Item text="Image" url="onenote/image" SEODescription="OneNote 外接程序引用。" />
 		<Item text="OneNote JavaScript API 要求集" url="requirement-sets/onenote-api-requirement-sets" SEODescription="了解 OneNote 要求集、支持这些要求集的 Office 主机应用程序，以及这些应用程序的内部版本或发布日期。" />
 	</Item>
-	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio">
-		<Item text="Application" url="visio/application" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="Document" url="visio/document" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="LoadOption" url="visio/loadoption" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="Page" url="visio/page" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="PageView" url="visio/pageview" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="Shape" url="visio/shape" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Visio JavaScript API 参考。" />
-		<Item text="ShapeView" url="visio/shapeview" SEODescription="Visio JavaScript API 参考。" />
-	</Item>
-	<Item text="共享 API" url="shared/shared-api">
+	<Item text="共享的 API" url="shared/shared-api">
 		<Item text="适用于 Office 的 JavaScript API" url="javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 包括可在 Office 外接程序代码中使用的对象、方法、属性、事件和枚举。" />
 		<Item text="JavaScript API for Office 中的更改内容" url="what's-changed-in-the-javascript-api-for-office" SEODescription="适用于 Office 的 JavaScript API 会定期更新和新增对象、方法、属性、事件和枚举，以扩展 Office 外接程序的功能。" />
 		<Item text="Office 通用要求集" url="requirement-sets/office-add-in-requirement-sets" SEODescription="要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定要求集或使用运行时检查确定 Office 主机是否支持外接程序所需的 API。" />

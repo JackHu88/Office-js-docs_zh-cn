@@ -4,8 +4,9 @@
     <Item text="平台概述" url="overview/office-add-ins" SEODescription="了解 Office 外接程序，允许将您的解决方案成为跨越 Windows、Office Online、Mac 和 IPad 的 Office 本地的一部分。" />
 	<Item text="运行外接程序的要求" url="overview/requirements-for-running-office-add-ins" SEODescription="了解运行 Office 外接程序的软件和设备要求。" />	
 	<Item text="外接程序开发的最佳做法" url="overview/add-in-development-best-practices" SEODescription="遵循生成可优化用户体验的 Office 外接程序的最佳做法。" />
+	<Item text="主机和平台可用性" url="https://dev.office.com/add-in-availability" IsExternal="true" />
 	</Item>
-  <Item text="开始" url="get-started">
+  <Item text="入门" url="get-started">
     <Item text="使用 Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="使用 Visual Studio 开始构建一个 Office 外接程序" />
 	  <Item text="使用任何编辑器" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="在 Mac 或 Windows PC 上使用任意编辑器开始构建 Office 外接程序。" />
     <Item text="使用 Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="通过从您的浏览器使用 Napa Office 365 开发工具，创建适用于 Excel、Outlook、PowerPoint、Project 或 Word 的基本内容、任务窗格或 Outlook 外接程序，从而开始使用 Office 外接程序。" />
@@ -146,7 +147,7 @@
     <Item text="使用文本编辑器为项目创建您的第一个任务窗格外接程序" url="project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor" SEODescription="开发一个使用指向 HTML 文件的 XML 清单的 Office 外接程序" Scope="project" /> 
   </Item>
   <Item text="访问" url="access" Scope="access">
-    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，它通过使用自定义 HTML 和 JavaScript 扩展 Access Web App。" Scope="access" />
+    <Item text="访问 Web 应用外接程序" url="access/access-web-app-add-ins" SEOKeyword="访问外接程序" SEODescription="创建 Office 外接程序，通过使用自定义 HTML 和 JavaScript 扩展 Access Web 应用。" Scope="access" />
   </Item>
-
+<Item text="JavaScript API 参考" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

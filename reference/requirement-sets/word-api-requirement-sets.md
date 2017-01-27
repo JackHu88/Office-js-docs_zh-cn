@@ -6,7 +6,7 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 
 |  要求集  |   Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| WordApi 1.3  | 处于预览阶段，版本 1605（内部版本 6925.1000）或更高版本| 处于预览阶段，2016 年 5 月，1.22 或更高版本 | 处于预览阶段，15.22 或更高版本| 还没有完成。 ||
+| WordApi 1.3  | 处于预览阶段，版本 1605（内部版本 6925.1000）或更高版本| 处于预览阶段，2016 年 5 月，1.22 或更高版本 | 处于预览阶段，15.22 或更高版本| 处于预览阶段。 ||
 | WordApi 1.2  | 2015 年 12 月更新，版本 1601（内部版本 6568.1000）或更高版本 | 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | 版本 1608（内部版本 7601.6800）或更高版本|
 | WordApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本| 2016 年 1 月，1.18 或更高版本 | 2016 年 1 月，15.19 或更高版本| 2016 年 9 月 | |
 
@@ -14,10 +14,13 @@ Word 外接程序在多个 Office 版本中运行，包括 Office 2016 for Windo
 
 若要详细了解版本、内部版本号和 Office Online Server，请参阅：
 
-- [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [更新频道发布的 Office 365 客户端版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [使用的是哪一版 Office？](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
-- [Office Online Server 概述](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
+- 
+  [在哪里可以找到 Office 365 客户端应用程序的版本号和内部版本号](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [Office Online Server 概述](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。

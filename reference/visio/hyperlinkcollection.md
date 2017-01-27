@@ -1,7 +1,7 @@
 # <a name="hyperlinkcollection-object-javascript-api-for-visio"></a>HyperlinkCollection 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
+>**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
 
 表示 HyperlinkCollection。
 

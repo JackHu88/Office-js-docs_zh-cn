@@ -12,9 +12,11 @@
     
 - 选择要添加到您的联系人的电话号码。
     
-当前，上下文加载项仅限用于 Outlook Web App。
+当前，上下文外接程序仅限用于 Outlook Web App。
 
-## <a name="how-to-make-a-contextual-add-in"></a>如何制作上下文加载项
+>**注意：**上下文外接程序不支持外接程序命令。
+
+## <a name="how-to-make-a-contextual-add-in"></a>如何制作上下文外接程序
 
 若要制作上下文外接程序，其外接程序清单必须指定可对其进行激活的实体或正则表达式。实体可以是 [Entities](../../reference/outlook/simple-types.md) 对象中的任何属性。因此，外接程序清单必须包含 **ItemHasKnownEntity** 或 **ItemHasRegularExpressionMatch** 类型的规则。下面的示例演示如何指定作为电话号码的实体：
 

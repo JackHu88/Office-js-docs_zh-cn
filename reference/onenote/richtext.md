@@ -1,4 +1,4 @@
-# <a name="richtext-object-(javascript-api-for-onenote)"></a>RichText 对象（适用于 OneNote 的 JavaScript API）
+# <a name="richtext-object-javascript-api-for-onenote"></a>RichText 对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_  
 
@@ -10,6 +10,7 @@ _适用于：OneNote Online_
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
 |id|string|获取 RichText 对象的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
+|languageId|string|文本的语言 ID。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-languageId)|
 |text|字符串|获取 RichText 对象的文本内容。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
 _请参阅属性访问 [示例。](#property-access-examples)_
@@ -23,12 +24,27 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 
 | 方法           | 返回类型    |说明| 反馈|
 |:---------------|:--------|:----------|:-------|
+|[getHtml()](#gethtml)|string|获取格式文本的 HTML|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-getHtml)|
 |[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="gethtml"></a>getHtml()
+获取格式文本的 HTML
+
+#### <a name="syntax"></a>语法
+```js
+richTextObject.getHtml();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+字符串
+
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -39,7 +55,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void

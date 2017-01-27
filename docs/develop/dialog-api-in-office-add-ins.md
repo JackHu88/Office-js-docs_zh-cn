@@ -10,7 +10,7 @@
 - 为外接程序中的某些任务提供更多屏幕空间，或甚至整个屏幕。
 - 托管在任务窗格中显得太小的视频。
 
->**注意：**由于重叠 UI 可能会令用户生厌，因此除非应用场景需要，否则不要从任务窗格打开对话框。在考虑如何使用任务窗格区域时，可考虑采用带选项卡的任务窗格。有关示例，请参阅 [Excel 外接程序 JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 示例。
+>**注意：**由于重叠 UI 可能会令用户生厌，因此除非应用场景需要，否则不要从任务窗格打开对话框。在考虑如何使用任务窗格区域时，请注意任务窗格可以带有选项卡。有关示例，请参阅 [Excel 外接程序 JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) 示例。
 
 下图为一个对话框示例。 
 
@@ -24,7 +24,7 @@ Office JavaScript API 支持以下应用场景，其在 [Office.context.ui 命�
 
 ### <a name="opening-a-dialog-box"></a>打开对话框
 
-为了打开对话框，任务窗格中的代码会调用 [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) 方法，然后将应打开的页面 URL 传递给该方法。下面展示了一个非常简单的示例。
+为了打开对话框，任务窗格中的代码会调用 [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) 方法，然后将应打开的资源 URL 传递给该方法。这通常是一个页面，但它可能是 MVC 应用程序中的控制器方法、路由、Web 服务方法或任何其他资源。在本文中，“页面”或“网页”指对话框中的资源。下面展示了一个非常简单的示例。
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
@@ -33,9 +33,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 > **注意：**
 
 > - URL 使用 HTTP**S** 协议。对话框中加载的所有页面都必须要遵循此要求，而不仅仅是加载的第一个页面。
-> - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://dev.office.com/reference/add-ins/manifest/functionfile)。对话框中加载的第一个页面不一定要遵循此要求，但如果第一个页面与外接程序不在同一个域中，则需要在外接程序清单中的 [`<AppDomains>`](../../reference/manifest/appdomains.md) 元素内列出相应的域。
+> - 域与主机页的域相同，主机页可以是任务窗格中的页面，也可以是外接程序命令的[函数文件](https://dev.office.com/reference/add-ins/manifest/functionfile)。这要求：传递到 `displayDialogAsync` 方法的页面、控制器方法或其他资源必须与主机页位于相同的域。 
 
-在第一个页面加载后，用户可以转到使用 HTTPS 的任意网站。还可以将第一个页面设计为直接重定向到另一个站点。 
+在第一个页面（或其他资源）加载后，用户可以转到使用 HTTPS 的任意网站（或其他资源）。还可以将第一个页面设计为直接重定向到另一个站点。 
 
 默认情况下，对话框的高度和宽度占设备屏幕的 80%。不过，你也可以设置不同的百分比，只需将配置对象传递给方法即可，如下面的示例所示。
 
@@ -48,6 +48,20 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 将两个值均设置为 100% 可有效提供全屏体验。（有效最大值为 99.5%，窗口仍可移动和调整大小。）
 
 >**注意：**只能从主机窗口打开一个对话框。尝试打开另一个对话框会生成错误。（有关详细信息，请参阅 [displayDialogAsync 返回的错误](#errors-from-displaydialogAsync)。）比方说，如果用户从任务窗格打开对话框，则无法从任务窗格中的其他页面打开第二个对话框。不过，如果是从[外接程序命令](https://dev.office.com/docs/add-ins/design/add-in-commands)打开对话框，那么只要选择此命令，就会打开一个新的（但不可见的）HTML 文件。这会新建一个（不可见的）主机窗口，所以每个这样的窗口都可以启动自己的对话框。 
+
+### <a name="take-advantage-of-a-performance-option-in-office-online"></a>使用 Office Online 中的性能选项
+
+`displayInIframe` 属性是可以传递到 `displayDialogAsync` 的配置对象中的附加属性。当将此属性设置为 `true` 且外接程序在 Office Online 打开的文档中运行时，对话框将作为浮动 iframe 而非独立窗口打开，这样可以使对话框打开速度更快。示例如下。
+
+```js
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+```
+
+默认值为 `false`，与完全遗漏此属性时完全相同。
+
+如果外接程序未在 Office Online 中运行，则会忽略 `displayInIframe`，但是对其存在没有危害。
+
+> **注意：**如果对话框将随时重定向至 iframe 无法打开的页面，则***不***应使用 `displayInIframe: true`。例如，许多热门 Web 服务的登录页（如 Google 和 Microsoft 帐户）都无法在 iframe 中打开。 
 
 ### <a name="sending-information-from-the-dialog-box-to-the-host-page"></a>将信息从对话框发送到主机页
 
@@ -217,7 +231,7 @@ function processMessage(arg) {
 
 |代码编号|含义|
 |:-----|:-----|
-|12004|传递给 `displayDialogAsync` 的 URL 的域不受信任。该域必须与主机页的域相同（包括协议和端口号），**或**必须在外接程序清单的 `<AppDomains>` 部分中进行注册。|
+|12004|传递给 `displayDialogAsync` 的 URL 的域不受信任。此域必须与主机页的域相同（包括协议和端口号）。|
 |12005|传递给 `displayDialogAsync` 的 URL 使用 HTTP 协议。需要使用 HTTPS。（在 Office 的某些版本中，返回 12005 的错误消息与返回 12004 错误消息是相同的。）|
 |12007|已从此主机窗口打开了一个对话框。主机窗口（如任务窗格）一次只能打开一个对话框。|
 
@@ -267,8 +281,7 @@ function processDialogEvent(arg) {
             showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
             break;
         case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");
-            break;
+            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
         case 12006:
             showNotification("Dialog closed.");
             break;
@@ -281,7 +294,7 @@ function processDialogEvent(arg) {
 
 有关这样处理错误的示例外接程序，请参阅 [Office 外接程序对话框 API 示例](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)。
 
-  
+ 
 ## <a name="passing-information-to-the-dialog-box"></a>向对话框传递信息
 
 有时，主机页需要向对话框传递信息。完成此操作的方式主要分为两种：
@@ -322,7 +335,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 对话框窗口中的代码可以解析 URL 并读取参数值。
 
->**注意：**Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）之后，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。将相同的值添加到对话框的会话存储中。同样，*代码不得读取此值，也不得写入此值*。
+ 自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）之后，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。将相同的值添加到对话框的会话存储中。同样，*代码不得读取此值，也不得写入此值*。
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>使用对话框 API 显示视频
 
@@ -335,8 +348,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
             frameborder="0" allowfullscreen>
         </iframe>
 
-2.  video.dialogbox.html 页面必须与主机页位于同一域中，
-3.   或者位于外接程序清单的 `<AppDomains>` 部分中注册的域中。
+2.  video.dialogbox.html 页面必须与主机页位于相同的域。
 3.  在主机页中调用 `displayDialogAsync`，打开 video.dialogbox.html。
 4.  如果外接程序需要知道用户何时关闭对话框，请为 `DialogEventReceived` 事件注册处理程序，并处理 12006 事件。有关详细信息，请参阅[对话框窗口中的错误和事件](#errors-and-events-in-the-dialog-window)部分。
 
@@ -346,27 +358,22 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 ## <a name="using-the-dialog-apis-in-an-authentication-flow"></a>在身份验证流中使用对话框 API
 
-对话框 API 的主要应用场景是为不允许在 iframe 中打开登录页的资源或标识提供程序（如 Microsoft 帐户、Office 365、Google 和 Facebook）启用身份验证。下面是一个非常简单的典型身份验证流：
+对话框 API 的主要应用场景是为不允许在 Iframe 中打开登录页的资源或标识提供程序（如 Microsoft 帐户、Office 365、Google 和 Facebook）启用身份验证。 
 
-1. 用户选择主机页上的 UI 元素进行登录。该元素的处理程序调用 `displayDialogAsync`，并传递标识提供程序的登录页 URL。*由于这是对话框中打开的第一个页面，并且它与主机窗口不在同一域，因此必须在外接程序清单的 `<AppDomains>` 部分中列出该页面的域。*URL 包含一个查询参数，用于提示标识提供程序在用户登录特定页面后重定向对话框窗口。在本文中，我们将调用页面“redirectPage.html”。（*此页面必须与主机窗口位于同一域中*，因为对话框窗口传递登录尝试结果的唯一方法就是调用 `messageParent`，而它只能在与主机窗口位于同一域的页面上调用）。 
+>**注意：**将对话框 API 用于此方案时，请*不*要在 `displayDialogAsync` 的调用中使用 `displayInIframe: true` 选项。请参阅此文章上文部分了解有关此选项的详细信息。 
+
+下面是一个简单的典型身份验证流。 
+
+1. 对话框中打开的第一个页面是外接程序的域（即主机窗口的域）中托管的本地页面（或其他资源）。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。”此页面中的代码使用传递给对话框的信息构建标识提供程序的登录页 URL，如[向对话框传递信息](#passing-information-to-the-dialog-box)中所述。 
+2. 然后，对话框窗口重定向到登录页。URL 包含一个查询参数，用于提示标识提供程序在用户登录特定页面后重定向对话框窗口。在本文中，我们将此页面称为 "redirectPage.html"。（*此页面必须与主机窗口位于相同域中*，因为对话框窗口传递登录尝试结果的唯一方法就是调用 `messageParent`，而它只能在与主机窗口位于同一域的页面上调用）。 
 2. 标识提供程序的服务处理来自对话框窗口的传入 GET 请求。如果用户已经登录，它会立即将窗口重定向到 redirectPage.html，并将用户数据作为查询参数添加。如果用户尚未登录，提供程序的登录页会显示在窗口中，以便用户登录。对于大多数提供程序，如果用户无法成功登录，提供程序会在对话框窗口中显示错误页面，而不会重定向到 redirectPage.html。用户必须通过选择右上角的 **X** 来关闭窗口。如果用户成功登录，则对话框窗口会重定向到 redirectPage.html，并且用户数据会作为查询参数添加。
 3. 当 redirectPage.html 页面打开时，它会调用 `messageParent` 向主机页报告登录是否成功，而且还会视情况报告用户数据或错误数据。 
 4. `DialogMessageReceived` 事件在主机页中触发，其处理程序关闭对话框窗口，并视情况对消息进行其他处理。 
 
-有关使用此模式的示例外接程序，请参阅[使用 ASP.NET 和 QuickBooks 的 Excel 外接程序](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
-
-### <a name="alternate-authentication-and-authorization-scenarios"></a>其他身份验证和授权应用场景
-
-#### <a name="addressing-slow-network"></a>处理慢速网络
-
-如果网络或标识提供程序的速度慢缓慢，对话框可能无法在用户选择 UI 元素时立即打开。这会让用户觉得什么都没有发生。确保更佳体验的一种方法是在对话框中打开外接程序的域（即主机窗口的域）中托管的本地页面作为第一个页面。此页面可以显示简单的 UI，提示用户“请稍候，我们正在将你重定向到可以登录 *NAME-OF-PROVIDER* 的页面。” 
-
-此页面中的代码使用传递给对话框的信息构建标识提供程序的登录页 URL，如[向对话框传递信息](#passing-information-to-the-dialog-box)中所述。然后，重定向到登录页。在此设计中，由于提供程序的页面不是对话框中打开的第一个页面，因此无需在外接程序清单的 `<AppDomains>` 部分中列出提供程序的域
-
 有关使用此模式的示例外接程序，请参阅：
 
-- [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Office 外接程序 Office 365 客户端 AngularJS 身份验证](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)。
+- [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)：对话框窗口最初打开的资源是没有自己视图的控制器方法。然后，其重定向到 Office 365 登录页。
+- [Office 外接程序 Office 365 客户端 AngularJS 身份验证](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)：对话框窗口最初打开的资源是一个页面。 
 
 #### <a name="supporting-multiple-identity-providers"></a>支持多个标识提供程序
 
@@ -391,7 +398,6 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 下面的示例使用对话框 API 实现此目的：
 
 - [在 PowerPoint 外接程序中使用 Microsoft Graph 插入 Excel 图表](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) - 将访问令牌存储在数据库中。
-- [使用 ASP.NET 和 QuickBooks 的 Excel 外接程序](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) - 在 `messageParent` 中传递访问令牌。
 - [使用 OAuth.io 服务简化热门联机服务访问的 Office 外接程序](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>有关外接程序中身份验证和授权的详细信息
@@ -404,5 +410,5 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 如果外接程序使用客户端路由（单页应用程序通常这样做），则可以选择将路由 URL 传递给 [ displayDialogAsync ](http://dev.office.com/reference/add-ins/shared/officeui.displaydialogasync) 方法，而不是传递各个完整 HTML 页面的 URL。 
 
->**重要说明：**对话框位于新窗口中，其中包含它自己的执行上下文。如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。因此，此技术会在对话框窗口中启动应用程序的第二个实例。在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。 
+> **重要说明：**对话框位于新窗口中，其中包含它自己的执行上下文。如果你传递路由，则基本页及其所有初始化和引导代码会在这个新的上下文中再次运行，且所有变量都会在对话框中设置为各自的初始值。因此，此技术会在对话框窗口中启动应用程序的第二个实例。在对话框窗口中更改变量的代码不会更改相同变量的任务窗格版本。同样，对话框窗口有其自己的会话存储，任务窗格中的代码无法访问此类存储。 
 

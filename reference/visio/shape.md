@@ -1,7 +1,7 @@
 # <a name="shape-object-javascript-api-for-visio"></a>Shape 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
+>**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
 
 表示 Shape 类。
 
@@ -10,7 +10,7 @@
 | 属性     | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:---|
 |id|int|形状的标识符。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-id)|
-|name|string|形状的名称。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
+|name|字符串|形状的名称。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
 |select|bool|如果选择形状，则返回 true。用户可以设置为 true，从而明确选择形状。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
 |text|string|形状的文本。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-text)|
 

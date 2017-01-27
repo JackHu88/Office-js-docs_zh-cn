@@ -1,5 +1,5 @@
 
-# <a name="document.setselecteddataasync-method"></a>Document.setSelectedDataAsync 方法
+# <a name="documentsetselecteddataasync-method"></a>Document.setSelectedDataAsync 方法
 将数据写入文档中的当前选择。
 
 |||
@@ -17,7 +17,7 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 
 |**名称**|**类型**|**说明**|**支持说明**|
 |:-----|:-----|:-----|:-----|
-| _data_|数据可以是以下任意数据类型：<ul><li><b>string</b> (Office.CoercionType.Text) - 仅适用于 Excel、Excel Online、PowerPoint、PowerPoint Online、Word 和 Word Online。</li><li>数组的 <b>array</b> (Office.CoercionType.Matrix) - 仅适用于 Excel、Word 和 Word Online。</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) - 仅适用于 Access、Excel、Word 和 Word Online。</li><li><b>HTML</b> (Office.CoercionType.Html) - 仅适用于 Word 和 Word Online。</li><li><b>Office Open XML</b>  (Office.CoercionType.Ooxml) - 仅适用于 Word 和 Word Online。</li><li><b>Base64 编码图像流</b> (Office.CoercionType.Image) - 仅适用于 Excel、PowerPoint、Word 和 Word Online。</li></ul>|当前选择中要设置的数据。必需。|**包含更改的版本：**1.1。若要支持 Access 内容外接程序，必须有 **Selection** 要求集 1.1 或更高版本。若要支持设置图像数据，必须有 **ImageCoercion** 要求集 1.1 或更高版本。若要对其进行设置以用于应用程序激活，请使用：<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>可通过以下代码完成运行时检测 ImageCoercion 功能：<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
+| _data_|数据可以是以下任意数据类型：<ul><li><b>string</b> (Office.CoercionType.Text) - 仅适用于 Excel、Excel Online、PowerPoint、PowerPoint Online、Word 和 Word Online。</li><li>数组的 <b>array</b> (Office.CoercionType.Matrix) - 仅适用于 Excel、Word 和 Word Online。</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) - 仅适用于 Access、Excel、Word 和 Word Online。</li><li><b>HTML</b> (Office.CoercionType.Html) - 仅适用于 Word 和 Word Online。</li><li><b>Office Open XML</b> (Office.CoercionType.Ooxml) - 仅适用于 Word 和 Word Online。</li><li><b>Base64 编码图像流</b> (Office.CoercionType.Image) - 仅适用于 PowerPoint 和 Word。</li></ul>|当前选择中要设置的数据。必需。|**包含更改的版本：**1.1。若要支持 Access 内容外接程序，必须有 **Selection** 要求集 1.1 或更高版本。若要支持设置图像数据，必须有 **ImageCoercion** 要求集 1.1 或更高版本。若要对其进行设置以用于应用程序激活，请使用：<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>可通过以下代码完成运行时检测 ImageCoercion 功能：<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
 | _options_|**object**|指定一组 [可选参数](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)。选项对象可能包含用于设置选项的下列属性：<br/><ul><li>coercionType (<b><a href="735eaab6-5e31-4bc2-add5-9d378900a31b.htm">CoercionType</a></b>) - 指定如何强制设置数据。如果未设置此选项，则使用默认的 coercionType 值 Office.CoercionType.Text。</li><li>tableOptions (<b>object</b>) - 对于插入的表格，为指定<a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">表格格式选项</a>（例如标题行、总计行和带状行）的键值对列表。 </li><li>cellFormat (<b>object</b>) - 对于插入的表格，为指定列、行或单元格范围以及适用于该范围的<a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">单元格格式</a>的键值对列表。 </li><li>imageLeft (<b>number</b>) - 此选项适用于插入图像。表示相对于 PowerPoint 幻灯片左侧的插入位置，以及相对于 Excel 中当前选定单元格的插入位置。Word 会忽略此值。此值以磅为单位。</li><li>imageTop (<b>number</b>) - 此选项适用于插入图像。表示相对于 PowerPoint 幻灯片顶部的插入位置，以及相对于 Excel 中当前选定单元格的插入位置。Word 会忽略此值。此值以磅为单位。</li><li>imageWidth (<b>number</b>) - 此选项适用于插入图像。表示图像宽度。如果提供此选项时未提供 imageHeight，那么图像会进行缩放，以匹配图像的宽度值。如果同时提供了图像的宽度和高度，那么图像会相应地调整大小。如果图像的高度或宽度均未提供，则会使用默认的图像大小和纵横比。此值以磅为单位。</li><li>imageHeight (<b>number</b>) - 此选项适用于插入图像。表示图像高度。如果提供此选项时未提供 imageWidth，那么图像会进行缩放，以匹配图像的高度值。如果同时提供了图像的宽度和高度，那么图像会相应地调整大小。如果图像的高度或宽度均未提供，则会使用默认的图像大小和纵横比。此值以磅为单位。</li><li>asyncContext (<b>object \| value</b>) - 用户定义的对象，适用于 <a href="540c114f-0398-425c-baf3-7363f2f6bc47.htm">AsyncResult</a> 对象的 asyncContext 属性。当回调是命名的函数时，使用此选项为 <b>AsyncResult</b> 提供对象或值。</li></ul>|_tableOptions_ 和 _cellFormat_ 选项已在 v1.1 中添加，并且在 Excel 2013 和 Excel Online 中受支持。<br/><br/>_imageLeft_ 和 _ImageTop_ 选项在 Excel 和 PowerPoint 中受支持。|
 | _callback_|**object**|返回回调时调用的函数，其唯一的参数的类型为 **AsyncResult** 。||
 
@@ -28,7 +28,7 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 在传递到 **setSelectedDataAsync** 方法的回调函数中，[AsyncResult.value](../../reference/shared/asyncresult.value.md) 属性始终返回 **undefined**，因为没有要检索的对象或数据。
 
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 为 _data_ 传递的值包含要写入当前选定内容的数据。如果该值为：
 

@@ -1,7 +1,7 @@
 # <a name="hyperlink-object-javascript-api-for-visio"></a>Hyperlink 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
+>**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
 
 表示 Hyperlink。
 
@@ -9,7 +9,7 @@
 
 | 属性     | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:---|
-|address|string|获取超链接对象的地址。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
+|address|字符串|获取超链接对象的地址。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
 |description|string|获取超链接的说明。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
 |subAddress|string|获取超链接对象的子地址。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
 

@@ -7,7 +7,7 @@
 |主机|引入版本|包含最后一次更改的版本|
 |:---------------|:--------|:----------|
 |Word、Excel、PowerPoint|1.1|1.1|
-|Outlook|Mailbox 1.4|邮箱 1.4|
+|Outlook|Mailbox 1.4|Mailbox 1.4|
 
 此方法在 Word、Excel 或 PowerPoint 外接程序的 DialogAPI [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)以及 Outlook 的邮箱要求集 1.4 中引入。若要指定 DialogAPI 要求集，请在清单中运行以下代码。
 
@@ -93,9 +93,9 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 | 属性     | 类型   |说明|
 |:---------------|:--------|:----------|
-|**width**|object|可选。以占当前显示器的百分比的形式，定义对话框的宽度。默认值为 80%。最小分辨率为 250 像素。|
-|**height**|object|可选。以占当前显示器的百分比的形式，定义对话框的高度。默认值为 80%。最小分辨率为 150 像素。|
-|**displayInIframe**|对象|可选。确定是否应在 IFrame 内显示对话框。**此设置仅适用于 Office Online 客户端**，桌面客户端可忽略此设置。可取值如下：<ul><li>False（默认值）- 对话框将显示为一个新的浏览器窗口（弹出窗口）。对于无法在 IFrame 中显示的身份验证页建议使用此值。 </li><li>True - 对话框将显示为使用 IFrame 的浮动重叠窗口。对于用户体验和性能而言，这是最佳选择。</li>|
+|**width**|int|可选。以占当前显示器的百分比的形式，定义对话框的宽度。默认值为 80%。最小分辨率为 250 像素。|
+|**height**|int|可选。以占当前显示器的百分比的形式，定义对话框的高度。默认值为 80%。最小分辨率为 150 像素。|
+|**displayInIframe**|bool|可选。确定是否应在 IFrame 内显示对话框。**此设置仅适用于 Office Online 客户端**，桌面客户端可忽略此设置。可取值如下：<ul><li>False（默认值）- 对话框将显示为一个新的浏览器窗口（弹出窗口）。对于无法在 IFrame 中显示的身份验证页建议使用此值。 </li><li>True - 对话框将显示为使用 IFrame 的浮动重叠窗口。对于用户体验和性能而言，这是最佳选择。</li>|
 
 
 ## <a name="callback-value"></a>回调值

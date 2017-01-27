@@ -1,7 +1,7 @@
 # <a name="shapedataitem-object-javascript-api-for-visio"></a>ShapeDataItem 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
+>**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
 
 表示 ShapeDataItem。
 
@@ -10,7 +10,7 @@
 | 属性     | 类型   |说明| 反馈|
 |:---------------|:--------|:----------|:---|
 |label|string|指定形状数据项标签的字符串。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|value|string|指定形状数据项值的字符串。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+|value|字符串|指定形状数据项值的字符串。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
 _请参阅属性访问 [示例。](#property-access-examples)_
 
