@@ -54,7 +54,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 `displayInIframe` 属性是可以传递到 `displayDialogAsync` 的配置对象中的附加属性。当将此属性设置为 `true` 且外接程序在 Office Online 打开的文档中运行时，对话框将作为浮动 iframe 而非独立窗口打开，这样可以使对话框打开速度更快。示例如下。
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
 默认值为 `false`，与完全遗漏此属性时完全相同。
@@ -335,7 +335,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?client
 
 对话框窗口中的代码可以解析 URL 并读取参数值。
 
- 自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）之后，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。将相同的值添加到对话框的会话存储中。同样，*代码不得读取此值，也不得写入此值*。
+> **注意**：Office 会自动向传递给 `displayDialogAsync` 的 URL 添加查询参数 `_host_info`。（附加在自定义查询参数（若有）之后，不会附加到对话框导航到的任何后续 URL。）Microsoft 可能会更改此值的内容，或者将来会将其全部删除，因此代码不得读取此值。将相同的值添加到对话框的会话存储中。同样，*代码不得读取此值，也不得写入此值*。
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>使用对话框 API 显示视频
 

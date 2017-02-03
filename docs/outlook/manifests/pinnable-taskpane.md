@@ -10,7 +10,9 @@
 
 第一步是添加固定支持，此步操作是在外接程序[清单](./manifests.md)中完成。为此，请向描述任务窗格按钮的 `Action` 元素添加 [ SupportsPinning](../../../reference/manifest/action.md#supportspinning) 元素。
 
-由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此必须添加 v1.0 和 v1.1 架构的 [VersionOverrides](../../../reference/manifest/versionoverrides.md) 元素。
+由于 `SupportsPinning` 元素是在 VersionOverrides v1.1 架构中进行定义，因此需为 v1.0 和 v1.1 架构包含 [VersionOverrides](../../../reference/manifest/versionoverrides.md) 元素。
+
+> **注意：**如果计划将 Outlook 外接程序[发布](../../publish/publish.md)到 Office 应用商店，当使用 **SupportsPinning** 元素时，外接程序内容不得为静态，且其必须清晰显示与邮箱中打开的或选择的邮件相关的数据，才能通过 [Office 应用商店验证](https://msdn.microsoft.com/en-us/library/jj220035.aspx)。
 
 ```xml
 <!-- Task pane button -->

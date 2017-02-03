@@ -9,12 +9,12 @@
 |Word、Excel、PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-此方法在 Word、Excel 或 PowerPoint 外接程序的 DialogAPI [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)以及 Outlook 的邮箱要求集 1.4 中引入。若要指定 DialogAPI 要求集，请在清单中运行以下代码。
+此方法在 Word、Excel 或 PowerPoint 外接程序的 DialogApi [要求集](../../docs/overview/specify-office-hosts-and-api-requirements.md)以及 Outlook 的邮箱要求集 1.4 中引入。若要指定 DialogAPI 要求集，请在清单中运行以下代码。
 
 ```xml
 <Requirements> 
   <Sets DefaultMinVersion="1.1"> 
-    <Set Name="DialogAPI"/> 
+    <Set Name="DialogApi"/> 
   </Sets> 
 </Requirements> 
 ```
@@ -32,7 +32,7 @@
 若要在运行时在 Word、Excel 或 PowerPoint 外接程序中检测此 API，请运行以下代码。
 
 ```js
-if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+if (Office.context.requirements.isSetSupported('DialogApi', 1.1)) {  
   // Use Office UI methods; 
 } else { 
   // Alternate path 

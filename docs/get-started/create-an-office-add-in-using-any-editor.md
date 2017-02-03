@@ -18,7 +18,7 @@
 - [Gulp](http://gulpjs.com/)
 - [TSD](http://definitelytyped.org/tsd/)
     
-只有 Git 和 npm 需要进行单独安装。其他都可以使用 npm 安装。
+仅 Git 和 npm 需要使用单独的安装。其他的则可以使用 npm 进行安装。
 
 安装 Git 时，除了应选择以下选项之外，还应使用默认设置： 
 
@@ -214,13 +214,43 @@ tsd install
 - [旁加载 Outlook 外接程序进行测试](../outlook/testing-and-tips.md)
     
 
-## <a name="debugging-your-office-add-in"></a>调试 Office 外接程序
+## <a name="debug-your-add-in"></a>调试你的外接程序
 
-有多种方法可以调试外接程序：
+可通过以下方式调试外接程序：
 
+- 从任务窗格附加调试器 (Office 2016 for Windows)。
+- 使用浏览器的开发人员工具。
+- 在 Windows 10 上使用 F12 开发人员工具。
 
-- 您可以使用 Office Web 客户端，打开浏览器的开发人员工具，然后就像调试任何其他客户端 JavaScript 应用程序一样调试外接程序。 
-- 如果您是在 Windows 10 上使用桌面 Office，您可以 [在 Windows 10 上使用 F12 开发人员工具调试外接程序](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
+### <a name="attach-debugger-from-the-task-pane"></a>从任务窗格附加调试器
+
+在 Office 2016 for Windows 版本 77xx.xxxx 或更高版本中，可从任务窗格附加调试器。 
+
+若要启动“**附加调试器**”工具，选择任务窗格右上角来激活“**个性**”菜单，如下图红圈所示。   
+
+![附加调试器菜单的屏幕截图](../../images/attach-debugger.png)
+
+选择“**附加调试器**”。此操作将启动“**Visual Studio 实时调试器**”对话框，如下图所示。 
+
+![Visual Studio JIT 调试器对话框的屏幕截图](../../images/visual-studio-debugger.png)
+
+然后可在 Visual Studio 中进行附加和调试。   
+
+  >  **注意**：当前唯一受支持的调试器工具是 [Visual Studio 2015](https://www.visualstudio.com/downloads/) [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx)。如果没有安装 Visual Studio，则选择“**附加调试器**”选项不会导致任何操作。  
+  
+有关详细信息，请参阅下列内容：
+
+-   若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks)部分的提示 4。
+-   若要设置断点，请参阅[使用断点](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx)。
+-   若要使用 F12，请参阅[使用 F12 开发人员工具](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx)。
+
+### <a name="browser-developer-tools"></a>浏览开发人员工具 
+
+可使用 Office Web 客户端，打开浏览器的开发人员工具，然后就像调试任何其他客户端 JavaScript 应用程序一样调试外接程序。 
+
+### <a name="f12-developer-tools-on-windows-10"></a>Windows 10 上的 F12 开发人员工具
+
+如果是在 Windows 10 上使用 Office 桌面客户端，可以[在 Windows 10 上使用 F12 开发人员工具调试外接程序](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)。
     
 ## <a name="additional-resources"></a>其他资源
 

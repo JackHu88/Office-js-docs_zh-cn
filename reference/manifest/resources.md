@@ -17,18 +17,20 @@
 
 ### <a name="images"></a>Images
 每个图标必须具有三个 **Images** 元素，三个强制大小的各一个元素：
+
 - 16x16
 - 32x32
 - 80x80
 
 此外还支持以下其他大小，但并不是必需的：
+
 - 20x20
 - 24x24
 - 40x40
 - 48x48
 - 64x64
 
-> **重要说明：** Outlook 需要缓存图像资源的能力，以提高性能。为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。这将导致 Outlook 自动替代泛型或默认图像。    
+> **重要说明：**Outlook 需要缓存图像资源的能力，以提高性能。为此，托管图像资源的服务器不能向响应头添加任何 CACHE-CONTROL 指令。这将导致 Outlook 自动替代泛型或默认图像。    
 
 
 ## <a name="resources-examples"></a>资源示例 
@@ -36,14 +38,14 @@
 ```XML
 <Resources>
       <bt:Images>
-        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp16-icon_default.png" />
+        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp16-icon_default.png" />
         </bt:Image>
-        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp32-icon_default.png" />
+        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp32-icon_default.png" />
         </bt:Image>
-        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp80-icon_default.png" />
+        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp80-icon_default.png" />
         </bt:Image>
       </bt:Images>
       <bt:Urls>
@@ -69,9 +71,9 @@
 <Resources>
   <bt:Images>
     <!-- Blue icon -->
-    <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/images/blue-16.png"/>
-    <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER/images/blue-32.png"/>
-    <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/images/blue-80.png"/>
+    <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/blue-16.png"/>
+    <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER//blue-32.png"/>
+    <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/blue-80.png"/>
   </bt:Images>
   <bt:Urls>
     <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html"/>
