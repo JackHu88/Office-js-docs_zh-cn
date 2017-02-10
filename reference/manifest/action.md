@@ -64,6 +64,7 @@
 ```  
 
 ## <a name="supportspinning"></a>SupportsPinning
+
 **xsi: type** 是“ShowTaskpane”时的可选元素。包含的 [ VersionOverrides ](./versionoverrides.md) 元素的 `xsi:type` 属性值必须为 `VersionOverridesV1_1`。添加此元素时将值设为 `true` 可以支持任务窗格固定。这样一来，用户可以“固定”任务窗格，即使用户选择其他对象，任务窗格也可以继续处于打开状态。有关详细信息，请参阅[在 Outlook 中实现可固定的任务窗格](../../docs/outlook/manifests/pinnable-taskpane)
 
 > **注意**：SupportsPinning 当前仅受 Outlook 2016 for Windows（内部版本 7628.1000 或更高版本）的支持。

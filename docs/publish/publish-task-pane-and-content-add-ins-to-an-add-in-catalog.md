@@ -1,15 +1,15 @@
-﻿
-# <a name="publish-task-pane-and-content-addins-to-a-sharepoint-catalog"></a>将任务窗格和内容外接程序发布到 SharePoint 目录
+
+# <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>将任务窗格和内容外接程序发布到 SharePoint 目录
 
 >**注意：**如果面向云或混合环境，我们建议通过 [管理中心预览](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) 使用集中部署来发布外接程序。
 
 外接程序目录是 SharePoint Web 应用程序或 SharePoint Online 租户中的专用网站集合，它托管 Office 和 SharePoint 外接程序的文档库。管理员可以将 Office 外接程序清单文件上载到外接程序目录以供组织使用。管理员将外接程序目录注册为受信任的目录时，用户可从 Office 客户端应用程序中的插入 UI 中插入外接程序。
 
->**注意：**SharePoint 上的外接程序目录不支持在[外接程序清单](../overview/add-in-manifests.md)的 VersionOverrides 节点中实现的外接程序功能。
+>**注意：**SharePoint 上的外接程序目录不支持在[外接程序清单](../overview/add-in-manifests.md)的 VersionOverrides 节点中实现的外接程序功能，例如外接程序命令。 
 
 SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 Office 外接程序，必须将其提交到 [Office 应用商店](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)。   
 
-## <a name="to-set-up-an-addin-catalog-on-sharepoint"></a>在 SharePoint 上设置外接程序目录
+## <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>在 SharePoint 上设置外接程序目录
 
 1. 浏览到“**管理中心网站**”（“**开始**” > “**所有程序**” > “**Microsoft SharePoint 2013 产品**” > “**SharePoint 2013 管理中心**”）。
     
@@ -29,7 +29,7 @@ SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 O
     
 9. 若要向 Office 外接程序外接程序目录添加外接程序，请选择“**Office 外接程序**”。
 
-## <a name="to-set-up-an-addin-catalog-on-office-365"></a>在 Office 365 上设置外接程序目录
+## <a name="to-set-up-an-add-in-catalog-on-office-365"></a>在 Office 365 上设置外接程序目录
 
 1. 在“Office 365 管理中心”页上，选择“**管理**”，然后选择“**SharePoint**”。
     
@@ -51,7 +51,7 @@ SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 O
     
 若要将外接程序添加到外接程序目录网站，请浏览至已创建的网站。在左侧导航窗格中，选择“**Office 外接程序**”，然后选择“**新外接程序**”以上传 Office 外接程序清单文件。    
 
-## <a name="publish-to-an-addin-catalog"></a>发布到外接程序目录
+## <a name="publish-to-an-add-in-catalog"></a>发布到外接程序目录
 
 
 1. 浏览至外接程序目录：
@@ -66,7 +66,7 @@ SharePoint 目录不支持 Office 2016 for Mac。若要向 Mac 客户端部署 O
     
 2. 选择“**单击以添加新项目**”链接。
     
-3. 选择“**浏览**”，然后指定要上传的[清单](../../docs/overview/add-in-manifests.md)。
+3. 选择“**浏览**”，然后指定要上传的[清单](../../docs/overview/add-in-manifests.md)(#清单)。
     
     此目录中的内容和任务窗格外接程序现在可从“**Office 外接程序**”对话框提供。若要访问这些外接程序，请在“**插入**”选项卡上选择“**我的外接程序**”，然后选择“**我的组织**”。
     

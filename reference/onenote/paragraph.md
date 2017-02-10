@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-onenote)"></a>Paragraph 对象（适用于 OneNote 的 JavaScript API）
+# <a name="paragraph-object-javascript-api-for-onenote"></a>Paragraph 对象（适用于 OneNote 的 JavaScript API）
 
 _适用于：OneNote Online_  
 
@@ -9,8 +9,8 @@ _适用于：OneNote Online_
 
 | 属性     | 类型   |说明|反馈|
 |:---------------|:--------|:----------|:-------|
-|id|字符串|获取段落对象的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
-|type|字符串|获取 Paragraph 对象的类型。只读。可能的值是：RichText、Image、Table、Other。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
+|id|string|获取 Paragraph 对象的 ID。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
+|type|string|获取 Paragraph 对象的类型。只读。可能的值是：RichText、Image、Table、Other。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
 
 _请参阅属性访问 [示例。](#property-access-examples)_
 
@@ -20,13 +20,13 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 |image|[Image](image.md)|获取 Paragraph 中的 Image 对象。如果 ParagraphType 不是 Image，则引发异常。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
 |inkWords|[InkWordCollection](inkwordcollection.md)|获取 Paragraph 中的 Ink 集合。如果 ParagraphType 不为 Ink，则引发异常。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-inkWords)|
 |outline|[Outline](outline.md)|获取包含“段落”的“边框”对象。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-outline)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|此段落下的段落集合。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-paragraphs)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|此段落下的段落集合。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-paragraphs)|
 |parentParagraph|[Paragraph](paragraph.md)|获取父段落对象。如果父段落不存在，则引发。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraph)|
 |parentParagraphOrNull|[Paragraph](paragraph.md)|获取父段落对象。如果父段落不存在，则返回 null。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentParagraphOrNull)|
 |parentTableCell|[TableCell](tablecell.md)|获取包含 Paragraph 的 TableCell 对象（如果存在）。如果父级不为 TableCell，则引发 ItemNotFound。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCell)|
 |parentTableCellOrNull|[TableCell](tablecell.md)|获取包含 Paragraph 的 TableCell 对象（如果存在）。如果父级不为 TableCell，则返回 null。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-parentTableCellOrNull)|
 |richText|[RichText](richtext.md)|获取 Paragraph 中的 RichText 对象。如果 ParagraphType 不为 RichText，则引发异常。只读只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
-|table|[Table](table.md)|获取 Paragraph 中的 Table 对象。如果 ParagraphType 不为 Table，则引发异常。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
+|table|[表](table.md)|获取 Paragraph 中的 Table 对象。如果 ParagraphType 不为 Table，则引发异常。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
 
 ## <a name="methods"></a>方法
 
@@ -42,7 +42,7 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 删除 paragraph
 
 #### <a name="syntax"></a>语法
@@ -94,7 +94,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserthtmlassibling(insertlocation:-string,-html:-string)"></a>insertHtmlAsSibling(insertLocation: string, html: string)
+### <a name="inserthtmlassiblinginsertlocation-string-html-string"></a>insertHtmlAsSibling(insertLocation: string, html: string)
 插入指定的 HTML 内容
 
 #### <a name="syntax"></a>语法
@@ -105,8 +105,8 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|insertLocation|字符串|相对于当前 Paragraph 的新内容的位置。可能的值是：Before、After|
-|Html|字符串|描述内容的可视化演示文稿的 HTML 字符串。请查看 OneNote 外接程序 JavaScript API [支持的 HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)。|
+|insertLocation|string|相对于当前 Paragraph 的新内容的位置。可能的值是：Before、After|
+|Html|string|描述内容的可视化演示文稿的 HTML 字符串。请查看 OneNote 外接程序 JavaScript API [支持的 HTML](../../docs/onenote/onenote-add-ins-page-content.md#supported-html)。|
 
 #### <a name="returns"></a>返回
 void
@@ -148,7 +148,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertimageassibling(insertlocation:-string,-base64encodedimage:-string,-width:-double,-height:-double)"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
+### <a name="insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 在指定的插入位置插入图像。
 
 #### <a name="syntax"></a>语法
@@ -159,10 +159,10 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|insertLocation|字符串|相对于当前段落的表格的位置。可能的值是：Before、After|
-|base64EncodedImage|字符串|要追加的 HTML 字符串。|
+|insertLocation|string|相对于当前段落的表格的位置。可能的值是：Before、After|
+|base64EncodedImage|string|要追加的 HTML 字符串。|
 |宽度|double|可选。以磅为单位的宽度。默认值为 null，将考虑图像宽度。|
-|高度|double|可选。以磅为单位的高度。默认值为 null，将考虑图像高度。|
+|height|double|可选。以磅为单位的高度。默认值为 null，将考虑图像高度。|
 
 #### <a name="returns"></a>返回
 [Image](image.md)
@@ -204,7 +204,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertrichtextassibling(insertlocation:-string,-paragraphtext:-string)"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
+### <a name="insertrichtextassiblinginsertlocation-string-paragraphtext-string"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 在指定的插入位置插入段落文本。
 
 #### <a name="syntax"></a>语法
@@ -215,8 +215,8 @@ paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|insertLocation|字符串|相对于当前段落的表格的位置。可能的值是：Before、After|
-|paragraphText|字符串|要追加的 HTML 字符串。|
+|insertLocation|string|相对于当前段落的表格的位置。可能的值是：Before、After|
+|paragraphText|string|要追加的 HTML 字符串。|
 
 #### <a name="returns"></a>返回
 [RichText](richtext.md)
@@ -258,7 +258,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserttableassibling(insertlocation:-string,-rowcount:-number,-columncount:-number,-values:-string[][])"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### <a name="inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 将具有指定行数和列数的表格添加到当前段落的之前或之后。
 
 #### <a name="syntax"></a>语法
@@ -269,7 +269,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|insertLocation|字符串|相对于当前段落的表格的位置。可能的值是：Before、After|
+|insertLocation|string|相对于当前段落的表格的位置。可能的值是：Before、After|
 |rowCount|数字|表格的行数。|
 |columnCount|数字|表格的列数。|
 |值|string[][]|可选。可选的二维数组。如果指定数组中的对应字符串，则填充单元格。|
@@ -277,7 +277,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="returns"></a>返回
 [Table](table.md)
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
 
 #### <a name="syntax"></a>语法
@@ -288,7 +288,7 @@ object.load(param);
 #### <a name="parameters"></a>参数
 | 参数    | 类型   |说明|
 |:---------------|:--------|:----------|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
+|param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void

@@ -25,8 +25,8 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
     
       2. 在功能区的“**开发人员**”选项卡上，选择“**Visual Basic**”。
     
-     >**注意**  没看到“**开发人员**”选项卡？请参阅 [操作说明：在功能区显示“开发人员”选项卡](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) 以将其打开。
-	 3.在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
+     >**注意**  没看到“**开发人员**”选项卡？请参阅 [操作说明：在功能区显示“开发人员”选项卡](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx)以将其打开。
+      3. 在 Visual Basic 编辑器中，依次选择“**视图**”和“**即时窗口**”。
     
       4. 在即时窗口中键入以下内容以显示 Exchange Server 的版本。返回值的主版本必须等于或大于 15。
     
@@ -112,9 +112,9 @@ Outlook 外接程序激活是上下文相关的，并且基于外接程序清单
 
 
 
-1. 如果你已在 Outlook 打开时修改了清单，并且未使用 Napa、Visual Studio 2012 或 Visual Studio 的更高版本开发外接程序，则应卸载外接程序，并使用 Exchange 管理中心重新安装它。 
+1. 如果你已在 Outlook 打开时修改了清单，并且未使用 Visual Studio 2012 或 Visual Studio 的更高版本开发外接程序，则应卸载外接程序，并使用 Exchange 管理中心重新安装它。 
     
-2. 重新启动 Outlook 并测试 Outlook 现在是否已激活加载项。
+2. 重新启动 Outlook 并测试 Outlook 现在是否已激活外接程序。
     
 3. 如果 Outlook 无法激活外接程序，则检查 Outlook 是否具有外接程序清单的正确缓存副本。请查看以下路径：
     

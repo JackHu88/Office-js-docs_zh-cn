@@ -47,10 +47,7 @@ Project 的加载项方案包括以下几种：
 
 对于复杂的自定义应用程序，为了便于调试，建议你使用 Visual Studio 2015 为外接程序开发网站。Visual Studio 2015 包括用于外接程序项目的模板，你可以在其中选择外接程序的类型（任务窗格、内容或邮件）和主机应用程序（Project、Word、Excel 或 Outlook）。有关与 Project Online 中的数据集成的示例，请参阅 MSDN 上“Project 编程功能”博客中的[将 Project 任务窗格外接程序连接到 PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)。
 
-
- >**注释**  Project 2013 版本不支持 Napa。
-
-在安装 Project 2013 SDK 下载时， `\Samples\Apps\` 子目录包括以下示例 外接程序：
+在安装 Project 2013 SDK 下载时， `\Samples\Apps\` 子目录包括以下示例外接程序：
 
 
 -  **Bing 搜索：**BingSearch.XML 清单文件指向用于移动设备的 Bing 搜索页。由于 Bing Web 应用程序在 Internet 中已存在，因此 Bing 搜索加载项不使用其他源代码文件或 Project 加载项对象模型。
@@ -66,7 +63,7 @@ Project 的加载项方案包括以下几种：
 清单文件指定加载项网页或 Web 应用程序的 URL、加载项的类型（Project 任务窗格）、用于其他语言和区域设置的内容的可选 URL 以及其他属性。
 
 
-### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>过程 1. 创建用于 Bing 搜索的加载项清单文件
+### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>过程 1. 创建用于 Bing 搜索的加载项清单文件
 
 
 - 在本地目录中创建一个 XML 文件。该 XML 文件包括  **OfficeApp** 元素和子元素， [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)中对其进行了介绍。例如，创建一个名为 BingSearch.xml 的文件，其中包含以下 XML。
@@ -153,7 +150,7 @@ Project 的加载项方案包括以下几种：
 在过程 2 中，在安装 Project 2013 的本地计算机上安装 Bing 搜索加载项。但是，由于加载项基础架构不直接使用本地文件路径，如  `C:\Project\AppManifests`，因此您可以在本地计算机上创建网络共享。如果您喜欢，可以在远程计算机上创建文件共享。
 
 
-### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>过程 2. 安装 Bing 搜索加载项
+### <a name="procedure-2-to-install-the-bing-search-add-in"></a>过程 2. 安装 Bing 搜索加载项
 
 
 1. 为加载项清单创建本地目录。例如，创建  `C:\Project\AppManifests` 目录。
@@ -178,7 +175,7 @@ Project 的加载项方案包括以下几种：
     
     **图 2.启动文件共享上的外接程序**
 
-    ![启动文件共享上的 Office 应用](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![启动文件共享上的 Office 应用程序](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. 选择必应搜索外接程序，然后选择“**插入**”。
     
@@ -186,7 +183,7 @@ Bing 搜索加载项显示在任务窗格中，如图 3 所示。可以手动调
 
 **图 3.使用必应搜索应用程序**
 
-![使用必应搜索应用](../../images/pj15_AgaveOverview_BingSearch.gif)
+![使用 Bing 搜索应用程序](../../images/pj15_AgaveOverview_BingSearch.gif)
 
 
 ## <a name="distributing-project-add-ins"></a>分发 Project 加载项

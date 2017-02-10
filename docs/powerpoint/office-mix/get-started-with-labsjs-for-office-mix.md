@@ -33,7 +33,7 @@ labs.js 库充当除 office.js 库（Office 外接程序 的 API）以外的抽�
 
 第一步是注册 Office 365 开发人员网站。这样您就可以在将实验室提交到 Office 应用商店之前对其进行托管和测试。此网站允许您在实时环境中将外接程序发布到 Office Mix 并进行测试。
 
-有关详细信息，请参阅 [在 Office 365 上设置 SharePoint 加载项的开发环境](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx)。您只需执行前两个步骤；安装"Napa"开发人员工具为可选。
+有关详细信息，请参阅[在 Office 365 上为 SharePoint 外接程序设置开发环境](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) 
 
 
 ### <a name="set-up-an-app-catalog-on-sharepoint-online"></a>在 SharePoint Online 上设置应用程序目录
@@ -71,7 +71,7 @@ labs.js 库充当除 office.js 库（Office 外接程序 的 API）以外的抽�
 最后，使用开发人员帐户重新登录。在 PowerPoint 2013 右上角选择您的登录名称并使用您的开发人员帐户登录。现在您可以插入外接程序。
 
 
-### <a name="insert,-publish,-and-view-your-app"></a>插入、发布和查看应用程序
+### <a name="insert-publish-and-view-your-app"></a>插入、发布和查看应用程序
 
 若要将外接程序插入此目录，请选择“**插入**”功能区，然后在“**应用程序**”区域中选择“**存储**”。选择“**我的组织**”，然后将在外接程序目录中看到此外接程。选择外接程序，选择“**插入**”，则外接程序（实验室）会插入到 PowerPoint 2013 文档中。
 

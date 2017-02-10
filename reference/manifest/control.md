@@ -6,8 +6,10 @@
 
 |  属性  |  必需  |  说明  |
 |:-----|:-----|:-----|
-|**xsi:type**|是|正被定义的控件类型。可以是按钮或菜单。|
+|**xsi:type**|是|正在定义的控件类型。可以是 `Button`、`Menu` 或 `MobileButton`。 |
 |**id**|否|控件元素的 ID。最多可包含 125 个字符。|
+
+> **注意：**在 VersionOverrides 架构 1.1 中定义了 **xsi:type** 的 `MobileButton` 值。它只适用于 [MobileFormFactor](./mobileformfactor.md) 元素内包含的 **Control** 元素。
 
 ## <a name="button-control"></a>按钮控件
 
@@ -21,49 +23,6 @@
 |  [Supertip](./supertip.md)  | 是 |  按钮的 supertip。    |
 |  [Icon](./icon.md)      | 是 |  按钮的图像。         |
 |  [Action](./action.md)    | 是 |  指定要执行的操作。  |
-
-
-
-```XML
-        <!-- Define a control that calls a JavaScript function. -->
-
-                 <Control xsi:type="Button" id="Button1Id1">
-                  <Label resid="residLabel" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getData</FunctionName>
-                  </Action>
-                </Control>
-
-
-                <!-- Define a control that shows a task pane. -->
-
-                <Control xsi:type="Button" id="Button2Id1">
-                  <Label resid="residLabel2" />
-                  <Tooltip resid="residToolTip" />
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon2_32x32" />
-                    <bt:Image size="32" resid="icon2_32x32" />
-                    <bt:Image size="80" resid="icon2_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Control>
-```
 
 ### <a name="executefunction-button-example"></a>ExecuteFunction 按钮示例
 
@@ -104,7 +63,7 @@
   </Action>
 </Control>
 ```
-## <a name="menu-(dropdown-button)-controls"></a>菜单（下拉）控件
+## <a name="menu-dropdown-button-controls"></a>菜单（下拉）控件
 
 菜单定义选项的静态列表。每个菜单项将执行函数或显示任务窗格。不支持子菜单。 
 
@@ -120,51 +79,51 @@
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
-              <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
-              <Supertip>
-                <Title resid="residLabel" />
-                <Description resid="residToolTip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Items>
-                <Item id="showGallery2">
-                  <Label resid="residLabel3"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Item>
-              <Item id="showGallery3">
-                  <Label resid="residLabel5"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon4_32x32" />
-                    <bt:Image size="32" resid="icon4_32x32" />
-                    <bt:Image size="80" resid="icon4_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getButton</FunctionName>
-                  </Action>
-                </Item>
-              </Items>
-            </Control>
+  <Label resid="residLabel3" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="residLabel3"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Action xsi:type="ShowTaskpane">
+        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+        <SourceLocation resid="residUnitConverterUrl" />
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="residLabel5"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon4_32x32" />
+        <bt:Image size="32" resid="icon4_32x32" />
+        <bt:Image size="80" resid="icon4_32x32" />
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>getButton</FunctionName>
+      </Action>
+    </Item>
+  </Items>
+</Control>
 
 ```
 
@@ -178,59 +137,57 @@
 |  [Icon](./icon.md)      | 是 |  按钮的图像。         |
 |  [Items](#items)     | 是 |  菜单中显示的按钮的集合。包含每个子菜单项的 **Item** 元素。每个 **Item** 元素均包含 [按钮控件](#button-control) 的子元素。|
 
-
 ### <a name="menu-control-examples"></a>菜单控件示例
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
-              <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
-              <Supertip>
-                <Title resid="residLabel" />
-                <Description resid="residToolTip" />
-              </Supertip>
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Items>
-                <Item id="showGallery2">
-                  <Label resid="residLabel3"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1_32x32" />
-                    <bt:Image size="32" resid="icon1_32x32" />
-                    <bt:Image size="80" resid="icon1_32x32" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>MyTaskPaneID1</TaskpaneId>
-                    <SourceLocation resid="residUnitConverterUrl" />
-                  </Action>
-                </Item>
-              <Item id="showGallery3">
-                  <Label resid="residLabel5"/>
-                  <Supertip>
-                    <Title resid="residLabel" />
-                    <Description resid="residToolTip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon4_32x32" />
-                    <bt:Image size="32" resid="icon4_32x32" />
-                    <bt:Image size="80" resid="icon4_32x32" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>getButton</FunctionName>
-                  </Action>
-                </Item>
-              </Items>
-            </Control>
+  <Label resid="residLabel3" />
+  <Tooltip resid="residToolTip" />
+  <Supertip>
+    <Title resid="residLabel" />
+    <Description resid="residToolTip" />
+  </Supertip>
+  <Icon>
+    <bt:Image size="16" resid="icon1_32x32" />
+    <bt:Image size="32" resid="icon1_32x32" />
+    <bt:Image size="80" resid="icon1_32x32" />
+  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="residLabel3"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Action xsi:type="ShowTaskpane">
+        <TaskpaneId>MyTaskPaneID1</TaskpaneId>
+        <SourceLocation resid="residUnitConverterUrl" />
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="residLabel5"/>
+      <Supertip>
+        <Title resid="residLabel" />
+        <Description resid="residToolTip" />
+      </Supertip>
+      <Icon>
+        <bt:Image size="16" resid="icon4_32x32" />
+        <bt:Image size="32" resid="icon4_32x32" />
+        <bt:Image size="80" resid="icon4_32x32" />
+      </Icon>
+      <Action xsi:type="ExecuteFunction">
+        <FunctionName>getButton</FunctionName>
+      </Action>
+    </Item>
+  </Items>
+</Control>
 
 ```
-
 
 ```xml
 <Control xsi:type="Menu" id="msgReadMenuButton">
@@ -261,5 +218,64 @@
       </Action>
     </Item>
   </Items>
+</Control>
+```
+
+## <a name="mobilebutton-control"></a>MobileButton 控件
+
+当用户选择某个移动按钮时，将执行一个操作。它可以执行函数或显示任务窗格。 每个移动按钮控件必须具有对清单唯一的 `id`。
+
+在 VersionOverrides 架构 1.1 中定义了 **xsi:type** 的 `MobileButton` 值。包含  [VersionOverrides](./versionoverrides.md) 元素的 `VersionOverridesV1_1` 属性值必须为 `xsi:type`。
+
+> **注意**：仅 Outlook for iOS 支持此种类型的 **Control** 元素。
+
+### <a name="child-elements"></a>子元素
+|  元素 |  必需  |  说明  |
+|:-----|:-----|:-----|
+|  **Label**     | 是 |  按钮文本。**resid** 属性必须设置为 [ShortStrings](./resources.md#shortstrings) 元素（位于 [Resources](./resources.md) 元素）中 **String** 元素的 **id** 属性的值。        |
+|  [Icon](./icon.md)      | 是 |  按钮的图像。         |
+|  [Action](./action.md)    | 是 |  指定要执行的操作。  |
+
+### <a name="executefunction-mobile-button-example"></a>ExecuteFunction 移动按钮示例
+
+```xml
+<Control xsi:type="MobileButton" id="msgReadFunctionButton">
+  <Label resid="funcReadButtonLabel" />
+  <Icon>
+    <bt:Image resid="blue-icon-16-1" size="25" scale="1" />
+    <bt:Image resid="blue-icon-16-2" size="25" scale="2" />
+    <bt:Image resid="blue-icon-16-3" size="25" scale="3" />
+    <bt:Image resid="blue-icon-32-1" size="32" scale="1" />
+    <bt:Image resid="blue-icon-32-2" size="32" scale="2" />
+    <bt:Image resid="blue-icon-32-3" size="32" scale="3" />
+    <bt:Image resid="blue-icon-80-1" size="48" scale="1" />
+    <bt:Image resid="blue-icon-80-2" size="48" scale="2" />
+    <bt:Image resid="blue-icon-80-3" size="48" scale="3" />
+  </Icon>
+  <Action xsi:type="ExecuteFunction">
+    <FunctionName>getSubject</FunctionName>
+  </Action>
+</Control>
+```
+
+### <a name="showtaskpane-mobile-button-example"></a>ShowTaskpane 移动按钮示例
+
+```xml
+<Control xsi:type="MobileButton" id="msgReadOpenPaneButton">
+  <Label resid="paneReadButtonLabel" />
+  <Icon>
+    <bt:Image resid="blue-icon-16-1" size="25" scale="1" />
+    <bt:Image resid="blue-icon-16-2" size="25" scale="2" />
+    <bt:Image resid="blue-icon-16-3" size="25" scale="3" />
+    <bt:Image resid="blue-icon-32-1" size="32" scale="1" />
+    <bt:Image resid="blue-icon-32-2" size="32" scale="2" />
+    <bt:Image resid="blue-icon-32-3" size="32" scale="3" />
+    <bt:Image resid="blue-icon-80-1" size="48" scale="1" />
+    <bt:Image resid="blue-icon-80-2" size="48" scale="2" />
+    <bt:Image resid="blue-icon-80-3" size="48" scale="3" />
+  </Icon>
+  <Action xsi:type="ShowTaskpane">
+    <SourceLocation resid="readTaskPaneUrl" />
+  </Action>
 </Control>
 ```

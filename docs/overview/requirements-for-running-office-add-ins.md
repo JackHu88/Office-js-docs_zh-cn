@@ -15,7 +15,7 @@
 对于所有类型的外接程序（内容、Outlook 和任务窗格外接程序以及外接程序命令），你需要将你的外接程序的网页文件部署到 Web 服务器或 Web 托管服务，如 [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md)。
 
 
- >**注意：**当你在 Visual Studio 中开发和调试外接程序时，Visual Studio 将使用 IIS Express 在本地部署和运行你的外接程序的网页文件，并且不需要额外的 Web 服务器。与此类似，当你在浏览器中使用 Napa 进行开发和调试时，它将从与你用于登录到 Napa 的帐户相关联的存储中部署和运行你的外接程序的网页文件。
+ >**注意：** 在 Visual Studio 中开发和调试外接程序时，Visual Studio 使用 IIS Express 在本地部署并运行你的外接程序的网页文件，而不需要其他 Web 服务器。 
 
 对于内容和任务窗格外接程序，在受支持的 Office 主机应用程序（Access Web App、Word、Excel、PowerPoint 或 Project）中，你还需要 SharePoint 上的一个 [外接程序目录](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)才能上载外接程序的 XML 清单文件。
 

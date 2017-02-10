@@ -19,7 +19,7 @@
     
 - 共享网络文件夹或外接程序目录中提供的外接程序的 XML 清单文件 (GetDoc_App.xml)。该清单文件必须指向前面提到的 HTML 文件的位置。
     
-您还可以使用 Visual Studio 2015 或 Napa Office 365 开发工具 创建适用于 PowerPoint 或 Word 的外接程序。有关如何创建 Office 外接程序的详细信息，请参阅表 1。
+也可使用 [Visual Studio 2015](get-started/create-and-debug-office-add-ins-in-visual-studio) 或[任意编辑器](get-started/create-an-office-add-in-using-any-editor)创建适用于 PowerPoint 或 Word 的外接程序。 
 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>创建任务窗格外接程序需要了解的核心概念

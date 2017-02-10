@@ -39,7 +39,7 @@
 在 Outlook for Mac 中，选择外接程序栏最右侧的“**管理外接程序**”，然后登录到 Exchange 管理中心。继续进行下一节中的第 4 步。
 
 
-### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>使用 Outlook Web App 或 Outlook.com 安装外接程序
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlookcom"></a>使用 Outlook Web App 或 Outlook.com 安装外接程序
 
 若要使用 Outlook Web App (OWA) 安装 Outlook 外接程序，请按照下列步骤操作：
 
@@ -59,7 +59,6 @@
 
 >**注意**  如果没有使用以下任一项来开发外接程序： 
 - Office 365 开发人员租户
-- Napa Office 365 开发工具
 - Visual Studio
 
 如果你没有 Exchange Server 最低的“我的自定义应用”角色，则可仅从 Office 应用商店安装外接程序。为了测试外接程序或通过指定外接程序清单的 URL 或文件名安装外接程序，你应请求你的 Exchange 管理员提供所需的权限。
@@ -72,9 +71,9 @@ Exchange 管理员可运行以下 PowerShell cmdlet 向单个用户分配必要�
 
 ```$users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}```
 
-有关我的自定义应用角色的详细信息，请参阅 [我的自定义应用角色](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx)。 
+有关我的自定义应用角色的详细信息，请参阅[我的自定义应用角色](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx)。 
 
-使用 Office 365、Napa 或 Visual Studio 开发外接程序会向您分配组织管理员角色，这便允许您按 EAC 中的文件或 URL 或者按 Powershell cmdlet 安装外接程序。
+使用 Office 365 或 Visual Studio 开发外接程序会向你分配组织管理员角色，这便允许你按 EAC 中的文件或 URL 或者按 Powershell cmdlet 安装外接程序。
 
 
 ### <a name="installing-an-add-in-by-using-remote-powershell"></a>使用远程 PowerShell 安装外接程序

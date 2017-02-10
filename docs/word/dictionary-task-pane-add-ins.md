@@ -1,22 +1,19 @@
 
-# <a name="create-a-dictionary-task-pane-addin"></a>创建字典任务窗格外接程序
+# <a name="create-a-dictionary-task-pane-add-in"></a>创建字典任务窗格外接程序
 
 
 本文显示任务窗格加载项和伴随的 Web 服务的示例，该 Web 服务为用户在 Word 2013 文档中的当前选择提供字典定义或同义词库同义词。 
 
 字典 Office 外接程序基于标准任务窗格外接程序，它具有附加功能来支持在 Office 应用程序的 UI 中的其他位置查询和显示字典 XML Web 服务的定义。 
 
-在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。
-XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。
-图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
+在典型的字典任务窗格外接程序中，用户在其文档中选择一个单词或短语，然后外接程序后面的 JavaScript 逻辑将此选项传递给字典提供程序的 XML Web 服务。然后，字典提供程序的网页更新，以向用户显示所选内容的定义。XML Web 服务组件最多以 OfficeDefinitions XML 架构定义的格式返回三个定义，然后会在宿主 Office 应用程序的 UI 中的其他位置向用户显示这些定义。图 1 显示所选内容并显示 Word 2013 中运行的必应品牌字典外接程序体验。
 
 **图 1.显示选定字词的定义的字典外接程序**
 
 
 ![显示定义的字典应用程序](../../images/DictionaryAgave01.jpg)
 
-由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。
-图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
+由您来确定是单击字典外接程序的 HTML 用户界面中的**查看更多**链接以显示任务窗格中的详细信息，还是打开一个单独的浏览器窗口以显示所选的单词或短语的整个网页。图 2 显示了**定义**上下文菜单命令，它允许用户快速启动安装的字典。图 3 至 5 显示了 Office 用户界面中使用字典 XML 服务提供 Word 2013 定义的位置。
 
 **图 2.定义上下文菜单中的命令**
 
@@ -181,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-addin"></a>创建字典加载项的组件
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>创建字典加载项的组件
 
 
 字典加载项包含三个主要组件文件。
@@ -194,7 +191,7 @@ public class WebService : System.Web.Services.WebService {
 - JavaScript 文件，用于提供从文档中获取用户选择的逻辑，将选择作为查询发送给 Web 服务，然后在外接程序的 UI 中显示返回的结果。
     
 
-### <a name="creating-a-dictionary-addins-manifest-file"></a>创建字典加载项的清单文件
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a>创建字典加载项的清单文件
 
 下面是字典加载项的示例清单文件。
 
@@ -202,7 +199,7 @@ public class WebService : System.Web.Services.WebService {
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>DemoDict</Id>
+  <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
   <DefaultLocale>en-us</DefaultLocale>
@@ -444,7 +441,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-### <a name="creating-a-dictionary-addins-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>创建字典外接程序的 HTML 用户界面
 
 
 以下两个示例演示用于演示字典外接程序的 UI 的 HTML 和 CSS 文件。若要查看 UI 在外接程序的任务窗格中如何显示，请参阅代码之后的图 6。若要查看 Dictionary.js 文件中 JavaScript 的实现如何为此 HTML UI 提供编程逻辑，请参阅本节后面紧接着的“编写 JavaScript 实现”。

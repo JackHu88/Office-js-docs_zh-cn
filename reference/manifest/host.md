@@ -50,6 +50,7 @@
 |  元素 |  必需  |  说明  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  是   |  定义桌面外形规格的设置。 |
+|  [MobileFormFactor](./mobileformfactor.md)    |  否   |  定义移动外形规格的设置。**注意：**仅在 Outlook for iOS 中支持此元素。 |
 
 
 ### <a name="xsitype"></a>xsi:type

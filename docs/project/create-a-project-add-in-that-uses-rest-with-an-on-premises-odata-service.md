@@ -19,13 +19,12 @@
      >**注意**  Project Standard 2013 也可以承载主机任务窗格外接程序，但是无法登录到 Project Web App。
 - 带有 Visual Studio 的 Office 开发人员工具的 Visual Studio 2015 中包括用于创建 Office 和 SharePoint 外接程序的模板。请确保你已安装最新版本的 Office 开发人员工具；请参阅 [Office 外接程序和 SharePoint 下载](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx)的_工具_部分。
     
-     >**注意**  Napa 不能用于创建 Project 2013 任务窗格外接程序。
 - 本文中的过程和代码示例可访问本地域中 Project Server 2013 的  **ProjectData** 服务。本文中的 jQuery 方法不适用于 Project Online。
     
     验证可从你的开发计算机访问 **ProjectData** 服务。
     
 
-### <a name="procedure-1.-to-verify-that-the-projectdata-service-is-accessible"></a>过程 1. 确认可访问 ProjectData 服务
+### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>过程 1. 确认可访问 ProjectData 服务
 
 
 1- 若要使浏览器直接显示来自 REST 查询的 XML 数据，请关闭源阅读视图。有关如何在 Internet Explorer 中执行此操作的信息，请参阅 [查询 Project Server 2013 报告数据的 OData 源](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)中过程 1 的第 4 步。
@@ -62,7 +61,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 - Web 项目名为  **HelloProjectODataWeb**。它在任务窗格中包含 Web 内容的网页、JavaScript 文件、CSS 文件、图像、引用和配置文件。Web 项目以 .NET Framework 4 为目标。过程 4 和过程 5 演示了如何修改 Web 项目中的文件以创建  **HelloProjectOData** 加载项的功能。
     
 
-### <a name="procedure-2.-to-create-the-helloprojectodata-add-in-for-project"></a>过程 2. 为 Project 创建 HelloProjectOData 加载项
+### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>过程 2. 为 Project 创建 HelloProjectOData 加载项
 
 
 1. 以管理员身份运行 Visual Studio 2015，然后在起始页上选择“**新建项目**”。
@@ -102,7 +101,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 有关清单的详细信息，请参阅 [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)和 [Office 外接程序清单的架构参考 (v1.1)](../overview/add-in-manifests.md)。
 
 
-### <a name="procedure-3.-to-modify-the-add-in-manifest"></a>过程 3. 修改加载项清单
+### <a name="procedure-3-to-modify-the-add-in-manifest"></a>过程 3. 修改加载项清单
 
 
 1. 在 Visual Studio 中，打开 HelloProjectOData.xml 文件。
@@ -164,7 +163,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
      >**注意**  在本示例中，活动项目的成本和工作数据源于已发布值。如果在 Project 中更改值，那么在项目发布之前 **ProjectData** 服务不会具有这些更改。
 
 
-### <a name="procedure-4.-to-create-the-html-content"></a>过程 4. 创建 HTML 内容
+### <a name="procedure-4-to-create-the-html-content"></a>过程 4. 创建 HTML 内容
 
 1. 在 Home.html 文件的  **head** 元素中，为外接程序使用的 CSS 文件添加任何其他 **link** 元素。Visual Studio 项目模板包含一个指向可用于自定义 CSS 样式的 App.css 文件的链接。
     
@@ -271,7 +270,7 @@ Visual Studio Office 开发人员工具包含 Project 2013 任务窗格外接程
 ```
 
 
-## <a name="creating-the-javascript-code-for-the-add-in"></a>为外接程序创建 JavaScript 代码
+## <a name="creating-the-javascript-code-for-the-add-in"></a>为加载项创建 JavaScript 代码
 
 
 Project 任务窗格加载项的模板包含旨在演示关于典型 Office 2013 加载项文档中的数据的基本获取和设置操作的默认初始化代码。由于 Project 2013 不支持写入活动项目的操作，并且  **HelloProjectOData** 加载项不使用 **getSelectedDataAsync** 方法，因此可以删除 **Office.initialize** 函数内的脚本，以及删除默认 HelloProjectOData.js 文件中的 **setData** 函数和 **getData** 函数。
@@ -281,7 +280,7 @@ JavaScript 中包括用于 REST 查询的全局常数和用于多个函数的全
 HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择“**比较所有项目**”时会调用 **retrieveOData** 函数；**parseODataResult** 函数可计算平均值并使用设置好颜色和单位的值填充对照表。
 
 
-### <a name="procedure-5.-to-create-the-javascript-code"></a>过程 5. 创建 JavaScript 代码
+### <a name="procedure-5-to-create-the-javascript-code"></a>过程 5. 创建 JavaScript 代码
 
 
 1. 删除默认 HelloProjectOData.js 文件中的所有代码，然后添加全局变量和  **Office.initialize** 函数。变量名称全部大写表示它们是常量；稍后它们将与 **_pwa** 变量一起用于在此示例中创建 REST 查询。
@@ -546,7 +545,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 ```
 
 
-## <a name="testing-the-helloprojectodata-add-in"></a>测试 HelloProjectOData 外接程序
+## <a name="testing-the-helloprojectodata-add-in"></a>测试 HelloProjectOData 加载项
 
 
 若要使用 Visual Studio 2015 测试并调试  **HelloProjectOData** 外接程序，您必须在开发计算机上安装 Project Professional 2013。若要启用不同的测试方案，请确保您可以选择 Project 打开本地计算机文件还是与 Project Web App 连接。例如，执行下列步骤：
@@ -556,7 +555,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
     
 2. 在“**Project Web App 帐户**”对话框中，“**可用帐户**”列表除了有本地“**计算机**”帐户外还可以有多个 Project Web App 帐户。在“**准备工作**”部分，选择“**选择帐户**”。
     
-3. 关闭 Project 以便 Visual Studio 能够启动它以对外接程序进行调试。
+3. 关闭 Project 以便 Visual Studio 能够启动它以对加载项进行调试。
     
 基本测试应当包括以下内容：
 
@@ -568,7 +567,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 - 再次运行外接程序，在此过程中创建含有附带成本和工作数据任务的项目。你可以将此项目保存到 Project Web App 中，但请勿将其发布。验证外接程序是否显示 Project 服务器中的信息，但当前项目**不可用**。
     
 
-### <a name="procedure-6.-to-test-the-add-in"></a>过程 6. 测试加载项
+### <a name="procedure-6-to-test-the-add-in"></a>过程 6. 测试加载项
 
 
 1. 运行 Project Professional 2013，与 Project Web App 连接，然后创建一个测试项目。将任务分配到本地资源或企业资源，对部分任务设置不同的完成百分比值，然后发布该项目。退出 Project，从而让 Visual Studio 启动 Project 以对加载项进行调试。
@@ -665,8 +664,7 @@ HelloProjectOData.js 文件的剩余部分包含两个函数：当用户选择�
 - 如果修改加载项并发布它，您应当对已发布的加载项再次运行类似的测试。有关其他注意事项，请参阅 [后续步骤](#next-steps)。
     
 
- >
-  **注释**  在  **ProjectData** 服务的一次查询中可返回的数据量有限制；数据量因实体而异。例如， **Projects** 实体集的默认限制为每次查询 100 个项目，但 **Risks** 实体集的默认限制为 200。对于生产安装， **HelloProjectOData** 示例中的代码应进行修改以支持多于 100 个项目的查询。有关详细信息，请参阅 [后续步骤](#next-steps)和 [查询 Project Server 2013 报告数据的 OData 源](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)。
+ >**注释**  在  **ProjectData** 服务的一次查询中可返回的数据量有限制；数据量因实体而异。例如， **Projects** 实体集的默认限制为每次查询 100 个项目，但 **Risks** 实体集的默认限制为 200。对于生产安装， **HelloProjectOData** 示例中的代码应进行修改以支持多于 100 个项目的查询。有关详细信息，请参阅 [后续步骤](#next-steps)和 [查询 Project Server 2013 报告数据的 OData 源](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx)。
 
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>HelloProjectOData 加载项的示例代码
@@ -1129,9 +1127,9 @@ Table styles
 
 - 重新编写 **retrieveOData** 函数以支持多于 100 个项目的查询。例如，你可以使用 `~/ProjectData/Projects()/$count` 查询获取项目数，并在项目数据的 REST 查询中使用 _$skip_ 运算符和 _$top_ 运算符。循环运行多个查询，然后计算每个查询数据的平均值。项目数据的每个查询的格式为：`~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`。
     
-    有关详细信息，请参阅 [使用 REST 终结点的 OData 系统查询选项](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx)。还可以使用 Windows PowerShell 中的 [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) 命令来替代 **Projects** 实体集（或任意 33 个实体集）的查询的默认页面大小。请参阅 [ProjectData - Project OData 服务引用](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)。
+    For more information, see [OData System Query Options Using the REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). You can also use the [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
     
-- 若要部署外接程序，请参阅 [发布 Office 外接程序](../publish/publish.md)。
+- 若要部署加载项，请参阅 [发布 Office 外接程序](../publish/publish.md)。
     
 
 ## <a name="additional-resources"></a>其他资源
@@ -1142,8 +1140,7 @@ Table styles
     
 - [使用文本编辑器创建 Project 2013 的第一个任务窗格外接程序](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
-- 
-  [ProjectData - Project 2013 OData 服务引用](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
+- [ProjectData - Project 2013 OData 服务引用](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
 - [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
     

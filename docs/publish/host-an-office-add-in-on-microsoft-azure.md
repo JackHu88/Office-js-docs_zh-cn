@@ -20,7 +20,7 @@
 ![托管在 Microsoft Azure 中的 Office 外接程序网站](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
 
 
-## <a name="set-up-your-development-computer-with-azure-sdk-for-.net,-an-azure-subscription,-and-office-2013"></a>使用 .NET 的 Azure SDK、Azure 订阅和 Office 2013 来设置开发计算机
+## <a name="set-up-your-development-computer-with-azure-sdk-for-net-an-azure-subscription-and-office-2013"></a>使用 .NET 的 Azure SDK、Azure 订阅和 Office 2013 来设置开发计算机
 
 
 
@@ -44,7 +44,7 @@
 若要使演练简单易行并重点介绍使用 Azure 和 Office 外接程序，你可以将本地文件共享作为受信任的目录使用，可在其中存储外接程序的 XML 清单文件。对于打算在一个或多个业务中使用的外接程序，可在 SharePoint 中保留外接程序清单文件，或将外接程序发布到 Office 应用商店。 
 
 
-## <a name="step-1:-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>步骤 1：创建网络文件共享以承载加载项清单文件
+## <a name="step-1-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>步骤 1：创建网络文件共享以承载加载项清单文件
 
 
 
@@ -59,7 +59,7 @@
 5. 在“**文件共享**”中，选择下拉箭头，然后选择“**所有人**” > “**添加**” > “**共享**”。
     
 
-## <a name="step-2:-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>步骤 2：将文件共享添加到受信任的加载项目录，使 Office 客户端应用程序信任安装 Office 外接程序的位置
+## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>步骤 2：将文件共享添加到受信任的加载项目录，使 Office 客户端应用程序信任安装 Office 外接程序的位置
 
 
 
@@ -74,7 +74,7 @@
 5. 选中“**在菜单中显示**”复选框。将外接程序 XML 清单文件存储在受信任的外接程序目录的共享中时，外接程序将显示在“**Office 外接程序**”对话框中的“**共享文件夹**”下。
     
 
-## <a name="step-3:-create-a-website-in-azure"></a>步骤 3. 在 Azure 中创建网站
+## <a name="step-3-create-a-website-in-azure"></a>步骤 3. 在 Azure 中创建网站
 
 
 可以使用多种方法创建空的 Azure 网站。如果使用的是 Visual Studio 2015，则按照[使用 Visual Studio 2015](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2015) 中的步骤操作，从 Visual Studio IDE 中创建 Azure 网站。你也可以按照[使用 Azure 管理门户](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-management-portal)中的步骤操作，创建 Azure 网站。
@@ -135,7 +135,7 @@
     发布配置文件包含你的凭据，使你可以安全地发布到 Azure。 
     
 
-## <a name="step-4:-create-an-office-add-in-in-visual-studio"></a>步骤 4：在 Visual Studio 中创建 Office 外接程序
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>步骤 4：在 Visual Studio 中创建 Office 外接程序
 
 
 
@@ -153,7 +153,7 @@
     
 现已创建基本的 Office 外接程序，并已准备好发布到 Azure。由于我们的重点是演示如何发布到 Azure，因此不要对使用 Visual Studio 中的标准 Office 外接程序模板创建的示例外接程序做出任何更改。
 
-## <a name="step-5:-publish-your-office-add-in-to-the-azure-website"></a>步骤 5：将 Office 加载项发布到 Azure 网站
+## <a name="step-5-publish-your-office-add-in-to-the-azure-website"></a>步骤 5：将 Office 加载项发布到 Azure 网站
 
 
 
@@ -180,7 +180,7 @@
     若要查看你的外接程序的网页，请将 URL 更改为使用 https: 并添加你的外接程序的默认 HTML 页的路径。例如，已更改的 URL 应类似于 https://YourDomain.azurewebsites.net/Addin/Home/Home.html。这可确认你的外接程序的网站现在托管于 Azure 上。复制此 URL，因为稍后在本主题编辑外接程序清单文件时将需要此 URL。
     
 
-## <a name="step-6:-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>步骤 6：编辑外接程序清单文件以指向 Azure 上的 Office 外接程序
+## <a name="step-6-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>步骤 6：编辑外接程序清单文件以指向 Azure 上的 Office 外接程序
 
 
 
@@ -199,7 +199,7 @@
 7. 浏览到本主题前面创建的网络文件共享，并将清单文件粘贴到文件夹中。
     
 
-## <a name="step-7:-insert-and-run-the-add-in-in-the-office-client-application"></a>步骤 7：在 Office 客户端应用程序中插入并运行加载项
+## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>步骤 7：在 Office 客户端应用程序中插入并运行加载项
 
 
 
@@ -220,5 +220,5 @@
 
 - [发布 Office 外接程序](../publish/publish.md)
     
-- [使用 Napa 或 Visual Studio 打包外接程序以准备发布](../publish/package-your-add-in-using-napa-or-visual-studio.md)
+- [使用 Visual Studio 打包外接程序以准备发布](../publish/package-your-add-in-using-visual-studio.md)
     

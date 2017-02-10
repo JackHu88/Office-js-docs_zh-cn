@@ -11,8 +11,7 @@
 		<Item text="说明" url="manifest/description" SEODescription="指定 Office 外接程序的说明为不超过 250 个字符的字符串。" />
 		<Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="指定在台式计算机上使用邮件外接程序时应用的源位置和控制设置。" />
 		<Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="定义可实现其他字典支持的任务窗格外接程序的设置。" />
-		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="指定该词典的主页的 URL。" />
-		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="指定该词典的名称。" />
+		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="指定该词典的主页的 URL。" />		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="指定该词典的名称。" />
 		<Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="指定是否应为邮件外接程序关闭实体突出显示。" />
 		<Item text="DisplayName" url="manifest/displayname" SEODescription="指定 Office 外接程序的名称为最长 125 个字符的字符串。" />
 		<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="定义在特定设备（台式机、平板电脑或电话）上运行时邮件外接程序将使用的窗体的 UX 设置。" />
@@ -42,21 +41,23 @@
 		<Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="定义此字典支持的、表示为区域性名称字符串的区域语言。" />
 		<Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="定义此字典支持的区域语言。" />
 		<Item text="版本" url="manifest/version" SEODescription="指定 Office 外接程序的版本。" />
-		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="根元素包含由外接程序实现的外接程序命令的信息。">
-			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="指定用户选择“按钮”或“菜单”控件时将执行的操作。" />
+		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint, outlook" SEODescription="根元素包含由外接程序实现的外接程序命令的信息。">
+			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint, outlook" SEODescription="指定用户选择“按钮”或“菜单”控件时将执行的操作。" />
 			<Item text="Control" url="manifest/control" SEODescription="指定用户选择“按钮”或“菜单”时将执行的控件。" />
-			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="指定外接程序命令的选项卡和组。" />
-			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="定义外接程序公开功能的位置。" />
-			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="指定对给定外形规格的外接程序的设置。" />
-			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。" />
+
+			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="指定外接程序命令的选项卡和组。" />
+			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint, outlook" SEODescription="定义外接程序公开功能的位置。" />
+			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="指定对给定外形规格的外接程序的设置。" />
+			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint, outlook" SEODescription="为外接程序通过外接程序命令公开的操作指定源代码文件，这些外接程序命令执行 JavaScript 函数，而不显示 UI。" />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="提供在 Word、Excel、和 PowerPoint 主机中安装此外接程序时显示的标注所使用的信息。" />
-			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="定义选项卡中的一组 UI 扩展点。" />
-			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="指定 Office 外接程序支持的 Office 主机应用程序的类型。" />
-			<Item text="图标" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="定义“按钮”和“菜单”控件的 Image 元素。" />
+			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint, outlook" SEODescription="定义选项卡中的一组 UI 扩展点。" />
+			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint, outlook" SEODescription="指定 Office 外接程序支持的 Office 主机应用程序的类型。" />
+			<Item text="图标" url="manifest/icon" Scope="excel, word, powerpoint, outlook" SEODescription="定义“按钮”和“菜单”控件的 Image 元素。" />
+      <Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="指定对移动外形规格的外接程序的设置。" />
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="定义要添加到 Office 上下文菜单的控件集合。" />
-			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="指定预先存在的选项卡以用于外接程序命令。" />
-			<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="包含 VersionOverrides 节点的图标、字符串和 URL。" />
-			<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="定义丰富的工具提示（标题和说明）。" />
+			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="指定预先存在的选项卡以用于外接程序命令。" />
+			<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="包含 VersionOverrides 节点的图标、字符串和 URL。" />
+			<Item text="Supertip" url="manifest/supertip" Scope="excel, word, powerpoint, outlook" SEODescription="定义丰富的工具提示（标题和说明）。" />
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="提供 Word Javascript API 的概述。">

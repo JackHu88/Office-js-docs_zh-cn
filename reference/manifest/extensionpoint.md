@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>ExtensionPoint 元素
 
- 定义 Office UI 中外接程序公开功能的位置。**ExtensionPoint** 元素是 [DesktopFormFactor](./desktopformfactor.md) 的子元素。 
+ 定义 Office UI 中外接程序公开功能的位置。**ExtensionPoint** 元素是 [DesktopFormFactor](./desktopformfactor.md) 或 [MobileFormFactor](./mobileformfactor.md) 的子元素。 
 
 ## <a name="attributes"></a>属性
 
@@ -72,7 +72,8 @@
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [模块](#module)（仅能在 [DesktopFormFactor](./desktopformfactor.md) 中使用。）
+- [Module](#module)（仅能在 [DesktopFormFactor](./desktopformfactor.md) 中使用。）
+- [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 此扩展点将按钮放置在邮件阅读窗体的命令界面。在 Outlook 桌面，它显示在功能区中。
@@ -198,3 +199,37 @@
 |  [OfficeTab](./officetab.md) |  将命令添加到默认功能区选项卡。  |
 |  [CustomTab](./customtab.md) |  将命令添加到自定义功能区选项卡。  |
 
+### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+此扩展点将按钮置于移动外形规格中的邮件阅读视图的命令界面中。
+
+> **注意：**仅在 Outlook for iOS 中支持此元素类型。
+
+**子元素**
+
+|  元素 |  说明  |
+|:-----|:-----|
+|  [Group](./group.md) |  将按钮组添加到命令界面。  |
+|  [Control](./control.md) |  将单个按钮添加到命令界面。  |
+
+此种类型的 **ExtensionPoint** 元素仅能具有一个子元素，即 **Group** 元素或 **Control** 元素。
+
+此扩展点中包含的 **Control** 元素必须将 **xsi:type** 属性设置为 `MobileButton`。
+
+#### <a name="group-example"></a>组示例
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Group id="mobileGroupID">
+    <Label resid="residAppName"/>
+    <!-- one or more Control elements -->
+  </Group>
+</ExtensionPoint>
+```
+
+#### <a name="control-example"></a>控件示例
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Control id="mobileButton1" xsi:type="MobileButton">
+    <!-- Control definition -->
+  </Control>
+</ExtensionPoint>
+```

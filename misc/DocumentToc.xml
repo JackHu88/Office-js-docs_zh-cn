@@ -8,8 +8,7 @@
 	</Item>
   <Item text="入门" url="get-started">
     <Item text="使用 Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="使用 Visual Studio 开始构建一个 Office 外接程序" />
-	  <Item text="使用任何编辑器" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="在 Mac 或 Windows PC 上使用任意编辑器开始构建 Office 外接程序。" />
-    <Item text="使用 Napa" url="get-started/create-an-office-add-in-with-napa" SEODescription="通过从您的浏览器使用 Napa Office 365 开发工具，创建适用于 Excel、Outlook、PowerPoint、Project 或 Word 的基本内容、任务窗格或 Outlook 外接程序，从而开始使用 Office 外接程序。" />
+	  <Item text="使用任何编辑器" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="在 Mac 或 Windows PC 上使用任意编辑器开始生成 Office 外接程序。" />
   </Item>
   <Item text="设计" url="design/add-in-design">
       <Item text="UI 元素" url="design/ui-elements/ui-elements" SEODescription="使用外接程序命令、结构 UI 和 自定义 HTML 界面来创建引人注目的外接程序用户界面。">
@@ -23,6 +22,7 @@
 	<Item text="Excel、Word 和 PowerPoint 的外接程序命令" url="design/add-in-commands" SEODescription="使用外接程序中的外接程序命令扩展 Excel、Word 和 PowerPoint 中的默认 Office UI。" />
   	<Item text="外接程序命令的设计图标" url="design/design-icons" SEODescription="与 Office UI 无缝集成的外接程序命令的设计图标。" />
 	<Item text="数据可视化样式准则" url="design/data-visualization-guidelines" SEODescription="提供 Office 外接程序中的数据可视化准则。" />
+	<Item text="可用性测试" url="design/usability-testing" />
     	<Item text="语音准则" url="design/voice-guidelines" SEODescription="找到要在 Office 外接程序的 UI 文本中使用的语音准则" />
     	<Item text="辅助功能准则" url="design/accessibility-guidelines" SEODescription="了解如何让 Office 外接程序可供所有用户访问。" />
     </Item>
@@ -64,7 +64,7 @@
 	</Item>
   <Item text="发布" url="publish/publish">
     <Item text="在 Microsoft Azure 上托管 Office 外接程序" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="使用 Visual Studio 2015 和 Microsoft Office 开发人员工具发布到 Microsoft Azure，然后在它上面托管 Office 外接程序。" />
-    <Item text="使用 Napa 或 Visual Studio 打包您的外接程序" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="打包您的 Office 外接程序为发布做准备。" />
+    <Item text="使用 Visual Studio 打包外接程序" url="publish/package-your-add-in-using-visual-studio" SEODescription="打包 Office 外接程序为发布做准备。" />
     <Item text="将任务窗格和内容外接程序发布到外接程序目录" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="配置 Office 客户端以便你的外接程序在 Office 外接程序对话框中可用" />
 	<Item text="将外接程序提交到 Office 应用商店" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
@@ -87,48 +87,53 @@
   
   <Item text="Outlook" url="outlook/outlook-add-ins" SEODescription="在阅读或撰写模式中创建 Outlook 外接程序。" Scope="outlook">
     <Item text="概述" url="outlook/overview" SEODescription="了解 Outlook 外接程序体系结构和功能。" Scope="outlook" />
+    <Item text="Outlook 外接程序设计准则" url="outlook/outlook-addin-design" SEODescription="了解如何设计 Outlook 外接程序。" Scope="outlook" />
     <Item text="适用于 Outlook 的外接程序命令" url="outlook/add-in-commands-for-outlook" SEODescription="使用外接程序命令将 Outlook 外接程序与 Outlook UI 集成。" Scope="outlook" />
+    <Item text="适用于 Outlook Mobile 的外接程序" url="outlook/outlook-mobile-addins" SEODescription="了解如何开发适用于 Outlook Mobile 的外接程序。" Scope="outlook" />
     <Item text="上下文 Outlook 外接程序" url="outlook/contextual-outlook-add-ins" SEODescription="基于邮件或约会中的指定文本激活 Outlook 外接程序。" Scope="outlook" />
     <Item text="模块扩展 Outlook 外接程序" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="通过向导航栏添加模块扩展来扩展 Outlook UI。" /> 
-	<Item text="API" url="outlook/apis" SEODescription="了解如何指定您的 Outlook 外接程序所需的 API。" Scope="outlook" />
-	<Item text="清单" url="outlook/manifests/manifests" Scope="outlook" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。">
-      <Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />
-      <Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="在 Outlook 外接程序清单中使用 VersionOverrides 元素可以定义外接程序命令。" Scope="outlook" />
-      <Item text="可固定的任务窗格" url="outlook/manifests/pinnable-taskpane" SEODescription="在 Outlook 外接程序中实现可固定的任务窗格。" Scope="outlook" />
-  </Item>
-  <Item text="在阅读或撰写窗体中获取并设置项数据" url="outlook/item-data" SEODescription="了解从 Outlook 外接程序的约会或邮件上获取或设置数据的方法" Scope="outlook" />
-	<Item text="获取和设置外接程序元数据" url="outlook/metadata-for-an-outlook-add-in" SEODescription="了解加载和存储只有您的 Outlook 外接程序可以访问的自定义数据 - 通过漫游设置和自定义属性。" Scope="outlook" />
-	<Item text="隐私和安全性" url="outlook/privacy-and-security" SEODescription="最终用户" Scope="outlook">
-		<Item text="了解 Outlook 外接程序权限" url="outlook/understanding-outlook-add-in-permissions" SEODescription="在 Outlook 外接程序清单中指定权限级别。" />
+    <Item text="可固定的任务窗格" url="outlook/manifests/pinnable-taskpane" SEODescription="在 Outlook 外接程序中实现可固定的任务窗格。" Scope="outlook" />
+	  <Item text="API" url="outlook/apis" SEODescription="了解如何指定您的 Outlook 外接程序所需的 API。" Scope="outlook" />
+    <Item text="清单" url="outlook/manifests/manifests" Scope="outlook" SEODescription="创建适用于阅读或撰写窗体的 Outlook 外接程序清单。">
+        <Item text="激活规则" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="定义 Outlook 外接程序清单中的激活规则以指定 Outlook 何时显示外接程序。" Scope="outlook" />
+        <Item text="定义外接程序命令" url="outlook/manifests/define-add-in-commands" SEODescription="在 Outlook 外接程序清单中使用 VersionOverrides 元素可以定义外接程序命令。" Scope="outlook" />
+        <Item text="添加对 Outlook Mobile 的支持" url="outlook/manifests/add-mobile-support" SEODescription="了解如何向外接程序添加对 Outlook Mobile 的支持。" Scope="outlook" />
     </Item>
-	<Item text="阅读方案" url="outlook/read-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
-		<Item text="使用正则表达式显示 Outlook 外接程序" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="了解如何使用正则表达式指定某个 Outlook 外接程序与阅读方案相关且 Outlook 应在 UI 中显示外接程序的条件。" Scope="outlook" />
-		<Item text="将项目中的字符串作为已知实体进行匹配" url="outlook/match-strings-in-an-item-as-well-known-entities" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
-		<Item text="从一个项目提取实体字符串" url="outlook/extract-entity-strings-from-an-item" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
-		<Item text="获取 Outlook 项目的附件" url="outlook/get-attachments-of-an-outlook-item" SEODescription="使用 Outlook 外接程序使服务能够从 Exchange 服务器中获取附件。" Scope="outlook" />
-	</Item>
-	<Item text="撰写方案" url="outlook/compose-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
-		<Item text="添加和删除撰写窗体中一个项目的附件" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="参阅 JavaScript 示例，这些示例使用异步方法和 Outlook 外接程序的 Exchange Web 服务 (EWS) ID 将附件添加到用户在 Outlook 中撰写的项目中。" Scope="outlook" /><Item text="在撰写窗体中获取或设置项目数据" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="了解在撰写方案的 Outlook 外接程序中如何获取或设置一个项目的各种属性" Scope="outlook" />
-		<Item text="获取、设置或添加收件人" url="outlook/get-set-or-add-recipients" />
-		<Item text="获取或设置主题" url="outlook/get-or-set-the-subject" SEODescription="了解用户在 Outlook 中撰写约会或邮件时如何从 Outlook 外接程序中获取或设置主题。" Scope="outlook" />
-		<Item text="在正文插入数据" url="outlook/insert-data-in-the-body" SEODescription="了解如何将数据插入到用户正从 Outlook 外接程序撰写的约会或邮件的正文中。" Scope="outlook" />	
-		<Item text="获取或设置约会位置" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="了解用户在 Outlook 中撰写约会时如何从 Outlook 外接程序中获取或设置位置。" Scope="outlook" />
-		<Item text="获取或设置约会时间" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="了解如何从 Outlook 外接程序获取或设置约会时间。" Scope="outlook" />
-	</Item>
-	<Item text="调用 Web 服务" url="outlook/web-services" SEODescription="了解如何为 Outlook 从 Outlook 外接程序调用 EWS 或其他 Web 服务。" Scope="outlook" />
-	<Item text="身份验证" url="outlook/authentication" SEODescription="了解如何使用 Exchange 2013 标识令牌验证您的 Outlook 外接程序。" Scope="outlook">
-		<Item text="标识令牌内部" url="outlook/inside-the-identity-token" SEODescription="找出 Exchange 2013 标识令牌中的内容。" Scope="outlook" />
-		<Item text="使用标识令牌调用服务" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
-		<Item text="使用令牌验证库" url="outlook/use-the-token-validation-library" SEODescription="了解如何使用 EWS 托管 API 验证库验证 Exchange 标识令牌。" Scope="outlook" />
-		<Item text="验证标识令牌" url="outlook/validate-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
-		<Item text="使用 PHP 验证标识令牌" url="outlook/use-php-to-validate-an-identity-token" SEODescription="了解如何使用 PHP 验证将 Outlook 外接程序客户的电子邮件帐户与您的服务所提供的信息相关联的 Exchange 2013 标识令牌。" Scope="outlook" />
-		<Item text="使用标识令牌验证用户" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="请参阅代码示例，该示例说明身份验证对象如何匹配由包含一组服务凭据的标识令牌所表示的唯一标识。" Scope="outlook" /></Item>
-	<Item text="测试和提示" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
-		<Item text="在 Outlook for Mac 中比较 Outlook 外接程序支持" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="转到 dev.office.com 的错误链接。 我在表中固定了项目符号列表。" Scope="outlook" />
-		<Item text="处理 Outlook 外接程序中的日期值的提示" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="使用 Date 对象处理 Outlook 外接程序中的日期值。" />
-		<Item text="Outlook 外接程序的激活和 JavaScript API 限制" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="请确保 Outlook 外接程序处于激活和 API 使用准则范围内。" />
-		<Item text=" Outlook 外接程序激活故障排除" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook 外接程序激活是上下文相关的并且基于外接程序清单中的规则。探讨已安装的外接程序在 Outlook 中激活失败的原因。" Scope="outlook" />
-	 </Item>  
+    <Item text="调用 Outlook REST API" url="outlook/use-rest-api" SEODescription="了解如何进行身份验证并从 Outlook 外接程序调用 REST API。" Scope="outlook" />
+    <Item text="在阅读或撰写窗体中获取并设置项目数据" url="outlook/item-data" SEODescription="了解从 Outlook 外接程序的约会或邮件上获取或设置数据的方法" Scope="outlook" />
+    <Item text="获取和设置外接程序元数据" url="outlook/metadata-for-an-outlook-add-in" SEODescription="了解加载和存储只有您的 Outlook 外接程序可以访问的自定义数据 - 通过漫游设置和自定义属性。" Scope="outlook" />
+    <Item text="隐私和安全性" url="outlook/privacy-and-security" SEODescription="最终用户" Scope="outlook">
+      <Item text="了解 Outlook 外接程序权限" url="outlook/understanding-outlook-add-in-permissions" SEODescription="在 Outlook 外接程序清单中指定权限级别。" />
+    </Item>
+    <Item text="阅读方案" url="outlook/read-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
+      <Item text="使用正则表达式显示 Outlook 外接程序" url="outlook/use-regular-expressions-to-show-an-outlook-add-in" SEODescription="了解如何使用正则表达式指定某个 Outlook 外接程序与阅读方案相关且 Outlook 应在 UI 中显示外接程序的条件。" Scope="outlook" />
+      <Item text="将项目中的字符串作为已知实体进行匹配" url="outlook/match-strings-in-an-item-as-well-known-entities" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
+      <Item text="从一个项目提取实体字符串" url="outlook/extract-entity-strings-from-an-item" SEODescription="识别特定字符串模式以激活 Outlook 外接程序或促进进一步处理这些字符串匹配。" Scope="outlook" />
+      <Item text="获取 Outlook 项目的附件" url="outlook/get-attachments-of-an-outlook-item" SEODescription="使用 Outlook 外接程序使服务能够从 Exchange 服务器中获取附件。" Scope="outlook" />
+    </Item>
+    <Item text="撰写方案" url="outlook/compose-scenario" SEODescription="为阅读方案构建 Outlook 外接程序，并查找可用的 API 功能的信息。" Scope="outlook">
+      <Item text="添加和删除撰写窗体中一个项目的附件" url="outlook/add-and-remove-attachments-to-an-item-in-a-compose-form" SEODescription="参阅 JavaScript 示例，这些示例使用异步方法和 Outlook 外接程序的 Exchange Web 服务 (EWS) ID 将附件添加到用户在 Outlook 中撰写的项目中。" Scope="outlook" /><Item text="在撰写窗体中获取或设置项目数据" url="outlook/get-and-set-item-data-in-a-compose-form" FriendlyUrl="outlook/composeget-and-set-item-data-in-a-compose-form" SEODescription="了解在撰写方案的 Outlook 外接程序中如何获取或设置一个项目的各种属性" Scope="outlook" />
+      <Item text="获取、设置或添加收件人" url="outlook/get-set-or-add-recipients" />
+      <Item text="获取或设置主题" url="outlook/get-or-set-the-subject" SEODescription="了解用户在 Outlook 中撰写约会或邮件时如何从 Outlook 外接程序中获取或设置主题。" Scope="outlook" />
+      <Item text="在正文插入数据" url="outlook/insert-data-in-the-body" SEODescription="了解如何将数据插入到用户正从 Outlook 外接程序撰写的约会或邮件的正文中。" Scope="outlook" />	
+      <Item text="获取或设置约会位置" url="outlook/get-or-set-the-location-of-an-appointment" SEODescription="了解用户在 Outlook 中撰写约会时如何从 Outlook 外接程序中获取或设置位置。" Scope="outlook" />
+      <Item text="获取或设置约会时间" url="outlook/get-or-set-the-time-of-an-appointment" SEODescription="了解如何从 Outlook 外接程序获取或设置约会时间。" Scope="outlook" />
+    </Item>
+	  <Item text="调用 Web 服务" url="outlook/web-services" SEODescription="了解如何为 Outlook 从 Outlook 外接程序调用 EWS 或其他 Web 服务。" Scope="outlook" />
+    <Item text="身份验证" url="outlook/authentication" SEODescription="了解如何使用 Exchange 2013 标识令牌验证您的 Outlook 外接程序。" Scope="outlook">
+      <Item text="标识令牌内部" url="outlook/inside-the-identity-token" SEODescription="找出 Exchange 2013 标识令牌中的内容。" Scope="outlook" />
+      <Item text="使用标识令牌调用服务" url="outlook/call-a-service-by-using-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
+      <Item text="使用令牌验证库" url="outlook/use-the-token-validation-library" SEODescription="了解如何使用 EWS 托管 API 验证库验证 Exchange 标识令牌。" Scope="outlook" />
+      <Item text="验证标识令牌" url="outlook/validate-an-identity-token" SEODescription="了解如何使用标识令牌将您的 Outlook 外接程序客户的电子邮件帐户关联到您的 Web 服务所提供的信息。" Scope="outlook" />
+      <Item text="使用 PHP 验证标识令牌" url="outlook/use-php-to-validate-an-identity-token" SEODescription="了解如何使用 PHP 验证将 Outlook 外接程序客户的电子邮件帐户与您的服务所提供的信息相关联的 Exchange 2013 标识令牌。" Scope="outlook" />
+      <Item text="使用标识令牌验证用户" url="outlook/authenticate-a-user-with-an-identity-token" SEODescription="请参阅代码示例，该示例说明身份验证对象如何匹配由包含一组服务凭据的标识令牌所表示的唯一标识。" Scope="outlook" />    
+    </Item>
+    <Item text="测试和提示" url="outlook/testing-and-tips" FriendlyUrl="outlook/testingtesting-and-tips" Scope="outlook">
+      <Item text="在 Outlook for Mac 中比较 Outlook 外接程序支持" url="outlook/compare-outlook-add-in-support-in-outlook-for-mac" SEOKeyword="转到 dev.office.com 的错误链接。 我在表中固定了项目符号列表。" Scope="outlook" />
+      <Item text="处理 Outlook 外接程序中的日期值的提示" url="outlook/tips-for-handling-date-values-in-outlook-add-ins" Scope="outlook" SEODescription="使用 Date 对象处理 Outlook 外接程序中的日期值。" />
+      <Item text="Outlook 外接程序的激活和 JavaScript API 限制" url="outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins" Scope="outlook" SEODescription="请确保 Outlook 外接程序处于激活和 API 使用准则范围内。" />
+      <Item text=" Outlook 外接程序激活故障排除" url="outlook/troubleshoot-outlook-add-in-activation" SEODescription="Outlook 外接程序激活是上下文相关的并且基于外接程序清单中的规则。探讨已安装的外接程序在 Outlook 中激活失败的原因。" Scope="outlook" />
+    </Item>  
 	</Item>
   <Item text="PowerPoint" url="powerpoint/powerpoint-add-ins" Scope="powerpoint">
 	<Item text="在 PowerPoint 外接程序中使用文档主题" url="powerpoint/use-document-themes-in-your-powerpoint-add-ins" Scope="powerpoint" SEODescription="将某个主题应用至 PowerPoint 外接程序" />

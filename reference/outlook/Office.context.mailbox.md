@@ -24,9 +24,11 @@
 
 ### <a name="members"></a>成员
 
-#### <a name="ewsurl-:string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl :String
 
 获取此电子邮件帐户的 Exchange Web Services (EWS) 终点的 URL。仅限阅读模式。
+
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此成员。
 
 远程服务可使用 `ewsUrl` 值对用户邮箱进行 EWS 调用。例如，可以创建远程服务来 [获取选定项目中的附件](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx)。
 
@@ -34,7 +36,7 @@
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item#saveAsync) 方法，才能使用 `ewsUrl` 成员。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="type:"></a>类型:
+##### <a name="type"></a>类型:
 
 *   String
 
@@ -48,13 +50,15 @@
 
 ### <a name="methods"></a>方法
 
-####  <a name="converttoewsid(itemid,-restversion)-→-{string}"></a>convertToEwsId(itemId, restVersion) → {String}
+####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 将项目 ID 格式化（从 REST 转换为 EWS 格式）。
 
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+
 通过 REST API 检索的项 ID（如 [Outlook 邮件 API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) 或 [Microsoft Graph](http://graph.microsoft.io/)）使用与 Exchange Web 服务 (EWS) 所使用格式不同的格式。`convertToEwsId` 方法将 REST 格式化的 ID 转换为正确的 EWS 格式。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -69,7 +73,7 @@
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 受限|
 |适用的 Outlook 模式| 撰写或阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 类型：字符串
 
@@ -84,7 +88,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttimetimevalue--localclienttimesimple-typesmdlocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 获取包含以本地客户端时间表示的时间信息的字典。
 
@@ -92,7 +96,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 
 如果邮件应用程序在 Outlook 中运行，`convertToLocalClientTime` 方法将返回一个值设置为客户端计算机时区的字典对象。如果邮件应用程序在 Outlook Web App 中运行，`convertToLocalClientTime` 方法将返回值设置为 EAC 中指定的时区的字典对象。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -106,17 +110,19 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 撰写或阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 类型：[LocalClientTime](simple-types.md#localclienttime)
 
-####  <a name="converttorestid(itemid,-restversion)-→-{string}"></a>convertToRestId(itemId, restVersion) → {String}
+####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 将项目 ID 格式化（从 EWS 转换为 REST 格式）。
 
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
+
 与 REST API 所使用的格式比较，通过 EWS 或通过 `itemId` 属性检索的项目 ID 使用不同的格式（例如 [Outlook Mail API](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) 或 [Microsoft Graph](http://graph.microsoft.io/)）。`convertToRestId` 方法将 EWS 格式化的 ID 转换为正确的 REST 格式。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -131,7 +137,7 @@ Outlook 或 Outlook Web App 邮件应用程序的日期和时间可以使用不�
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| 受限|
 |适用的 Outlook 模式| 撰写或阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 类型：字符串
 
@@ -146,13 +152,13 @@ var ewsId = Office.context.mailbox.item.itemId;
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 从包含时间信息的字典中获取 Date 对象。
 
 `convertToUtcClientTime` 方法将包含本地日期和时间的字典转换为包含与本地日期和时间对应的正确值的 Date 对象。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 说明|
 |---|---|---|
@@ -166,7 +172,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 |[最低权限级别](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |适用的 Outlook 模式| 撰写或阅读|
 
-##### <a name="returns:"></a>返回：
+##### <a name="returns"></a>返回：
 
 包含以 UTC 表示的时间的 Date 对象。
 
@@ -180,9 +186,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 </dl>
 
-####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
+####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 显示现有日历约会。
+
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
 `displayAppointmentForm` 方法将打开桌面新窗口中或移动设备对话框中的现有日历约会。
 
@@ -192,7 +200,7 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 
 如果指定的项标识符没有识别现有约会，将在客户端计算机或设备上打开一个空白窗格，并且不会返回错误消息。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -212,9 +220,11 @@ var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.R
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
+####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 显示现有邮件。
+
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
 `displayMessageForm` 方法将打开桌面新窗口中或移动设备对话框中的现有邮件。
 
@@ -224,7 +234,7 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 
 不要使用包含表示约会的 `itemId` 的 `displayMessageForm`。使用 `displayAppointmentForm` 方法显示现有的约会，并使用 `displayNewAppointmentForm` 显示窗体以新建约会。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
@@ -244,9 +254,11 @@ Office.context.mailbox.displayAppointmentForm(appointmentId);
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
 显示用于新建日历约会的表单。
+
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
 `displayNewAppointmentForm` 方法打开可让用户新建约会或会议的窗体。如果指定了参数，将使用参数的内容自动填充约会窗体字段。
 
@@ -256,13 +268,13 @@ Office.context.mailbox.displayMessageForm(messageId);
 
 如果任何参数超过指定大小限制，或者指定了未知参数名称，则会引发异常。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 描述|
 |---|---|---|
-|`parameters`| 对象|描述新约会的参数字典。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 <code>EmailAddressDetails</code> 对象的数组。数组限制为最多 100 个条目。</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>包含电子邮件地址的字符串的数组或包含约会每个可选与会者的 EmailAddressDetails 对象的数组。数组上限为 100 个条目。</td></tr><tr><td><code>start</code></td><td>日期</td><td>指定约会的开始日期和时间的日期对象。</td></tr><tr><td><code>end</code></td><td>日期</td><td>指定约会的结束日期和时间的日期对象。</td></tr><tr><td><code>location</code></td><td>字符串</td><td>包含约会位置的字符串。字符串长度限制为最多 255 个字符。</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>包含约会所需资源的字符串数组。数组限制为最多 100 个条目。</td></tr><tr><td><code>subject</code></td><td>字符串</td><td>包含约会主题的字符串。字符串长度限制为最多 255 个字符。</td></tr><tr><td><code>body</code></td><td>字符串</td><td>约会邮件的正文。正文内容限制为最大 32 KB。</td></tr></tbody></table>|
+|`parameters`| 对象|描述新约会的参数字典。<br/><br/>**属性**<br/><table class="nested-table"><thead><tr><th>名称</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>包含电子邮件地址的字符串数组或包含约会的每个必需与会者的 <code>EmailAddressDetails</code> 对象的数组。数组限制为最多 100 个条目。</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>包含电子邮件地址的字符串的数组或包含约会每个可选与会者的 EmailAddressDetails 对象的数组。数组上限为 100 个条目。</td></tr><tr><td><code>start</code></td><td>日期</td><td>指定约会的开始日期和时间的日期对象。</td></tr><tr><td><code>end</code></td><td>日期</td><td>指定约会的结束日期和时间的日期对象。</td></tr><tr><td><code>location</code></td><td>String</td><td>包含约会位置的字符串。字符串长度限制为最多 255 个字符。</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>包含约会所需资源的字符串数组。数组限制为最多 100 个条目。</td></tr><tr><td><code>subject</code></td><td>字符串</td><td>包含约会主题的字符串。字符串长度限制为最多 255 个字符。</td></tr><tr><td><code>body</code></td><td>字符串</td><td>约会邮件的正文。正文内容限制为最大 32 KB。</td></tr></tbody></table>|
 
-##### <a name="requirements"></a>要求
+##### <a name="requirements"></a>??
 
 |要求| 值|
 |---|---|
@@ -290,7 +302,7 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 获取一个字符串，其中包含用于从 Exchange Server 获取附件或项目的令牌。
 
@@ -302,7 +314,7 @@ Office.context.mailbox.displayNewAppointmentForm(
 
 在撰写模式中，必须调用 [`saveAsync`](Office.context.mailbox.item#saveAsync) 方法来获取传递给 `getCallbackTokenAsync` 方法的项目标识符。应用必须具有调用 `saveAsync` 方法的 **ReadWriteItem** 权限。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -329,14 +341,14 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 获取用于标识用户和 Office 外接程序的令牌。
 
 
   `getUserIdentityTokenAsync` 方法返回你可以用于在第三方系统上识别和 [验证外接程序和用户的令牌](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx)。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
@@ -364,9 +376,11 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 向托管用户邮箱的 Exchange 服务器上的 Exchange Web 服务 (EWS) 发出异步请求。
+
+> **注意：**在 Outlook for iOS 或 Outlook for Android 中不支持此方法。
 
 `makeEwsRequestAsync` 方法代表外接程序将 EWS 请求发送到 Exchange。
 
@@ -392,12 +406,12 @@ XML 请求必须指定 UTF-8 编码。
 
 当邮件应用程序运行在 Outlook 网页版中时，您不需要设置编码值。可以通过使用 mailbox.diagnostics.hostName 属性来确定您的邮件应用程序在 Outlook 中还是 Outlook 网页版中运行。可以通过使用 mailbox.diagnostics.hostVersion 属性来确定正在运行的是 Outlook 的哪个版本。
 
-##### <a name="parameters:"></a>参数：
+##### <a name="parameters"></a>参数：
 
 |名称| 类型| 属性| 说明|
 |---|---|---|---|
 |`data`| 字符串||EWS 请求。|
-|`callback`| 函数||方法完成后，使用单个参数 `asyncResult`（一个 [`AsyncResult`](simple-types.md#asyncresult) 对象）调用在 `callback` 参数中传递的函数。
+|`callback`| 函数||方法完成后，使用单个参数 `callback`（一个 [`asyncResult`](simple-types.md#asyncresult) 对象）调用在 `AsyncResult` 参数中传递的函数。
 
 EWS 调用的 XML 结果作为 `asyncResult.value` 属性中的字符串提供。如果结果大小超过 1 MB，则返回一条错误消息。| |`userContext`| 对象| &lt;可选&gt;|传递给异步方法的任何状态数据。|
 
