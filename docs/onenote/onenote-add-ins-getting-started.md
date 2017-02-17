@@ -1,4 +1,4 @@
-# <a name="build-your-first-onenote-addin"></a>生成你的第一个 OneNote 外接程序
+# <a name="build-your-first-onenote-add-in"></a>生成你的第一个 OneNote 外接程序
 
 本文介绍生成可将一些文本添加到 OneNote 页面的简单任务窗格外接程序的步骤。
 
@@ -7,80 +7,42 @@
    ![构建自此演练的 OneNote 外接程序](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-## <a name="step-1-set-up-your-dev-environment-and-create-an-addin-project"></a>步骤 1：设置开发环境并创建外接程序项目
+## <a name="step-1-set-up-your-dev-environment-and-create-an-add-in-project"></a>步骤 1：设置开发环境并创建外接程序项目
 按照说明 [使用任何编辑器创建 Office 外接程序](../get-started/create-an-office-add-in-using-any-editor.md)，安装必需的系统必备组件并运行 Office Yeoman 生成器以创建新的外接程序项目。下表列出了要在 Yeoman 生成器中进行选择的项目属性。
 
 | 选项 | 值 |
 |:------|:------|
-| 项目名称 | OneNote 外接程序 |
-| 项目的根文件夹 | （接受默认值） |
-| Office 项目类型 | 任务窗格外接程序 |
-| 受支持的 Office 应用程序 | （确保选中 OneNote） |
-| 要使用的技术 | HTML、CSS 和 JavaScript |
+| 新建子文件夹 | （接受默认值） |
+| 外接程序名称 | OneNote 外接程序 |
+| 支持的 Office 应用程序 | （选择 OneNote） |
+| 新建外接程序 | 是，我想要新建外接程序 |
+| 添加 [TypeScript](https://www.typescriptlang.org/) | 否 |
+| 选择框架 | Jquery |
 
 <a name="develop"></a>
-## <a name="step-2-modify-the-addin"></a>步骤 2：修改外接程序
+## <a name="step-2-modify-the-add-in"></a>第 2 步：修改外接程序
 可以使用任何文本编辑器或 IDE 编辑外接程序文件。如果尚未尝试过 Visual Studio 代码，可以在 Linux、Mac OSX 和 Windows 上[免费下载](https://code.visualstudio.com/)。
 
-1 - 在 **app/home** 文件夹中打开 *home.html*。 
+1 - 打开项目目录中的 **index.html**。 
 
-2 - 编辑对 Office JavaScript API 和 [Office UI Fabric](http://dev.office.com/fabric) 样式及组件的引用。
-
-  a.取消评论到 fabric.components.min.css 的链接。
-  
-  b.根据以下对 *beta* 版本的引用，替换对 Office.js 的脚本引用。
-
-```
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-  Office 引用将如下所示。
-
-```
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-<link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
-```
-
-3 - 用以下代码替换 `<body>` 元素。这将添加一个使用 [Office UI Fabric 组件](http://dev.office.com/fabric/components) 的文本区域和按钮。**响应网格**布局源自 [Office UI Fabric 样式](http://dev.office.com/fabric/styles) 集。 
+2 - 用以下代码替换 `<main>` 元素。这将添加使用 [Office UI Fabric 组件](http://dev.office.com/fabric/components)的文本区域和按钮。
 
 ```html
-<body class="ms-font-m">
-   <div class="home flex-container">
-       <div class="ms-Grid">
-           <div class="ms-Grid-row ms-bgColor-themeDarker">
-               <div class="ms-Grid-col">
-                   <span class="ms-font-xl ms-fontColor-themeLighter ms-fontWeight-semibold">OneNote Add-in</span>
-               </div>
-           </div>
-       </div>
-       <br />
-       <div class="ms-Grid">
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <label class="ms-Label">Enter content here</label>
-                   <div class="ms-TextField ms-TextField--placeholder">
-                       <textarea id="textBox" rows="5"></textarea>
-                   </div>
-               </div>
-           </div>
-           <div class="ms-Grid-row">
-               <div class="ms-Grid-col">
-                   <div class="ms-font-m ms-fontColor-themeLight header--text">
-                       <button class="ms-Button ms-Button--primary" id="addOutline">
-                           <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
-                           <span class="ms-Button-label">Add outline</span>
-                           <span class="ms-Button-description">Adds the content above to the current page.</span>
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
+<main class="ms-welcome__main">
+   <br />
+   <p class="ms-font-l">Enter content below</p>
+   <div class="ms-TextField ms-TextField--placeholder">
+       <textarea id="textBox" rows="5"></textarea>
    </div>
-</body>
+   <button id="addOutline" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
+        <span class="ms-Button-label">Add Outline</span>
+        <span class="ms-Button-icon"><i class="ms-Icon"></i></span>
+        <span class="ms-Button-description">Adds the content above to the current page.</span>
+    </button>
+</main>
 ```
 
-4 - 在 *app/home* 文件夹中打开 **home.js**编辑 **Office.initialize** 函数以添加一个单击事件至“**添加边框**”按钮，如下所示。
+3 - 打开项目目录中的 **app.js**（或 app.ts，如果使用的是 TypeScript）。编辑 **Office.initialize** 函数，向“**添加边框**”按钮添加单击事件，如下所示。
 
 ```js
 // The initialize function is run each time the page is loaded.
@@ -94,7 +56,7 @@ Office.initialize = function (reason) {
 };
 ```
  
-5 - 用以下 **addOutlineToPage** 方法替换 **getDataFromSelection** 方法。这将从文本区域中获取内容并将其添加至页面。
+4 - 用以下 **addOutlineToPage** 方法替换 **run** 方法。这将从文本区域中获取内容，并将其添加至页面。
 
 ```js
 // Add the contents of the text area to the page.
@@ -128,28 +90,20 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-## <a name="step-3-test-the-addin-on-onenote-online"></a>步骤 3：在 OneNote Online 上测试外接程序
-1 - 运行 Gulp Web 服务器。  
+## <a name="step-3-test-the-add-in-on-onenote-online"></a>步骤 3：在 OneNote Online 上测试外接程序
+1 - 启动 HTTPS 服务器。  
 
-  a.打开 **cmd** 提示符并转到外接程序项目文件夹。 
+  a.打开 **cmd** 提示符/终端，然后转到外接程序项目文件夹。 
   
-  b.运行 `gulp serve-static` 命令，如以下所示。
+  b.运行命令，如以下所示。
 
   ```
-  C:\your-local-path\onenote add-in\> gulp serve-static
+  C:\your-local-path\onenote add-in\> npm start
   ```
 
-2 - 安装 Gulp Web 服务器的自签名证书作为受信任的证书。对于所有用 Office Yeoman 生成器创建的外接程序项目，只需在电脑上进行一次此操作。
+2 - 安装自签名证书作为受信任的证书。对于所有用 Office Yeoman 生成器创建的外接程序项目，只需在计算机上执行一次此操作。有关详细信息，请参阅[添加自签名证书作为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
 
-   a.导航至托管的外接程序页面。默认情况下，这与您清单中的 URL 相同：
-
-  ```
-  https://localhost:8443/app/home/home.html
-  ```
-
-   b.安装证书作为受信任的证书。有关详细信息，请参阅 [添加自签名证书作为受信任的根证书](https://github.com/OfficeDev/generator-office/blob/master/docs/trust-self-signed-cert.md)。
-
-3 - 转到 [OneNote Online](https://www.onenote.com/notebooks) 并打开一个笔记本。
+3 - 转到 [OneNote Online](https://www.onenote.com/notebooks)，然后打开一个笔记本。
 
 4 - 选择“**插入 > Office 外接程序**”。该操作将打开 Office 外接程序对话框。
 
@@ -161,7 +115,7 @@ function addOutlineToPage() {
 
   ![显示“我的外接程序”选项卡的 Office 外接程序对话框](../../images/onenote-office-add-ins-dialog.png)
 
-5 - 在“上载外接程序”对话框中，浏览至项目文件夹中的 **manifest-onenote-add-in.xml**，然后选择“**上载**”。测试时，清单文件将存储在浏览器的本地存储。
+5 - 在“上载外接程序”对话框中，转到项目文件夹中的 **onenote-add-in-manifest.xml**，然后选择“**上载**”。测试时，清单文件会存储在浏览器的本地存储中。
 
 6 - 该外接程序在 OneNote 页旁的 iFrame 中打开。在文本区域中输入一些文本，然后选择“**添加边框**”。您输入的文本将添加至页面。 
 

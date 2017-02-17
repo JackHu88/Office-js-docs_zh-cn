@@ -1,13 +1,13 @@
 # <a name="application-object-javascript-api-for-visio"></a>Application 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
+>**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 Application。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明| 反馈|
+| 属性       | 类型    |说明| 反馈|
 |:---------------|:--------|:----------|:---|
 |showToolbars|bool|显示或隐藏标准工具栏。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
 
@@ -35,7 +35,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 

@@ -3,40 +3,30 @@
 
 可对你的 Office 外接程序使用 Yeoman 生成器。Yeoman 生成器可提供项目基架并生成管理。`manifest.xml` 文件告知 Office 应用程序你的外接程序所在的位置以及希望其显示的方式。Office 应用程序负责将其托管在 Office 内。
 
- >**注意：**这些说明使用 Windows 命令提示符，但也适用于其他 shell 环境。 
+ >**注意：**这些指令使用 Mac 终端，你也可以使用其他 shell 环境。 
 
 
-## <a name="prerequisites-for-yeoman-generator"></a>Yeoman 生成器的先决条件
+## <a name="prerequisites-for-the-yeoman-generator"></a>Yeoman 生成器系统必备
 
-若要运行 Yeoman Office 生成器，需要以下各项：
+若要安装 Yeoman Office 生成器，必须在计算机上安装 [git](https://git-scm.com/downloads) 和 node.js。如果使用的是 Mac，我们建议使用 [Node Version Manager](https://github.com/creationix/nvm) 并利用适当权限安装 node.js。如果使用的是 Windows，可以从 [nodejs.org](https://nodejs.org/en/) 安装 node.js。
 
+>**注意：**如果使用的是 Windows，请在安装 git 时使用默认值，以下情况除外：
 
-- [Git](https://git-scm.com/downloads)  
-- [npm](https://www.nodejs.org/en/download)
-- [Bower](http://bower.io/)
-- [Yeoman Office 生成器](https://www.npmjs.com/package/generator-office)
-- [Gulp](http://gulpjs.com/)
-- [TSD](http://definitelytyped.org/tsd/)
-    
-仅 Git 和 npm 需要使用单独的安装。其他的则可以使用 npm 进行安装。
+>- 通过 Windows 命令提示符使用 git
+>- 使用 Windows 默认控制台窗口
 
-安装 Git 时，除了应选择以下选项之外，还应使用默认设置： 
-
-- 从 Windows 命令提示符使用 Git
-- 使用 Windows 的默认控制台窗口
-    
-使用默认设置安装 npm 。然后，以管理员身份打开命令提示符，并全局安装其他软件：
+安装 node.js 后，打开一个终端，然后全局安装生成器。
 
 ```
-npm install -g bower yo generator-office gulp tsd
+npm install -g yo generator-office
 ```
 
 
 ## <a name="create-the-default-files-for-your-add-in"></a>为外接程序创建默认文件
 
-开发 Office 外接程序前，应首先为你的项目创建文件夹，并从该处运行生成器。Yeoman 生成器运行在要为该项目提供基架的目录中。 
+Yeoman 生成器在你要为项目搭建架构的目录中运行。开发 Office 外接程序前，应先为项目创建文件夹。
 
-在命令提示符中，移动到要在其中创建项目的父文件夹。然后使用以下命令创建名为 _myHelloWorldaddin_ 的新文件夹并将当前目录更改为此：
+在终端中，移到要在其中创建项目的父文件夹。然后，使用以下命令新建名为 _myHelloWorldaddin_ 的文件夹，然后将当前目录更改为此文件夹：
 
 
 
@@ -46,7 +36,7 @@ mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
 
-使用 Yeoman 生成器根据你的选择（Outlook、内容或任务窗格）创建外接程序。本文中介绍的步骤将创建一个任务窗格外接程序。若要运行该生成器，请输入以下指令：
+使用 Yeoman 生成器创建所选的外接程序。本文介绍的步骤用于创建简单的任务窗格外接程序。若要运行生成器，请输入以下命令：
 
 
 
@@ -55,168 +45,60 @@ cd myHelloWorldaddin
 yo office
 ```
 
+**有关外接程序的 Yeoman 生成器输入**
+
 生成器将提示输入以下内容： 
 
 
-- 外接程序的名称 -- 使用 _myHelloWorldaddin_ 
-- 项目的根文件夹 - 使用_当前文件夹_
-- 外接程序的类型 - 使用_任务窗格_
-- 创建外接程序的技术 - 使用 _HTML、CSS&amp; 和 JavaScript_
-- 受支持的 Office 应用程序 - 可以选择任何应用程序
-    
+- 新建子文件夹 - 使用 _N_
+- 外接程序名称 - 使用 _myHelloWorldaddin_ 
+- 支持的 Office 应用程序 - 可以选择任意应用程序
+- 新建外接程序 - 使用“_是，我想要新建外接程序_”。
+- 添加 [TypeScript](https://www.typescriptlang.org/) - 使用 _N_
+- 选择框架 - 使用 _Jquery_
 
-**有关外接程序的 Yeoman 生成器输入**
 
-![提示进行项目输入的 Yeoman 生成器的屏幕截图](../../images/338cf34b-fe8d-4a2f-9e38-e4bbca996139.PNG)
+![Yeoman 生成器提示输入项目相关信息的 gif](../../images/gettingstarted-fast.gif)
 
-这将为外接程序创建结构和基本文件。
+这会为外接程序创建结构和基本文件。
 
 
 ## <a name="hosting-your-office-add-in"></a>托管 Office 外接程序
 
-必须通过 HTTPS 使用 Office 外接程序，如果其为 HTTP，则 Office 应用程序将不会作为外接程序加载 Web 应用。若要在本地开发、调试和托管外接程序，则需具有使用 HTTPS 在本地创建并使用 Web 应用的方法。可通过 Gulp（在下一部分中所述）或使用 Azure 创建自托管的 HTTPS 网站。 
+必须通过 HTTPS 托管 Office 外接程序，即使在开发中，也是如此。Yo Office 创建 bsconfig.json，其使用 Browsersync，以便你可以跨多台设备同步文件更改，从而更快速地调整和测试外接程序。 
 
-
-### <a name="using-a-self-hosted-https-site"></a>使用自托管的 HTTPS 网站
-
-gulp-webserver 插件创建自托管的 HTTPS 网站。Office 生成器将其添加到 gulpfile.js 作为生成的项目的名为"serve-static"的任务。使用以下语句启动自托管的 webserver： 
+在控制台中键入以下命令，在 https://localhost:3000 上启动本地 HTTPS 网站：
 
 
 ```
-gulp serve-static
+npm start
 ```
 
-这将在 https://localhost:8443 启动 HTTPS 服务器。
+Browsersync 会启动 HTTPS 服务器，并在项目中启动 index.html 文件。你会看到错误消息“此网站的安全证书有问题”。
 
+
+![显示跳过错误并查看默认 index.html 文件的过程的 gif](../../images/ssl-chrome-bypass.gif)
+
+发生此错误是因为 Browsersync 包括开发环境必须信任的自签名 SSL 证书。若要了解如何解决此错误，请参阅[添加自签名证书](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md)。
+
+## <a name="sideload-the-add-in-into-office"></a>将外接程序旁加载到 Office
+
+可以使用旁加载来安装外接程序，以供在 Office 客户端内进行测试：
+
+- [旁加载 Office 外接程序以供测试](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
+- [旁加载 Outlook 外接程序以供测试](../outlook/testing-and-tips.md)
 
 ## <a name="develop-your-office-add-in"></a>开发 Office 外接程序
 
-可以使用任何文本编辑器来为自定义 Office 外接程序开发文件。
+可以使用任意文本编辑器开发自定义 Office 外接程序的文件。
+
+> **重要说明：**manifest-myHelloWorldaddin.xml 文件会指示 Office 客户端应用程序如何与外接程序进行交互。`<id>` 标记中的值是 Yo Office 在生成项目时创建的 GUID。请勿为外接程序更改 GUID。如果主机为 Azure，`SourceLocation` 值将为类似 _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_ 的 URL。如果使用的是自托管选项，在本示例中，此值为 _https://localhost:3000/[path-to-add-in]_。
 
 
-### <a name="javascript-project-support"></a>JavaScript 项目支持
+## <a name="debug-your-office-add-in"></a>调试 Office 外接程序
 
-在创建项目时，Office 生成器将创建一个 jsconfig.json 文件。你可以使用该文件推断你项目中的所有 JavaScript 文件，并使你免于包括重复性的 /// <reference path="../App.js" /> 代码块。
-
-了解有关 [JavaScript 语言](https://code.visualstudio.com/docs/languages/javascript#_javascript-projects-jsconfigjson)页面上的 jsconfig.json 文件的详细信息。
-
-
-### <a name="javascript-intellisense-support"></a>JavaScript 智能感知支持
-
-此外，即使您正在编写普通 JavaScript，您也可以使用 TypeScript 类型定义文件 ( `*.d.ts`) 来提供额外的 IntelliSense 支持。Office 生成器通过对所选的项目使用的所有第三方库的引用将  `tsd.json` 文件添加到创建的文件中。
-
-使用 Yeoman Office 生成器创建了项目后，只需运行以下命令来下载被引用的类型定义文件：
-
-
-
-
-```
-tsd install
-```
-
-
-### <a name="create-a-hello-world-office-add-in"></a>创建 Hello World Office 外接程序
-
-
-在此示例中，将创建一个 Hello World 外接程序。该外接程序的 UI 由一个 HTML 文件提供，该文件还可以提供 JavaScript 编程逻辑。 
-
-
-### <a name="to-create-the-files-for-a-hello-world-add-in"></a>创建 Hello World 外接程序的文件
-
-
-- 在项目文件夹中，转到 _[项目文件夹]/app/home_（在该示例中是 myHelloWorldaddin/app/home），打开 home.html，并使用以下提供最少的 HTML 标记集来显示外接程序 UI 的代码替换现有代码。
-    
-```HTML
-        <!DOCTYPE html>  
-      <html> 
-        <head> 
-           <meta charset="UTF-8" /> 
-           <meta http-equiv="X-UA-Compatible" content="IE=Edge"/> 
-           <link rel="stylesheet" type="text/css" href="program.css" />
-         </head> 
-   
-        <body> 
-           <p>Hello World!</p> 
-        </body> 
-      
-       </html> 
-```
-
-  
-    
-- 接下来，在同一文件夹中，打开 home.css 文件并添加以下 CSS 代码。
-    
-```css
-     body 
-   { 
-        position:relative; 
-   } 
-   li :hover 
-   { 
-        text-decoration: underline; 
-        cursor:pointer; 
-   } 
-   h1,h3,h4,p,a,li 
-   { 
-        font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif; 
-        text-decoration-color:#4ec724; 
-   } 
-```
-    
-- 然后，返回到父项目文件夹并确保名为 manifest-myHelloWorldaddin.xml 的 XML 文件包含以下 XML 代码。
-    
-     >**重要说明：**`<id>` 标记中的值是 yeoman 生成器生成项目时所创建的 GUID。不要更改 yeoman 生成器为外接程序创建的 GUID。如果主机为 Azure，则 `SourceLocation` 值将为类似 _https:// [name-of-your-web-app].azurewebsites.net/[path-to-add-in]_ 的 URL。如果正在使用自托管选项，则在本示例中，它将为 _https://localhost:8443/[path-to-add-in]_。
-
-```XML
-     <?xml version="1.0" encoding="utf-8"?> 
-   <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-              xsi:type="TaskPaneApp"> 
-   <Id>[GUID-for-your-add-in]</Id> 
-   <Version>1.0</Version> 
-   <ProviderName>Microsoft</ProviderName> 
-   <DefaultLocale>EN-US</DefaultLocale> 
-   <DisplayName DefaultValue="myHelloWorldaddin"/> 
-   <Description DefaultValue="My first app."/> 
-    
-   <Hosts> 
-     <Host Name="Document"/> 
-     <Host Name="Workbook"/> 
-   </Hosts>
-    
-   <DefaultSettings> 
-     <SourceLocation DefaultValue="https://localhost:8443/app/home/home.html"/> 
-   </DefaultSettings> 
-   
-   <Permissions>ReadWriteDocument</Permissions>
-    
-   </OfficeApp> 
-```
-
-
-### <a name="running-the-add-in-locally"></a>在本地运行外接程序
-
-
-若要测试本地外接程序，打开浏览器并输入 home.html 文件的 URL。该操作可在 Web 服务器或自托管 HTTPS 网站上执行。如果在本地对其托管，只需将该 URL 键入到浏览器。在该示例中，它是 `https://localhost:8443/app/home/home.html`。 
-
-您将看到一条错误消息，指示"此网站的安全证书有问题。"请选择"继续浏览此网站..."，然后您将看到文本"Hello World!"
-
-
- >**注意：**生成的外接程序附带自签名证书和密钥。将这些内容添加到信任的证书颁发机构列表，这样一来，浏览器便不会发出证书警告。如果想要使用自己的自签名证书，请参阅 [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) 文档。有关如何在 OS X Yosemite 中信任证书的信息，请参阅 [OS X Yosemite：如果证书未被接受](https://support.apple.com/kb/PH18677?locale=en_US)。
-
-
-## <a name="install-the-add-in-for-testing"></a>安装外接程序进行测试
-
-您可以使用旁加载来安装外接程序进行测试：
-
-- [旁加载 Office 外接程序进行测试](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-- [在 iPad 和 Mac 上旁加载 Office 外接程序进行测试](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
-- [旁加载 Outlook 外接程序进行测试](../outlook/testing-and-tips.md)
-    
-
-## <a name="debug-your-add-in"></a>调试你的外接程序
-
-可通过以下方式调试外接程序：
+可通过多种方式调试外接程序：
 
 - 从任务窗格附加调试器 (Office 2016 for Windows)。
 - 使用浏览器的开发人员工具。
@@ -236,13 +118,13 @@ tsd install
 
 然后可在 Visual Studio 中进行附加和调试。   
 
-  >  **注意**：当前唯一受支持的调试器工具是 [Visual Studio 2015](https://www.visualstudio.com/downloads/) [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx)。如果没有安装 Visual Studio，则选择“**附加调试器**”选项不会导致任何操作。  
+  > **注意**：当前唯一受支持的调试器工具是 [Visual Studio 2015](https://www.visualstudio.com/downloads/) [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx)。如果没有安装 Visual Studio，则选择“**附加调试器**”选项不会导致任何操作。  
   
 有关详细信息，请参阅下列内容：
 
--   若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks)部分的提示 4。
--   若要设置断点，请参阅[使用断点](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx)。
--   若要使用 F12，请参阅[使用 F12 开发人员工具](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx)。
+-    若要在 Visual Studio 中启动并使用 DOM 资源管理器，请参阅 [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates)（使用新项目模板为 Office 生成漂亮应用）博客文章中[提示和技巧](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks)部分的提示 4。
+-    若要设置断点，请参阅[使用断点](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx)。
+-    若要使用 F12，请参阅[使用 F12 开发人员工具](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx)。
 
 ### <a name="browser-developer-tools"></a>浏览开发人员工具 
 

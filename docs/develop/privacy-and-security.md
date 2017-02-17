@@ -72,12 +72,12 @@ Office 外接程序运行时管理进程间通信、JavaScript API 调用和事�
 - 支持针对可用加载项的用户审阅系统以推广自我管理的社区。
     
 
-## <a name="addressing-end-users'-privacy-concerns"></a>解决最终用户的隐私问题
+## <a name="addressing-end-users-privacy-concerns"></a>解决最终用户的隐私问题
 
 本节解决最终用户使用 Office 外接程序时的隐私问题。首先，它从客户（最终用户）的角度介绍了 Office 外接程序平台提供的保护。其次，它向开发人员提供了关于如何支持用户期望以及如何安全处理用户的个人身份信息 (PII) 的指南。 
 
 
-### <a name="end-users'-perspective"></a>最终用户的角度
+### <a name="end-users-perspective"></a>最终用户的角度
 
 Office 外接程序使用在浏览器控件或 **iframe** 中运行的 Web 技术构建。因此，使用加载项与浏览到 Internet 或 Intranet 上的 Web 站点类似。加载项可以位于组织外部（如果你从 Office 应用商店获取加载项）或内部（如果你从 Exchange Server 加载项目录、SharePoint 加载项目录或组织网络上的文件共享获取加载项）。加载项具有对网络的有限访问权限，大部分加载项可以读取或写入到活动文档或邮件项目。在用户或管理员安装或启动加载项之前，加载项平台存在特定限制。但与在任何扩展性模型中一样，用户在启动未知加载项之前应当谨慎。
 
@@ -115,7 +115,7 @@ Outlook 外接程序通过特定的资源使用率监视提供额外安全和性
 - 如果你存储了用户的 PII，请确保你向用户通知这一点，并向用户提供检查并删除该信息的方法。如果你将加载项提交到 Office 应用商店，则可在隐私声明中概述你收集的数据及其用途。
     
 
-## <a name="developers'-permission-choices-and-security-practices"></a>开发人员的权限选择和安全实践
+## <a name="developers-permission-choices-and-security-practices"></a>开发人员的权限选择和安全实践
 
 遵循这些常规指南以支持 Office 外接程序的安全模型，并进一步了解有关每种加载项类型的更多详细信息。
 
@@ -209,7 +209,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 - 有关创建更安全的 Web 解决方案的更多最佳做法，请参阅[开发安全加载项](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx)。
     
 
-### <a name="tips-to-prevent-"clickjacking""></a>防止“点击劫持”的提示
+### <a name="tips-to-prevent-clickjacking"></a>防止“点击劫持”的提示
 
 由于 Office 加载项通过 Office Online 主机应用程序运行在浏览器中时呈现在 iframe 中，请使用以下提示来尽量降低[点击劫持](http://en.wikipedia.org/wiki/Clickjacking)（一种黑客用来欺骗用户泄露机密信息的技术）的风险。
 
@@ -224,9 +224,9 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 
 - 向用户发送包含确认链接的电子邮件。
     
-- 向用户发送消息文本，其中包含可在加载项中输入的确认代码。
+- 向用户发送短信，其中包含用户可在外接程序中输入的确认码。
     
-- 打开一个新的浏览器窗口，其中包含确认提示。
+- 对于无法应用 iframe 的页面，在新浏览器窗口中打开确认对话框。这通常是登录页采用的模式。使用[对话框 API](https://dev.office.com/docs/add-ins/develop/dialog-api-in-office-add-ins) 新建对话框。 
     
 此外，请确保您用于与用户联系的地址不能由潜在的攻击者提供。例如，对于付款确认，使用经授权用户帐户的文件中的地址。
 
@@ -263,7 +263,7 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 除资源使用率规则之外，Outlook 外接程序的开发人员还应确保其外接程序遵守有关指定激活规则和使用 JavaScript API 的限制。有关详细信息，请参阅[激活限制和适用于 Outlook 外接程序的 JavaScript API](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)。
 
 
-## <a name="it-administrators'-control"></a>IT 管理员控制
+## <a name="it-administrators-control"></a>IT 管理员控制
 
 在企业设置中，IT 管理员具有启用或禁用对 Office 应用商店和任何私有目录的访问的最高权限。 
 
@@ -271,20 +271,15 @@ Exchange 和 SharePoint 提供了客户端代理以实现跨域访问。通常�
 ## <a name="additional-resources"></a>其他资源
 
 
-- 
-  [在内容和任务窗格外接程序中请求 API 的使用权限](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
+- [在内容和任务窗格外接程序中请求 API 的使用权限](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
     
-- 
-  [Outlook 外接程序的隐私、权限和安全性](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
+- [Outlook 外接程序的隐私、权限和安全性](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
     
-- 
-  [了解 Outlook 外接程序权限](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
+- [了解 Outlook 外接程序权限](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
     
-- 
-  [Outlook 外接程序的激活和 JavaScript API 限制](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
+- [Outlook 外接程序的激活和 JavaScript API 限制](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
     
-- 
-  [解决 Office 外接程序中的同源策略限制](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [解决 Office 外接程序中的同源策略限制](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
     
 - [同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)
     

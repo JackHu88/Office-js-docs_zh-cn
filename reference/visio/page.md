@@ -1,20 +1,20 @@
 # <a name="page-object-javascript-api-for-visio"></a>Page 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
+>**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 Page 类。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明| 反馈|
+| 属性       | 类型    |说明| 反馈|
 |:---------------|:--------|:----------|:---|
 |index|int|页面的索引。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|页面是否为背景页。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
 |name|string|页面名称。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
 
 ## <a name="relationships"></a>关系
-| 关系 | 类型   |说明| 反馈|
+| 关系 | 类型    |说明| 反馈|
 |:---------------|:--------|:----------|:---|
 |shapes|[ShapeCollection](shapecollection.md)|页面中的形状。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-shapes)|
 |view|[PageView](pageview.md)|返回页面的视图。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-view)|
@@ -52,7 +52,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 

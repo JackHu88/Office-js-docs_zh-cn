@@ -1,6 +1,6 @@
 # <a name="visio-javascript-apis-reference"></a>Visio JavaScript API 参考
 
->**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。 
+>**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 可以使用 Visio JavaScript API 在 SharePoint Online 中嵌入 Visio 图表。嵌入的 Visio 图表是存储在 SharePoint 文档库并在 SharePoint 页面上显示的图表。若要嵌入 Visio 图表，请在 HTML &lt;iframe&gt; 元素中显示它。然后，可以使用 Visio JavaScript API 以程序化方式处理嵌入的图表。
 

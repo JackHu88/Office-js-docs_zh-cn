@@ -1,7 +1,7 @@
 # <a name="shapeview-object-javascript-api-for-visio"></a>ShapeView 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**目前 Visio JavaScript API 不适用于预览版或生产环境。
+>**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 ShapeView 类。
 
@@ -32,7 +32,7 @@ shapeViewObject.addOverlay(OverlayType, Content, HorizontalAlignment, VerticalAl
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |OverlayType|OverlayType|覆盖类型：文本、图像。|
 |Content|string|覆盖的内容。|
@@ -53,7 +53,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |param|对象|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
@@ -69,7 +69,7 @@ shapeViewObject.removeOverlay(OverlayId);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |OverlayId|number|覆盖 ID。删除形状上特定 ID 的覆盖。|
 
