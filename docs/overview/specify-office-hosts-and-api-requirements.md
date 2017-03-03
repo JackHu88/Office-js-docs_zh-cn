@@ -22,10 +22,10 @@
 |:-----|:-----|
 |Office 应用程序、Office 主机应用程序、Office 主机或主机|Office 应用程序、Office 主机应用程序、Office 主机或主机|
 |平台|平台|
-|其中 Office 主机将要运行，如 Office Online 或 Office for iPad。|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。不支持在清单中指定的要求集的 Office 主机不能运行外接程序，并且外接程序不会显示在“<span class="ui">我的外接程序</span>”中。这限制了外接程序的使用位置。在使用运行时检查的代码中。有关要求集的完整列表，请参阅 [Office 外接程序要求集](../../reference/office-add-in-requirement-sets.md)。|
+|要求集|命名的一组相关的 API 成员。外接程序使用要求集来确定 Office 主机是否支持你的外接程序使用的 API 成员。测试对要求集的支持比对单个的 API 成员的支持更为容易。要求集支持根据 Office 主机和 Office 主机的版本变化。 <br >要求集在清单文件中指定。当你在清单中指定要求集时，你可以设置 Office 主机必须提供的用于运行你的外接程序的最低级别的 API 支持。不支持在清单中指定的要求集的 Office 主机不能运行外接程序，并且外接程序不会显示在“<span class="ui">我的外接程序</span>”中。这限制了外接程序的使用位置。在使用运行时检查的代码中。有关要求集的完整列表，请参阅 [Office 外接程序要求集](../../reference/office-add-in-requirement-sets.md)。|
 |运行时检查|在运行时执行的一种测试，用以确定运行外接程序的 Office 主机是否支持要求集或外接程序使用的方法。若要执行运行时检查，请使用包含 **isSetSupported** 方法、要求集或不属于要求集的方法名称的 **if** 语句。使用运行时检查以确保达到的客户数目最大。与要求集不同，运行时检查不指定 Office 主机必须提供的用于运行外接程序的最低级别的 API 支持。相反，使用 **if** 语句来确定是否支持某个 API 成员。如果支持，则可以在外接程序中提供其他功能。使用运行时检查时，外接程序将始终在“**我的外接程序**”中显示。|
 
-## <a name="before-you-begin"></a>准备工作
+## <a name="before-you-begin"></a>开始之前
 
 您的外接程序必须使用最新版本的外接程序清单架构。如果您在外接程序中使用运行时检查，请确保您使用的是适用于 Office 的最新 JavaScript API (office.js) 库。
 
@@ -100,7 +100,7 @@
 ## <a name="set-the-requirements-element-in-the-manifest"></a>在清单中设置 Requirements 元素
 
 
-**Requirements** 元素指定 Office 主机必须支持的用于运行你的外接程序的最低要求集或 API 成员。**Requirements** 元素可以指定可在外接程序中使用的要求集和各个方法。在 1.1 版本的外接程序清单架构中，**Requirements** 元素对于所有外接程序（Outlook 外接程序除外）均为可选元素。
+**Requirements** 元素指定运行外接程序时 Office 主机需要支持的最小要求集或 API 成员。**Requirements** 元素可以指定要求集和外接程序中使用的各个方法。在 1.1 版外接程序清单架构中，除 Outlook 外接程序外，**Requirements** 元素对于所有外接程序均为可选项。
 
 
  >**警告：**只能使用 **Requirements** 元素指定外接程序必须使用的关键要求集或 API 成员。如果 Office 主机或平台不支持在 **Requirements** 元素中指定的要求集或 API 成员，则外接程序将无法在该主机或平台上运行，并且不会显示在“**我的外接程序**”中。相反，我们建议使外接程序在 Office 主机的所有平台上可用，例如 Excel for Windows、Excel Online 和 Excel for iPad。若要使外接程序在_所有_ Office 主机和平台上可用，请使用运行时检查，而不使用 **Requirements** 元素。
@@ -140,7 +140,7 @@
 - **Method** 元素指定在您的外接程序所运行 Office 主机中必须要支持的单个方法。 **Name** 属性为必需属性，并使用其父对象指定合格方法的名称。
     
 
-## <a name="use-runtime-checks-in-your-javascript-code"></a>在你的 JavaScript 代码中使用运行时检查
+## <a name="use-runtime-checks-in-your-javascript-code"></a>使用运行时签入您的 JavaScript 代码
 
 
 如果 Office 主机支持某些要求集，你可能想要在你的外接程序中提供其他功能。例如，如果外接程序在 Word 2016 中运行，你可能想要在现有的外接程序中使用新的 Word JavaScript API Word。若要执行此操作，请结合要求集名称使用 **isSetSupported** 方法。**isSetSupported** 确定在运行时，运行外接程序的 Office 主机是否支持要求集。如果要求集受支持，则 **isSetSupported** 返回 **true** 并运行使用此要求集中 API 成员的其他代码。如果 Office 主机不支持此要求集，则 **isSetSupported** 返回 **false** 且不会运行其他代码。以下代码显示与 **isSetSupported** 结合使用的语法。
@@ -172,7 +172,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName , VersionNumbe
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1)
 {
-    // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
+       // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts')
 {
@@ -213,7 +213,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 - [Office 外接程序 XML 清单](../../docs/overview/add-in-manifests.md)
     
-- [Office 外接程序要求集](../../reference/office-add-in-requirement-sets.md)
+- [Office 外接程序要求集](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
 - [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     

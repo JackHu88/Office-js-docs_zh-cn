@@ -66,7 +66,7 @@
     <Item text="在 Microsoft Azure 上托管 Office 外接程序" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="使用 Visual Studio 2015 和 Microsoft Office 开发人员工具发布到 Microsoft Azure，然后在它上面托管 Office 外接程序。" />
     <Item text="使用 Visual Studio 打包外接程序" url="publish/package-your-add-in-using-visual-studio" SEODescription="打包 Office 外接程序为发布做准备。" />
     <Item text="将任务窗格和内容外接程序发布到外接程序目录" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="配置 Office 客户端以便你的外接程序在 Office 外接程序对话框中可用" />
-	<Item text="将外接程序提交到 Office 应用商店" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
+	<Item text="将外接程序提交到 Office 应用商店" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="使用 JavaScript API 创建 Word 外接程序。" Scope="word">
