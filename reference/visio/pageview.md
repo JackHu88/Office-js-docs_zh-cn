@@ -1,28 +1,29 @@
 # <a name="pageview-object-javascript-api-for-visio"></a>PageView 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 PageView 类。
 
 ## <a name="properties"></a>属性
 
-| 属性 | 类型 |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|zoom|int|获取并设置页面的缩放级别。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+| 属性 | 类型 |说明|
+|:---------------|:--------|:----------|
+|zoom|int|获取并设置页面的缩放级别。|
 
 ## <a name="relationships"></a>关系
-
 无
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|平移 Visio 绘图，将指定的形状放置在视图中心位置。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-centerViewportOnShape)|
-|[fitToWindow()](#fittowindow)|void|让页面填满当前窗口。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-fitToWindow)|
-|[isShapeInViewport(Shape:Shape)](#isshapeinviewportshape-shape)|bool|检查形状是否在页面的视区内。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-isShapeInViewport)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-load)|
+| 方法           | 返回类型    |说明|
+|:---------------|:--------|:----------|
+|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|平移 Visio 绘图，将指定的形状放置在视图中心位置。|
+|[fitToWindow()](#fittowindow)|void|让页面填满当前窗口。|
+|[getPosition()](#getposition)|[Position](position.md)|返回在视图中指定页面位置的 Position 对象。|
+|[getSelection()](#getselection)|[Selection](selection.md)|表示页面中的 Selection 对象。|
+|[isShapeInViewport(Shape:Shape)](#isshapeinviewportshape-shape)|bool|检查形状是否在页面的视区内。|
+|[load(param: object)](#loadparam-object)|无效|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[setPosition(Position:Position)](#setpositionposition-position)|void|在视图中设置页面的位置。|
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -73,6 +74,34 @@ pageViewObject.fitToWindow();
 #### <a name="returns"></a>返回
 void
 
+### <a name="getposition"></a>getPosition()
+返回在视图中指定页面位置的 Position 对象。
+
+#### <a name="syntax"></a>语法
+```js
+pageViewObject.getPosition();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+[Position](position.md)
+
+### <a name="getselection"></a>getSelection()
+表示页面中的 Selection 对象。
+
+#### <a name="syntax"></a>语法
+```js
+pageViewObject.getSelection();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+[Selection](selection.md)
+
 ### <a name="isshapeinviewportshape-shape"></a>isShapeInViewport(Shape:Shape)
 检查形状是否在页面的视区内。
 
@@ -104,6 +133,14 @@ object.load(param);
 
 #### <a name="returns"></a>返回
 void
+
+### <a name="setpositionposition-position"></a>setPosition(Position:Position)
+在视图中设置页面的位置。
+
+#### <a name="syntax"></a>语法
+```js
+pageViewObject.setPosition(Position);
+```
 
 #### <a name="parameters"></a>参数
 | 参数       | 类型    |说明|

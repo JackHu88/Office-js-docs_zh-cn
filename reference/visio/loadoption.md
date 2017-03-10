@@ -1,7 +1,5 @@
 # <a name="object-load-options-javascript-api-for-visio"></a>对象加载选项（适用于 Visio 的 JavaScript API）
 
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
-
 表示可以传递到加载方法，以指定在执行 **sync()** 方法时要加载的一组属性和关系的对象。sync() 方法可在 Visio 对象与相应的 JavaScript 代理对象之间同步状态。这会获取诸如选择、展开参数之类的选项，以指定要在对象上加载的一组属性，同时还允许对集合进行分页。
 
 它还可用于提供包含要加载的属性和关系的字符串，或提供包含要加载的属性和关系列表的数组。请参阅以下示例。

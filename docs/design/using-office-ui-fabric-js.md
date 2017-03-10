@@ -16,9 +16,9 @@ Fabric 包含以下多个项目：
 ##<a name="1-add-the-fabric-cdn-references"></a>1.添加 Fabric CDN 引用
 若要从 CDN 引用 Fabric，请在页面中添加以下 HTML 代码。
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
 
 就是这么简单。现在，可以开始在外接程序中使用 Fabric 了。 
 
@@ -37,26 +37,26 @@ Fabric 提供了多个可在外接程序中使用的用户体验组件，如按�
 
 > **注意：**随着时间的推移，我们将逐渐添加其他组件。 
 
-- [痕迹导航](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
-- [按钮](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
-- [复选框](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
-- [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
-- [日期选取器](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md)（有关如何在外接程序中实现日期选取器的示例，请参阅 [Excel 销售额跟踪程序](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)代码示例。）
-- [下拉列表](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)
-- [标签](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)
-- [链接](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)
-- [列表](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md)（请考虑在 CSS 中更改组件的默认样式。）
-- [MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)
-- [MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)
-- [覆盖](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)
-- [面板](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)
-- [透视](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)
-- [ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)
-- [搜索框](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)
-- [缓冲图标](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)
-- [表](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)
-- [TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)
-- [开关](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)
+- [痕迹导航栏](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
+- [按钮](https://dev.office.com/fabric-js/Components/Button/Button.html)（考虑在外接程序中使用小型按钮变体。）
+- [复选框](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
+- [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
+- [日期选取器](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html)（有关如何在外接程序中实现日期选取器的示例，请参阅 [Excel 销售额跟踪程序](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)代码示例。）
+- [下拉列表](https://dev.office.com/fabric-js/Components/Dropdown/Dropdown.html)
+- [标签](https://dev.office.com/fabric-js/Components/Label/Label.html)
+- [链接](https://dev.office.com/fabric-js/Components/Link/Link.html)
+- [列表](https://dev.office.com/fabric-js/Components/List/List.html)（请考虑在 CSS 中更改组件的默认样式。）
+- [MessageBanner](https://dev.office.com/fabric-js/Components/MessageBanner/MessageBanner.html)
+- [MessageBar](https://dev.office.com/fabric-js/Components/MessageBar/MessageBar.html)
+- [覆盖](https://dev.office.com/fabric-js/Components/Overlay/Overlay.html)
+- [面板](https://dev.office.com/fabric-js/Components/Panel/Panel.html)
+- [透视](https://dev.office.com/fabric-js/Components/Pivot/Pivot.html)
+- [ProgressIndicator](https://dev.office.com/fabric-js/Components/ProgressIndicator/ProgressIndicator.html)
+- [搜索框](https://dev.office.com/fabric-js/Components/SearchBox/SearchBox.html)
+- [缓冲图标](https://dev.office.com/fabric-js/Components/Spinner/Spinner.html)
+- [表](https://dev.office.com/fabric-js/Components/Table/Table.html)
+- [TextField](https://dev.office.com/fabric-js/Components/TextField/TextField.html)
+- [开关](https://dev.office.com/fabric-js/Components/Toggle/Toggle.html)
    
 ## <a name="updating-your-add-in-to-use-fabric-js"></a>将外接程序更新为使用 Fabric JS
 如果你一直使用的是旧版 Office UI Fabric，并且想迁移到 Fabric JS，请务必了解新组件，并在外接程序中合并和测试新组件。请注意以下几点，它们有助于你进行更新规划：

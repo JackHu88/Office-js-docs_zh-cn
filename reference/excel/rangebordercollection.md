@@ -1,10 +1,10 @@
-﻿# <a name="rangebordercollection-object-javascript-api-for-excel"></a>RangeBorderCollection 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="rangebordercollection-object-javascript-api-for-excel"></a>RangeBorderCollection 对象 (Excel JavaScript API)
 
-表示构成区域边框的 border 对象。
+表示构成区域边框的 Border 对象。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明| 要求集|
+| 属性       | 类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
 |count|int|集合中的 border 对象数量。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[RangeBorder[]](rangeborder.md)|rangeBorder 对象的集合。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -21,7 +21,6 @@ _请参阅属性访问[示例。](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|按名称获取边框对象|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|按边框索引获取此对象|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -35,7 +34,7 @@ rangeBorderCollectionObject.getItem(index);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |index|string|要检索的 border 对象的索引值。可能的值是：EdgeTop、EdgeBottom、EdgeLeft、EdgeRight、InsideVertical、InsideHorizontal、DiagonalDown、DiagonalUp|
 
@@ -95,7 +94,7 @@ rangeBorderCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
@@ -123,22 +122,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
-
-#### <a name="syntax"></a>语法
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
-|:---------------|:--------|:----------|:---|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
-
-#### <a name="returns"></a>返回
-void
 ### <a name="property-access-examples"></a>属性访问示例
 
 ```js

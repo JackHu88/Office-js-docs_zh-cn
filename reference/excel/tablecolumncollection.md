@@ -1,12 +1,12 @@
-# <a name="tablecolumncollection-object-javascript-api-for-excel"></a>TableColumnCollection 对象（适用于 Excel 的 JavaScript API）
+# <a name="tablecolumncollection-object-javascript-api-for-excel"></a>TableColumnCollection 对象 (Excel JavaScript API)
 
 表示属于表的所有列的集合。
 
 ## <a name="properties"></a>属性
 
-| 属性     | 类型   |说明| 要求集|
+| 属性       | 类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
-|count|int|返回表中的列数。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|INT|返回表中的列数。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[TableColumn[]](tablecolumn.md)|tableColumn 对象的集合。只读。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _请参阅属性访问[示例。](#property-access-examples)_
@@ -19,28 +19,29 @@ _请参阅属性访问[示例。](#property-access-examples)_
 
 | 方法           | 返回类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean 或 string 或 number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|向表中添加新列。|[1.1：1.1 要求索引小于列总数，1.4 允许索引为可选（NUll 或 -1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: number 或 string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取列对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][], name: string)](#addindex-number-values-boolean-or-string-or-number-name-string)|[TableColumn](tablecolumn.md)|向表中添加新列。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|获取表中的列数。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取列对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|按列在集合中的位置获取此对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: number 或 string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取列对象。如果列对象不存在，则返回的对象 isNull 属性为 true。|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[TableColumn](tablecolumn.md)|按名称或 ID 获取 column 对象。如果没有 column 对象，将返回 NULL 对象。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
 
-### <a name="addindex-number-values-boolean-or-string-or-number"></a>add(index: number, values: (boolean or string or number)[][])
+### <a name="addindex-number-values-boolean-or-string-or-number-name-string"></a>add(index: number, values: (boolean or string or number)[][], name: string)
 向表中添加新列。
 
 #### <a name="syntax"></a>语法
 ```js
-tableColumnCollectionObject.add(index, values);
+tableColumnCollectionObject.add(index, values, name);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |index|number|可选。指定新列的相对位置。如果为 NULL 或 -1，将在末尾进行添加。索引更高的列将被移到一侧。从零开始编制索引。|
 |值|(boolean or string or number)[][]|可选。未设置格式的表列值的二维数组。|
+|name|string|可选。指定新列的名称。如果为 Null，将使用默认名称。|
 
 #### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
@@ -65,6 +66,20 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcount"></a>getCount()
+获取表中的列数。
+
+#### <a name="syntax"></a>语法
+```js
+tableColumnCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+int
+
 ### <a name="getitemkey-number-or-string"></a>getItem(key: number or string)
 按名称或 ID 获取 column 对象。
 
@@ -74,7 +89,7 @@ tableColumnCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |Key|number or string| 列名称或 ID。|
 
@@ -124,7 +139,7 @@ tableColumnCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |index|number|要检索的对象的索引值。从零开始编制索引。|
 
@@ -147,37 +162,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getitemornullkey-number-or-string"></a>getItemOrNull(key: number 或 string)
-按名称或 ID 获取列对象。如果列对象不存在，则返回的对象 isNull 属性为 true。
+### <a name="getitemornullobjectkey-number-or-string"></a>getItemOrNullObject(key: number or string)
+按名称或 ID 获取 column 对象。如果没有 column 对象，将返回 NULL 对象。
 
 #### <a name="syntax"></a>语法
 ```js
-tableColumnCollectionObject.getItemOrNull(key);
+tableColumnCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |Key|number or string| 列名称或 ID。|
 
 #### <a name="returns"></a>返回
 [TableColumn](tablecolumn.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
-
-#### <a name="syntax"></a>语法
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
-|:---------------|:--------|:----------|:---|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
-
-#### <a name="returns"></a>返回
-void
 ### <a name="property-access-examples"></a>属性访问示例
 
 ```js

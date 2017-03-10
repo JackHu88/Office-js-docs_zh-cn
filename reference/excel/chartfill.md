@@ -1,6 +1,6 @@
-﻿# <a name="chartfill-object-javascript-api-for-excel"></a>ChartFill 对象（适用于 Excel 的 JavaScript API）
+# <a name="chartfill-object-javascript-api-for-excel"></a>ChartFill 对象 (Excel JavaScript API)
 
-表示图表元素的格式填充。
+表示图表元素的填充格式。
 
 ## <a name="properties"></a>属性
 
@@ -40,7 +40,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;    
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -62,7 +62,7 @@ chartFillObject.setSolidColor(color);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |color|string|表示窗体 #RRGGBB（例如“FFA500”）的边框线条颜色或作为已命名的 HTML 颜色（例如“orange”）的 HTML 颜色代码。|
 
@@ -75,7 +75,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
 
     chart.format.fill.setSolidColor("#FF0000");
 

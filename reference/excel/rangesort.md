@@ -1,6 +1,6 @@
-# <a name="rangesort-object-javascript-api-for-excel"></a>RangeSort 对象（适用于 Excel 的 JavaScript API）
+# <a name="rangesort-object-javascript-api-for-excel"></a>RangeSort 对象 (Excel JavaScript API)
 
-管理对范围对象的排序操作。
+管理对 Range 对象的排序操作。
 
 ## <a name="properties"></a>属性
 
@@ -28,7 +28,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |域|SortField[]|要用作排序依据的条件列表。|
 |matchCase|bool|可选。是否让大小写对字符串排序产生影响。|

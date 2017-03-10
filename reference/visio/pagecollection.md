@@ -1,15 +1,14 @@
 # <a name="pagecollection-object-javascript-api-for-visio"></a>PageCollection 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
-表示文档中的一组 Page 对象。
+表示属于文档的 Page 对象的集合。
 
 ## <a name="properties"></a>属性
 
-| 属性       | 类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|items|[Page[]](page.md)|页面对象的集合。只读。|[转到](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-items)|
+| 属性       | 类型    |说明|
+|:---------------|:--------|:----------|
+|项|[Page[]](page.md)|页面对象的集合。只读。|
 
 ## <a name="relationships"></a>关系
 无
@@ -17,11 +16,11 @@
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|获取集合中的页面数量。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getCount)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Page](page.md)|按键（名称或 ID）获取页面。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getItem)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-load)|
+| 方法           | 返回类型    |说明|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|获取集合中的页面数量。|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Page](page.md)|按键（名称或 ID）获取页面。|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
 ## <a name="method-details"></a>方法详细信息
 

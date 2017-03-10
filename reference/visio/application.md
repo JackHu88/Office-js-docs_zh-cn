@@ -1,17 +1,16 @@
 # <a name="application-object-javascript-api-for-visio"></a>Application 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
-表示 Application。
+表示 Application 对象。
 
 ## <a name="properties"></a>属性
 
-| 属性       | 类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|showToolbars|bool|显示或隐藏标准工具栏。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
+| 属性       | 类型    |说明|
+|:---------------|:--------|:----------|
+|showToolbars|bool|显示或隐藏标准工具栏。|
 
-_请参阅属性访问 [示例。](#property-access-examples)_
+_请参阅属性访问[示例。](#property-access-examples)_
 
 ## <a name="relationships"></a>关系
 无
@@ -19,9 +18,9 @@ _请参阅属性访问 [示例。](#property-access-examples)_
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
+| 方法           | 返回类型    |说明|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
 
 ## <a name="method-details"></a>方法详细信息
 

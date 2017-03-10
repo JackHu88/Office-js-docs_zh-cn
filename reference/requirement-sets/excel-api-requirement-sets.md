@@ -2,10 +2,12 @@
 
 要求集是指各组已命名的 API 成员。Office 外接程序使用清单中指定的要求集或执行运行时检查，以确定 Office 主机是否支持外接程序所需的 API。有关详细信息，请参阅[指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)。
 
-Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。 
+Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows、Office for iPad、Office for Mac 和 Office Online。下表列出了 Excel 要求集、支持该要求集的 Office 主机应用程序，以及这些应用程序的内部版本或版本号。
 
 |  要求集  |  Office 2016 for Windows*  |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| ExcelApi 1.5 **Beta**  | 版本 1702（生成号 TBD）或更高版本| 即将推出 |  即将推出| 即将推出 | 即将推出|
+| ExcelApi 1.4 **Beta** | 版本 1702（生成号 TBD）或更高版本| 即将推出 |  即将推出| 即将推出 | 即将推出|
 | ExcelApi 1.3  | 版本 1608（内部版本 7369.2055）或更高版本| 1.27 或更高版本 |  15.27 或更高版本| 2016 年 9 月 | 版本 1608（内部版本 7601.6800）或更高版本|
 | ExcelApi 1.2  | 版本 1601（内部版本 6741.2088）或更高版本 | 1.21 或更高版本 | 15.22 或更高版本| 2016 年 1 月 ||
 | ExcelApi 1.1  | 版本 1509（内部版本 4266.1001）或更高版本 | 1.19 或更高版本 | 15.20 或更高版本| 2016 年 1 月 ||
@@ -22,8 +24,89 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 ## <a name="office-common-api-requirement-sets"></a>Office 通用 API 要求集
 若要了解通用 API 要求集，请参阅 [Office 通用 API 要求集](office-add-in-requirement-sets.md)。
 
-## <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新 
-下面介绍了要求集 1.3 中 Excel JavaScript API 的新增内容。 
+## <a name="whats-new-in-excel-javascript-api-14"></a>Excel JavaScript API 1.4 的最近更新
+下面介绍了要求集 1.3 中 Excel JavaScript API 的新增内容。
+
+### <a name="named-item-add-and-new-properties"></a>添加了已命名项和新属性
+
+新属性
+* `comment`
+* `scope`：限定到工作表或工作簿的项
+* `worksheet`：返回已命名项限定到的工作表。
+
+新方法
+* `add(name: string, reference: Range or string, comment: string)`：将新名称添加到给定范围的集合。
+* `addFormulaLocal(name: string, formula: string, comment: string)`：使用用户的公式区域设置，将新名称添加到给定范围的集合。
+
+### <a name="settings-api-in-in-excel-namespace"></a>Excel 命名空间中的设置 API
+
+[Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/setting.md) 对象表示文档保留设置的键值对。现在，我们已在 Excel 命名空间下添加了与设置相关的 API。这不会提供全新功能，但可便于继续使用基于承诺的批处理 API 语法，减少对 Excel 相关任务常见 API 的依赖。
+
+API 包括通过键获取设置条目的 `getItem()`，以及将指定键值设置对添加到工作簿的 `add()`。
+
+### <a name="others"></a>其他
+
+* 设置表列名称（旧版只允许读取）。
+* 将表列添加到表的末尾（旧版只允许添加到除末尾之外的其他任何位置）。
+* 一次性向表中添加多行（旧版只允许一次添加 1 行）。
+* `range.getColumnsAfter(count: number)` 和 `range.getColumnsBefore(count: number)` 分别用于获取当前 Range 对象的右/左侧的一定数量的列。
+* 获取项或 NULL 对象函数：此功能允许使用键获取对象。如果没有对象，返回的对象的 isNullObject 属性为 true。这样一来，开发者可以检查对象是否存在，而无需通过异常处理来进行处理。适用于工作表、已命名项、绑定、图表系列等
+
+`worksheet.GetItemOrNullObject()`
+
+### <a name="suspend-calculation"></a>暂停计算
+在下一次调用“context.sync()”前暂停计算 (application.suspendCalculationUntilNextSync())。设置后，开发者负责重新计算工作簿，以确保传播所有依赖项。
+
+此外，我们正在修复不会重新计算脏单元格的 F9 重新计算缺陷。
+
+|对象| 最近更新| 说明|要求集|
+|:----|:----|:----|:----|
+|[application](../excel/application.md)|_方法_  >  [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|在下一次调用“context.sync()”前暂停计算。设置后，开发者负责重新计算工作簿，以确保传播所有依赖项。|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_  >  [getCount()](../excel/bindingcollection.md#getcount)|获取集合中的绑定数量。|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_方法_  >  [getItemOrNullObject(id: string)](../excel/bindingcollection.md#getitemornullobjectid-string)|按 ID 获取 Binding 对象。如果没有 Binding 对象，将返回 NULL 对象。|1.4|
+|[chartCollection](../excel/chartcollection.md)|_方法_  >  [getCount()](../excel/chartcollection.md#getcount)|返回工作表中的图表数。|1.4|
+|[chartCollection](../excel/chartcollection.md)|_方法_  >  [getItemOrNullObject(name: string)](../excel/chartcollection.md#getitemornullobjectname-string)|按名称获取图表。如果存在多个同名的图表，将返回第一个图表。|1.4|
+|[chartPointsCollection](../excel/chartpointscollection.md)|_方法_  >  [getCount()](../excel/chartpointscollection.md#getcount)|返回系列中的图表点数。|1.4|
+|[chartSeriesCollection](../excel/chartseriescollection.md)|_方法_  >  [getCount()](../excel/chartseriescollection.md#getcount)|返回集合中的系列数量。|1.4|
+|[namedItem](../excel/nameditem.md)|_属性_ > comment|表示与此名称相关联的注释。|1.4|
+|[namedItem](../excel/nameditem.md)|_属性_ > scope|指明是否将 name 限定到工作簿或特定工作表。只读。可取值为：Equal、Greater、GreaterEqual、Less、LessEqual、NotEqual。|1.4|
+|[namedItem](../excel/nameditem.md)|_关系_ > worksheet|返回已命名项限定到的工作表。如果项改为限定到工作簿，将引发错误。只读。|1.4|
+|[namedItem](../excel/nameditem.md)|_关系_ > worksheetOrNullObject|返回已命名项限定到的工作表。如果项改为限定到工作簿，将返回 NULL 对象。只读。|1.4|
+|[namedItem](../excel/nameditem.md)|_方法_  >  [delete()](../excel/nameditem.md#delete)|删除给定的名称。|1.4|
+|[namedItem](../excel/nameditem.md)|_方法_  >  [getRangeOrNullObject()](../excel/nameditem.md#getrangeornullobject)|返回与名称相关联的 Range 对象。如果已命名项的类型不是 Range，将返回 NULL 对象。|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_方法_  >  [add(name: string, reference:Range or string, comment: string)](../excel/nameditemcollection.md#addname-string-reference-range-or-string-comment-string)|将新名称添加到给定范围的集合。|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_方法_  >  [addFormulaLocal(name: string, formula: string, comment: string)](../excel/nameditemcollection.md#addformulalocalname-string-formula-string-comment-string)|使用用户的公式区域设置，将新名称添加到给定范围的集合。|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_方法_  >  [getCount()](../excel/nameditemcollection.md#getcount)|获取集合中已命名项的数量。|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_方法_  >  [getItemOrNullObject(name: string)](../excel/nameditemcollection.md#getitemornullobjectname-string)|按 NamedItem 对象的名称获取此对象。如果没有 NamedItem 对象，将返回 NULL 对象。|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_方法_  >  [getCount()](../excel/pivottablecollection.md#getcount)|获取集合中的数据透视表的数量。|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_方法_  >  [getItemOrNullObject(name: string)](../excel/pivottablecollection.md#getitemornullobjectname-string)|按 PivotTable 对象的名称获取此对象。如果没有 PivotTable 对象，将返回 NULL 对象。|1.4|
+|[range](../excel/range.md)|_方法_  >  [getIntersectionOrNullObject(anotherRange:Range or string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|获取表示指定区域的矩形交集的 range 对象。如果找不到任何交集，将返回 NULL 对象。|1.4|
+|[range](../excel/range.md)|_方法_  >  [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/range.md#getusedrangeornullobjectvaluesonly-bool)|返回指定 Range 对象的所用区域。如果区域内没有使用单元格，此函数将返回 NULL 对象。|1.4|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_方法_  >  [getCount()](../excel/rangeviewcollection.md#getcount)|获取集合中 RangeView 对象的数量。|1.4|
+|[setting](../excel/setting.md)|_属性_ > key|返回表示 setting 对象的 ID 的键。只读。|1.4|
+|[setting](../excel/setting.md)|_属性_ > value|表示为此设置存储的值。|1.4|
+|[setting](../excel/setting.md)|_方法_ > [delete()](../excel/setting.md#delete)|删除 Setting 对象。|1.4|
+|[settingCollection](../excel/settingcollection.md)|_属性_ > items|一组 setting 对象。只读。|1.4|
+|[settingCollection](../excel/settingcollection.md)|_方法_  >  [add(key: string, value: (any)[])](../excel/settingcollection.md#addkey-string-value-any)|设置指定的 Setting 对象，或将其添加到工作簿中。|1.4|
+|[settingCollection](../excel/settingcollection.md)|_方法_  >  [getCount()](../excel/settingcollection.md#getcount)|获取集合中的 Setting 对象的数量。|1.4|
+|[settingCollection](../excel/settingcollection.md)|_方法_ > [getItem(key: 字符串)](../excel/settingcollection.md#getitemkey-string)|按键获取 Setting 项。|1.4|
+|[settingCollection](../excel/settingcollection.md)|_方法_  >  [getItemOrNullObject(key: string)](../excel/settingcollection.md#getitemornullobjectkey-string)|按键获取 Setting 项。如果没有 Setting 项，将返回 NULL 对象。|1.4|
+|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_关系_ > settings|获取表示引发了 SettingsChanged 事件的绑定的 Setting 对象。|1.4|
+|[tableCollection](../excel/tablecollection.md)|_方法_  >  [getCount()](../excel/tablecollection.md#getcount)|获取集合中的表数量。|1.4|
+|[tableCollection](../excel/tablecollection.md)|_方法_  >  [getItemOrNullObject(key: number or string)](../excel/tablecollection.md#getitemornullobjectkey-number-or-string)|按名称或 ID 获取表。如果没有表，将返回 NULL 对象。|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_方法_  >  [getCount()](../excel/tablecolumncollection.md#getcount)|获取表中的列数。|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_方法_  >  [getItemOrNullObject(key: number or string)](../excel/tablecolumncollection.md#getitemornullobjectkey-number-or-string)|按名称或 ID 获取 column 对象。如果没有 column 对象，将返回 NULL 对象。|1.4|
+|[tableRowCollection](../excel/tablerowcollection.md)|_方法_  >  [getCount()](../excel/tablerowcollection.md#getcount)|获取表格中的行数。|1.4|
+|[workbook](../excel/workbook.md)|_关系_ > settings|表示一组与 workbook 相关联的 setting 对象。只读。|1.4|
+|[worksheet](../excel/worksheet.md)|_关系_ > names|一组范围限定到当前工作表的名称。只读。|1.4|
+|[worksheet](../excel/worksheet.md)|_方法_  >  [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/worksheet.md#getusedrangeornullobjectvaluesonly-bool)|使用的区域是包含分配了值或格式的任意单元格的最小区域。如果整个工作表为空，此函数将返回 NULL 对象。|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_方法_  >  [getCount(visibleOnly: bool)](../excel/worksheetcollection.md#getcountvisibleonly-bool)|获取集合中的工作表数量。|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_方法_  >  [getItemOrNullObject(key: string)](../excel/worksheetcollection.md#getitemornullobjectkey-string)|按 Worksheet 对象的名称或 ID 获取此对象。如果没有 Worksheet 对象，将返回 NULL 对象。|1.4|
+
+
+
+## <a name="whats-new-in-excel-javascript-api-13"></a>Excel JavaScript API 1.3 的最近更新
+下面介绍了要求集 1.3 中 Excel JavaScript API 的新增内容。
 
 |对象| 最近更新| 说明|要求集|
 |:----|:----|:----|:----|
@@ -76,7 +159,7 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 |[worksheet](../excel/worksheet.md)|_关系_ > pivotTables|一组属于 worksheet 的 PivotTable 对象。只读。|1.3|
 
 ## <a name="whats-new-in-excel-javascript-api-12"></a>Excel JavaScript API 1.2 的最近更新
-下面介绍了要求集 1.2 中 Excel JavaScript API 的新增内容。 
+下面介绍了要求集 1.2 中 Excel JavaScript API 的新增内容。
 
 |对象| 最近更新| 说明|要求集|
 |:----|:----|:----|:----|
@@ -162,7 +245,7 @@ Excel 加载项在多个 Office 版本中运行，包括 Office 2016 for Windows
 
 ## <a name="excel-javascript-api-11"></a>Excel JavaScript API 1.1
 Excel JavaScript API 1.1 是首版 API。有关 API 的详细信息，请参阅“Excel JavaScript API”参考主题。  
-    
+
 ## <a name="additional-resources"></a>其他资源
 
 - [指定 Office 主机和 API 要求](../../docs/overview/specify-office-hosts-and-api-requirements.md)

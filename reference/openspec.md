@@ -12,9 +12,9 @@ Visio Online 是一种用来联机查看和共享 Visio 图表的全新方式。
 **请参阅 [Visio JavaScript API 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) 页，了解详细信息并提供反馈意见。**
 
 ## <a name="new-excel-javascript-apis"></a>新 Excel JavaScript API
-加入我们，一起审阅我们新设计的 Excel JavaScript API 吧。新增和更新后的 API 包括 customXML 部件、命名项添加方法、条件格式等。 
+加入我们，一起审阅我们新设计的 Excel JavaScript API 吧。新增和更新后的 API 包括 customXML 部件、条件格式等。 
 
-**请访问 [Excel JavaScript 1.4 API 页](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec)，了解详细信息并提供反馈。**
+**请参阅 [Excel JavaScript 开放式设计页](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)，了解详细信息并提供反馈。**
 
 ## <a name="new-word-javascript-apis-13"></a>新 Word JavaScript API (1.3)
 Word JavaScript API 1.3 更新包含自引入此 API 以来我们实现的最多一组更改。借助新 API，你可以： 
@@ -26,7 +26,7 @@ Word JavaScript API 1.3 更新包含自引入此 API 以来我们实现的最多
 
 几乎所有 Word JavaScript API 对象中都已经实现了这些更改。对于 Windows 和 Mac 的桌面版 Word 2016 以及 iPad 上的 Word 2016，此功能现在或很快就会进行预览阶段。请将你的客户端更新为最新的每月内部版本，并开始实现这些强大功能吧！
 
-**请访问 [Word JS API 1.3 页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)，了解详细信息并提供反馈。**
+**请访问 [Word JS API 1.3 开放式设计页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word)，了解详细信息并提供反馈。**
 
 ## <a name="new-word-javascript-apis-14"></a>新 Word JavaScript API (1.4)
 Word JavaScript API 1.4 更新中新增了重要内容，具体包括：
@@ -38,10 +38,13 @@ Word JavaScript API 1.4 更新中新增了重要内容，具体包括：
 * 表合并单元格
 * 表行合并和列拆分
 
-**请访问 [Word JS API 1.4 页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)，了解详细信息并提供反馈。**
+**请访问 [Word JS API 1.4 开放式设计页](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec)，了解详细信息并提供反馈。**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>主机、平台信息和诊断信息 
-请参阅出于向开发者提供外接程序运行时环境信息和诊断信息的目的，计划在 Office.Context 对象中新增的内容。 
+请参阅出于向开发者提供外接程序运行时环境信息和诊断信息的目的，计划在 Office.Context 对象中[新增的内容](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)。 
 
-**请参阅 [Office 上下文新增内容规范](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)，了解详细信息并提供反馈。**
+## <a name="single-sign-on-capability"></a>单一登录功能 
+单击[此处](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec)探索在 Office 外接程序中启用单一登录功能的初始设计
+
+**请参阅 [Office.context 新增内容规范](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec)，了解详细信息并提供反馈。**
 

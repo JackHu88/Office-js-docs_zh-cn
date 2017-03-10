@@ -1,7 +1,6 @@
 # <a name="document-object-javascript-api-for-visio"></a>Document 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 Document 类。
 
@@ -10,18 +9,20 @@
 无
 
 ## <a name="relationships"></a>Relationships
-| 关系 | 类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|application|[Application](application.md)|表示包含此文档的 Visio 应用程序实例。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
-|pages|[PageCollection](pagecollection.md)|表示一组与文档相关联的页面。只读。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
+| 关系 | 类型    |说明|
+|:---------------|:--------|:----------|
+|application|[Application](application.md)|表示包含此文档的 Visio 应用程序实例。只读。|
+|pages|[PageCollection](pagecollection.md)|表示一组与文档相关联的页面。只读。|
+|view|[DocumentView](documentview.md)|返回 DocumentView 对象。只读。|
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|[getActivePage()](#getactivepage)|[Page](page.md)|返回文档的活动页。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
-|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|设置文档的活动页。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
+| 方法           | 返回类型    |说明|
+|:---------------|:--------|:----------|
+|[getActivePage()](#getactivepage)|[Page](page.md)|返回文档的活动页。|
+|[load(param: object)](#loadparam-object)|无效|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|设置文档的活动页。|
+|[startDataRefresh()](#startdatarefresh)|void|触发刷新关系图中所有页面的数据。|
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -106,7 +107,33 @@ Visio.run(function (ctx) {
 ```
 
 
-### <a name="property-access-examples"></a>属性访问示例
+### <a name="startdatarefresh"></a>startDataRefresh()
+触发刷新关系图中所有页面的数据。
+
+#### <a name="syntax"></a>语法
+```js
+documentObject.startDataRefresh();
+```
+
+#### <a name="parameters"></a>参数
+无
+
+#### <a name="returns"></a>返回
+void
+
+#### <a name="examples"></a>示例
+```js
+Visio.run(function (ctx) { 
+    var document = ctx.document;
+    document.startDataRefresh();
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```### Property access examples
 ```js
 Visio.run(function (ctx) { 
     var pages = ctx.document.pages;
@@ -114,6 +141,20 @@ Visio.run(function (ctx) {
     return ctx.sync().then(function () {
         console.log("Pages Count: " +pageCount.value);
         });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+### <a name="property-access-examples"></a>属性访问示例
+```js
+Visio.run(function (ctx) { 
+    var documentView = ctx.document.view;
+    documentView.disableHyperlinks();
+    return ctx.sync();
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {

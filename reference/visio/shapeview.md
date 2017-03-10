@@ -1,7 +1,6 @@
 # <a name="shapeview-object-javascript-api-for-visio"></a>ShapeView 对象（适用于 Visio 的 JavaScript API）
 
 适用于：_Visio Online_
->**注意：**Visio JavaScript API 暂处于预览阶段，可能会发生变更。暂不支持在生产环境中使用 Visio JavaScript API。
 
 表示 ShapeView 类。
 
@@ -10,15 +9,17 @@
 无
 
 ## <a name="relationships"></a>Relationships
-无
+| 关系 | 类型    |说明|
+|:---------------|:--------|:----------|
+|highlight|[Highlight](highlight.md)|表示形状周围的突出显示内容。|
 
 ## <a name="methods"></a>方法
 
-| 方法           | 返回类型    |说明| 反馈|
-|:---------------|:--------|:----------|:---|
-|[addOverlay(OverlayType:OverlayType, Content: string, HorizontalAlignment:HorizontalAlignment, VerticalAlignment:VerticalAlignment, Width: number, Height: number)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|在形状之上添加覆盖。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-addOverlay)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-load)|
-|[removeOverlay(OverlayId: number)](#removeoverlayoverlayid-number)|void|删除形状上的特定覆盖或所有覆盖。|[转到反馈页](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-removeOverlay)|
+| 方法           | 返回类型    |说明|
+|:---------------|:--------|:----------|
+|[addOverlay(OverlayType:OverlayType, Content: string, HorizontalAlignment:HorizontalAlignment, VerticalAlignment:VerticalAlignment, Width: number, Height: number)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|在形状之上添加覆盖。|
+|[load(param: object)](#loadparam-object)|无效|使用参数中指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|
+|[removeOverlay(OverlayId: number)](#removeoverlayoverlayid-number)|void|删除形状上的特定覆盖或所有覆盖。|
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -75,6 +76,20 @@ shapeViewObject.removeOverlay(OverlayId);
 
 #### <a name="returns"></a>返回
 void
+### <a name="property-access-examples"></a>属性访问示例
+```js
+Visio.run(function (ctx) { 
+    var activePage = ctx.document.getActivePage();
+    var shape = activePage.shapes.getItem(0);
+    shape.view.highlight = { color: "#E7E7E7", width: 100 };
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### <a name="property-access-examples"></a>属性访问示例
 ```js

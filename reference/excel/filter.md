@@ -1,15 +1,15 @@
-﻿# <a name="filter-object-javascript-api-for-excel"></a>Filter 对象（适用于 Excel 的 JavaScript API）
+﻿# <a name="filter-object-javascript-api-for-excel"></a>Filter 对象 (Excel JavaScript API)
 
-管理表中列的筛选。
+管理表列的筛选。
 
 ## <a name="properties"></a>属性
 
 无
 
 ## <a name="relationships"></a>Relationships
-| 关系 | 类型   |说明| 要求集|
+| 关系 | 类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
-|criteria|[FilterCriteria](filtercriteria.md)|给定列上当前应用的筛选器。只读。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|条件|[FilterCriteria](filtercriteria.md)|给定列上当前应用的筛选器。只读。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>方法
 
@@ -27,7 +27,6 @@
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|将“Top Percent”筛选器应用于列，以获取给定比例的元素。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|将“Values”筛选器应用于列，以获取给定值。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|清除给定列上的筛选器。|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|无效|使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -41,9 +40,9 @@ filterObject.apply(criteria);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
-|条件|FilterCriteria|要应用的条件。|
+|criteria|FilterCriteria|要应用的条件。|
 
 #### <a name="returns"></a>返回
 void
@@ -57,7 +56,7 @@ filterObject.applyBottomItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |count|编号|要显示的底部元素的数量。|
 
@@ -73,7 +72,7 @@ filterObject.applyBottomPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |百分比|编号|要显示的底部元素的百分比。|
 
@@ -89,7 +88,7 @@ filterObject.applyCellColorFilter(color);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |color|string|要显示的单元格的背景颜色。|
 
@@ -105,7 +104,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |criteria1|string|第一个条件字符串。|
 |criteria2|string|可选。第二个条件字符串。|
@@ -123,7 +122,7 @@ filterObject.applyDynamicFilter(criteria);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |条件|string|要应用的动态条件。可能的值是：Unknown、AboveAverage、AllDatesInPeriodApril、AllDatesInPeriodAugust、AllDatesInPeriodDecember、AllDatesInPeriodFebruray、AllDatesInPeriodJanuary、AllDatesInPeriodJuly、AllDatesInPeriodJune、AllDatesInPeriodMarch、AllDatesInPeriodMay、AllDatesInPeriodNovember、AllDatesInPeriodOctober、AllDatesInPeriodQuarter1、AllDatesInPeriodQuarter2、AllDatesInPeriodQuarter3、AllDatesInPeriodQuarter4、AllDatesInPeriodSeptember, BelowAverage、LastMonth, LastQuarter、LastWeek、LastYear、NextMonth、NextQuarter、NextWeek、NextYear、ThisMonth、ThisQuarter、ThisWeek、ThisYear、Today、Tomorrow、YearToDate、Yesterday|
 
@@ -139,7 +138,7 @@ filterObject.applyFontColorFilter(color);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |color|string|要显示的单元格的字体颜色。|
 
@@ -155,7 +154,7 @@ filterObject.applyIconFilter(icon);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |icon|图标|要显示的单元格图标。|
 
@@ -171,7 +170,7 @@ filterObject.applyTopItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |count|编号|要显示的顶部元素的数量。|
 
@@ -187,7 +186,7 @@ filterObject.applyTopPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |百分比|编号|要显示的顶部元素的百分比。|
 
@@ -203,7 +202,7 @@ filterObject.applyValuesFilter(values);
 ```
 
 #### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
+| 参数       | 类型    |说明|
 |:---------------|:--------|:----------|:---|
 |值|()[]|要显示的值的列表。|
 
@@ -220,22 +219,6 @@ filterObject.clear();
 
 #### <a name="parameters"></a>参数
 无
-
-#### <a name="returns"></a>返回
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-使用参数指定的属性和对象值填充在 JavaScript 层中创建的代理对象。
-
-#### <a name="syntax"></a>语法
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>参数
-| 参数    | 类型   |说明|
-|:---------------|:--------|:----------|:---|
-|param|object|可选。接受参数和关系名称作为分隔字符串或数组。或者提供 [loadOption](loadoption.md) 对象。|
 
 #### <a name="returns"></a>返回
 void
