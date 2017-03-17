@@ -1,4 +1,3 @@
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>解决 Office 外接程序中的用户错误
 
 有时，您的用户在使用您开发的 Office 外接程序时可能会遇到问题。例如，外接程序无法加载或无法访问。使用本文中的信息有助于解决您的用户在使用 Office 外接程序时遇到的常见问题。 
@@ -49,19 +48,40 @@
 
 请参阅[验证并排查清单问题](troubleshoot-manifest.md)，针对外接程序清单问题进行调试。
 
+## <a name="add-in-dialog-box-cannot-be-displayed"></a>无法显示外接程序对话框
+
+使用 Office 外接程序时，将要求用户允许显示对话框。用户选择“**允许**”，将出现以下错误消息：
+
+“浏览器中的安全设置阻止创建对话框。请尝试使用其他浏览器，或者配置浏览器，使地址栏中显示的 [URL] 和域处于同一安全区域。”
+
+![对话框错误消息的屏幕截图](http://i.imgur.com/3mqmlgE.png)
+
+|**受影响的浏览器**|**受影响的平台**|
+|:--------------------|:---------------------|
+|Internet Explorer、Microsoft Edge|Office Online|
+
+若要解决此问题，最终用户或管理员可以向 Internet Explorer 中的受信任站点列表添加外接程序的域。无论使用的是 Internet Explorer 还是 Microsoft Edge 浏览器，请使用相同过程。
+
+>**重要说明：**如果不信任某个外接程序，请不要将该外接程序的 URL 添加到受信任站点的列表中。
+
+要将 URL 添加到受信任站点的列表中，请执行以下操作：
+
+1. 在 Internet Explorer 中，选择“工具”按钮，然后转到“**Internet 选项**” > “**安全**”。
+2. 选择“**受信任站点**”区域，并选择“**网站**”。
+3. 输入错误消息中显示的 URL，然后选择“**添加**”。
+4. 再次尝试使用外接程序。如果问题仍然存在，请验证其他安全区域的设置，并确保外接程序域与 Office 应用程序地址栏中显示的 URL 处于同一区域。
+
+在弹出模式中使用对话框 API 时，会出现此问题。若要避免出现此问题，请使用 [displayInFrame](../../reference/shared/officeui.displaydialogasync) 标记。这要求页面支持在 iframe 中进行显示。以下示例演示如何使用此标记。
+
+```js
+
+Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+```
+
 ## <a name="additional-resources"></a>其他资源
 
-
-
-- [调试 Office Online 中的外接程序](../testing/debug-add-ins-in-office-online.md)
-    
-- [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
-- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-    
-- [在 Visual Studio 中创建和调试 Office 外接程序](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-    
-- [部署和安装 Outlook 外接程序以供测试](../outlook/testing-and-tips.md)
-    
+- [调试 Office Online 中的外接程序](../testing/debug-add-ins-in-office-online.md) 
+- [将 Office 外接程序旁加载到 iPad 和 Mac 上](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [在 iPad 和 Mac 上调试 Office 外接程序](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
 - [验证并排查清单问题](troubleshoot-manifest.md)
     

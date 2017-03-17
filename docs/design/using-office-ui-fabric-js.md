@@ -37,8 +37,8 @@ Fabric 提供了多个可在外接程序中使用的用户体验组件，如按�
 
 > **注意：**随着时间的推移，我们将逐渐添加其他组件。 
 
-- [痕迹导航栏](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
-- [按钮](https://dev.office.com/fabric-js/Components/Button/Button.html)（考虑在外接程序中使用小型按钮变体。）
+- [痕迹导航](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
+- [按钮](https://dev.office.com/fabric-js/Components/Button/Button.html)（考虑在外接程序中使用小型按钮变体。将 16px 填充添加到小型按钮，以确保触摸设备上 40px 的最小触摸目标。）
 - [复选框](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
 - [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
 - [日期选取器](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html)（有关如何在外接程序中实现日期选取器的示例，请参阅 [Excel 销售额跟踪程序](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)代码示例。）

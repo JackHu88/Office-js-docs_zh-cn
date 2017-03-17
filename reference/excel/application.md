@@ -1,4 +1,4 @@
-﻿# <a name="application-object-javascript-api-for-excel"></a>Application 对象 (Excel JavaScript API)
+# <a name="application-object-javascript-api-for-excel"></a>Application 对象 (Excel JavaScript API)
 
 表示用于管理工作簿的 Excel 应用程序。
 
@@ -19,7 +19,7 @@ _请参阅属性访问[示例。](#property-access-examples)_
 | 方法           | 返回类型    |说明| 要求集|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|无效|重新计算 Excel 中当前打开的所有工作簿。|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[suspendCalculationUntilNextSync()](#suspendcalculationuntilnextsync)|void|在下一次调用“context.sync()”前暂停计算。设置后，开发者负责重新计算工作簿，以确保传播所有依赖项。|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+
 
 ## <a name="method-details"></a>方法详细信息
 
@@ -52,20 +52,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="suspendcalculationuntilnextsync"></a>suspendCalculationUntilNextSync()
-在下一次调用“context.sync()”前暂停计算。设置后，开发者负责重新计算工作簿，以确保传播所有依赖项。
-
-#### <a name="syntax"></a>语法
-```js
-applicationObject.suspendCalculationUntilNextSync();
-```
-
-#### <a name="parameters"></a>参数
-无
-
-#### <a name="returns"></a>返回
-void
 ### <a name="property-access-examples"></a>属性访问示例
 ```js
 Excel.run(function (ctx) {
